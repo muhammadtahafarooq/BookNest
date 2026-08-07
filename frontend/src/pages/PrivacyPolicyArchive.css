@@ -1,0 +1,32 @@
+
+        body {
+            background-color: #F3F0E8; /* Aged Ivory Paper */
+            color: #171A1C; /* Obsidian Ink */
+        }
+        
+        .fade-in-header {
+            opacity: 0;
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .ambient-shadow-1 {
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+        }
+        
+        .border-stone-manuscript {
+            border-color: #D8D4CA;
+        }
+        
+        .text-stone-manuscript {
+            color: #D8D4CA;
+        }
+
+        .bg-soft-archive {
+            background-color: #FAF8F3;
+        }
+    

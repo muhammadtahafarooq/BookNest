@@ -1,0 +1,10 @@
+
+        .book-tilt {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .book-tilt:hover {
+            transform: translateY(-8px) rotateY(-5deg) rotateX(5deg);
+            box-shadow: -10px 15px 20px rgba(0, 0, 0, 0.15);
+        }
+    

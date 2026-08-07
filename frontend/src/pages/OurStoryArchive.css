@@ -1,0 +1,38 @@
+
+        body {
+            background-color: #F3F0E8; /* Aged Ivory Paper */
+            color: #1c1b1b;
+        }
+        
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .editorial-shadow {
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+        }
+
+        .editorial-shadow-hover:hover {
+            box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1);
+        }
+
+        .hairline-divider {
+            border-top: 1px solid #e5e2e1;
+        }
+        
+        .bg-obsidian {
+            background-color: #171A1C;
+        }
+        
+        .bg-deep-forest {
+            background-color: #23372B;
+        }
+    

@@ -1,0 +1,21 @@
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .luxury-shadow {
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+        }
+        .luxury-shadow-hover:hover {
+            box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1);
+        }
+        .editorial-divider {
+            background: linear-gradient(to right, transparent, #c4c7c9, transparent);
+            height: 1px;
+            width: 100%;
+        }
+        .editorial-divider-vertical {
+            background: linear-gradient(to bottom, transparent, #c4c7c9, transparent);
+            width: 1px;
+            height: 100%;
+        }
+    

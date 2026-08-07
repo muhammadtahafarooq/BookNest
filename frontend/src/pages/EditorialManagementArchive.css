@@ -1,0 +1,21 @@
+
+        /* Ambient shadows for "Luxury Editorial" feel */
+        .shadow-ambient-lvl0 { box-shadow: none; border: 1px solid #75777a; } /* outline variant */
+        .shadow-ambient-lvl1 { box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05); border: 1px solid #c4c7c9; }
+        .shadow-ambient-lvl2 { box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1); border: 1px solid #c4c7c9; }
+        .divider-fade {
+            background: linear-gradient(to bottom, transparent, #c4c7c9 20%, #c4c7c9 80%, transparent);
+        }
+        
+        /* Burnished Brass accent (approximated for light mode as a deep bronze/gold via secondary/tertiary colors) */
+        .btn-brass {
+            background-color: #211a17; /* tertiary-container */
+            color: #ffffff;
+            transition: all 0.2s ease;
+        }
+        .btn-brass:hover {
+            background-color: #313030;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(33, 26, 23, 0.2);
+        }
+    

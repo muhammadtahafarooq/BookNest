@@ -1,0 +1,8 @@
+
+        .editorial-divider {
+            background-image: linear-gradient(to right, transparent, #c6c6cd, transparent);
+            height: 1px;
+            width: 100%;
+            margin: 2rem 0;
+        }
+    

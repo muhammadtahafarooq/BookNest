@@ -1,0 +1,50 @@
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+             font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom animations */
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        /* Staggered delays */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+
+        /* Floating Book Effect */
+        .book-float {
+            transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+        }
+        .book-float:hover {
+            transform: translateY(-8px) rotateY(-5deg);
+            box-shadow: 20px 20px 30px rgba(16, 42, 67, 0.15);
+        }
+        
+        /* Book Spine Illusion */
+        .book-cover {
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to right, rgba(255,255,255,0.4), rgba(0,0,0,0.1));
+            z-index: 10;
+        }
+    

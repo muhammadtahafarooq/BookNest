@@ -1,0 +1,49 @@
+
+        .book-card {
+            perspective: 1000px;
+        }
+        .book-cover {
+            transform: rotateY(-15deg);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: -5px 5px 15px rgba(0,0,0,0.1), inset 5px 0 10px rgba(255,255,255,0.2);
+            transform-style: preserve-3d;
+        }
+        .book-card:hover .book-cover {
+            transform: rotateY(-5deg) translateY(-5px);
+            box-shadow: -10px 10px 25px rgba(0,0,0,0.2), inset 5px 0 10px rgba(255,255,255,0.3);
+        }
+        .book-spine {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%);
+            transform: rotateY(-90deg);
+            transform-origin: left;
+            opacity: 0.8;
+        }
+        .shelf-base {
+            height: 12px;
+            background: linear-gradient(to bottom, #dcd9db 0%, #c6c6cd 100%);
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 1;
+        }
+        .text-golden {
+            color: #C89B3C;
+        }
+        .bg-golden {
+            background-color: #C89B3C;
+        }
+        .bg-midnight {
+            background-color: #102A43;
+        }
+        .bg-forest {
+            background-color: #1A3636;
+        }
+        .border-golden {
+            border-color: #C89B3C;
+        }
+    

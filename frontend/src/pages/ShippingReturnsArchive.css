@@ -1,0 +1,60 @@
+
+        body {
+            background-color: #F3F0E8; /* Aged Ivory Paper */
+            color: #171A1C; /* Obsidian Ink */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .luxury-card {
+            background-color: #FAF8F3; /* Soft Archive White */
+            border: 1px solid #D8D4CA; /* Stone Manuscript */
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .luxury-card:hover {
+            box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: #A67C42; /* Burnished Brass */
+            color: #171A1C; /* Obsidian Ink */
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #8E6A38;
+        }
+
+        .text-brass {
+            color: #A67C42;
+        }
+        
+        .border-stone {
+            border-color: #D8D4CA;
+        }
+
+        .bg-forest {
+            background-color: #23372B; /* Deep Forest Archive */
+        }
+        
+        /* Fade in animation classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-line {
+            width: 2px;
+            background: linear-gradient(to bottom, #D8D4CA 0%, #D8D4CA 50%, transparent 50%);
+            background-size: 100% 8px;
+        }
+    

@@ -1,0 +1,78 @@
+
+        /* Custom overrides based on user prompt */
+        body {
+            background-color: #F6F3EC; /* Requested background */
+        }
+        .font-fraunces { font-family: 'Fraunces', serif; }
+        
+        /* Material Symbols utility */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+
+        /* Floating Book Shelf 3D Effect */
+        .book-card {
+            perspective: 1000px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .book-cover-container {
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+        
+        .book-card:hover .book-cover-container {
+            transform: rotateY(-10deg) rotateX(5deg);
+        }
+
+        .book-spine {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0.2), rgba(0,0,0,0.1));
+            transform-origin: left;
+            transform: rotateY(-90deg);
+        }
+
+        .book-shadow {
+            position: absolute;
+            bottom: -10px;
+            left: 5%;
+            width: 90%;
+            height: 15px;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            transition: opacity 0.4s ease, bottom 0.4s ease;
+        }
+
+        .book-card:hover .book-shadow {
+            opacity: 0.2;
+            bottom: -20px;
+        }
+
+        /* Filter sidebar sticky styling */
+        .sticky-filters {
+            position: sticky;
+            top: 100px; /* Offset for top nav */
+        }
+
+        /* Subtle scroll animation class added via JS */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    

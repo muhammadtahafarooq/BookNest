@@ -1,0 +1,11 @@
+
+        .brass-gradient { background: linear-gradient(135deg, #bfa054 0%, #d4b872 50%, #bfa054 100%); }
+        .ambient-shadow-1 { box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05); }
+        .ambient-shadow-2 { box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1); }
+        .editorial-divider { border-bottom: 1px solid #dcd9d9; }
+        .input-editorial { background-color: #fcf8f8; border: 1px solid #dcd9d9; transition: border-color 0.2s; }
+        .input-editorial:focus { border-color: #000000; outline: none; }
+        
+        /* Smooth preview transitions */
+        .preview-fade { transition: opacity 0.3s ease-in-out; }
+    

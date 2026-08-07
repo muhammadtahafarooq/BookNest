@@ -1,0 +1,16 @@
+
+        body {
+            background-color: #F6F3EC; /* paper-mist */
+            color: #102A43; /* midnight-ink */
+        }
+        .text-antique-brass { color: #C89B3C; }
+        .bg-antique-brass { background-color: #C89B3C; }
+        .border-antique-brass { border-color: #C89B3C; }
+        .font-fraunces { font-family: 'Fraunces', serif; }
+        .shadow-ambient { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); }
+        .glass-panel {
+            background: rgba(249, 248, 246, 0.85); /* cloud-linen with opacity */
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    

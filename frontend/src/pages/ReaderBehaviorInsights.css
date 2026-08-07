@@ -1,0 +1,32 @@
+
+        body {
+            background-color: #fcf8f8;
+            color: #1c1b1b;
+        }
+        
+        /* Editorial Shadows */
+        .shadow-editorial {
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+        }
+        
+        .shadow-editorial-hover:hover {
+            box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1);
+        }
+
+        /* Ambient Dividers */
+        .divider-horizontal {
+            border-bottom: 1px solid #c4c7c9;
+        }
+        
+        /* Smooth Revel Animation */
+        .reveal-chart {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        
+        .reveal-chart.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    

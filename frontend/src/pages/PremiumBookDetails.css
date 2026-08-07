@@ -1,0 +1,72 @@
+
+        body {
+            background-color: #F3F0E8;
+            color: #0F172A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .shadow-level-1 {
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+            border: 1px solid #E5E7EB;
+        }
+        
+        .shadow-level-2 {
+            box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1);
+            border: 1px solid #E5E7EB;
+        }
+
+        .btn-primary {
+            background-color: #A67C42;
+            color: #0F172A;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(181, 148, 16, 0.2);
+        }
+
+        .btn-secondary {
+            border: 1px solid #E5E7EB;
+            color: #0F172A;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: #0F172A;
+            background-color: rgba(26, 26, 26, 0.03);
+        }
+        
+        .divider-fade {
+            background: linear-gradient(to bottom, transparent, #E5E7EB 20%, #E5E7EB 80%, transparent);
+            width: 1px;
+        }
+
+        .card-tilt {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+
+        .card-tilt:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(23, 26, 28, 0.12);
+        }
+        
+        .animate-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    

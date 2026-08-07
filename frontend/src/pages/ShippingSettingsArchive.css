@@ -1,0 +1,52 @@
+
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .shadow-level-1 {
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+        }
+        
+        .shadow-level-2 {
+            box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1);
+        }
+        
+        .editorial-input {
+            border: 1px solid #c4c7c9; /* outline-variant */
+            background-color: #ffffff; /* Soft Archive White */
+            transition: border-color 0.2s ease;
+        }
+        
+        .editorial-input:focus {
+            outline: none;
+            border-color: #000000; /* Obsidian Ink */
+            box-shadow: none;
+        }
+        
+        .nav-active-item {
+            position: relative;
+        }
+        .nav-active-item::before {
+            content: '';
+            position: absolute;
+            left: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 60%;
+            width: 4px;
+            background-color: #000000; /* primary */
+            border-radius: 0 4px 4px 0;
+        }
+    

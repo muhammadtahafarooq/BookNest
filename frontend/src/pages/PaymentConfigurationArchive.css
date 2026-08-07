@@ -1,0 +1,18 @@
+
+        body { background-color: #fcf8f8; color: #1c1b1b; }
+        .lux-shadow { box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05); }
+        .lux-shadow-hover:hover { box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1); transform: translateY(-2px); }
+        .lux-border { border: 1px solid #c4c7c9; }
+        .divider-faded {
+            background: linear-gradient(to bottom, transparent, #c4c7c9, transparent);
+            width: 1px;
+            height: 100%;
+        }
+        
+        /* Smooth transitions for forms */
+        input:focus, textarea:focus, select:focus {
+            border-color: #000000;
+            box-shadow: 0 0 0 1px #000000;
+            transition: all 0.2s ease-in-out;
+        }
+    

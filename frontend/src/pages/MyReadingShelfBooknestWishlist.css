@@ -1,0 +1,31 @@
+
+        body {
+            background-color: #fcf8f8;
+        }
+        .book-card {
+            perspective: 1000px;
+        }
+        .book-cover {
+            transform: rotateY(-15deg) translateZ(10px);
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease;
+        }
+        .book-card:hover .book-cover {
+            transform: rotateY(-5deg) translateZ(20px) scale(1.05);
+        }
+        .book-spine {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 100%;
+            background-color: rgba(0,0,0,0.2);
+            transform: rotateY(-90deg) translateZ(10px);
+            transform-origin: left;
+        }
+        .shelf-base {
+            background: linear-gradient(to bottom, #e4e2e4, #dcd9db);
+            border-top: 1px solid #fff;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 4px 6px rgba(0,0,0,0.05);
+        }
+    

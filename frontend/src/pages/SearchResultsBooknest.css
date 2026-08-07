@@ -1,0 +1,108 @@
+
+        body {
+            background-color: #F8FAFC;
+            color: #1E293B;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .font-fraunces {
+            font-family: 'Fraunces', serif;
+        }
+
+        /* 3D Book Cover Effect */
+        .book-container {
+            perspective: 1000px;
+        }
+        .book-card {
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+        .book-container:hover .book-card {
+            transform: rotateY(-15deg) rotateX(5deg) scale(1.05);
+        }
+        .book-spine {
+            position: absolute;
+            width: 20px;
+            height: 100%;
+            background-color: #8c8c8c;
+            top: 0;
+            left: 0;
+            transform: rotateY(-90deg);
+            transform-origin: left;
+            box-shadow: inset -2px 0 5px rgba(0,0,0,0.2);
+            border-radius: 2px 0 0 2px;
+        }
+        .book-cover {
+            position: relative;
+            z-index: 2;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            border-radius: 0 4px 4px 0;
+            overflow: hidden;
+            border-left: 1px solid rgba(255,255,255,0.3);
+        }
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+            z-index: 10;
+        }
+        .shelf-base {
+            height: 8px;
+            background: linear-gradient(to bottom, #d1c8b8, #b0a594);
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            top: -4px;
+        }
+        .shelf-base::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 90%;
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Custom Scrollbar for Filters */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #F1F5F9;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Reveal Animation */
+        @keyframes revealUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .reveal-item {
+            animation: revealUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+    

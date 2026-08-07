@@ -1,0 +1,37 @@
+
+        .book-shadow {
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+        }
+        .book-shadow-hover:hover {
+            box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1);
+        }
+        .border-stone {
+            border-color: #c4c7c9; /* outline-variant approximation for stone manuscript */
+        }
+        .bg-ivory {
+            background-color: #f3f0ef; /* inverse-on-surface */
+        }
+        .bg-brass {
+            background-color: #A67C42; /* Custom burnished brass matching */
+        }
+        
+        /* Floating Bookmark Animation */
+        @keyframes floatBookmark {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-10px) rotate(0deg); }
+        }
+        .animate-bookmark {
+            animation: floatBookmark 4s ease-in-out infinite;
+        }
+
+        /* Gentle Scroll Reveal */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    

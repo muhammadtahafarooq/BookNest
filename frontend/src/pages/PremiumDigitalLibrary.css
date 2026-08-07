@@ -1,0 +1,42 @@
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .symbol-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        @keyframes subtleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: subtleFloat 6s ease-in-out infinite;
+        }
+        
+        .editorial-border {
+            border: 1px solid #c4c7c9;
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+            transition: all 0.3s ease;
+        }
+        .editorial-border:hover {
+            box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1);
+        }
+
+        .book-card-hover {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .book-card-hover:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(23, 26, 28, 0.12);
+        }
+        
+        /* Custom scrollbar for horizontal lists */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    

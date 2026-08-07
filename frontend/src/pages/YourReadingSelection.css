@@ -1,0 +1,37 @@
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Entrance Animations */
+        @keyframes fadeUpLedger {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up-ledger {
+            animation: fadeUpLedger 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideInShelf {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .animate-slide-in-shelf {
+            animation: slideInShelf 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+
+        /* Component Specifics overriding Tailwind generic colors for the prompt requirements if not strictly in config */
+        .bg-soft-archive-white { background-color: #FAF8F3; } /* Custom requirement */
+        .text-obsidian-ink { color: #171A1C; } /* Custom requirement */
+        
+        /* Shadow based on design rules */
+        .shadow-level-1 { box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05); }
+        .shadow-level-2:hover { box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1); transform: translateY(-2px); transition: all 0.3s ease; }
+    

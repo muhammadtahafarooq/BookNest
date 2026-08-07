@@ -1,0 +1,45 @@
+
+        body {
+            background-color: #F3F0E8; /* Aged Ivory Paper */
+            color: #171A1C; /* Obsidian Ink */
+        }
+        .burnished-brass {
+            color: #A67C42;
+        }
+        .bg-burnished-brass {
+            background-color: #A67C42;
+        }
+        .border-burnished-brass {
+            border-color: #A67C42;
+        }
+        .soft-archive-white {
+            background-color: #FAF8F3;
+        }
+        .stone-manuscript-border {
+            border-color: #D3D0C8;
+        }
+        
+        .shadow-level-1 {
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+        }
+        .shadow-level-2 {
+            box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1);
+        }
+        
+        /* Motion & Animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Timeline specific */
+        .timeline-progress {
+            transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    

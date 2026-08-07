@@ -1,0 +1,20 @@
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Premium Overrides based on prompt */
+        .bg-midnight-ink { background-color: #102A43; }
+        .text-midnight-ink { color: #102A43; }
+        .border-midnight-ink { border-color: #102A43; }
+        
+        .bg-paper-mist { background-color: #F6F3EC; }
+        
+        .bg-antique-brass { background-color: #C89B3C; }
+        .text-antique-brass { color: #C89B3C; }
+        .border-antique-brass { border-color: #C89B3C; }
+        
+        .hover\:bg-antique-brass-light:hover { background-color: rgba(200, 155, 60, 0.1); }
+    

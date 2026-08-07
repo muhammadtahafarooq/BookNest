@@ -1,0 +1,50 @@
+
+        body {
+            background-color: #F3F0E8; /* Aged Ivory Paper */
+            color: #171A1C; /* Obsidian Ink */
+        }
+        .sidebar {
+            background-color: #171A1C; /* Obsidian Ink */
+        }
+        .sidebar-active {
+            color: #A67C42; /* Burnished Brass */
+        }
+        .sidebar-inactive {
+            color: #c4c7c9;
+        }
+        .card {
+            background-color: #FAF8F3; /* Soft Archive White */
+            border-color: #D8D4CA; /* Stone Manuscript */
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+        }
+        .text-brass {
+            color: #A67C42;
+        }
+        .bg-brass {
+            background-color: #A67C42;
+        }
+        .border-stone {
+            border-color: #D8D4CA;
+        }
+        .table-row-hover:hover {
+            background-color: rgba(216, 212, 202, 0.15);
+        }
+        
+        /* Entrance Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    

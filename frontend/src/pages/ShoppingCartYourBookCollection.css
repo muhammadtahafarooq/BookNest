@@ -1,0 +1,5 @@
+
+        body { background-color: #F6F3EC; } /* Paper Mist */
+        .shelf-shadow { box-shadow: 0 12px 24px -8px rgba(16, 42, 67, 0.1), 0 4px 12px -4px rgba(16, 42, 67, 0.05); }
+        .book-shadow { box-shadow: 16px 0 16px -8px rgba(0,0,0,0.1) inset, -4px 0 8px -4px rgba(0,0,0,0.05) inset, 8px 8px 16px rgba(0,0,0,0.1); }
+      

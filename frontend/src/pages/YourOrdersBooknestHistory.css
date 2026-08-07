@@ -1,0 +1,11 @@
+
+        .book-perspective {
+            transform: perspective(800px) rotateY(-15deg) rotateX(5deg);
+            box-shadow: -8px 8px 16px rgba(0,0,0,0.15), -2px 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .book-perspective:hover {
+            transform: perspective(800px) rotateY(-5deg) rotateX(2deg) translateY(-4px);
+            box-shadow: -12px 12px 24px rgba(0,0,0,0.2), -4px 4px 8px rgba(0,0,0,0.15);
+        }
+    

@@ -1,0 +1,24 @@
+
+        .fade-up-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-up-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Level 1 Depth Shadow */
+        .shadow-level-1 {
+            box-shadow: 0 4px 20px rgba(23, 26, 28, 0.05);
+        }
+        /* Level 2 Depth Shadow (Hover) */
+        .hover\:shadow-level-2:hover {
+            box-shadow: 0 8px 30px rgba(23, 26, 28, 0.1);
+        }
+        /* Input Focus Border Transition */
+        .archive-input:focus {
+            border-color: #000000; /* Obsidian Ink / Primary */
+            outline: none;
+        }
+    
