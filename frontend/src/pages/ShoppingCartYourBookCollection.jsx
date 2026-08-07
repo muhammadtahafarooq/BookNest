@@ -113,7 +113,7 @@ export default function ShoppingCartYourBookCollection() {
 <span className="font-headline-md text-headline-md text-midnight-ink">Total</span>
 <span className="font-display-lg text-headline-lg text-antique-brass">$90.71</span>
 </div>
-<button className="w-full bg-antique-brass hover:bg-antique-brass/90 text-on-primary font-label-md text-label-md uppercase tracking-widest py-4 rounded-premium transition-all duration-300 shelf-shadow flex justify-center items-center gap-2" onClick={() => navigate('/securecheckoutarchive')}>
+<button className="w-full bg-antique-brass hover:bg-antique-brass/90 text-on-primary font-label-md text-label-md uppercase tracking-widest py-4 rounded-premium transition-all duration-300 shelf-shadow flex justify-center items-center gap-2" onClick={() => navigate('/checkout')}>
                         Proceed to Checkout
                         <span className="material-symbols-outlined" style={{fontSize: '18px'}}>arrow_forward</span>
 </button>

@@ -38,8 +38,8 @@ export default function Footer() {
               <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/aboutusourstorybooknest">About Us</Link></li>
               <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/contactusbooknestsupport">Contact</Link></li>
               <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/faqbooknestsupport">FAQ</Link></li>
-              <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/shippingreturnsbooknestguide">Shipping & Returns</Link></li>
-              <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/privacypolicybooknestprivatelibrary">Privacy Policy</Link></li>
+              <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/shippingreturnsarchive">Shipping & Returns</Link></li>
+              <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/privacypolicyarchive">Privacy Policy</Link></li>
               <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/termsconditionsbooknestprivatelibrary">Terms of Service</Link></li>
             </ul>
           </div>
@@ -70,7 +70,7 @@ export default function Footer() {
         <div className="col-span-1 md:col-span-4 border-t border-outline/20 mt-4 pt-8 flex flex-col md:flex-row justify-between items-center text-on-primary/40 font-label-sm text-label-sm">
           <p>© 2024 BookNest Pakistan. All rights reserved.</p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
-            <Link className="hover:text-on-primary transition-colors" to="/privacypolicybooknestprivatelibrary">Privacy</Link>
+            <Link className="hover:text-on-primary transition-colors" to="/privacypolicyarchive">Privacy</Link>
             <Link className="hover:text-on-primary transition-colors" to="/termsconditionsbooknestprivatelibrary">Terms</Link>
             <Link className="hover:text-on-primary transition-colors" to="/contactusbooknestsupport">Contact</Link>
           </div>

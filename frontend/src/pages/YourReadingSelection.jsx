@@ -154,7 +154,7 @@ return (
 <span className="font-headline-md text-headline-md text-obsidian-ink">$45.00</span>
 </div>
 {/* CTA */}
-<button className="w-full bg-[#171A1C] text-[#FAF8F3] font-label-md text-label-md py-md rounded hover:opacity-90 transition-opacity flex justify-center items-center gap-sm" onClick={() => navigate('/securecheckoutarchive')}>
+<button className="w-full bg-[#171A1C] text-[#FAF8F3] font-label-md text-label-md py-md rounded hover:opacity-90 transition-opacity flex justify-center items-center gap-sm" onClick={() => navigate('/checkout')}>
                         Proceed To Checkout
                         <span className="material-symbols-outlined text-sm">arrow_forward</span>
 </button>

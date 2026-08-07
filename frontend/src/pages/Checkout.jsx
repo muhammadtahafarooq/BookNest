@@ -217,7 +217,7 @@ export default function Checkout() {
 <span className="font-display-lg text-headline-lg text-primary">$39.14</span>
 </div>
 {/* Action */}
-<button className="w-full bg-secondary text-on-secondary py-4 rounded-xl font-label-md text-label-md hover:bg-secondary/90 transition-colors duration-400 flex justify-center items-center gap-2 custom-shadow" onClick={() => navigate('/securecheckoutarchive')}>
+<button className="w-full bg-secondary text-on-secondary py-4 rounded-xl font-label-md text-label-md hover:bg-secondary/90 transition-colors duration-400 flex justify-center items-center gap-2 custom-shadow" onClick={() => navigate('/checkout')}>
 <span className="material-symbols-outlined text-[20px]">lock</span>
                         Place Order
                     </button>
