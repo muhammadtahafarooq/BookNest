@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './TermsConditionsArchive.css';
@@ -8,30 +10,8 @@ export default function TermsConditionsArchive() {
   return (
     <>
       {/* TopNavBar: Standardized from Shared Components */}
-<header className="bg-primary text-on-primary font-headline-md text-headline-md font-body-md text-body-md border-b border-outline-variant shadow-sm w-full top-0 z-50">
-<div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
-{/* Brand Logo */}
-<div className="font-headline-md text-headline-md text-on-primary tracking-tight">
-                BookNest
-            </div>
-{/* Empty Nav Links for T&C Page (Transactional/Info intent - suppress main nav cluster for focus) */}
-<nav className="hidden md:flex gap-gutter items-center">
-{/* Intentionally left blank as per Shell Visibility rules: relevance check fails for T&C */}
-</nav>
-{/* Trailing Icon Actions */}
-<div className="flex gap-md items-center">
-<button aria-label="favorite" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
-<span className="material-symbols-outlined text-body-lg">favorite</span>
-</button>
-<button aria-label="shopping_cart" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/shoppingcartyourbookcollection')}>
-<span className="material-symbols-outlined text-body-lg">shopping_cart</span>
-</button>
-<button aria-label="account_circle" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined text-body-lg">account_circle</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content: T&C Document Layout */}
 <main className="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xxl">
 {/* Header Section with Animation */}
@@ -106,27 +86,7 @@ export default function TermsConditionsArchive() {
 </div>
 </main>
 {/* Footer: Standardized from Shared Components */}
-<footer className="bg-primary text-on-primary font-body-md text-body-md border-t border-outline-variant w-full mt-auto">
-<div className="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-xxl w-full max-w-[1280px] mx-auto gap-lg">
-{/* Brand & Copyright */}
-<div className="flex flex-col items-center md:items-start gap-sm">
-<div className="font-headline-sm text-headline-sm text-on-primary">
-                    BookNest
-                </div>
-<div className="font-label-sm text-label-sm text-on-primary-fixed-variant">
-                    © 2024 BookNest Digital Archive. All Rights Reserved.
-                </div>
-</div>
-{/* Footer Links */}
-<div className="flex flex-wrap justify-center gap-md font-label-sm text-label-sm text-on-primary-fixed-variant">
-<Link className="hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link>
-<Link className="hover:text-secondary-fixed transition-colors duration-200" to="/searchresultsbooknest">Research Guides</Link>
-<Link className="hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archives</Link>
-<Link className="text-on-primary font-bold" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="text-on-primary font-bold" to="/shopbrowsebooks">Terms of Service</Link>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './FaqBooknestSupport.css';
@@ -123,17 +125,7 @@ export default function FaqBooknestSupport() {
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-primary-container text-on-primary-fixed w-full py-12 px-margin-desktop">
-<div className="max-w-container-max-width mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
-<div className="font-headline-md text-headline-md text-on-primary-fixed font-bold">BookNest</div>
-<div className="flex gap-6">
-<Link className="font-body-sm text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-400" to="/aboutusourstorybooknest">About Us</Link>
-<Link className="font-body-sm text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-400" to="/contactusbooknestsupport">Contact</Link>
-<Link className="font-body-sm text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-400" to="/shopbrowsebooks">Policies</Link>
-</div>
-<div className="font-body-sm text-on-primary-fixed-variant">© 2024 BookNest. All rights reserved.</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

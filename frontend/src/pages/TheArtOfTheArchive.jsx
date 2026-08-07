@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './TheArtOfTheArchive.css';
@@ -57,18 +59,8 @@ return (
 </nav>
 <main className="w-full">
 {/* Article Header */}
-<header className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xxl text-center page-reveal">
-<h1 className="font-display-lg text-display-lg md:font-display-lg md:text-display-lg text-primary mb-md">The Art of the Archive</h1>
-<div className="flex items-center justify-center space-x-md mb-xl font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">
-<span>By Julian Thorne</span>
-<span className="w-1 h-1 bg-outline rounded-full"></span>
-<span>October 24, 2024</span>
-</div>
-<div className="w-full h-[60vh] rounded-xl overflow-hidden shadow-lg relative group">
-<img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up macro photography of an antique leather bound book spine. The leather is rich deep brown, highly textured with age, and features ornate burnished brass metal corners and clasps. Soft warm library lighting, shallow depth of field, highlighting the tactile luxury of historical literature. Editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBeZkLuX_qGHpAQf6B6QrynXc3UX0Vs0iudy0jkTyZucJQUK37DcrPbfwzfdGM_B3DgL4ZPn6C5epkZjpxC7u95cVt-aIc3HEkG_L4V48Ojg9TBQEq3z-NvneCYorXS9xk50ptD1x8blEEtwfA9wWrJXLoOXcQzogzEf3TyzhAmcfq4LIOARaQFthlqFgSmgTbLs8wkOTeFqcSGU0FhH2jC7GXM9rbjDwCtLLZP6EqHmdXjvBdWPxo1A" />
-<div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Article Content */}
 <article className="max-w-[800px] mx-auto px-margin-mobile md:px-0 py-xl font-body-lg text-body-lg text-on-surface-variant leading-[1.8]">
 <p className="mb-lg fade-in-scroll">
@@ -81,7 +73,7 @@ return (
 <p className="font-headline-md text-headline-md text-primary italic mb-sm">
                     "A library is not a collection of books, but a sanctuary for the stories they hold."
                 </p>
-<footer className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">— Julian Thorne</footer>
+<Footer />
 </blockquote>
 <p className="mb-xl fade-in-scroll">
                 To explore an archive is to engage in an act of temporal translation. The marginalia left by a reader centuries ago becomes a conversation across generations. We are reminded that knowledge is not static; it is a physical entity, shaped by the hands that hold it and the environments that shelter it.

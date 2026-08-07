@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 import './SecureCheckoutArchive.css';
@@ -7,15 +9,8 @@ export default function SecureCheckoutArchive() {
   return (
     <>
       {/* TopNavBar (Simplified for Checkout) */}
-<header className="bg-soft-archive-white border-b border-stone-manuscript shadow-ambient-1 w-full z-50">
-<div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
-<Link className="font-headline-sm text-headline-sm font-bold text-obsidian-ink tracking-tight" to="/">BookNest</Link>
-<div className="flex items-center gap-md">
-<span className="material-symbols-outlined text-outline">lock</span>
-<span className="font-label-md text-label-md text-outline">Secure Checkout</span>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Checkout Canvas */}
 <main className="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-xxl">
 {/* Progress Indicator */}
@@ -167,18 +162,7 @@ export default function SecureCheckoutArchive() {
 </div>
 </main>
 {/* Footer */}
-<footer className="bg-soft-archive-white border-t border-stone-manuscript mt-auto">
-<div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-xl max-w-[1280px] mx-auto">
-<span className="font-headline-sm text-headline-sm text-obsidian-ink mb-md md:mb-0">BookNest</span>
-<div className="flex flex-col md:flex-row items-center gap-md">
-<span className="font-label-sm text-label-sm text-outline">© 2024 BookNest. The Private Collector's Digital Archive.</span>
-<div className="flex gap-md font-label-sm text-label-sm text-outline">
-<Link className="hover:text-obsidian-ink transition-colors" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="hover:text-obsidian-ink transition-colors" to="/shopbrowsebooks">Privacy Policy</Link>
-</div>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

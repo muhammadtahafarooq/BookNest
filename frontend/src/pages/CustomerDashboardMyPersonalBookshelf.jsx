@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './CustomerDashboardMyPersonalBookshelf.css';
@@ -159,25 +161,7 @@ export default function CustomerDashboardMyPersonalBookshelf() {
 </main>
 </div>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary border-t border-outline/20 mt-auto">
-<div className="w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
-<div className="col-span-1">
-<p className="font-headline-md text-headline-md font-bold text-on-primary mb-4">BookNest</p>
-<p className="font-body-sm text-body-sm text-outline-variant opacity-80">© 2024 BookNest Pakistan. All rights reserved.</p>
-</div>
-<div className="col-span-1 flex flex-col gap-2">
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/aboutusourstorybooknest">About Us</Link>
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/contactusbooknestsupport">Contact</Link>
-</div>
-<div className="col-span-1 flex flex-col gap-2">
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Shipping Policy</Link>
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Terms of Service</Link>
-</div>
-<div className="col-span-1 flex flex-col gap-2">
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Privacy Policy</Link>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

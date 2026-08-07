@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './BannerManagementStudio.css';
@@ -67,31 +69,8 @@ export default function BannerManagementStudio() {
 {/* Main Content Area */}
 <main className="flex-1 ml-64 min-h-screen flex flex-col bg-background">
 {/* Top App Bar */}
-<header className="flex justify-between items-center w-full px-xxl h-20 bg-background dark:bg-surface border-b border-outline-variant dark:border-outline flat no shadows docked top-0 full-width sticky z-40">
-<div className="flex items-center gap-xl">
-<span className="font-headline-md text-headline-md font-bold text-primary dark:text-on-surface tracking-tight">Lexicon Manager</span>
-<nav className="hidden md:flex gap-md h-full items-center">
-<Link className="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md h-full flex items-center px-sm" to="/shopbrowsebooks">Promotions</Link>
-<Link className="text-primary font-bold border-b-2 border-primary hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md h-full flex items-center px-sm" to="/shopbrowsebooks">Banners</Link>
-<Link className="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md h-full flex items-center px-sm" to="/shopbrowsebooks">Newsletters</Link>
-</nav>
-</div>
-<div className="flex items-center gap-md">
-<div className="relative hidden lg:block">
-<span className="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" data-icon="search">search</span>
-<input className="input-editorial pl-xl pr-sm py-xs rounded-full text-label-sm font-label-sm w-48 focus:w-64 transition-all bg-surface-container-low border-none" placeholder="Search resources..." type="text" />
-</div>
-<button className="text-on-surface-variant hover:text-primary transition-colors p-xs rounded-full hover:bg-surface-variant focus:outline-none ring-1 ring-outline" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button className="text-on-surface-variant hover:text-primary transition-colors p-xs rounded-full hover:bg-surface-variant focus:outline-none ring-1 ring-outline">
-<span className="material-symbols-outlined" data-icon="history">history</span>
-</button>
-<div className="h-8 w-8 rounded-full bg-surface-variant border border-outline-variant overflow-hidden ml-sm cursor-pointer">
-<img alt="Administrator Avatar" className="w-full h-full object-cover" data-alt="A distinguished black and white portrait of a librarian administrator in sharp focus, classic lighting, conveying authority and intellect in a modern digital library context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuztgY4nEoC5WQXZZg8mi95_MHdenVzC5tNehNC11aaUaVR8rJ8yM4fY0_F3z7Zc1prMKihwjUOZxf3pvvnLlKuPUPPbjBB5m_KcCIE47PbA78ICNqatNfH0Naq9ieUkFwQDbq7SOJxDw22tsJc7R2nA_W2DbyhHcip3tmt94hPodWbXkQyCRtqHqtLNH9gPHNJBmKQ477lagFKFGse804uoTixhGFhe_yYHsLdTqPswitR2WRnBiXFQ" />
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Workspace */}
 <div className="flex-1 p-margin-desktop grid grid-cols-12 gap-gutter max-w-[1600px] mx-auto w-full">
 {/* Header & List Section (Left Column) */}

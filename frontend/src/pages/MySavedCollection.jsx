@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './MySavedCollection.css';
@@ -47,12 +49,8 @@ export default function MySavedCollection() {
 {/* Main Content Canvas */}
 <main className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-xxl min-h-screen">
 {/* Page Header */}
-<header className="page-reveal mb-xxl flex flex-col items-center text-center relative">
-<div className="absolute top-0 w-px h-16 bg-gradient-to-b from-transparent to-outline opacity-30 mb-8 -mt-8"></div>
-<span className="material-symbols-outlined text-secondary mb-sm text-4xl opacity-80" style={{fontVariationSettings: '\'FILL\' 0, \'wght\' 200'}}>bookmark_added</span>
-<h1 className="font-display-lg text-display-lg text-primary mb-sm">My Saved Collection</h1>
-<p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto italic">Books waiting to become part of your physical library.</p>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Wishlist Grid */}
 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg mb-xxl">
 {/* Book Card 1 */}
@@ -174,22 +172,7 @@ export default function MySavedCollection() {
         </section> */}
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-headline-sm text-headline-sm font-body-md text-body-md font-label-sm text-label-sm full-width bottom-0 border-t border-outline dark:border-outline-variant">
-<div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-xl max-w-[1280px] mx-auto">
-<div className="font-headline-md text-headline-md text-on-primary mb-md md:mb-0">
-                BookNest
-            </div>
-<div className="flex flex-wrap justify-center gap-md mb-md md:mb-0">
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Archival Standards</Link>
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/contactusbooknestsupport">Contact Us</Link>
-</div>
-<div className="text-on-primary-fixed-variant text-center md:text-right">
-                © 2024 BookNest. The Private Collector's Digital Archive.
-            </div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 import './CustomerManagementBooknestAdminDirectory.css';
@@ -77,21 +79,8 @@ export default function CustomerManagementBooknestAdminDirectory() {
 {/* Main Content Area */}
 <main className="flex-grow ml-64 min-h-screen">
 {/* Header */}
-<header className="flex justify-between items-center w-full h-16 px-gutter max-w-container-max-width mx-auto mt-8 mb-12">
-<div>
-<h2 className="font-headline-lg text-headline-lg text-primary">Customer Directory</h2>
-</div>
-<div className="flex items-center space-x-4">
-<div className="relative w-64">
-<span className="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline">search</span>
-<input className="w-full pl-10 pr-4 py-2 bg-surface-container-lowest ghost-border rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="Search readers..." type="text" />
-</div>
-<button className="px-4 py-2 bg-surface-variant text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-dim transition-colors flex items-center shadow-ambient">
-<span className="material-symbols-outlined mr-2 text-sm" data-icon="download">download</span>
-                    Export Directory
-                </button>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <div className="max-w-container-max-width mx-auto px-gutter mb-desktop flex gap-6">
 {/* Customer Table (Left Side) */}
 <div className="w-2/3 bg-surface-container-lowest rounded-xl shadow-ambient ghost-border p-6 overflow-hidden">

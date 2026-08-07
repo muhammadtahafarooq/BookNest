@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './Checkout.css';
@@ -225,16 +227,7 @@ export default function Checkout() {
 </div>
 </main>
 {/* Footer */}
-<footer className="w-full bg-surface-container-lowest border-t border-outline-variant py-8 mt-auto">
-<div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4">
-<p className="font-body-sm text-body-sm text-on-surface-variant">© 2024 BookNest. All rights reserved.</p>
-<div className="flex gap-6 font-body-sm text-body-sm">
-<Link className="text-on-surface-variant hover:text-primary transition-colors" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="text-on-surface-variant hover:text-primary transition-colors" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="text-on-surface-variant hover:text-primary transition-colors" to="/contactusbooknestsupport">Contact Support</Link>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

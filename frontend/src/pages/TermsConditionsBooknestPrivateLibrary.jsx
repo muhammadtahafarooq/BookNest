@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './TermsConditionsBooknestPrivateLibrary.css';
@@ -41,11 +43,8 @@ export default function TermsConditionsBooknestPrivateLibrary() {
 {/* Main Content */}
 <main className="flex-grow w-full max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24">
 {/* Header */}
-<header className="mb-16 text-center">
-<h1 className="font-display-lg text-display-lg font-bold text-primary mb-4">Terms &amp; Conditions</h1>
-<p className="font-label-md text-label-md text-outline">Last Updated: October 26, 2024</p>
-<div className="editorial-divider mt-8"></div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Document Content */}
 <article className="space-y-12">
 <section>
@@ -90,27 +89,7 @@ export default function TermsConditionsBooknestPrivateLibrary() {
 </div>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary text-on-primary border-t border-outline/20 mt-auto">
-<div className="w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
-<div className="col-span-1 md:col-span-1 flex flex-col items-start space-y-4">
-<span className="font-headline-md text-headline-md font-bold text-on-primary">BookNest</span>
-<p className="font-body-sm text-body-sm text-outline-variant">© 2024 BookNest Pakistan. All rights reserved.</p>
-</div>
-<div className="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
-<div className="flex flex-col space-y-3">
-<span className="font-label-md text-label-md text-on-primary mb-2">Company</span>
-<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/about">About Us</Link>
-<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/contact">Contact</Link>
-</div>
-<div className="flex flex-col space-y-3">
-<span className="font-label-md text-label-md text-on-primary mb-2">Legal</span>
-<Link className="font-body-sm text-body-sm text-secondary-fixed font-bold opacity-80 hover:opacity-100 transition-opacity" to="/terms">Terms of Service</Link>
-<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/privacy">Privacy Policy</Link>
-<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shipping">Shipping Policy</Link>
-</div>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

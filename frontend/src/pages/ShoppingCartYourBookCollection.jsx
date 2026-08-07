@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './ShoppingCartYourBookCollection.css';
@@ -34,10 +36,8 @@ export default function ShoppingCartYourBookCollection() {
 </nav>
 <main className="w-full px-margin-desktop max-w-container-max-width mx-auto py-12">
 {/* Header */}
-<header className="mb-12">
-<h1 className="font-display-lg text-display-lg text-midnight-ink mb-2">Your Book Collection</h1>
-<p className="font-body-lg text-body-lg text-midnight-ink/70">Review your selected books before checkout.</p>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 {/* Cart Items (Left Column) */}
 <div className="lg:col-span-8 flex flex-col gap-8">
@@ -163,25 +163,7 @@ export default function ShoppingCartYourBookCollection() {
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-midnight-ink w-full px-margin-desktop py-12 border-t border-midnight-ink/20 mt-12">
-<div className="max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
-<div>
-<Link className="text-headline-md font-display-lg text-on-primary block mb-4" to="/">BookNest</Link>
-<p className="font-body-sm text-body-sm text-on-primary/60">© 2024 BookNest. All rights reserved.</p>
-</div>
-<div className="flex flex-col gap-3">
-<Link className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/aboutusourstorybooknest">About Us</Link>
-<Link className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/contactusbooknestsupport">Contact</Link>
-</div>
-<div className="flex flex-col gap-3">
-<Link className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Shipping Policy</Link>
-<Link className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Privacy Policy</Link>
-</div>
-<div className="flex flex-col gap-3">
-<Link className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Newsletter</Link>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

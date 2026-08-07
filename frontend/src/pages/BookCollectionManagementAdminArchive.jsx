@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './BookCollectionManagementAdminArchive.css';
@@ -60,14 +62,8 @@ export default function BookCollectionManagementAdminArchive() {
 {/* Main Content */}
 <main className="flex-1 flex flex-col h-full bg-paper-mist overflow-hidden relative z-0">
 {/* TopAppBar Placeholder (Hidden on desktop sidebar layout, but keeping semantic structure) */}
-<header className="h-20 bg-paper-mist/80 backdrop-blur-md border-b border-outline-variant/30 flex items-center justify-between px-8 flex-shrink-0 z-10 md:hidden">
-<div className="flex items-center">
-<button className="mr-4 text-on-surface">
-<span className="material-symbols-outlined">menu</span>
-</button>
-<span className="font-fraunces text-xl text-midnight-ink font-bold">BookNest</span>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Page Header & Actions */}
 <div className="px-8 py-8 flex-shrink-0 z-10">
 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">

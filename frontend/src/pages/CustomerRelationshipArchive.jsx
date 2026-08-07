@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './CustomerRelationshipArchive.css';
@@ -42,28 +44,8 @@ export default function CustomerRelationshipArchive() {
   return (
     <>
       {/* TopNavBar */}
-<header className="bg-primary text-on-primary docked full-width top-0 border-b border-outline-variant shadow-md z-50">
-<div className="flex justify-between items-center w-full px-margin-desktop py-md max-w-[1280px] mx-auto">
-<div className="flex items-center gap-lg">
-<span className="font-headline-md text-headline-md font-bold text-on-primary tracking-tight">BookNest</span>
-<nav className="hidden md:flex gap-md ml-xl">
-<Link className="text-on-primary-fixed-variant opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md py-sm" to="/catalogarchive">Catalog</Link>
-<Link className="text-on-primary-fixed-variant opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md py-sm" to="/browsecollections">Collections</Link>
-<Link className="text-on-primary border-b-2 border-secondary-container pb-1 font-label-md text-label-md py-sm" to="/shopbrowsebooks">Archives</Link>
-<Link className="text-on-primary-fixed-variant opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md py-sm" to="/shopbrowsebooks">Curations</Link>
-</nav>
-</div>
-<div className="flex items-center gap-md">
-<button className="scale-95 active:scale-90 transition-transform p-sm rounded-full hover:bg-surface-variant/20">
-<span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>menu_book</span>
-</button>
-<button className="scale-95 active:scale-90 transition-transform p-sm rounded-full hover:bg-surface-variant/20">
-<span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>history</span>
-</button>
-<button className="font-label-md text-label-md bg-on-primary text-primary px-lg py-sm rounded-full scale-95 active:scale-90 transition-transform hover:bg-surface-container-low" onClick={() => navigate('/loginbooknestprivatelibrary')}>Sign In</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <main className="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
 {/* Page Header */}
 <div className="fade-in flex flex-col md:flex-row justify-between items-start md:items-end mb-xl gap-lg">
@@ -270,31 +252,7 @@ export default function CustomerRelationshipArchive() {
 {/* Backdrop for Panel */}
 <div className="fixed inset-0 bg-primary/20 backdrop-blur-sm z-40 hidden transition-opacity opacity-0" id="panelBackdrop" onclick="togglePreviewPanel()"></div>
 {/* Footer */}
-<footer className="bg-primary text-on-primary w-full py-xxl px-margin-desktop mt-auto border-t border-outline-variant/30">
-<div className="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-xl">
-<div className="flex items-center gap-md">
-<span className="font-headline-sm text-headline-sm font-bold text-on-primary">BookNest</span>
-<span className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70">© 1892-2024 BookNest Archival Society. All rights reserved.</span>
-</div>
-{/* Operational Stats injected here as requested */}
-<div className="flex gap-lg border border-outline-variant/30 rounded-lg p-md bg-surface-container-highest/10">
-<div className="text-center px-md border-r border-outline-variant/30">
-<span className="block font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 mb-xs uppercase tracking-wider">Total Active Readers</span>
-<span className="font-headline-sm text-headline-sm text-secondary-fixed">1,892</span>
-</div>
-<div className="text-center px-md">
-<span className="block font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 mb-xs uppercase tracking-wider">New Members This Month</span>
-<span className="font-headline-sm text-headline-sm text-secondary-fixed">+14</span>
-</div>
-</div>
-<div className="flex gap-md flex-wrap justify-center">
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">Archival Standards</Link>
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">Conservation Policy</Link>
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">Terms of Access</Link>
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">The Vault</Link>
-</div>
-</div>
-</footer>
+<Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>
   );

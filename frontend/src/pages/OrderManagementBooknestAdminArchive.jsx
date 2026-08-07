@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './OrderManagementBooknestAdminArchive.css';
@@ -66,26 +68,8 @@ export default function OrderManagementBooknestAdminArchive() {
 </div>
 </nav>
 {/* TopAppBar */}
-<header className="fixed top-0 right-0 left-64 flex justify-between items-center h-20 px-margin-desktop z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
-<div className="flex-1 flex items-center">
-<div className="relative w-96">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input className="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none font-body-sm text-body-sm" placeholder="Search orders, customers..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-6">
-<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">notifications</span>
-</button>
-<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400">
-<span className="material-symbols-outlined">apps</span>
-</button>
-<div className="flex items-center gap-3 border-l border-outline-variant pl-6">
-<img className="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a corporate administrator in a modern office setting. Soft, natural lighting. Professional attire. Clean, minimal background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsK7D1oSPxDPXbVbetLg0vL5x0Ys0h9P-fOEnBbbfqxGSDNnVQy-ajbqNt_uHDOqON_D1eKo5siccOckdMyt012gvbduP6VdeE_s5XhtydSqD6EvW8FJtqTHvSM3Kbv9k9TNOsg1z8pcjPBnhfF7keAzvItPmvZym60NH4wjoLl3mfSww4otaAMJ4qITho0Aw0DVPpUA0qhljtVc9dT9AEYA-TB6kRL6yCZ45_KaWO1_JNGKmp9ee-" />
-<span className="font-label-md text-label-md font-semibold text-primary">Admin Profile</span>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content Area */}
 <main className="ml-64 mt-20 p-margin-desktop w-full max-w-[calc(100vw-256px)] overflow-y-auto">
 <div className="max-w-container-max-width mx-auto">

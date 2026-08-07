@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './AboutUsOurStoryBooknest.css';
@@ -8,35 +10,8 @@ export default function AboutUsOurStoryBooknest() {
   return (
     <>
       {/* 1. TopNavBar */}
-<header className="bg-primary dark:bg-primary shadow-md sticky top-0 z-50">
-<div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
-{/* Brand */}
-<Link className="font-display-lg text-display-lg font-bold text-on-primary font-fraunces flex items-center gap-2" to="/">
-<span className="material-symbols-outlined text-antique-brass text-4xl" style={{fontVariationSettings: '\'FILL\' 1'}}>menu_book</span>
-                BookNest
-            </Link>
-{/* Navigation Links (Desktop) */}
-<nav className="hidden md:flex items-center gap-8">
-<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 transition-all duration-400 py-2 px-3 rounded-md" to="/shopbrowsebooks">Shop</Link>
-<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 transition-all duration-400 py-2 px-3 rounded-md" to="/shopbrowsebooks">Categories</Link>
-<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 transition-all duration-400 py-2 px-3 rounded-md" to="/shopbrowsebooks">Best Sellers</Link>
-<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 transition-all duration-400 py-2 px-3 rounded-md" to="/shopbrowsebooks">New Arrivals</Link>
-</nav>
-{/* Trailing Actions */}
-<div className="flex items-center gap-4">
-<button className="text-on-primary hover:text-antique-brass transition-colors scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
-<span className="material-symbols-outlined text-2xl">favorite</span>
-</button>
-<button className="text-on-primary hover:text-antique-brass transition-colors scale-95 duration-200 ease-in-out relative" onClick={() => navigate('/shoppingcartyourbookcollection')}>
-<span className="material-symbols-outlined text-2xl">shopping_cart</span>
-<span className="absolute -top-1 -right-1 bg-antique-brass text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
-</button>
-<button className="text-on-primary hover:text-antique-brass transition-colors scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined text-2xl">account_circle</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* 2. Hero Section */}
 <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
 {/* Background Image */}
@@ -225,40 +200,7 @@ export default function AboutUsOurStoryBooknest() {
 </div>
 </section>
 {/* 9. Footer */}
-<footer className="bg-primary dark:bg-primary border-t border-outline/20">
-<div className="w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
-{/* Brand & Copyright */}
-<div className="col-span-1 flex flex-col justify-between">
-<div>
-<Link className="font-headline-md text-headline-md font-bold text-on-primary font-fraunces flex items-center gap-2 mb-4" to="/">
-<span className="material-symbols-outlined text-antique-brass" style={{fontVariationSettings: '\'FILL\' 1'}}>menu_book</span>
-                        BookNest
-                    </Link>
-<p className="font-body-sm text-body-sm text-outline-variant max-w-xs">
-                        Curating the world's most compelling ideas for the discerning reader.
-                    </p>
-</div>
-<p className="font-body-sm text-body-sm text-outline-variant mt-12 md:mt-0">
-                    © 2024 BookNest Pakistan. All rights reserved.
-                </p>
-</div>
-{/* Empty column for spacing in this layout style */}
-<div className="col-span-1 hidden md:block"></div>
-{/* Links Column 1 */}
-<div className="col-span-1 flex flex-col gap-3">
-<span className="font-label-sm text-label-sm text-outline-variant uppercase tracking-widest mb-2">Company</span>
-<Link className="font-body-sm text-body-sm text-secondary-fixed font-bold hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity" to="/aboutusourstorybooknest">About Us</Link>
-<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity" to="/contactusbooknestsupport">Contact</Link>
-</div>
-{/* Links Column 2 */}
-<div className="col-span-1 flex flex-col gap-3">
-<span className="font-label-sm text-label-sm text-outline-variant uppercase tracking-widest mb-2">Legal</span>
-<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity" to="/shopbrowsebooks">Shipping Policy</Link>
-<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity" to="/shopbrowsebooks">Privacy Policy</Link>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

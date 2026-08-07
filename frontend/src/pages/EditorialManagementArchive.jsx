@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './EditorialManagementArchive.css';
@@ -53,28 +55,8 @@ export default function EditorialManagementArchive() {
 {/* Main Content Area Wrapper */}
 <div className="flex-1 flex flex-col md:ml-64 w-full">
 {/* TopAppBar */}
-<header className="flex justify-between items-center px-gutter w-full bg-surface dark:bg-surface-dim docked full-width top-0 h-16 border-b border-outline-variant dark:border-outline shadow-sm z-10 sticky">
-<div className="flex items-center gap-8">
-<span className="font-headline-sm text-headline-sm text-primary font-bold md:hidden">BookNest</span>
-<nav className="hidden md:flex gap-6">
-<Link className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" to="/dashboard/customerdashboardmypersonalbookshelf">Dashboard</Link>
-<Link className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" to="/shopbrowsebooks">Workflows</Link>
-<Link className="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 scale-98" to="/shopbrowsebooks">Peer Review</Link>
-</nav>
-</div>
-<div className="flex items-center gap-4">
-<div className="relative hidden sm:block">
-<input className="bg-surface-container-lowest border border-outline-variant rounded-full py-1.5 px-4 pl-10 text-body-md focus:border-primary focus:ring-0 w-64 transition-colors" placeholder="Search archives..." type="text" />
-<span className="material-symbols-outlined absolute left-3 top-2 text-on-surface-variant text-sm">search</span>
-</div>
-<button className="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-highest" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">notifications</span>
-</button>
-<button className="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-highest" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">account_circle</span>
-</button>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Workspace */}
 <main className="flex-1 p-margin-mobile md:p-margin-desktop bg-surface max-w-[1280px] mx-auto w-full">
 {/* Page Header */}

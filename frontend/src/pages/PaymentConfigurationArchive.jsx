@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 import './PaymentConfigurationArchive.css';
@@ -31,16 +33,8 @@ export default function PaymentConfigurationArchive() {
 {/* Main Content Area */}
 <main className="flex-1 md:ml-64 w-full flex flex-col min-h-screen">
 {/* TopNavBar (Visible on Mobile, Hidden on md+) */}
-<header className="md:hidden bg-surface dark:bg-surface-container-low w-full h-16 border-b border-outline-variant dark:border-outline flex justify-between items-center px-margin-mobile z-40 sticky top-0">
-<div className="flex items-center gap-sm">
-<span className="material-symbols-outlined text-[24px] text-primary dark:text-on-surface">menu</span>
-<span className="font-headline-md text-headline-md font-bold text-primary dark:text-on-surface tracking-tight">BookNest</span>
-</div>
-<div className="flex items-center gap-md">
-<span className="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">search</span>
-<img alt="Administrator Profile" className="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A macro shot of luxurious ivory textured paper, lit softly to emphasize the grain, evoking a sense of refined age and archival quality. The paper serves as a backdrop, exuding a serene, premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2iz9D87S9R5s-5qTJ9nHzS2a70VKuRRqoKCRl6iJOhsSvg6JhpgRy4EKe8j9Tu3FtjDGqOcnk_gzKHLpqtWeab_xpbP-EWTrUNQjet3D9Zx8iiIjDVBdWW0Wr3lM5RdTxai-dHr3wTa4H0KQIApGDHxV6uyxs-SMoBY5Fkb4dBoBsWn6PgtR9IDYt24W51OlIvbibyqu9QUVaeGVMDy7XGrKxoe4Z8abP0U4p-MVqg-vCYiyVNYeWRg" />
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Page Content Canvas */}
 <div className="flex-1 px-margin-mobile md:px-margin-desktop py-xl md:py-xxl max-w-[1280px] mx-auto w-full">
 {/* Header Section */}

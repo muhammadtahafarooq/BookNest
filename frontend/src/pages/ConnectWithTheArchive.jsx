@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './ConnectWithTheArchive.css';
@@ -35,33 +37,8 @@ export default function ConnectWithTheArchive() {
 return (
     <>
       {/* TopNavBar */}
-<header className="bg-primary text-on-primary w-full border-b border-outline-variant shadow-sm sticky top-0 z-50">
-<div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
-{/* Brand */}
-<div className="flex items-center gap-sm">
-<span className="font-headline-md text-headline-md text-on-primary tracking-tight">BookNest</span>
-</div>
-{/* Search (on_left representation, hidden on very small screens) */}
-<div className="hidden md:flex flex-1 max-w-md mx-lg">
-<div className="relative w-full text-on-surface">
-<span className="material-symbols-outlined absolute left-sm top-1/2 transform -translate-y-1/2 text-outline-variant text-lg">search</span>
-<input className="w-full bg-surface-container-lowest border border-outline-variant rounded-full py-sm pl-[36px] pr-sm text-body-md font-body-md focus:border-primary focus:ring-0 transition-colors archive-input placeholder:text-outline" placeholder="Search the archives..." type="text" />
-</div>
-</div>
-{/* Trailing Icons */}
-<div className="flex items-center gap-md">
-<button aria-label="favorite" className="text-on-primary hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
-<span className="material-symbols-outlined" style={{fontVariationSettings: '\'wght\' 300'}}>favorite</span>
-</button>
-<button aria-label="shopping_cart" className="text-on-primary hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/shoppingcartyourbookcollection')}>
-<span className="material-symbols-outlined" style={{fontVariationSettings: '\'wght\' 300'}}>shopping_cart</span>
-</button>
-<button aria-label="account_circle" className="text-on-primary hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" style={{fontVariationSettings: '\'wght\' 300'}}>account_circle</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content */}
 <main className="flex-grow w-full flex flex-col items-center">
 {/* Hero Section (Asymmetric Layout) */}
@@ -164,23 +141,7 @@ return (
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-primary text-on-primary w-full border-t border-outline-variant py-xxl mt-auto">
-<div className="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-[1280px] mx-auto gap-lg">
-{/* Brand & Copyright */}
-<div className="flex flex-col items-center md:items-start gap-sm">
-<span className="font-headline-sm text-headline-sm text-on-primary">BookNest</span>
-<span className="font-label-sm text-label-sm text-on-primary-fixed-variant">© 2024 BookNest Digital Archive. All Rights Reserved.</span>
-</div>
-{/* Links */}
-<nav className="flex flex-wrap justify-center gap-lg">
-<Link className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link>
-<Link className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/searchresultsbooknest">Research Guides</Link>
-<Link className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archives</Link>
-<Link className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
-</nav>
-</div>
-</footer>
+<Footer />
 {/* Intersection Observer for Fade-Up Animations */}
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './ReviewsModerationBooknestAdminArchive.css';
@@ -77,23 +79,8 @@ export default function ReviewsModerationBooknestAdminArchive() {
 </ul>
 </nav>
 {/* TopAppBar (Generated from JSON guidance) */}
-<header className="fixed top-0 right-0 left-64 flex justify-between items-center h-20 px-margin-desktop z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant hidden md:flex">
-<div className="flex items-center space-x-4">
-<h2 className="font-headline-md text-headline-md font-semibold text-on-surface">Review Management</h2>
-</div>
-<div className="flex items-center space-x-6">
-<div className="flex space-x-4 text-primary dark:text-primary-fixed-dim">
-<button className="hover:text-secondary transition-colors duration-400 hover:scale-95 transition-transform" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}><span className="material-symbols-outlined" data-icon="notifications">notifications</span></button>
-<button className="hover:text-secondary transition-colors duration-400 hover:scale-95 transition-transform"><span className="material-symbols-outlined" data-icon="apps">apps</span></button>
-</div>
-<div className="flex items-center space-x-3 border-l border-outline-variant pl-6 cursor-pointer hover:bg-surface-container-low p-2 rounded-lg transition-colors">
-<div className="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold">
-                    A
-                </div>
-<span className="font-label-md text-label-md text-primary font-medium">Admin Profile</span>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content Area */}
 <main className="md:ml-64 pt-24 min-h-screen px-margin-mobile md:px-margin-desktop pb-12">
 <div className="max-w-container-max-width mx-auto">

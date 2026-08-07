@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 import './CategoryManagementBooknestAdmin.css';
@@ -47,27 +49,8 @@ export default function CategoryManagementBooknestAdmin() {
 {/* Main Content */}
 <div className="flex-1 flex flex-col min-h-screen overflow-hidden">
 {/* Header */}
-<header className="h-20 bg-surface border-b border-outline-variant/20 flex items-center justify-between px-margin-desktop shadow-sm flex-shrink-0">
-<div className="flex items-center space-x-4">
-<button className="md:hidden text-on-surface">
-<span className="material-symbols-outlined">menu</span>
-</button>
-<h1 className="font-headline-lg text-headline-lg text-primary">Category Collections</h1>
-</div>
-<div className="flex items-center space-x-6">
-<div className="relative hidden sm:block w-64">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" style={{fontSize: '20px'}}>search</span>
-<input className="w-full h-10 pl-10 pr-4 rounded-lg bg-surface-container-lowest border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary/50 outline-none font-body-sm text-body-sm transition-all shadow-[0_2px_4px_rgba(0,0,0,0.02)]" placeholder="Search categories..." type="text" />
-</div>
-<button className="flex items-center space-x-2 bg-on-tertiary-container hover:bg-on-tertiary-fixed-variant text-surface-container-lowest px-4 py-2 rounded-lg transition-colors shadow-sm">
-<span className="material-symbols-outlined" style={{fontSize: '20px'}}>add</span>
-<span className="font-body-sm text-body-sm font-medium">Add Category</span>
-</button>
-<div className="h-8 w-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
-<span className="material-symbols-outlined" style={{fontSize: '20px'}}>account_circle</span>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Canvas */}
 <main className="flex-1 overflow-y-auto p-margin-desktop space-y-gutter">
 {/* Statistics Section */}
@@ -265,9 +248,7 @@ export default function CategoryManagementBooknestAdmin() {
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-surface border-t border-outline-variant/20 py-4 px-margin-desktop text-center flex-shrink-0">
-<p className="font-body-sm text-body-sm text-on-surface-variant">© 2024 BookNest Admin Portal. The Private Library Experience.</p>
-</footer>
+<Footer />
 </div>
     </>
   );

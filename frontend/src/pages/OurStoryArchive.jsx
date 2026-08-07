@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './OurStoryArchive.css';
@@ -36,37 +38,8 @@ export default function OurStoryArchive() {
 return (
     <>
       {/* TopNavBar */}
-<header className="bg-obsidian dark:bg-primary-container text-on-primary dark:text-on-primary-container font-headline-md text-headline-md font-body-md text-body-md docked full-width top-0 border-b border-outline-variant shadow-sm w-full sticky z-50">
-<div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
-<div className="flex items-center gap-4">
-<Link className="font-headline-md text-headline-md text-on-primary tracking-tight" to="/">
-                    BookNest
-                </Link>
-</div>
-<div className="hidden md:flex items-center bg-surface-container-low/10 rounded-full px-4 py-2 border border-outline-variant/30 focus-within:border-on-primary transition-colors">
-<span className="material-symbols-outlined text-on-primary-fixed-variant mr-2 text-[20px]" data-icon="search">search</span>
-<input className="bg-transparent border-none outline-none text-on-primary font-body-md text-sm placeholder-on-primary-fixed-variant w-64 focus:ring-0 p-0" placeholder="Search the catalog..." type="text" />
-</div>
-<div className="flex items-center gap-6">
-<nav className="hidden md:flex gap-6">
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link>
-<Link className="text-secondary-fixed font-bold border-b-2 border-secondary-fixed pb-1" to="/aboutusourstorybooknest">About Us</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Journal</Link>
-</nav>
-<div className="flex items-center gap-4 text-on-primary">
-<button aria-label="Favorite" className="hover:text-secondary-fixed transition-colors duration-200 flex items-center justify-center opacity-80" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
-<span className="material-symbols-outlined" data-icon="favorite">favorite</span>
-</button>
-<button aria-label="Shopping Cart" className="hover:text-secondary-fixed transition-colors duration-200 flex items-center justify-center opacity-80" onClick={() => navigate('/shoppingcartyourbookcollection')}>
-<span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
-</button>
-<button aria-label="Account Circle" className="hover:text-secondary-fixed transition-colors duration-200 flex items-center justify-center opacity-80" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
-</div>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <main className="flex-grow">
 {/* Hero Section */}
 <section className="relative w-full overflow-hidden border-b border-outline-variant bg-[#F3F0E8] pt-xl pb-xxl px-margin-mobile md:px-margin-desktop fade-in-section">
@@ -143,21 +116,7 @@ return (
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-obsidian dark:bg-primary-container text-on-primary dark:text-on-primary-container font-body-md text-body-md font-label-sm text-label-sm full-width py-xxl border-t border-outline-variant flat">
-<div className="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-[1280px] mx-auto gap-8">
-<div className="flex flex-col items-center md:items-start gap-4">
-<span className="font-headline-sm text-headline-sm text-on-primary tracking-tight">BookNest</span>
-<span className="text-on-primary-fixed-variant">© 2024 BookNest Digital Archive. All Rights Reserved.</span>
-</div>
-<nav className="flex flex-wrap justify-center gap-6">
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/searchresultsbooknest">Research Guides</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archives</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
-</nav>
-</div>
-</footer>
+<Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>
   );

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './ShippingSettingsArchive.css';
@@ -44,23 +46,8 @@ export default function ShippingSettingsArchive() {
 </div>
 </nav>
 {/* Shared TopNavBar */}
-<header className="bg-surface dark:bg-surface-container-low border-b border-outline-variant flex justify-between items-center h-16 px-lg w-[calc(100%-16rem)] ml-64 fixed top-0 z-40 hidden md:flex">
-<div className="flex items-center">
-{/* Search placeholder on left */}
-<div className="relative w-64 group">
-<span className="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant opacity-70 group-hover:opacity-100 transition-opacity">search</span>
-<input className="w-full pl-xl pr-sm py-sm bg-surface-container-lowest border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm" placeholder="Search archive..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-md">
-<button className="w-10 h-10 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button className="w-10 h-10 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content Canvas */}
 <main className="md:ml-64 pt-16 min-h-screen pb-xxl">
 <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop mt-xl">

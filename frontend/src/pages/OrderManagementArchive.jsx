@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './OrderManagementArchive.css';
@@ -74,34 +76,8 @@ export default function OrderManagementArchive() {
 </ul>
 </nav>
 {/* JSON: TopAppBar */}
-<header className="fixed top-0 right-0 w-[calc(100%-256px)] bg-surface border-b border-outline-variant flex justify-between items-center px-lg h-xxl z-40">
-{/* Brand / Navigation Links */}
-<div className="flex items-center gap-xl h-full">
-<span className="font-headline-sm text-headline-sm font-bold text-primary">Ledger &amp; Folio</span>
-<nav className="hidden md:flex items-end h-full gap-lg pb-4">
-<Link className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90" to="/dashboard/customerdashboardmypersonalbookshelf">Dashboard</Link>
-<Link className="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 scale-95 active:scale-90" to="/shopbrowsebooks">Reports</Link>
-<Link className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90" to="/shopbrowsebooks">Archive</Link>
-</nav>
-</div>
-{/* Trailing Actions & Search */}
-<div className="flex items-center gap-lg">
-<div className="relative hidden lg:block">
-<span className="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
-<input className="editorial-input bg-surface-container-low border border-outline-variant rounded-full py-xs pl-xl pr-md font-label-md text-label-md text-primary w-64 focus:border-primary transition-colors" placeholder="Search Ledgers..." type="text" />
-</div>
-<div className="flex items-center gap-md">
-<button className="text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">notifications</span>
-</button>
-<button className="text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90">
-<span className="material-symbols-outlined">history</span>
-</button>
-</div>
-<div className="w-px h-8 bg-outline-variant"></div>
-<img alt="User Avatar" className="w-10 h-10 rounded-full object-cover border border-outline-variant cursor-pointer hover:opacity-80 transition-opacity" data-alt="A sophisticated, minimalist profile avatar of a curator or archivist, featuring muted tones, subtle lighting, and a professional aesthetic, suitable for a high-end editorial digital interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK7tV5hQtQAjOgxbM0uU7jNEZUo6zp5btt2lyuRWpaDNydQRUu9eHYmJv3kFS6jYpJhHzTQJRMyhs0Af0fMiAjp7o-CkUxbEtneu2QwLh1vIz3r05WbMGtfqWBYft52zSlHRgpiVW4QPrOGdhtS0bGM8g74YsYwH1nv82-OqOzHOn8ixuk1y8loxiEWFL5URtCp3u2vk20IviDZB69bjxH_h2NfTRFo-H3QyJo3iCwbOvjLEcRt2bNkg" />
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content Canvas */}
 <main className="ml-64 mt-[80px] w-full min-h-[calc(100vh-80px)] p-margin-desktop bg-surface overflow-x-hidden">
 {/* Page Header */}

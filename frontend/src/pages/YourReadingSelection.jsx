@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './YourReadingSelection.css';
@@ -52,10 +54,8 @@ return (
 {/* Main Content */}
 <main className="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xxl">
 {/* Cart Header */}
-<header className="mb-xl">
-<h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-obsidian-ink mb-sm">Your Reading Selection</h1>
-<p className="font-body-lg text-body-lg text-on-surface-variant">Review your chosen books before checkout.</p>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-xl">
 {/* Cart Items List (8 Columns) */}
 <div className="lg:col-span-8 flex flex-col gap-lg border-t border-outline-variant pt-lg">
@@ -196,24 +196,7 @@ return (
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-body-md text-body-md font-label-sm text-label-sm full-width py-xxl border-t border-outline-variant mt-auto">
-<div className="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-[1280px] mx-auto gap-xl">
-{/* Brand */}
-<div className="font-headline-sm text-headline-sm text-on-primary">BookNest</div>
-{/* Links */}
-<ul className="flex flex-wrap justify-center gap-md md:gap-lg">
-<li><Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link></li>
-<li><Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/searchresultsbooknest">Research Guides</Link></li>
-<li><Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archives</Link></li>
-<li><Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link></li>
-<li><Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link></li>
-</ul>
-{/* Copyright */}
-<div className="text-on-primary-fixed-variant font-label-sm text-label-sm text-center md:text-right">
-                © 2024 BookNest Digital Archive. All Rights Reserved.
-            </div>
-</div>
-</footer>
+<Footer />
 {/* Interactive Script for micro-interactions (optional embellishment) */}
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>

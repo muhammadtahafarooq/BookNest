@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './AdminCommandCenter.css';
@@ -63,24 +65,8 @@ export default function AdminCommandCenter() {
 </div>
 </aside>
 <main className="flex-1 flex flex-col min-h-screen bg-background fade-in">
-<header className="h-20 border-b border-outline-variant bg-surface flex items-center justify-between px-margin-desktop sticky top-0 z-10">
-<div className="flex items-center flex-1 max-w-xl">
-<div className="relative w-full">
-<span className="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">search</span>
-<input className="w-full pl-xl pr-md py-2 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md text-on-surface transition-colors" placeholder="Search archives, orders, or ISBNs..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-lg ml-auto">
-<button className="relative text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">notifications</span>
-<span className="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
-</button>
-<button className="flex items-center gap-sm bg-primary text-on-primary px-lg py-2 rounded-lg font-label-md text-label-md hover:bg-primary/90 transition-colors">
-<span className="material-symbols-outlined" style={{fontSize: '18px'}}>add</span>
-                    Quick Action
-                </button>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <div className="p-margin-desktop max-w-[1280px] mx-auto w-full space-y-xl flex-1">
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
 <div className="bg-surface-container-lowest rounded-xl p-lg border border-outline-variant luxury-shadow flex flex-col gap-sm">

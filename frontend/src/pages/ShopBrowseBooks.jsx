@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './ShopBrowseBooks.css';
@@ -8,40 +10,8 @@ export default function ShopBrowseBooks() {
   return (
     <>
       {/* TopNavBar (Shared Component) */}
-<header className="bg-primary shadow-sm docked full-width top-0 z-50 sticky transition-all duration-300">
-<div className="flex justify-between items-center w-full px-margin-desktop max-w-container-max-width mx-auto py-4">
-{/* Brand Logo */}
-<Link className="text-headline-lg font-display-lg font-bold text-on-primary" to="/">
-                BookNest
-            </Link>
-{/* Navigation Links (Hidden on mobile) */}
-<nav className="hidden md:flex items-center space-x-8">
-{/* Shop - Active */}
-<Link className="text-secondary-fixed font-bold border-b-2 border-secondary-fixed pb-1 font-label-md text-label-md transition-colors duration-400" to="/shopbrowsebooks">
-                    Shop
-                </Link>
-<Link className="text-on-primary/80 hover:text-secondary-fixed font-label-md text-label-md transition-colors duration-400" to="/shopbrowsebooks">
-                    Categories
-                </Link>
-<Link className="text-on-primary/80 hover:text-secondary-fixed font-label-md text-label-md transition-colors duration-400" to="/shopbrowsebooks">
-                    New Arrivals
-                </Link>
-</nav>
-{/* Trailing Icons */}
-<div className="flex items-center space-x-4">
-<button aria-label="shopping_cart" className="text-on-primary hover:text-secondary-fixed transition-colors duration-400 p-2" onClick={() => navigate('/shoppingcartyourbookcollection')}>
-<span className="material-symbols-outlined">shopping_cart</span>
-</button>
-<button aria-label="person" className="text-on-primary hover:text-secondary-fixed transition-colors duration-400 p-2" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">person</span>
-</button>
-{/* Mobile Menu Button */}
-<button aria-label="menu" className="md:hidden text-on-primary hover:text-secondary-fixed p-2 transition-colors duration-400">
-<span className="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content Area */}
 <main className="flex-grow w-full max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12 flex flex-col md:flex-row gap-gutter">
 {/* Filter Sidebar (Library Archive Style) */}
@@ -279,55 +249,7 @@ export default function ShopBrowseBooks() {
 </section>
 </main>
 {/* Footer (Shared Component translated & styled with Midnight Ink aesthetic) */}
-<footer className="bg-primary dark:bg-primary-container border-t border-outline-variant full-width bottom mt-auto relative z-10 overflow-hidden">
-{/* Subtle shader background for premium feel in footer */}
-<div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay">
-<div className="bg-cover bg-center w-full h-full" data-alt="A dark, abstract 'Midnight Ink' fluid pattern with very subtle, elegant swirls of deep navy and charcoal. Almost imperceptible gradient texture creating a sense of depth and luxury on a dark background." style={{backgroundImage: 'url(\'https://lh3.googleusercontent.com/aida-public/AB6AXuDph53ArMeeSbA-hm46p-k-e0UGKrHbHcLpkr400Et10_moEWLxzraZa5xuXoIxK-k2YEN3ay5r4FiddCekxXRMPKZDppoCRdnF2wzlaac7fGglFUGlSHAI82cnlkIF0m_06Vh68Kytz8WFfunZUjBkHQhx1rDMY9_41WmOhDQq2K-OR82GpnvypjMMFev7XvkUGDxrqLQUrS9Ef0_eLvsY8ybzy-kDWOrB7XVEL9XzE9bMV9LpwCSe\')'}}></div>
-</div>
-<div className="w-full px-margin-desktop py-12 max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter relative z-20">
-{/* Brand Column */}
-<div className="col-span-1 md:col-span-1 flex flex-col justify-start">
-<Link className="text-headline-md font-display-lg text-on-primary mb-4 block font-fraunces" to="/">
-                    BookNest
-                </Link>
-<p className="text-on-primary/60 font-body-sm text-body-sm mb-6">
-                    Curating the finest literature for discerning minds. Your personal digital library.
-                </p>
-<p className="font-body-sm text-body-sm text-on-primary/40 mt-auto">
-                    © 2024 BookNest. All rights reserved.
-                </p>
-</div>
-{/* Links Column */}
-<div className="col-span-1 md:col-span-2 grid grid-cols-2 gap-8">
-<div>
-<h4 className="font-label-md text-label-md text-secondary-fixed-dim uppercase tracking-widest mb-4">Explore</h4>
-<ul className="space-y-3 font-body-sm text-body-sm text-on-primary/60">
-<li><Link className="hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/aboutusourstorybooknest">About Us</Link></li>
-<li><Link className="hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/contactusbooknestsupport">Contact</Link></li>
-<li><Link className="hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Shipping Policy</Link></li>
-</ul>
-</div>
-<div>
-<h4 className="font-label-md text-label-md text-secondary-fixed-dim uppercase tracking-widest mb-4">Legal</h4>
-<ul className="space-y-3 font-body-sm text-body-sm text-on-primary/60">
-<li><Link className="hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Privacy Policy</Link></li>
-<li><Link className="hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Terms of Service</Link></li>
-</ul>
-</div>
-</div>
-{/* Newsletter Column */}
-<div className="col-span-1 md:col-span-1 flex flex-col justify-start">
-<h4 className="font-label-md text-label-md text-secondary-fixed-dim uppercase tracking-widest mb-4">Newsletter</h4>
-<p className="text-on-primary/60 font-body-sm text-body-sm mb-4">Subscribe for curated recommendations and exclusive literary events.</p>
-<form className="flex flex-col space-y-2" onsubmit="event.preventDefault();">
-<input className="bg-surface-tint/20 border border-outline-variant/30 rounded-DEFAULT px-4 py-2 text-on-primary font-body-sm focus:ring-1 focus:ring-secondary-fixed-dim focus:border-secondary-fixed-dim transition-colors placeholder-on-primary/40" placeholder="Email address" type="email" />
-<button className="bg-secondary-fixed-dim text-primary font-label-md text-label-md px-4 py-2 rounded-DEFAULT hover:bg-secondary-fixed transition-colors pointer-cursor" type="submit">
-                        Subscribe
-                    </button>
-</form>
-</div>
-</div>
-</footer>
+<Footer />
 {/* Simple Scroll Animation Script */}
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>

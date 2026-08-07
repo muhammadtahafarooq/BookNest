@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './ManageBookCategories.css';
@@ -48,26 +50,8 @@ export default function ManageBookCategories() {
 </div>
 </nav>
 {/* TopAppBar Component */}
-<header className="hidden md:flex justify-between items-center w-full px-margin-desktop py-md ml-64 bg-surface docked full-width top-0 sticky z-40 border-b border-outline-variant transition-opacity duration-150 h-20">
-<div className="flex items-center gap-4">
-<span className="font-headline-sm text-headline-sm font-bold text-on-surface">Command Center</span>
-</div>
-<div className="flex items-center flex-1 max-w-md mx-8">
-<div className="relative w-full">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-<input className="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary transition-colors" placeholder="Search across system..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-6">
-<button className="text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button className="text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/admin/admindashboardbooknestcommandcenter')}>
-<span className="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<img alt="Admin User" className="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A subtle, high-quality, professional headshot of an administrator in a well-lit, minimal studio environment. The aesthetic is clean, modern, and trustworthy, with soft, diffused lighting and a neutral background. The tone is authoritative yet approachable, fitting for a premium library management system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJnyoGjLnuo_JZH5u3dXCmwKZRxhu6syIH8DsHcXF-jtnuS68q2DedZuyno6IU0E8JcEyggl5pa-Mdszb7LCmInyhAz5Vm6dxUqDZPJNh_gvUJVNV0wxLwG4bDvjntd9p2jEBf7HDViAf9hcfOegAhizpxvaIZJxvbglBPykfhg0751ECOhTZgipY98AawoOS88p8TZvL2xtRlHsDKni7YKWdBo5nKPhxvIJyPIcKrfsYZJxOIT2eOXw" />
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Workspace */}
 <main className="md:ml-64 pt-8 px-4 md:px-xl pb-xxl max-w-7xl mx-auto">
 {/* Header Section */}

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './BookCollectionManagement.css';
@@ -38,31 +40,8 @@ export default function BookCollectionManagement() {
 {/* Main Content Area */}
 <div className="flex-1 md:ml-64 min-h-screen flex flex-col">
 {/* Top Navigation Shell */}
-<header className="w-full h-16 bg-surface dark:bg-surface-container border-b border-outline-variant flex justify-between items-center px-lg z-40 relative">
-<div className="flex items-center gap-4 lg:hidden">
-<button className="text-on-surface-variant hover:text-primary transition-colors">
-<span className="material-symbols-outlined">menu</span>
-</button>
-</div>
-<div className="hidden lg:flex flex-1 max-w-md ml-auto">
-{/* Search on Left (Relative to top bar context) */}
-<div className="relative w-full">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
-<input className="w-full bg-surface-container-low border border-outline-variant rounded-full py-2 pl-10 pr-4 text-body-md font-body-md focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary transition-colors" placeholder="Search across workspace..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-6 ml-auto lg:ml-6">
-<button aria-label="Notifications" className="text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button aria-label="Settings" className="text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/admin/admindashboardbooknestcommandcenter')}>
-<span className="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<div className="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
-<img alt="Admin Profile" className="object-cover w-full h-full" data-alt="A close up portrait of an elegant professional administrator in a softly lit, modern publishing office setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYt9pj5QyXV2TlYou4WXP1v9wCd5ecyNI0922A5YlFiO0XNABeOcUbjslQ0J1Cjr0ihztuH77WWDyhwnnwUPFsvRrl8s4fglNa04G0nlqLeni5HylvxbvYiOpBzgTSg6ZDzG5f822Bze6SwmyzVfG9UOD50_MuhWc1Cb37V6hfXaRR0G_o6vhG087PtZuCyo8HxwCuTH7awOfM8cxc8jVfDSje0GiyrUorsWBbOEMVO3J9db7pqkBp-A" />
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Canvas / Main Content */}
 <main className="flex-1 p-margin-mobile md:p-margin-desktop overflow-x-hidden max-w-[1280px] mx-auto w-full fade-in">
 {/* Admin Header */}

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 import './SalesReportsAnalyticsBooknestBusinessIntelligence.css';
@@ -79,25 +81,8 @@ export default function SalesReportsAnalyticsBooknestBusinessIntelligence() {
 {/* MAIN CANVAS */}
 <main className="ml-64 min-h-screen px-margin-desktop py-margin-desktop max-w-container-max-width mx-auto">
 {/* 2. HEADER */}
-<header className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
-<div>
-<h2 className="font-display-lg text-display-lg text-midnight-ink mb-2">Business Analytics</h2>
-<p className="font-body-lg text-body-lg text-on-surface-variant">Comprehensive insights into publishing and sales performance.</p>
-</div>
-<div className="flex items-center gap-4">
-{/* Date Range Picker */}
-<div className="relative flex items-center bg-white border border-outline-variant rounded-full px-4 py-2 hover:border-antique-brass cursor-pointer transition-colors shadow-sm">
-<span className="material-symbols-outlined text-on-surface-variant mr-2 text-[20px]">calendar_today</span>
-<span className="font-label-md text-label-md text-midnight-ink">Last 30 Days</span>
-<span className="material-symbols-outlined text-on-surface-variant ml-2 text-[20px]">expand_more</span>
-</div>
-{/* Export Button */}
-<button className="flex items-center gap-2 bg-antique-brass text-white px-6 py-2 rounded-full font-label-md text-label-md hover:bg-opacity-90 transition-all shadow-md">
-<span className="material-symbols-outlined text-[20px]">download</span>
-                    Export Report
-                </button>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* 3. REVENUE ANALYTICS (Top High-Level Stats) */}
 <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
 {/* Stat Card 1 */}

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './StaffManagementArchive1.css';
@@ -191,18 +193,7 @@ export default function StaffManagementArchive1() {
 </div>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container full-width bottom-0 border-t border-outline-variant/30 w-full py-xxl px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto">
-<div className="font-headline-sm text-headline-sm font-bold text-on-primary mb-lg md:mb-0">BookNest</div>
-<div className="flex flex-col items-center md:items-end gap-md">
-<div className="flex gap-lg font-label-sm text-label-sm">
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Archival Standards</Link>
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Conservation Policy</Link>
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Terms of Access</Link>
-<Link className="text-secondary-fixed font-bold hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">The Vault</Link>
-</div>
-<p className="font-body-md text-body-md text-on-primary-fixed-variant opacity-70">© 1892-2024 BookNest Archival Society. All rights reserved.</p>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

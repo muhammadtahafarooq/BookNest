@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './ShippingReturnsArchive.css';
@@ -34,26 +36,8 @@ export default function ShippingReturnsArchive() {
   return (
     <>
       {/* TopNavBar */}
-<header className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-headline-md text-headline-md font-body-md text-body-md shadow-sm sticky top-0 z-50">
-<div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto border-b border-outline-variant">
-{/* Brand */}
-<div className="font-headline-md text-headline-md text-on-primary tracking-tight">
-                BookNest
-            </div>
-{/* Actions */}
-<div className="flex items-center gap-md">
-<button aria-label="favorite" className="hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
-<span className="material-symbols-outlined" data-icon="favorite">favorite</span>
-</button>
-<button aria-label="shopping_cart" className="hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/shoppingcartyourbookcollection')}>
-<span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
-</button>
-<button aria-label="account_circle" className="hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content */}
 <main className="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-xxl space-y-xxl">
 {/* Hero Section */}
@@ -246,23 +230,7 @@ export default function ShippingReturnsArchive() {
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-body-md text-body-md font-label-sm text-label-sm border-t border-outline-variant mt-auto">
-<div className="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-xl md:py-xxl w-full max-w-[1280px] mx-auto gap-lg">
-<div className="font-headline-sm text-headline-sm text-on-primary">
-                BookNest
-            </div>
-<nav className="flex flex-wrap justify-center gap-md md:gap-lg">
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/searchresultsbooknest">Research Guides</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archives</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
-</nav>
-<div className="text-on-primary-fixed-variant text-sm">
-                © 2024 BookNest Digital Archive. All Rights Reserved.
-            </div>
-</div>
-</footer>
+<Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>
   );

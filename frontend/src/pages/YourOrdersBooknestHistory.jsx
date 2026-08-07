@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './YourOrdersBooknestHistory.css';
@@ -33,10 +35,8 @@ export default function YourOrdersBooknestHistory() {
 {/* Main Content Canvas */}
 <main className="flex-grow w-full max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-gutter">
 {/* Header */}
-<header className="mb-gutter md:mb-12">
-<h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Your Orders</h1>
-<p className="font-body-lg text-body-lg text-on-surface-variant">Your complete reading purchase history.</p>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Orders List */}
 <div className="space-y-6 md:space-y-8">
 {/* Order Card 1 */}
@@ -113,19 +113,7 @@ export default function YourOrdersBooknestHistory() {
 </div>
 </main>
 {/* Footer */}
-<footer className="bg-primary text-on-primary w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter border-t border-outline/20 mt-auto">
-<div className="flex flex-col gap-4 col-span-1 md:col-span-1">
-<div className="font-headline-md text-headline-md font-bold text-on-primary">BookNest</div>
-<p className="font-body-sm text-body-sm text-outline-variant">© 2024 BookNest Pakistan. All rights reserved.</p>
-</div>
-<div className="col-span-1 md:col-span-3 flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-start pt-2">
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/aboutusourstorybooknest">About Us</Link>
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/contactusbooknestsupport">Contact</Link>
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Shipping Policy</Link>
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Privacy Policy</Link>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

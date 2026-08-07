@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './ProductDetailsTheMidnightLibrary.css';
@@ -8,28 +10,8 @@ export default function ProductDetailsTheMidnightLibrary() {
   return (
     <>
       {/* TopNavBar */}
-<header className="bg-primary shadow-md sticky top-0 z-50 w-full transition-all duration-400">
-<div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
-<div className="font-display-lg text-display-lg font-bold text-on-primary">BookNest</div>
-<nav className="hidden md:flex space-x-8 items-center h-full">
-<Link className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" to="/shopbrowsebooks">Shop</Link>
-<Link className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" to="/shopbrowsebooks">Categories</Link>
-<Link className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" to="/shopbrowsebooks">Best Sellers</Link>
-<Link className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" to="/shopbrowsebooks">New Arrivals</Link>
-</nav>
-<div className="flex items-center space-x-6 text-on-primary">
-<button className="hover:text-tertiary-fixed-dim transition-colors scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
-<span className="material-symbols-outlined">favorite</span>
-</button>
-<button className="hover:text-tertiary-fixed-dim transition-colors scale-95 duration-200 ease-in-out" onClick={() => navigate('/shoppingcartyourbookcollection')}>
-<span className="material-symbols-outlined">shopping_cart</span>
-</button>
-<button className="hover:text-tertiary-fixed-dim transition-colors scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">account_circle</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <main className="flex-grow w-full max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12">
 {/* Breadcrumb */}
 <nav className="text-on-surface-variant font-label-sm text-label-sm mb-8 flex items-center space-x-2">
@@ -137,23 +119,7 @@ export default function ProductDetailsTheMidnightLibrary() {
 </div>
 </main>
 {/* Footer */}
-<footer className="bg-primary border-t border-outline/20 w-full">
-<div className="w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter text-on-primary">
-<div className="md:col-span-1 flex flex-col space-y-4">
-<div className="font-headline-md text-headline-md font-bold text-on-primary">BookNest</div>
-<p className="font-body-sm text-body-sm text-outline-variant">© 2024 BookNest Pakistan. All rights reserved.</p>
-</div>
-<div className="flex flex-col space-y-2 font-label-sm text-label-sm">
-<Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" to="/aboutusourstorybooknest">About Us</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" to="/contactusbooknestsupport">Contact</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" to="/shopbrowsebooks">Shipping Policy</Link>
-</div>
-<div className="flex flex-col space-y-2 font-label-sm text-label-sm">
-<Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" to="/shopbrowsebooks">Privacy Policy</Link>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

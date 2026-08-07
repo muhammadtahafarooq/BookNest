@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './PublisherManagementBooknestAdminArchive.css';
@@ -89,28 +91,8 @@ export default function PublisherManagementBooknestAdminArchive() {
 {/* Main Content Wrapper */}
 <div className="flex-1 flex flex-col md:ml-64 min-h-screen">
 {/* TopAppBar */}
-<header className="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md text-primary dark:text-primary-fixed-dim h-20 px-margin-desktop z-40 sticky top-0 flex justify-between items-center border-b border-outline-variant transition-transform">
-<div className="flex items-center flex-1 max-w-xl">
-<div className="relative w-full">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-<input className="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/50 font-body-sm text-body-sm transition-all text-on-surface" placeholder="Publisher Search..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-6">
-<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">notifications</span>
-</button>
-<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400">
-<span className="material-symbols-outlined">apps</span>
-</button>
-<div className="flex items-center gap-3 pl-6 border-l border-outline-variant cursor-pointer group">
-<img alt="Administrator Avatar" className="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a female administrator in a modern, well-lit office setting. High key lighting, sharp focus, light mode corporate aesthetic, conveying trust and competence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6Vl7imIIa88lf-YLa3AeX34bnx97MZOAOZ2L6YZn_CqYC0KdOl0vwiPp19VmQUWvvzP3s8Xyrwc6onlLCXpAeCX-JiaGtJA8vdZx_j-dht1GScfBLkalfoxE4uL-g22nm_L6B13yMnLwabgK6Jsjpt0I0Q0-aAjEDrtp4rqUOJG7p4FvTp04gQi3pOzlXiUzxhRuhk54QnuWJ7PqUOGYL4YSMT9FqblXTrYSt8HID5bFxtWeQToUR" />
-<div className="hidden sm:block">
-<p className="font-label-sm text-label-sm font-semibold text-on-surface group-hover:text-secondary transition-colors">Admin Profile</p>
-</div>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Page Content */}
 <main className="flex-1 p-margin-mobile md:p-margin-desktop bg-[#fcf8fa] overflow-y-auto">
 {/* Header Section */}

@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './SalesIntelligenceLedger.css';
@@ -109,17 +111,8 @@ export default function SalesIntelligenceLedger() {
 {/* Main Content Area */}
 <main className="flex-1 md:ml-64 flex flex-col min-h-screen">
 {/* TopAppBar (Visible on Mobile) */}
-<header className="md:hidden w-full h-20 bg-surface dark:bg-surface-container-low border-b border-outline-variant dark:border-outline flex justify-between items-center px-margin-mobile z-40 sticky top-0">
-<div className="flex items-center gap-sm">
-<span className="material-symbols-outlined text-primary dark:text-primary-fixed-dim" style={{fontVariationSettings: '\'FILL\' 1'}}>menu</span>
-<span className="font-headline-md text-headline-md font-bold tracking-tight text-primary dark:text-primary-fixed-dim">Librarian Intelligence</span>
-</div>
-<div className="flex items-center gap-sm">
-<div className="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden shrink-0">
-<img alt="Chief Curator Profile" className="w-full h-full object-cover" data-alt="Profile picture of a chief curator in a library setting, soft lighting, professional attire, soft archive white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ1jM9yNjrKmm0qyuYiESlSs7o5QVo8xuFiXh-Yttu6KM0cO13gUk1SfgQGk_Qb0h-kH866e6-5euCaW0dNplHAKRR0pohHa7qsQYfBlg2AzbjU6161U4co06ocw_zlma3bqzysA5ShJzlmfzxOQ5NVg02yUyIcpJjNKNpqt0re0l6WF-OoeQsOcRCXuXsRCfMaptGbiFYMfM0v2Jx07_OLV5BsDf3K5FdThP12bQazWjqozTUYb8e9A" />
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* TopAppBar (Visible on Desktop) */}
 <header className="hidden md:flex w-full h-20 bg-surface dark:bg-surface-container-low border-b border-outline-variant dark:border-outline justify-between items-center px-margin-desktop sticky top-0 z-40">
 <div className="flex items-center gap-xl">

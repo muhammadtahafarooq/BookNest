@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './TrackYourJourney.css';
@@ -71,10 +73,8 @@ return (
 </nav>
 <main className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-xxl">
 {/* Header */}
-<header className="text-center mb-xl fade-in-section">
-<h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-[#171A1C] mb-sm">Track Order</h1>
-<p className="font-body-md text-body-md text-on-surface-variant">Trace the journey of your next great read.</p>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Tracking Search Section */}
 <section className="max-w-2xl mx-auto mb-xxl fade-in-section">
 <div className="soft-archive-white rounded-xl shadow-level-1 border border-[#D3D0C8] p-lg md:p-xl transition-shadow duration-300 hover:shadow-level-2">
@@ -229,20 +229,7 @@ return (
 </div>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary-container full-width bottom-0 border-t border-outline dark:border-outline-variant mt-xxl">
-<div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-xl max-w-[1280px] mx-auto gap-lg">
-<div className="font-headline-md text-headline-md text-on-primary">BookNest</div>
-<div className="font-body-md text-body-md text-on-primary dark:text-on-primary-container text-center md:text-left">
-                © 2024 BookNest. The Private Collector's Digital Archive.
-            </div>
-<div className="flex flex-wrap justify-center gap-md">
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Archival Standards</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/contactusbooknestsupport">Contact Us</Link>
-</div>
-</div>
-</footer>
+<Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>
   );

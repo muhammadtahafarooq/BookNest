@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './CatalogArchive.css';
@@ -64,17 +66,8 @@ return (
 {/* Main Content */}
 <main className="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
 {/* Page Header */}
-<header className="mb-xl text-center md:text-left fade-in-up">
-<nav aria-label="Breadcrumb" className="mb-md">
-<ol className="flex items-center justify-center md:justify-start space-x-2 text-label-sm font-label-sm text-on-surface-variant">
-<li><Link className="hover:text-burnished-brass transition-colors" to="/">Home</Link></li>
-<li><span className="text-outline">/</span></li>
-<li aria-current="page" className="text-obsidian-ink font-semibold">Shop</li>
-</ol>
-</nav>
-<h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-obsidian-ink mb-sm">Explore The Collection</h1>
-<p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Browse thousands of carefully selected books.</p>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Search Area */}
 <div className="mb-xl fade-in-up stagger-1">
 <div className="relative w-full max-w-3xl mx-auto md:mx-0">
@@ -237,20 +230,7 @@ return (
 </div>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary-container full-width bottom-0 border-t border-outline dark:border-outline-variant mt-auto">
-<div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-xl max-w-[1280px] mx-auto space-y-md md:space-y-0">
-<div className="font-headline-md text-headline-md text-on-primary">BookNest</div>
-<nav className="flex flex-wrap justify-center md:justify-end gap-x-lg gap-y-sm">
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" to="/shopbrowsebooks">Archival Standards</Link>
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" to="/contactusbooknestsupport">Contact Us</Link>
-</nav>
-<div className="w-full md:w-auto text-center md:text-right mt-md md:mt-0 pt-md md:pt-0 border-t border-outline-variant md:border-t-0 md:ml-lg">
-<p className="text-on-primary-fixed-variant font-label-sm text-label-sm">© 2024 BookNest. The Private Collector's Digital Archive.</p>
-</div>
-</div>
-</footer>
+<Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>
   );

@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './ReaderCommandCenter.css';
@@ -56,17 +58,8 @@ return (
 {/* Main Content Canvas */}
 <main className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
 {/* Welcome Header */}
-<header className="relative mb-xxl flex flex-col items-center text-center">
-{/* Subtle floating bookmark SVG graphic */}
-<div aria-hidden="true" className="absolute top-0 right-10 md:right-32 text-[#A67C42] animate-bookmark opacity-80">
-<svg fill="currentColor" height="60" viewbox="0 0 40 60" width="40" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0H40V60L20 45L0 60V0Z"></path>
-</svg>
-</div>
-<h1 className="font-headline-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-md mt-lg">Welcome Back, Reader</h1>
-<p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Your private archive awaits. Continue your literary journey where you left off.</p>
-<div className="w-24 h-[1px] bg-outline-variant mt-lg opacity-50"></div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Bento Grid Layout */}
 <div className="grid grid-cols-1 md:grid-cols-12 gap-lg md:gap-xl">
 {/* Sidebar / Quick Actions (4 cols) */}
@@ -194,23 +187,7 @@ return (
 </div>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary-container full-width bottom-0 border-t border-outline dark:border-outline-variant flat no shadows mt-xxl">
-<div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-xl max-w-[1280px] mx-auto gap-lg md:gap-0">
-{/* Brand */}
-<div className="font-headline-md text-headline-md text-on-primary">BookNest</div>
-{/* Links */}
-<div className="flex flex-wrap justify-center gap-md">
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Archival Standards</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/contactusbooknestsupport">Contact Us</Link>
-</div>
-{/* Copyright */}
-<div className="font-body-md text-body-md text-on-primary-fixed-variant text-center md:text-right text-sm">
-                © 2024 BookNest. The Private Collector's Digital Archive.
-            </div>
-</div>
-</footer>
+<Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>
   );

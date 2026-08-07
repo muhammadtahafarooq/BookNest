@@ -1,45 +1,16 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Homepage.css';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function Homepage() {
   const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
-<header className="bg-primary dark:bg-primary docked full-width top-0 bg-primary dark:bg-primary shadow-md shadow-md z-50 sticky">
-<div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
-{/* Brand */}
-<Link className="font-display-lg text-display-lg font-bold text-on-primary font-editorial tracking-tight" to="/">BookNest</Link>
-{/* Navigation */}
-<nav className="hidden md:flex space-x-8 items-center h-full">
-{/* Shop - Active */}
-<Link className="text-on-primary border-b-2 border-secondary-fixed pb-1 font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center mt-1" to="/shopbrowsebooks">Shop</Link>
-{/* Categories */}
-<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center" to="/shopbrowsebooks">Categories</Link>
-{/* Best Sellers */}
-<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center" to="/shopbrowsebooks">Best Sellers</Link>
-{/* New Arrivals */}
-<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center" to="/shopbrowsebooks">New Arrivals</Link>
-</nav>
-{/* Actions */}
-<div className="flex items-center space-x-6 text-on-primary">
-<button aria-label="favorite" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')} className="hover:text-secondary-fixed transition-colors scale-95 duration-200 ease-in-out">
-<span className="material-symbols-outlined">favorite</span>
-</button>
-<button aria-label="shopping_cart" onClick={() => navigate('/shoppingcartyourbookcollection')} className="hover:text-secondary-fixed transition-colors scale-95 duration-200 ease-in-out relative">
-<span className="material-symbols-outlined">shopping_cart</span>
-<span className="absolute -top-1 -right-2 bg-danger-rose text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
-</button>
-<button aria-label="account_circle" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')} className="hover:text-secondary-fixed transition-colors scale-95 duration-200 ease-in-out">
-<span className="material-symbols-outlined">account_circle</span>
-</button>
-<button aria-label="menu" className="md:hidden hover:text-secondary-fixed transition-colors scale-95 duration-200 ease-in-out">
-<span className="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Hero Section */}
 <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-[#102A43] to-[#1A3636]">
 <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -254,56 +225,7 @@ export default function Homepage() {
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary full-width bg-primary dark:bg-primary border-t border-outline/20 flat no shadows text-on-primary">
-<div className="w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
-{/* Brand Column */}
-<div className="col-span-1 md:col-span-1">
-<Link className="font-headline-md text-headline-md font-bold text-on-primary font-editorial block mb-4" to="/">BookNest</Link>
-<p className="font-body-sm text-body-sm text-outline-variant mb-6 opacity-80 hover:opacity-100 transition-opacity">Books that find their way home. Your private library, curated with care.</p>
-<div className="flex space-x-4">
-{/* Social icons could go here */}
-</div>
-</div>
-{/* Links Column */}
-<div className="col-span-1 md:col-span-2 grid grid-cols-2 gap-8">
-<div>
-<h4 className="font-label-md text-label-md text-on-primary mb-4 font-bold tracking-wider">Store</h4>
-<ul className="space-y-3 font-body-sm text-body-sm">
-<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Shop All</Link></li>
-<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">New Arrivals</Link></li>
-<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Best Sellers</Link></li>
-<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Categories</Link></li>
-</ul>
-</div>
-<div>
-<h4 className="font-label-md text-label-md text-on-primary mb-4 font-bold tracking-wider">Support</h4>
-<ul className="space-y-3 font-body-sm text-body-sm">
-<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/aboutusourstorybooknest">About Us</Link></li>
-<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/contactusbooknestsupport">Contact</Link></li>
-<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Shipping Policy</Link></li>
-<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Terms of Service</Link></li>
-<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Privacy Policy</Link></li>
-</ul>
-</div>
-</div>
-{/* Newsletter Column */}
-<div className="col-span-1 md:col-span-1">
-<h4 className="font-label-md text-label-md text-on-primary mb-4 font-bold tracking-wider">Stay Updated</h4>
-<p className="font-body-sm text-body-sm text-outline-variant mb-4 opacity-80">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
-<form className="flex flex-col gap-2">
-<input className="bg-primary-container text-on-primary border border-outline/30 rounded px-4 py-2 font-body-sm text-body-sm focus:border-secondary-fixed focus:ring-1 focus:ring-secondary-fixed outline-none w-full" placeholder="Enter your email" type="email" />
-<button className="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold px-4 py-2 rounded hover:bg-secondary-fixed-dim transition-colors w-full text-center mt-1" type="button">Subscribe</button>
-</form>
-</div>
-<div className="col-span-1 md:col-span-4 border-t border-outline/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-outline-variant font-label-sm text-label-sm">
-<p>© 2024 BookNest Pakistan. All rights reserved.</p>
-<div className="flex items-center gap-4 mt-4 md:mt-0">
-<span className="material-symbols-outlined text-lg opacity-50 hover:opacity-100 cursor-pointer transition-opacity">payments</span>
-<span className="material-symbols-outlined text-lg opacity-50 hover:opacity-100 cursor-pointer transition-opacity">credit_card</span>
-</div>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './PromotionCouponArchive.css';
@@ -70,29 +72,8 @@ export default function PromotionCouponArchive() {
 {/* Main Content Area */}
 <main className="flex-1 ml-64 flex flex-col min-h-screen">
 {/* TopAppBar (Shared Component) */}
-<header className="bg-surface dark:bg-surface-dim top-0 sticky z-40 border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-xl py-md">
-<div className="flex items-center gap-xl">
-<span className="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">BookNest Control</span>
-<nav className="hidden md:flex gap-lg">
-<Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity cursor-pointer active:opacity-70 font-label-sm text-label-sm" to="/dashboard/customerdashboardmypersonalbookshelf">Dashboard</Link>
-<Link className="text-primary dark:text-primary-fixed-dim border-b-2 border-primary pb-1 font-label-sm text-label-sm" to="/shopbrowsebooks">Promotions</Link>
-<Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity cursor-pointer active:opacity-70 font-label-sm text-label-sm" to="/shopbrowsebooks">Archives</Link>
-</nav>
-</div>
-<div className="flex items-center gap-lg">
-<div className="relative hidden lg:block">
-<span className="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-<input className="pl-xl pr-md py-sm rounded-full bg-surface-container-highest border-none text-body-md focus:ring-1 focus:ring-primary w-64 text-on-surface placeholder:text-on-surface-variant" placeholder="Search archive..." type="text" />
-</div>
-<button className="text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button className="text-on-surface-variant hover:text-primary transition-colors">
-<span className="material-symbols-outlined" data-icon="history">history</span>
-</button>
-<img alt="Manager Avatar" className="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="A small circular avatar image showing a professional, elegantly dressed library manager in a softly lit, wood-paneled room. The lighting is warm and the style is sophisticated and editorial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtBi0EZXvh8U5pkSfP1vJ8C505UWoZ8JlwdRzjT5TBvKuJT5Oob081CAW6du2DelJnGNt4XXzvd50F40gAB5PXc5Yin6749F1wKFrZYyOJGQNVyGNlOYl6iDZYrApbiULQ6VC52bJ_mVqm4m_scv9WJGCbdQNtcnW7O_5T4XAjK3hkFdUntNrPUL0R1A4ywQSMdy6poaDrKD12ifYSJilyPDKDD3acb3ktDxaeh25IKV6cfkoFiYeg6w" />
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Page Content Grid */}
 <div className="flex-1 p-xl grid grid-cols-1 lg:grid-cols-12 gap-xl max-w-[1440px] mx-auto w-full">
 {/* Left Column: Coupons List */}

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './StoriesFromTheBookshelf.css';
@@ -8,30 +10,8 @@ export default function StoriesFromTheBookshelf() {
   return (
     <>
       {/* TopNavBar */}
-<header className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-headline-md text-headline-md font-body-md text-body-md docked full-width top-0 border-b border-outline-variant shadow-sm sticky z-50">
-<div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
-<div className="flex items-center gap-md">
-{/* Search bar on left logic simulated */}
-<button aria-label="Search" className="hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/searchresultsbooknest')}>
-<span className="material-symbols-outlined" data-icon="search">search</span>
-</button>
-</div>
-<div className="font-headline-md text-headline-md text-on-primary tracking-tight">
-                BookNest
-            </div>
-<div className="flex items-center gap-md text-on-primary-fixed-variant">
-<button aria-label="Favorite" className="hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
-<span className="material-symbols-outlined" data-icon="favorite">favorite</span>
-</button>
-<button aria-label="Shopping Cart" className="hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/shoppingcartyourbookcollection')}>
-<span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
-</button>
-<button aria-label="Account" className="hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <main className="flex-grow flex flex-col items-center w-full max-w-[1280px] mx-auto pb-xxl">
 {/* Header Section */}
 <section className="w-full px-margin-mobile md:px-margin-desktop py-xxl text-center animate-fade-up">
@@ -137,23 +117,7 @@ export default function StoriesFromTheBookshelf() {
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-body-md text-body-md font-label-sm text-label-sm full-width py-xxl border-t border-outline-variant flat mt-auto">
-<div className="flex flex-col md:flex-row justify-between items-center px-margin-desktop w-full max-w-[1280px] mx-auto gap-lg md:gap-0">
-<div className="font-headline-sm text-headline-sm text-on-primary">
-                BookNest
-            </div>
-<nav className="flex flex-wrap justify-center gap-md md:gap-lg">
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/searchresultsbooknest">Research Guides</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archives</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
-</nav>
-<div className="text-on-primary-fixed-variant font-label-sm text-label-sm text-center md:text-right">
-                © 2024 BookNest Digital Archive. All Rights Reserved.
-            </div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 import './PrivacyPolicyBooknestPrivateLibrary.css';
@@ -8,10 +10,8 @@ export default function PrivacyPolicyBooknestPrivateLibrary() {
     <>
       {/* TopNavBar (Suppressed due to linear/transactional intent of a pure document page, prioritizing content canvas) */}
 <main className="flex-grow pt-24 pb-32 px-margin-mobile md:px-margin-desktop w-full max-w-container-max-width mx-auto">
-<header className="text-center mb-16 md:mb-24">
-<h1 className="font-fraunces text-4xl md:text-5xl lg:text-[64px] font-semibold leading-tight tracking-tight mb-4 text-[#102A43]">Privacy Policy</h1>
-<p className="font-body-sm text-body-sm text-outline uppercase tracking-wider">Last updated: October 24, 2024</p>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <article className="max-w-[800px] mx-auto content-prose">
 <p className="font-body-lg text-body-lg text-[#102A43]/80">At BookNest, we believe in the sanctity of your reading sanctuary. This Privacy Policy details the care with which we handle your personal information as you navigate our collection, ensuring your literary journey remains private and secure.</p>
 <h2 className="font-fraunces text-2xl md:text-3xl font-semibold text-[#102A43]">Data Collection</h2>
@@ -28,25 +28,7 @@ export default function PrivacyPolicyBooknestPrivateLibrary() {
 </article>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary text-on-primary dark:text-on-primary border-t border-outline/20">
-<div className="w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
-<div className="col-span-1 md:col-span-2">
-<span className="font-headline-md text-headline-md font-bold text-on-primary block mb-6">BookNest</span>
-<p className="font-body-sm text-body-sm text-outline-variant mb-4">© 2024 BookNest Pakistan. All rights reserved.</p>
-</div>
-<div className="col-span-1 md:col-span-2 flex flex-col md:flex-row gap-8 md:justify-end">
-<div className="flex flex-col gap-4">
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/aboutusourstorybooknest">About Us</Link>
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/contactusbooknestsupport">Contact</Link>
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Shipping Policy</Link>
-</div>
-<div className="flex flex-col gap-4">
-<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="font-label-sm text-label-sm text-secondary-fixed font-bold opacity-80 hover:opacity-100 transition-opacity" to="/shopbrowsebooks">Privacy Policy</Link>
-</div>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

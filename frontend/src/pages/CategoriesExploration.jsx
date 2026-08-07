@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './CategoriesExploration.css';
@@ -8,42 +10,8 @@ export default function CategoriesExploration() {
   return (
     <>
       {/* TopNavBar Component */}
-<header className="bg-midnight-ink text-white sticky top-0 z-50 w-full shadow-md">
-<div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
-{/* Logo */}
-<Link className="font-display-lg text-headline-md lg:text-headline-lg font-bold tracking-tight text-white flex items-center gap-2" to="/">
-<span className="material-symbols-outlined icon-fill text-antique-brass text-3xl">auto_stories</span>
-                BookNest
-            </Link>
-{/* Desktop Navigation */}
-<nav className="hidden md:flex items-center gap-8">
-<Link className="font-label-md text-label-md text-outline-variant hover:text-white transition-colors" to="/shopbrowsebooks">Shop</Link>
-<Link className="font-label-md text-label-md text-white border-b-2 border-antique-brass pb-1" to="/shopbrowsebooks">Categories</Link>
-<Link className="font-label-md text-label-md text-outline-variant hover:text-white transition-colors" to="/shopbrowsebooks">Best Sellers</Link>
-<Link className="font-label-md text-label-md text-outline-variant hover:text-white transition-colors" to="/shopbrowsebooks">New Arrivals</Link>
-</nav>
-{/* Actions */}
-<div className="flex items-center gap-4">
-<div className="hidden lg:flex items-center bg-white/10 rounded-full px-4 py-2 focus-within:bg-white/20 transition-colors">
-<span className="material-symbols-outlined text-outline-variant mr-2" data-icon="search">search</span>
-<input className="bg-transparent border-none text-white text-sm focus:ring-0 placeholder:text-outline-variant w-48" placeholder="Search books, authors..." type="text" />
-</div>
-<button className="md:hidden text-white hover:text-antique-brass transition-colors p-2" onClick={() => navigate('/searchresultsbooknest')}>
-<span className="material-symbols-outlined" data-icon="search">search</span>
-</button>
-<button className="text-white hover:text-antique-brass transition-colors p-2 relative group" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
-<span className="material-symbols-outlined" data-icon="favorite">favorite</span>
-</button>
-<button className="text-white hover:text-antique-brass transition-colors p-2 relative group" onClick={() => navigate('/shoppingcartyourbookcollection')}>
-<span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
-<span className="absolute top-1 right-1 w-2 h-2 bg-antique-brass rounded-full"></span>
-</button>
-<button className="text-white hover:text-antique-brass transition-colors p-2" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content */}
 <main className="flex-grow">
 {/* Page Header */}
@@ -155,52 +123,7 @@ export default function CategoriesExploration() {
 </section>
 </main>
 {/* Footer Component */}
-<footer className="bg-midnight-ink text-white border-t border-white/10">
-<div className="w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
-<div className="col-span-1 md:col-span-1">
-<Link className="font-display-lg text-headline-md font-bold tracking-tight text-white flex items-center gap-2 mb-4" to="/">
-<span className="material-symbols-outlined icon-fill text-antique-brass text-2xl">auto_stories</span>
-                    BookNest
-                </Link>
-<p className="font-body-sm text-body-sm text-surface-tint mb-6 max-w-xs">
-                    Your premium digital library. Curated collections for the lifelong learner and avid reader.
-                </p>
-<p className="font-body-sm text-body-sm text-surface-tint">
-                    © 2024 BookNest. All rights reserved.
-                </p>
-</div>
-<div className="col-span-1">
-<h4 className="font-label-md text-label-md text-white font-bold mb-4">Explore</h4>
-<ul className="space-y-3">
-<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">Shop All</Link></li>
-<li><Link className="font-body-sm text-body-sm text-antique-brass font-medium" to="/shopbrowsebooks">Categories</Link></li>
-<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">Best Sellers</Link></li>
-<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">New Arrivals</Link></li>
-</ul>
-</div>
-<div className="col-span-1">
-<h4 className="font-label-md text-label-md text-white font-bold mb-4">Support</h4>
-<ul className="space-y-3">
-<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/aboutusourstorybooknest">About Us</Link></li>
-<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/contactusbooknestsupport">Contact</Link></li>
-<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">Shipping Policy</Link></li>
-<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">Terms of Service</Link></li>
-<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">Privacy Policy</Link></li>
-</ul>
-</div>
-<div className="col-span-1">
-<h4 className="font-label-md text-label-md text-white font-bold mb-4">Connect</h4>
-<div className="flex gap-4">
-<Link className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-outline-variant hover:bg-antique-brass hover:text-midnight-ink transition-all duration-300" to="/shopbrowsebooks">
-<span className="material-symbols-outlined text-lg">mail</span>
-</Link>
-<Link className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-outline-variant hover:bg-antique-brass hover:text-midnight-ink transition-all duration-300" to="/shopbrowsebooks">
-<span className="material-symbols-outlined text-lg">share</span>
-</Link>
-</div>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

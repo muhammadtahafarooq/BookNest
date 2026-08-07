@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './MyReadingShelfBooknestWishlist.css';
@@ -48,10 +50,8 @@ export default function MyReadingShelfBooknestWishlist() {
 {/* Main Content */}
 <main className="flex-grow w-full max-w-container-max-width mx-auto px-margin-desktop py-12 md:py-20">
 {/* Header */}
-<header className="text-center mb-16 md:mb-24">
-<h1 className="font-display-lg text-primary mb-4">My Reading Shelf</h1>
-<p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Your saved books waiting for their next chapter.</p>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Shelf Grid */}
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
 {/* Book Item 1 */}
@@ -158,43 +158,7 @@ export default function MyReadingShelfBooknestWishlist() {
 </div>
 </main>
 {/* Footer */}
-<footer className="bg-surface-container-highest text-on-primary-container font-body-sm">
-<div className="w-full py-12 px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-2 md:grid-cols-4 gap-gutter opacity-80 hover:opacity-100 transition-opacity">
-{/* Brand Column */}
-<div className="col-span-2 md:col-span-1 flex flex-col space-y-4">
-<span className="font-headline-md font-bold text-on-primary-fixed">BookNest</span>
-<p className="text-on-primary-container max-w-xs">The Private Library Experience. Curating exceptional literary journeys for the modern reader.</p>
-<div className="flex space-x-4 mt-2">
-<Link className="hover:text-secondary transition-colors" to="/shopbrowsebooks"><span className="material-symbols-outlined">public</span></Link>
-<Link className="hover:text-secondary transition-colors" to="/shopbrowsebooks"><span className="material-symbols-outlined">mail</span></Link>
-</div>
-</div>
-{/* Links Column 1 */}
-<div className="flex flex-col space-y-3">
-<h4 className="font-bold text-on-primary-fixed mb-2">Collections</h4>
-<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/browsecollections">Curated Collections</Link>
-<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Editorial Picks</Link>
-<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Rare Finds</Link>
-</div>
-{/* Links Column 2 */}
-<div className="flex flex-col space-y-3">
-<h4 className="font-bold text-on-primary-fixed mb-2">Support</h4>
-<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Shipping</Link>
-<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/contactusbooknestsupport">Contact</Link>
-<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/faqbooknestsupport">FAQ</Link>
-</div>
-{/* Links Column 3 */}
-<div className="flex flex-col space-y-3">
-<h4 className="font-bold text-on-primary-fixed mb-2">Company</h4>
-<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/aboutusourstorybooknest">Our Story</Link>
-<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Careers</Link>
-<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Terms of Service</Link>
-</div>
-</div>
-<div className="w-full border-t border-on-primary-container/20 py-6 px-margin-desktop text-center">
-<p>© 2024 BookNest. The Private Library Experience.</p>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

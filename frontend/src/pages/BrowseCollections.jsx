@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './BrowseCollections.css';
@@ -29,26 +31,8 @@ export default function BrowseCollections() {
 return (
     <>
       {/* TopNavBar */}
-<header className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container docked full-width top-0 shadow-sm dark:shadow-none border-b border-outline dark:border-outline-variant z-50 sticky">
-<div className="flex justify-between items-center w-full px-margin-desktop py-md max-w-[1280px] mx-auto">
-<Link className="font-headline-sm text-headline-sm font-bold text-on-primary dark:text-on-primary-container tracking-tight" to="/">BookNest</Link>
-<nav className="hidden md:flex gap-gutter items-center">
-<Link className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" to="/">Home</Link>
-<Link className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" to="/shopbrowsebooks">Shop</Link>
-<Link className="font-label-md text-label-md text-on-primary dark:text-on-primary-container border-b-2 border-on-secondary-container hover:opacity-80 transition-opacity duration-300" to="/shopbrowsebooks">Categories</Link>
-<Link className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" to="/shopbrowsebooks">Blog</Link>
-<Link className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" to="/aboutusourstorybooknest">About</Link>
-</nav>
-<div className="flex items-center gap-md">
-<button className="scale-95 duration-200 ease-in-out hover:opacity-80 transition-opacity text-on-primary">
-<span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>shopping_bag</span>
-</button>
-<button className="scale-95 duration-200 ease-in-out hover:opacity-80 transition-opacity text-on-primary" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>person</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <main className="w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop pb-xxl">
 {/* Header */}
 <section className="py-xl md:py-xxl max-w-3xl animate-fade-in-up">
@@ -150,20 +134,7 @@ return (
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container full-width bottom-0 border-t border-outline dark:border-outline-variant flat no shadows">
-<div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-xl max-w-[1280px] mx-auto gap-lg md:gap-0">
-<div className="font-headline-md text-headline-md text-on-primary">BookNest</div>
-<div className="font-body-md text-body-md text-center md:text-left text-on-primary-fixed-variant">
-                © 2024 BookNest. The Private Collector's Digital Archive.
-            </div>
-<nav className="flex flex-wrap justify-center gap-md">
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Archival Standards</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/contactusbooknestsupport">Contact Us</Link>
-</nav>
-</div>
-</footer>
+<Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>
   );

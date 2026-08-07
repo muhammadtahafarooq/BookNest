@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './BlogManagementBooknestPublishingRoom.css';
@@ -64,28 +66,8 @@ export default function BlogManagementBooknestPublishingRoom() {
 {/* Main Canvas */}
 <main className="flex-1 ml-0 md:ml-64 min-h-screen relative overflow-hidden flex flex-col">
 {/* Top App Bar */}
-<header className="fixed top-0 right-0 left-0 md:left-64 flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
-<div className="flex items-center gap-4">
-<h2 className="font-headline-md text-headline-md font-semibold text-on-surface">Content Library</h2>
-</div>
-<div className="flex-1 max-w-xl mx-8 hidden md:block">
-<div className="relative">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input className="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-200" placeholder="Search articles, authors, or categories..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-4">
-<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">notifications</span>
-</button>
-<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400">
-<span className="material-symbols-outlined">apps</span>
-</button>
-<div className="w-10 h-10 rounded-full overflow-hidden border-2 border-surface-container-high ml-2 cursor-pointer">
-<img alt="Admin Profile" className="w-full h-full object-cover" data-alt="A professional headshot of a female editorial manager in a modern office, soft natural lighting, high-end corporate style, confident and welcoming expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpt1SUKZib1QFJrDFPwgDFANNyA-qKOmTbpPZB2maxxmkYBf_ZYJE_TZoebA-lMRyaSUZJNdC8K0gru6kxbwnuEQlOS-EAnEOzoqUCccqOMvwsaK0fksZ9yXXZvK7891iMEoNy5OIuSRFBsvhBjyAF7KTBScCkr0_yKQ773rjL--HyVhMkrabMUdb1nvdOBaMoEPTDIMOuJi6vd8BG5AG0Onwla0DtcDPHEuEwutHXMhdCHNSH1Khl" />
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Content Area */}
 <div className="pt-28 px-margin-mobile md:px-margin-desktop pb-12 flex-1 max-w-container-max-width w-full mx-auto flex flex-col md:flex-row gap-gutter">
 {/* Article List (Main View) */}

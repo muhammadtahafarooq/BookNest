@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './PremiumBookDetails.css';
@@ -180,22 +182,7 @@ return (
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container full-width bottom-0 border-t border-outline dark:border-outline-variant mt-auto">
-<div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-xl max-w-[1280px] mx-auto gap-lg md:gap-0">
-<div className="font-headline-md text-headline-md text-on-primary">
-                BookNest
-            </div>
-<div className="flex flex-wrap justify-center gap-md md:gap-lg font-label-sm text-label-sm">
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Archival Standards</Link>
-<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/contactusbooknestsupport">Contact Us</Link>
-</div>
-<div className="font-body-md text-body-md text-on-primary-fixed-variant text-center md:text-right">
-                © 2024 BookNest. The Private Collector's Digital Archive.
-            </div>
-</div>
-</footer>
+<Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>
   );

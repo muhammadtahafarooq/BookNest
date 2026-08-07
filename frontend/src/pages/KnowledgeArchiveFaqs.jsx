@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './KnowledgeArchiveFaqs.css';
@@ -78,10 +80,8 @@ export default function KnowledgeArchiveFaqs() {
 {/* Main Content Canvas */}
 <main className="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-xxl">
 {/* Header Section */}
-<header className="text-center max-w-2xl mx-auto mb-xl fade-in-up">
-<h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-md">Frequently Asked Questions</h1>
-<p className="font-body-lg text-body-lg text-on-surface-variant">Find answers about orders, shipping, payments, and accounts in our knowledge archive.</p>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Layout Grid */}
 <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 {/* Sidebar Navigation */}
@@ -146,28 +146,7 @@ export default function KnowledgeArchiveFaqs() {
 </div>
 </main>
 {/* Footer */}
-<footer className="bg-primary-container dark:bg-tertiary-container full-width bottom-0 border-t border-outline-variant flat opacity-100 transition-opacity mt-auto">
-<div className="w-full px-margin-mobile md:px-margin-desktop py-xl flex flex-col md:flex-row justify-between items-center gap-lg max-w-[1280px] mx-auto">
-<div className="flex flex-col items-center md:items-start gap-sm">
-<span className="font-headline-sm text-headline-sm text-on-primary">BookNest</span>
-<span className="font-body-md text-body-md text-on-primary-container dark:text-on-tertiary-container">© 2024 BookNest. Curating the weight of information.</span>
-</div>
-<nav className="flex flex-wrap justify-center gap-md md:gap-lg">
-<Link className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" to="/shopbrowsebooks">
-                    Terms of Service
-                </Link>
-<Link className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" to="/shopbrowsebooks">
-                    Privacy Policy
-                </Link>
-<Link className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" to="/shopbrowsebooks">
-                    Shipping &amp; Returns
-                </Link>
-<Link className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" to="/contactusbooknestsupport">
-                    Contact Archive
-                </Link>
-</nav>
-</div>
-</footer>
+<Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>
   );

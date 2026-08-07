@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './ContactUsBooknestSupport.css';
@@ -8,31 +10,8 @@ export default function ContactUsBooknestSupport() {
   return (
     <>
       {/* TopNavBar */}
-<header className="bg-primary dark:bg-primary docked full-width top-0 shadow-md z-50 transition-all duration-300">
-<div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
-{/* Brand */}
-<Link className="font-display-lg text-display-lg font-bold text-on-primary tracking-tight" to="/">BookNest</Link>
-{/* Navigation Links */}
-<nav className="hidden md:flex items-center space-x-8">
-<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">Shop</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">Categories</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">Best Sellers</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">New Arrivals</Link>
-</nav>
-{/* Trailing Icons */}
-<div className="flex items-center space-x-6 text-on-primary">
-<button aria-label="Favorite" className="hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
-<span className="material-symbols-outlined font-light text-2xl" data-icon="favorite">favorite</span>
-</button>
-<button aria-label="Shopping Cart" className="hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/shoppingcartyourbookcollection')}>
-<span className="material-symbols-outlined font-light text-2xl" data-icon="shopping_cart">shopping_cart</span>
-</button>
-<button aria-label="Account" className="hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined font-light text-2xl" data-icon="account_circle">account_circle</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <main className="flex-grow">
 {/* CONTACT HERO */}
 <section className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden bg-[#EAE7E2]">
@@ -172,23 +151,7 @@ export default function ContactUsBooknestSupport() {
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary border-t border-outline/20">
-<div className="w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
-{/* Brand */}
-<div className="col-span-1 md:col-span-1 flex flex-col space-y-4">
-<span className="font-headline-md text-headline-md font-bold text-on-primary">BookNest</span>
-<p className="font-body-sm text-body-sm text-outline-variant">© 2024 BookNest Pakistan. All rights reserved.</p>
-</div>
-{/* Links Area (Span 3 cols for layout) */}
-<div className="col-span-1 md:col-span-3 flex flex-wrap gap-x-8 gap-y-4 justify-start md:justify-end items-center">
-<Link className="text-outline-variant hover:text-on-primary transition-all font-label-sm text-label-sm opacity-80 hover:opacity-100 transition-opacity" to="/aboutusourstorybooknest">About Us</Link>
-<Link className="text-secondary-fixed font-bold font-label-sm text-label-sm opacity-80 hover:opacity-100 transition-opacity" to="/contactusbooknestsupport">Contact</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-all font-label-sm text-label-sm opacity-80 hover:opacity-100 transition-opacity" to="/shopbrowsebooks">Shipping Policy</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-all font-label-sm text-label-sm opacity-80 hover:opacity-100 transition-opacity" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-all font-label-sm text-label-sm opacity-80 hover:opacity-100 transition-opacity" to="/shopbrowsebooks">Privacy Policy</Link>
-</div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

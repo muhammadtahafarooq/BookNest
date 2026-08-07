@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './AuthorManagementBooknestAdminArchive.css';
@@ -60,35 +62,8 @@ export default function AuthorManagementBooknestAdminArchive() {
 {/* Main Content Area */}
 <main className="flex-grow flex flex-col md:pl-64 min-h-screen">
 {/* TopAppBar (JSON Component) */}
-<header className="fixed top-0 right-0 left-0 md:left-64 flex justify-between items-center h-20 px-margin-desktop z-40 bg-surface/80 backdrop-blur-md bg-surface dark:bg-surface-dim text-primary dark:text-primary-fixed-dim border-b border-outline-variant">
-<div className="flex items-center gap-4 flex-1">
-{/* Mobile Menu Button */}
-<button className="md:hidden p-2 text-on-surface-variant hover:text-secondary transition-colors duration-400">
-<span className="material-symbols-outlined">menu</span>
-</button>
-<div className="hidden md:flex font-headline-md text-headline-md font-semibold text-on-surface items-center gap-2">
-<span className="text-antique-brass text-xl">|</span> Author Directory
-                </div>
-<div className="relative w-full max-w-md ml-4">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input className="w-full bg-surface-container-low border border-outline-variant rounded-full py-2 pl-10 pr-4 font-body-sm text-body-sm focus:outline-none focus:border-antique-brass focus:ring-1 focus:ring-antique-brass transition-all bg-white" placeholder="Search Authors..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-4">
-<button className="p-2 text-on-surface-variant hover:text-antique-brass transition-colors duration-400 rounded-full hover:bg-surface-container-high" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button className="p-2 text-on-surface-variant hover:text-antique-brass transition-colors duration-400 rounded-full hover:bg-surface-container-high hidden sm:block">
-<span className="material-symbols-outlined" data-icon="apps">apps</span>
-</button>
-<div className="h-8 w-px bg-outline-variant mx-2 hidden sm:block"></div>
-<button className="flex items-center gap-3 p-1 pr-3 rounded-full border border-outline-variant hover:border-antique-brass transition-colors bg-white">
-<img alt="Administrator Avatar" className="w-8 h-8 rounded-full object-cover bg-surface-container-high" data-alt="A small, professional avatar portrait of a modern administrator in a corporate setting, soft lighting, clean background, 8k resolution, minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDroon13T0AZWtah7jbjFWfhClVrzK5CFfWa0tW-OD-tfEDfpaf6MKh0oaSuqJ1iPGZnN85yJQ1S-R5IJhxGdSU1J4CF_hrtIInkzlEzuIQekrcJEtgMqrwqqYDwewzFMckf7Ox1TMCj0DUMbB-oQzkWXiSZtOtlibUOD_lC_SbN4FDmD6oDnmcLF75fiIs7OXplpeoVHs4txGCTBIhbIv_brcUt2N8NYyKH75drOsiL1xQ6Fn2GyPu" />
-<span className="font-label-md text-label-md text-on-surface hidden sm:block">Admin Profile</span>
-<span className="material-symbols-outlined text-sm text-outline hidden sm:block">expand_more</span>
-</button>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Page Canvas */}
 <div className="flex-grow pt-28 pb-12 px-margin-mobile md:px-margin-desktop w-full max-w-container-max-width mx-auto">
 {/* Page Header Actions */}

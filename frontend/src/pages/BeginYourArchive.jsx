@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './BeginYourArchive.css';
@@ -8,30 +10,8 @@ export default function BeginYourArchive() {
   return (
     <>
       {/* TopNavBar (Suppressed due to Linear/Transactional intent, but instructions said "Use the TopNavBar". Resolving conflict: Instructions explicitly said "Layout: Use the TopNavBar (dark/Obsidian Ink)". Proceeding to render TopNavBar despite general shell rules, as specific prompt overrides general rules.) */}
-<header className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container border-b border-outline-variant dark:border-outline shadow-md docked full-width top-0 z-50">
-<div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
-<div className="font-headline-md text-headline-md font-bold text-on-primary dark:text-on-primary-container">
-                BookNest
-            </div>
-<nav className="hidden md:flex space-x-gutter">
-<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" to="/catalogarchive">Catalog</Link>
-<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" to="/browsecollections">Collections</Link>
-<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" to="/shopbrowsebooks">Archives</Link>
-<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" to="/shopbrowsebooks">Curations</Link>
-</nav>
-<div className="flex items-center space-x-lg">
-<div className="hidden md:flex space-x-sm">
-<button className="text-on-primary dark:text-on-primary-container hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform">
-<span className="material-symbols-outlined" data-icon="menu_book">menu_book</span>
-</button>
-<button className="text-on-primary dark:text-on-primary-container hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform">
-<span className="material-symbols-outlined" data-icon="history">history</span>
-</button>
-</div>
-<Link className="font-label-md text-label-md text-on-primary dark:text-on-primary-container hover:opacity-80 transition-opacity" to="/loginbooknestprivatelibrary">Sign In</Link>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content Canvas */}
 <main className="flex-grow flex items-center justify-center py-xxl px-margin-mobile md:px-margin-desktop">
 <div className="page-reveal w-full max-w-[480px]">
@@ -79,22 +59,7 @@ export default function BeginYourArchive() {
 </div>
 </main>
 {/* Footer */}
-<footer className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container border-t border-outline-variant/30 full-width bottom-0 mt-auto">
-<div className="w-full py-xxl px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto gap-y-lg">
-<div className="font-headline-sm text-headline-sm font-bold text-on-primary text-center md:text-left">
-                BookNest
-            </div>
-<nav className="flex flex-wrap justify-center gap-x-lg gap-y-sm">
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Archival Standards</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Conservation Policy</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Terms of Access</Link>
-<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">The Vault</Link>
-</nav>
-<div className="font-body-md text-body-md text-on-primary-fixed-variant opacity-70 text-center md:text-right">
-                © 1892-2024 BookNest Archival Society. All rights reserved.
-            </div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

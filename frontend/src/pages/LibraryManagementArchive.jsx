@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 import './LibraryManagementArchive.css';
@@ -43,26 +45,8 @@ export default function LibraryManagementArchive() {
 {/* Main Content Area */}
 <main className="flex-1 flex flex-col h-full overflow-y-auto">
 {/* Top Bar */}
-<header className="h-20 flex items-center justify-between px-margin-desktop border-b border-stone bg-[#F3F0E8]/80 backdrop-blur-sm sticky top-0 z-10">
-<div className="flex items-center gap-sm font-label-md text-label-md text-on-surface-variant">
-<span>Admin</span>
-<span className="material-symbols-outlined text-[16px]">chevron_right</span>
-<span className="text-on-surface">Library Overview</span>
-</div>
-<div className="flex items-center gap-lg">
-<div className="relative hidden md:block w-64">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input className="w-full pl-10 pr-4 py-2 bg-[#FAF8F3] border border-[#D8D4CA] rounded-md focus:outline-none focus:border-[#171A1C] font-label-md text-label-md text-on-surface transition-colors" placeholder="Search volumes, authors..." type="text" />
-</div>
-<div className="flex items-center gap-sm">
-<img className="w-10 h-10 rounded-full object-cover border border-stone" data-alt="A detailed black and white portrait of an archivist, serious expression, wearing a tweed jacket, soft studio lighting, professional headshot style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK3GRpYvGEsMJ9XHwp96tmpLhlJY7sL-gqnXTwoJURuYVgn-oTB3kKnRvyJA4ixHU3IWgr1awmiGoWa5lAP3aeU8HOkMs97NMmcldZJhCu_KbvBAjP3NS3NTFRAbYIKmo4e1cw5hYUbtmYolR4I4FqiU-QF6szP5u-W6cSfp5TqpafXgg89qpckeK4Xhg-94zomjec46dzaThCrbAdgMdWZQ4DVbZl18Q9Z6DnIazACIE8gG6P_WBeKg" />
-<div className="hidden sm:block">
-<div className="font-label-md text-label-md">E. Blackwood</div>
-<div className="font-label-sm text-label-sm text-on-surface-variant">Chief Archivist</div>
-</div>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Dashboard Content */}
 <div className="p-margin-desktop max-w-[1280px] mx-auto w-full fade-in-up">
 <div className="flex justify-between items-end mb-xl">
@@ -193,9 +177,7 @@ export default function LibraryManagementArchive() {
 </div>
 </div>
 {/* Footer component placeholder */}
-<footer className="mt-xxl border-t border-stone py-lg text-center text-on-surface-variant font-label-sm text-label-sm">
-                © 1892-2024 BookNest Archival Society. All rights reserved.
-            </footer>
+<Footer />
 </div>
 </main>
     </>

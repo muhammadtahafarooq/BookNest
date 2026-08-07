@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './InventoryManagementBooknestAdminControl.css';
@@ -82,30 +84,8 @@ export default function InventoryManagementBooknestAdminControl() {
 </div>
 </nav>
 {/* TopAppBar */}
-<header className="hidden md:flex bg-surface dark:bg-surface-dim text-primary dark:text-primary-fixed-dim docked full-width top-0 border-b border-outline-variant flat no shadows fixed top-0 right-0 left-64 flex justify-between items-center h-20 px-margin-desktop z-40 bg-surface/80 backdrop-blur-md">
-<div className="flex items-center gap-6 flex-1">
-<h2 className="font-headline-md text-headline-md font-semibold text-midnight-ink">Inventory Control</h2>
-<div className="relative w-96 ml-8">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input className="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-slate-binding/10 rounded-full focus:outline-none focus:border-antique-brass focus:ring-1 focus:ring-antique-brass font-body-sm text-body-sm text-midnight-ink" placeholder="Search inventory..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-6">
-<button className="text-on-surface-variant hover:text-antique-brass transition-colors duration-400 relative" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">notifications</span>
-<span className="absolute top-0 right-0 w-2 h-2 bg-danger-rose rounded-full"></span>
-</button>
-<button className="text-on-surface-variant hover:text-antique-brass transition-colors duration-400">
-<span className="material-symbols-outlined">apps</span>
-</button>
-<div className="h-8 w-[1px] bg-outline-variant"></div>
-<button className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-<img alt="Administrator Avatar" className="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a mature publishing house administrator, wearing round spectacles and a neat navy blazer. Soft, natural light illuminating a clean, modern office background. Professional, high-quality photograph, minimalist corporate style, sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsCbq4buiUvNCPx01rz6LAnRt2g72D61ywYSRzmPyUY5qB72gb_BizU_H8ucH77t--8ozfEUJKSKWsyTHzkr_sdDSdnBXu35pA6apa4NLBF2W-VrFPFSO8-_hCm-67LFaKLUTpkTFHnZArJB1dfwF0bFshpfp2LmXkDT_KLRQR--HM6GDT5LMwbnqNvTq98QoqziJWncPWu9RNVNOoC-VVUQir-YmAQI6DYSvRKguUg1g0D7x4FaX4" />
-<span className="font-label-md text-label-md font-medium hidden lg:block text-midnight-ink">Admin Profile</span>
-<span className="material-symbols-outlined text-outline">expand_more</span>
-</button>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content */}
 <main className="md:ml-64 pt-24 px-margin-mobile md:px-margin-desktop pb-12 max-w-container-max-width mx-auto">
 {/* Inventory Summary Cards */}

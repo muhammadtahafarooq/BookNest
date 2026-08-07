@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './ContactMessagesBooknestAdminArchive.css';
@@ -85,37 +87,8 @@ export default function ContactMessagesBooknestAdminArchive() {
 {/* Main Content Area */}
 <main className="flex-1 md:ml-64 flex flex-col h-full bg-background relative overflow-hidden">
 {/* TopAppBar */}
-<header className="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md docked full-width top-0 border-b border-outline-variant h-20 px-margin-desktop z-40 flex justify-between items-center shrink-0">
-<div className="flex items-center gap-4">
-{/* Mobile Menu Button (Hidden on Desktop) */}
-<button className="md:hidden text-primary dark:text-primary-fixed-dim hover:text-secondary transition-colors duration-400">
-<span className="material-symbols-outlined">menu</span>
-</button>
-<div className="font-headline-md text-headline-md font-semibold text-on-surface">BookNest</div>
-</div>
-<div className="flex items-center gap-6">
-{/* Search Bar */}
-<div className="relative hidden sm:block">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
-<input className="pl-10 pr-4 py-2 rounded-lg border border-outline-variant bg-surface-lowest text-on-surface font-body-sm text-body-sm focus:border-secondary focus:ring-1 focus:ring-secondary outline-none w-64 transition-all duration-300" placeholder="Search..." type="text" />
-</div>
-<div className="flex items-center gap-4">
-<button className="text-primary dark:text-primary-fixed-dim hover:text-secondary transition-colors duration-400 relative" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">notifications</span>
-<span className="absolute top-0 right-0 w-2 h-2 bg-danger-rose rounded-full border border-surface"></span>
-</button>
-<button className="text-primary dark:text-primary-fixed-dim hover:text-secondary transition-colors duration-400 hidden sm:block">
-<span className="material-symbols-outlined">apps</span>
-</button>
-<div className="h-8 w-px bg-outline-variant mx-2 hidden sm:block"></div>
-<button className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-<img alt="Administrator Avatar" className="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A detailed headshot portrait of a professional administrator in a modern office setting. The lighting is soft and studio-quality, casting gentle shadows that emphasize a competent and welcoming expression. The background is a slightly blurred, bright minimal corporate environment, reinforcing a clean, light-mode design aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk4lpYUN2RFUkkEaCnSZGZEn-_3O5aPTE7Sa2zGn8SnMaZGHNuHnaGffpdVB1E6Lm5W4i2M2P4QnE-3mZLQJrZp2nfeRvzH9IwglBhpy52mBxc0H1ny5cs2p_f5aSSGvRufgOve8LBkR3MFv942KmZNv4WtSIIXUrNVFeKECJEfZokqK2QrhVcjNjBP-AjxKIMXZ53IxUnUDmGj0lzzvfN30ezLKVGBgTKytmD1Q4XxKEaH7JtJW3H" />
-<span className="font-label-md text-label-md text-primary hidden lg:block">Admin Profile</span>
-<span className="material-symbols-outlined text-sm hidden lg:block text-on-surface-variant">expand_more</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Page Content */}
 <div className="flex-1 overflow-hidden flex flex-col p-margin-desktop">
 {/* Page Header & Filters */}

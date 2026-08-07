@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 import './ReaderBehaviorInsights.css';
@@ -188,19 +190,8 @@ return (
 {/* Main Content Canvas */}
 <main className="flex-1 md:ml-64 w-full flex flex-col min-h-screen pb-xxl">
 {/* Header Section */}
-<header className="px-margin-mobile md:px-margin-desktop py-xl divider-horizontal flex flex-col md:flex-row md:items-end justify-between gap-lg bg-surface">
-<div>
-<p className="font-label-sm text-label-sm text-outline mb-xs tracking-widest uppercase">Analytics Archive</p>
-<h1 className="font-display-lg text-display-lg text-on-surface">Reader Behavior Insights</h1>
-</div>
-{/* Date Filters */}
-<div className="flex items-center gap-xs bg-surface-variant p-1 rounded-lg border border-outline-variant">
-<button className="px-md py-sm rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Today</button>
-<button className="px-md py-sm rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Week</button>
-<button className="px-md py-sm rounded bg-surface text-on-surface shadow-sm font-label-md text-label-md transition-colors">Month</button>
-<button className="px-md py-sm rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Year</button>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <div className="px-margin-mobile md:px-margin-desktop pt-xl">
 {/* 12-Column Grid Layout */}
 <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">

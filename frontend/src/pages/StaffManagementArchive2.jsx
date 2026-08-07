@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './StaffManagementArchive2.css';
@@ -54,16 +56,8 @@ export default function StaffManagementArchive2() {
 {/* Main Workspace */}
 <main className="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-xxl flex flex-col gap-xl relative">
 {/* Header Section */}
-<header className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-outline-variant pb-md gap-md">
-<div>
-<h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Staff Registry</h1>
-<p className="font-body-md text-body-md text-on-surface-variant mt-sm max-w-2xl">Manage archival personnel, curatorial access, and administrative privileges across the BookNest vault.</p>
-</div>
-<button className="bg-primary text-on-primary font-label-md text-label-md px-lg py-sm rounded flex items-center gap-sm hover:bg-inverse-surface transition-colors ambient-shadow-level-1" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined text-[18px]">person_add</span>
-                New Member
-            </button>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Content Area: 12-Column Grid */}
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
 {/* Staff List (8 Columns) */}
@@ -194,27 +188,7 @@ export default function StaffManagementArchive2() {
 </div>
 </main>
 {/* Footer (Shared Component) */}
-<footer className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container full-width bottom-0 border-t border-outline-variant/30 mt-auto">
-<div className="w-full py-xxl px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto gap-xl">
-{/* Brand & Copyright */}
-<div className="flex flex-col items-center md:items-start gap-sm">
-<span className="font-headline-sm text-headline-sm font-bold text-on-primary flex items-center gap-2">
-<span className="material-symbols-outlined" data-weight="fill" style={{fontVariationSettings: '\'FILL\' 1'}}>account_balance</span>
-                    BookNest
-                </span>
-<p className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 text-center md:text-left">
-                    © 1892-2024 BookNest Archival Society. All rights reserved.
-                </p>
-</div>
-{/* Footer Links */}
-<div className="flex flex-wrap justify-center gap-lg font-body-md text-body-md">
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Archival Standards</Link>
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Conservation Policy</Link>
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Terms of Access</Link>
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">The Vault</Link>
-</div>
-</div>
-</footer>
+<Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>
   );

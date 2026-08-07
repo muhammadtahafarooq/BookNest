@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './PremiumDigitalLibrary.css';
@@ -128,20 +130,7 @@ return (
 </section>
 </main>
 {/* Footer Component */}
-<footer className="bg-[#171A1C] text-[#F3F0E8] font-headline-sm text-headline-sm font-body-md text-body-md font-label-sm text-label-sm full-width bottom-0 border-t border-[#313030] flat no shadows mt-xxl">
-<div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full px-margin-mobile md:px-margin-desktop py-xl max-w-[1280px] mx-auto gap-8">
-<div className="flex flex-col space-y-4">
-<span className="font-headline-md text-headline-md text-on-primary font-bold tracking-tight">BookNest</span>
-<p className="text-[#F3F0E8] opacity-70 font-body-md text-body-md">© 2024 BookNest. The Private Collector's Digital Archive.</p>
-</div>
-<div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
-<Link className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" to="/shopbrowsebooks">Terms of Service</Link>
-<Link className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" to="/shopbrowsebooks">Archival Standards</Link>
-<Link className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" to="/contactusbooknestsupport">Contact Us</Link>
-</div>
-</div>
-</footer>
+<Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
     </>
   );

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './AdminDashboardBooknestCommandCenter.css';
@@ -70,30 +72,8 @@ export default function AdminDashboardBooknestCommandCenter() {
 {/* MAIN CONTENT */}
 <main className="flex-1 flex flex-col h-screen overflow-hidden bg-cloud-linen/30">
 {/* HEADER */}
-<header className="h-20 flex-shrink-0 bg-paper-mist border-b border-slate-binding/10 px-margin-desktop flex items-center justify-between z-10">
-<div className="flex items-center flex-1 max-w-md">
-<div className="relative w-full">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-binding/50">search</span>
-<input className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-slate-binding/10 text-body-sm focus:outline-none focus:ring-2 focus:ring-midnight-ink/20 focus:border-midnight-ink transition-all shadow-sm font-body-sm text-slate-binding placeholder:text-slate-binding/40" placeholder="Search ISBN, Author, Title..." type="text" />
-</div>
-</div>
-<div className="flex items-center space-x-4">
-<button className="relative p-2 rounded-full text-slate-binding hover:bg-black/5 transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined">notifications</span>
-<span className="absolute top-1.5 right-1.5 w-2 h-2 bg-antique-brass rounded-full border border-paper-mist"></span>
-</button>
-<div className="w-px h-6 bg-slate-binding/10 mx-2"></div>
-<div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity">
-<div className="mr-3 text-right hidden sm:block">
-<div className="font-label-md text-midnight-ink">Eleanor Vance</div>
-<div className="font-label-sm text-slate-binding/60">Editor in Chief</div>
-</div>
-<div className="w-10 h-10 rounded-full border-2 border-white shadow-sm overflow-hidden bg-cloud-linen">
-<img className="w-full h-full object-cover" data-alt="A highly detailed close-up portrait of a professional female editor in her 40s. She has a warm but authoritative expression, wearing sophisticated wire-rimmed glasses and a tailored navy blazer. Soft, studio lighting creates a premium, corporate aesthetic. The background is a blurred, high-end library setting with dark wood tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzqQQVl0qQ3-q6Md8SzwotIqXxOs2LEePid9prj2ea3N0bILYejASM9jz2SbLBRyZk1yvED2fqggK9pTOghgpx284uXTMwAV18NC3_wBHTG0Pju7kvCCapkKB5-2-1tpied8MG2sWX82YpT1--pmSXdIX1eTLFzjHTa2EsKTeubTPUAqVniprV7TE1PtaTYGKZrHp2G3bfEN1pZhx0sOgufsru6jC35kpbGfYjwhNsjpsamANQDoR6" />
-</div>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* CANVAS */}
 <div className="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop">
 <div className="max-w-container-max-width mx-auto space-y-6">

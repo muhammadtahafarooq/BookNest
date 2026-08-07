@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 import './PublisherManagementArchive.css';
@@ -54,20 +56,8 @@ export default function PublisherManagementArchive() {
 {/* Main Content Area */}
 <main className="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-xxl">
 {/* Header Section */}
-<header className="mb-xl flex flex-col md:flex-row md:items-end justify-between gap-md editorial-divider pb-lg">
-<div>
-<h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-xs">
-                    Publisher Management
-                </h1>
-<p className="font-body-lg text-body-lg text-on-surface-variant">
-                    Managing the Archive's Literary Partners
-                </p>
-</div>
-<button className="inline-flex items-center gap-sm bg-tertiary-fixed text-on-tertiary-fixed px-lg py-md rounded-DEFAULT font-label-md text-label-md shadow-ambient-1 hover:shadow-ambient-2 hover:-translate-y-[1px] transition-all duration-200 border border-outline-variant/30">
-<span className="material-symbols-outlined text-[18px]">add</span>
-                Add New Publisher
-            </button>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Search and Filter Bar */}
 <section className="mb-lg flex flex-col md:flex-row gap-md items-center justify-between bg-surface-container-lowest p-md rounded-lg shadow-ambient-1 border border-outline-variant/50">
 <div className="relative w-full md:w-[400px]">
@@ -271,33 +261,7 @@ export default function PublisherManagementArchive() {
 </section>
 </main>
 {/* Footer Shell */}
-<footer className="bg-primary dark:bg-primary-container Labels: font-label-sm text-label-sm. Body: font-body-md text-body-md. full-width bottom-0 border-t border-outline-variant/30 flat no shadows mt-auto">
-<div className="w-full py-xxl px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto gap-lg md:gap-0">
-{/* Footer Branding */}
-<div className="font-headline-sm text-headline-sm font-bold text-on-primary">
-                BookNest
-            </div>
-{/* Footer Links */}
-<div className="flex flex-wrap justify-center gap-x-lg gap-y-sm">
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">
-                    Archival Standards
-                </Link>
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">
-                    Conservation Policy
-                </Link>
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">
-                    Terms of Access
-                </Link>
-<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">
-                    The Vault
-                </Link>
-</div>
-{/* Copyright */}
-<div className="font-body-md text-body-md text-on-primary-fixed-variant opacity-70 text-center md:text-right">
-                © 1892-2024 BookNest Archival Society. All rights reserved.
-            </div>
-</div>
-</footer>
+<Footer />
     </>
   );
 }

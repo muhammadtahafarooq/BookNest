@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './SearchResultsBooknest.css';
@@ -8,49 +10,8 @@ export default function SearchResultsBooknest() {
   return (
     <>
       {/* TopNavBar */}
-<header className="bg-midnight-ink text-paper-mist shadow-md sticky top-0 z-50 w-full transition-all duration-300">
-<div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto h-20">
-{/* Brand */}
-<div className="flex items-center gap-4">
-<Link className="font-fraunces text-2xl font-bold tracking-tight text-paper-mist flex items-center gap-2" to="/">
-<span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>auto_stories</span>
-                    BookNest
-                </Link>
-</div>
-{/* Navigation Cluster (Hidden on Mobile) */}
-<nav aria-label="Main Navigation" className="hidden md:flex gap-8 items-center">
-<Link className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" to="/shopbrowsebooks">Genres</Link>
-<Link className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" to="/shopbrowsebooks">Best Sellers</Link>
-<Link className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" to="/shopbrowsebooks">New Releases</Link>
-<Link className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" to="/shopbrowsebooks">Authors</Link>
-</nav>
-{/* Trailing Actions */}
-<div className="flex items-center gap-6">
-{/* Search Icon (Mobile mostly) */}
-<button className="md:hidden text-cloud-linen hover:text-paper-mist transition-colors" onClick={() => navigate('/searchresultsbooknest')}>
-<span className="material-symbols-outlined">search</span>
-</button>
-{/* Icon Actions */}
-<div className="hidden sm:flex items-center gap-4 text-cloud-linen">
-<button aria-label="shopping_bag" className="hover:text-antique-brass transition-colors relative">
-<span className="material-symbols-outlined">shopping_bag</span>
-<span className="absolute -top-1 -right-1 bg-antique-brass text-midnight-ink text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
-</button>
-<button aria-label="menu_book" className="hover:text-antique-brass transition-colors">
-<span className="material-symbols-outlined">menu_book</span>
-</button>
-</div>
-{/* Primary Action */}
-<button className="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-antique-brass hover:bg-opacity-90 text-midnight-ink font-inter font-medium text-sm rounded transition-all duration-300" onClick={() => navigate('/loginbooknestprivatelibrary')}>
-                    Sign In
-                </button>
-{/* Mobile Menu Toggle */}
-<button className="md:hidden text-cloud-linen hover:text-paper-mist transition-colors">
-<span className="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Content */}
 <main className="flex-grow flex flex-col w-full max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12 gap-8">
 {/* Search Header */}
@@ -275,21 +236,7 @@ export default function SearchResultsBooknest() {
 </section>
 </main>
 {/* Footer */}
-<footer className="bg-primary-container dark:bg-black text-on-primary-container dark:text-surface-variant font-label-md text-label-md w-full py-12 px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto flex flex-col md:flex-row justify-between items-start gap-8 mt-auto">
-<div className="flex flex-col gap-4">
-<span className="font-headline-md text-headline-md text-on-primary-container font-fraunces font-bold flex items-center gap-2 text-paper-mist">
-<span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>auto_stories</span>
-                BookNest
-            </span>
-<p className="text-sm opacity-80">© 2024 BookNest. Curating the world's finest stories.</p>
-</div>
-<nav aria-label="Footer Navigation" className="flex flex-wrap gap-6 md:gap-8">
-<Link className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" to="/aboutusourstorybooknest">About Us</Link>
-<Link className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" to="/shopbrowsebooks">Shipping &amp; Returns</Link>
-<Link className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" to="/shopbrowsebooks">Privacy Policy</Link>
-<Link className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" to="/contactusbooknestsupport">Contact Support</Link>
-</nav>
-</footer>
+<Footer />
     </>
   );
 }

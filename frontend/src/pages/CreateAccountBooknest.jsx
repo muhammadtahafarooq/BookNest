@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 import './CreateAccountBooknest.css';
@@ -8,9 +10,8 @@ export default function CreateAccountBooknest() {
     <>
       {/* TopNavBar (Suppressed due to Transactional Page Rule) */}
 {/* The user is in a focused journey (Registration), so the global nav is hidden to prioritize the Canvas. */}
-<header className="w-full px-margin-desktop py-4 flex justify-between items-center absolute top-0 z-50">
-<Link className="text-headline-lg font-display-lg font-bold text-primary" to="/">BookNest</Link>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 <main className="flex-grow flex items-center justify-center p-margin-mobile md:p-margin-desktop min-h-screen">
 <div className="w-full max-w-container-max-width mx-auto flex flex-col md:flex-row bg-surface-container-lowest rounded-xl overflow-hidden" style={{boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.04)'}}>
 {/* Left Side: Editorial & Benefits */}

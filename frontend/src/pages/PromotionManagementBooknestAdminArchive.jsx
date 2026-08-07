@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './PromotionManagementBooknestAdminArchive.css';
@@ -84,28 +86,8 @@ export default function PromotionManagementBooknestAdminArchive() {
 {/* Main Content Area */}
 <main className="flex-1 ml-0 md:ml-64 flex flex-col h-full bg-surface-muted overflow-hidden relative">
 {/* TopAppBar */}
-<header className="h-20 bg-surface/80 backdrop-blur-md border-b border-outline-variant flex justify-between items-center px-margin-desktop sticky top-0 z-40">
-<div className="flex items-center gap-4 flex-1">
-<h2 className="font-headline-md text-headline-md font-semibold text-on-surface">Promotion Management</h2>
-</div>
-<div className="flex items-center gap-6">
-<div className="relative hidden lg:block w-72">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
-<input className="w-full pl-10 pr-4 py-2 bg-surface border border-outline-variant rounded-full text-body-sm focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all" placeholder="Search campaigns..." type="text" />
-</div>
-<div className="flex items-center gap-4">
-<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400 p-2" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400 p-2">
-<span className="material-symbols-outlined" data-icon="apps">apps</span>
-</button>
-<div className="w-10 h-10 rounded-full bg-tertiary-fixed overflow-hidden ml-2 cursor-pointer border border-outline-variant">
-<img alt="Administrator Avatar" className="w-full h-full object-cover" data-alt="A professional headshot of a female administrator in a modern, well-lit office setting. She is wearing a dark blue blazer. Soft, natural lighting. Corporate, trustworthy, and sophisticated aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4iZmgipw7bnEBKl52cZLSC9Eb6hu0HVmCOZxGAbP8Zhy52wiXxvHYf_vwzUb8QUiGg20jR9q7P4G0OXV_NjyCS-ziq8-_53Kr1U9moWUllWL0OvhUzWcJ48mDGDlf69KdQLTeRfiCnfZqVgoWXzaIEs-EiqyuLx8AaOzbHQ6VYOXn_Gy9ixvO6ShBmCTpfTgAGkk6talmhLE1Dlq-U5aTfF5cYsodvhOOIGGhdiw-raNdLEJzpyXv" />
-</div>
-</div>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Scrollable Canvas */}
 <div className="flex-1 overflow-y-auto p-margin-desktop">
 <div className="max-w-container-max-width mx-auto flex flex-col xl:flex-row gap-8">

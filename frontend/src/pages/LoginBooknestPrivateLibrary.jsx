@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 import './LoginBooknestPrivateLibrary.css';
@@ -72,12 +74,7 @@ export default function LoginBooknestPrivateLibrary() {
 </div>
 </main>
 {/* Minimal Footer based on Shared Component */}
-<footer className="w-full py-8 px-margin-desktop flex flex-col md:flex-row justify-center md:justify-between items-center max-w-container-max-width mx-auto border-t border-outline-variant/30 text-midnight-ink/70">
-<div className="font-headline-md text-headline-md text-midnight-ink mb-4 md:mb-0 opacity-80">
-            BookNest
-         </div>
-<p className="font-body-sm text-body-sm">© 2024 BookNest. All rights reserved.</p>
-</footer>
+<Footer />
     </>
   );
 }

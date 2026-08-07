@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './AuthorArchiveManagement.css';
@@ -48,26 +50,8 @@ export default function AuthorArchiveManagement() {
 {/* Main Content Area */}
 <div className="flex-1 ml-0 md:ml-64 flex flex-col min-h-screen archive-paper relative">
 {/* TopNavBar */}
-<header className="bg-surface dark:bg-surface-container-low docked full-width top-0 border-b border-outline-variant flat no shadows flex justify-between items-center h-16 px-lg sticky z-40">
-<div className="flex items-center gap-sm md:hidden">
-<span className="material-symbols-outlined text-on-surface cursor-pointer">menu</span>
-<span className="font-headline-sm text-headline-sm font-bold text-on-surface">BookNest</span>
-</div>
-<div className="hidden md:flex flex-1 max-w-md">
-<div className="relative w-full">
-<span className="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-<input className="w-full pl-xl pr-sm py-sm rounded-lg bg-surface-container border border-outline-variant focus:border-primary focus:ring-0 font-body-md text-on-surface transition-colors" placeholder="Search archive..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-md ml-auto">
-<button className="text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>notifications</span>
-</button>
-<button className="text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
-<span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>account_circle</span>
-</button>
-</div>
-</header>
+{/* <Navbar /> */}
+<Navbar />
 {/* Main Canvas */}
 <main className="flex-1 p-margin-mobile md:p-xl max-w-7xl mx-auto w-full">
 {/* Header Section */}
