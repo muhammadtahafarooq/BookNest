@@ -1,17 +1,20 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './Checkout.css';
 
 export default function Checkout() {
+    const navigate = useNavigate();
   return (
     <>
       {/* Minimal Navbar */}
 <nav className="w-full bg-surface-container-lowest ghost-border py-4 px-margin-desktop md:px-margin-desktop sticky top-0 z-50">
 <div className="max-w-container-max-width mx-auto flex justify-between items-center">
 <div className="font-display-lg text-display-lg text-primary tracking-tight">BookNest</div>
-<a className="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors duration-400 font-body-md text-body-md" href="#">
+<Link className="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors duration-400 font-body-md text-body-md" to="/shoppingcartyourbookcollection">
 <span className="material-symbols-outlined text-[20px]">arrow_back</span>
                 Return to Cart
-            </a>
+            </Link>
 </div>
 </nav>
 {/* Main Content */}
@@ -212,7 +215,7 @@ export default function Checkout() {
 <span className="font-display-lg text-headline-lg text-primary">$39.14</span>
 </div>
 {/* Action */}
-<button className="w-full bg-secondary text-on-secondary py-4 rounded-xl font-label-md text-label-md hover:bg-secondary/90 transition-colors duration-400 flex justify-center items-center gap-2 custom-shadow">
+<button className="w-full bg-secondary text-on-secondary py-4 rounded-xl font-label-md text-label-md hover:bg-secondary/90 transition-colors duration-400 flex justify-center items-center gap-2 custom-shadow" onClick={() => navigate('/securecheckoutarchive')}>
 <span className="material-symbols-outlined text-[20px]">lock</span>
                         Place Order
                     </button>
@@ -226,9 +229,9 @@ export default function Checkout() {
 <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4">
 <p className="font-body-sm text-body-sm text-on-surface-variant">© 2024 BookNest. All rights reserved.</p>
 <div className="flex gap-6 font-body-sm text-body-sm">
-<a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
-<a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
-<a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+<Link className="text-on-surface-variant hover:text-primary transition-colors" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="text-on-surface-variant hover:text-primary transition-colors" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="text-on-surface-variant hover:text-primary transition-colors" to="/contactusbooknestsupport">Contact Support</Link>
 </div>
 </div>
 </footer>

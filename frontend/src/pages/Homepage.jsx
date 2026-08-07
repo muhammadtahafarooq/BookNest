@@ -1,35 +1,37 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Homepage.css';
 
 export default function Homepage() {
+  const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
 <header className="bg-primary dark:bg-primary docked full-width top-0 bg-primary dark:bg-primary shadow-md shadow-md z-50 sticky">
 <div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
 {/* Brand */}
-<a className="font-display-lg text-display-lg font-bold text-on-primary font-editorial tracking-tight" href="#">BookNest</a>
+<Link className="font-display-lg text-display-lg font-bold text-on-primary font-editorial tracking-tight" to="/">BookNest</Link>
 {/* Navigation */}
 <nav className="hidden md:flex space-x-8 items-center h-full">
 {/* Shop - Active */}
-<a className="text-on-primary border-b-2 border-secondary-fixed pb-1 font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center mt-1" href="#">Shop</a>
+<Link className="text-on-primary border-b-2 border-secondary-fixed pb-1 font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center mt-1" to="/shopbrowsebooks">Shop</Link>
 {/* Categories */}
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center" href="#">Categories</a>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center" to="/shopbrowsebooks">Categories</Link>
 {/* Best Sellers */}
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center" href="#">Best Sellers</a>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center" to="/shopbrowsebooks">Best Sellers</Link>
 {/* New Arrivals */}
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center" href="#">New Arrivals</a>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md hover:bg-primary-container/50 transition-all duration-400 h-full flex items-center" to="/shopbrowsebooks">New Arrivals</Link>
 </nav>
 {/* Actions */}
 <div className="flex items-center space-x-6 text-on-primary">
-<button aria-label="favorite" className="hover:text-secondary-fixed transition-colors scale-95 duration-200 ease-in-out">
+<button aria-label="favorite" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')} className="hover:text-secondary-fixed transition-colors scale-95 duration-200 ease-in-out">
 <span className="material-symbols-outlined">favorite</span>
 </button>
-<button aria-label="shopping_cart" className="hover:text-secondary-fixed transition-colors scale-95 duration-200 ease-in-out relative">
+<button aria-label="shopping_cart" onClick={() => navigate('/shoppingcartyourbookcollection')} className="hover:text-secondary-fixed transition-colors scale-95 duration-200 ease-in-out relative">
 <span className="material-symbols-outlined">shopping_cart</span>
 <span className="absolute -top-1 -right-2 bg-danger-rose text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
 </button>
-<button aria-label="account_circle" className="hover:text-secondary-fixed transition-colors scale-95 duration-200 ease-in-out">
+<button aria-label="account_circle" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')} className="hover:text-secondary-fixed transition-colors scale-95 duration-200 ease-in-out">
 <span className="material-symbols-outlined">account_circle</span>
 </button>
 <button aria-label="menu" className="md:hidden hover:text-secondary-fixed transition-colors scale-95 duration-200 ease-in-out">
@@ -53,13 +55,13 @@ export default function Homepage() {
                     Curate your personal library with our handpicked selection of academic texts, captivating novels, inspiring children's tales, profound Islamic literature, and transformative self-help books.
                 </p>
 <div className="flex flex-wrap gap-4 pt-4">
-<button className="bg-golden text-[#102A43] font-label-md text-label-md px-8 py-4 rounded-lg font-bold hover:bg-[#b08832] transition-colors duration-400 shadow-lg shadow-black/20 flex items-center gap-2">
+<Link to="/shopbrowsebooks" className="bg-golden text-[#102A43] font-label-md text-label-md px-8 py-4 rounded-lg font-bold hover:bg-[#b08832] transition-colors duration-400 shadow-lg shadow-black/20 flex items-center gap-2">
                         Shop Books
                         <span className="material-symbols-outlined text-sm">arrow_forward</span>
-</button>
-<button className="border border-outline text-on-primary font-label-md text-label-md px-8 py-4 rounded-lg hover:bg-white/5 transition-colors duration-400 flex items-center gap-2">
+</Link>
+<Link to="/categoriesexploration" className="border border-outline text-on-primary font-label-md text-label-md px-8 py-4 rounded-lg hover:bg-white/5 transition-colors duration-400 flex items-center gap-2">
                         Explore Categories
-                    </button>
+                    </Link>
 </div>
 {/* Trust indicators */}
 <div className="flex items-center gap-6 pt-8 border-t border-white/10 text-inverse-primary font-body-sm">
@@ -108,13 +110,13 @@ export default function Homepage() {
 <h2 className="font-editorial text-4xl font-bold text-on-surface mb-2">Curated Shelves</h2>
 <p className="font-body-md text-surface-tint">Explore our extensive collection by category.</p>
 </div>
-<a className="hidden md:flex items-center gap-1 font-label-md text-label-md text-secondary hover:text-secondary-container transition-colors" href="#">
+<Link className="hidden md:flex items-center gap-1 font-label-md text-label-md text-secondary hover:text-secondary-container transition-colors" to="/shopbrowsebooks">
                     View All Categories <span className="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
+</Link>
 </div>
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
 {/* Academic */}
-<a className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" href="#">
+<Link className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" to="/catalogarchive">
 <div className="absolute inset-0 bg-gradient-to-br from-primary-fixed/30 to-transparent z-10"></div>
 <div className="absolute top-6 left-6 z-20">
 <h3 className="font-editorial text-2xl font-bold text-on-surface group-hover:text-primary transition-colors">Academic</h3>
@@ -123,9 +125,9 @@ export default function Homepage() {
 <div className="absolute bottom-[-20px] right-[-20px] w-48 h-48 opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700">
 <img className="w-full h-full object-cover rounded-lg rotate-[-10deg] shadow-lg" data-alt="A stack of heavy, thick hardcover academic textbooks with dark, textured covers and gold foil lettering on the spines, resting on a polished wooden desk under soft, warm library lighting. The overall aesthetic is intellectual, traditional, and scholarly, with a subtle depth of field blurring the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDADGKG1H3HyjyLpyf1AZXZTwsslu10nX92c6juek9qBev8qorkL3s347Fla7PVDffuckx9F9eUpzBJQYHB8EuhQIn_AMARmwv3q__e6AdQ6F4CO27wSQzwhQlmGL9vaS4bj7DuH_B9PXgaUSOtqDW1D4TnkRmHeAnT-mobNrJ6Vfw35AVtqoC1gplpcDVlLkst7A5BP4-4m05bl_I_LEAZ0kxGy1ZuKDBWkbXhsLuHWsVBEyEGbdgh" />
 </div>
-</a>
+</Link>
 {/* Novels */}
-<a className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" href="#">
+<Link className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" to="/catalogarchive">
 <div className="absolute inset-0 bg-gradient-to-br from-tertiary-fixed/30 to-transparent z-10"></div>
 <div className="absolute top-6 left-6 z-20">
 <h3 className="font-editorial text-2xl font-bold text-on-surface group-hover:text-primary transition-colors">Novels</h3>
@@ -134,9 +136,9 @@ export default function Homepage() {
 <div className="absolute bottom-[-10px] right-4 w-40 h-56 opacity-90 group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-500">
 <img className="w-full h-full object-cover rounded-lg shadow-lg" data-alt="A slightly fanned out row of three colorful fiction novels standing upright. The covers feature minimalist, modern graphic illustrations. The books are positioned on a clean, bright white surface, illuminated by crisp, natural daylight, creating a light-mode, airy, and inviting contemporary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9gEyhuelCP3Rmiva_pn0AaWRGMqCBFT8zIhYJcghkd1oUcqe7Pq-CGN4PVcHMMna-FrDjbjPP6p8SkBs_B9YD04Mu-UkpVPBl-2twD9e5l8ytv68CYTNzO6qNEQtnkQN4uNoTvFrxiGz4GjcQEOGKw_AQ1IN6NcqeTHZGzTrUvfy2-STA3TaYIThhogN3fTpdq9iXxixlOJU3P2ELlbVYYXNXGqyD_GLagGW1v_L_3G5ex7w7Kcd0" />
 </div>
-</a>
+</Link>
 {/* Children */}
-<a className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" href="#">
+<Link className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" to="/catalogarchive">
 <div className="absolute inset-0 bg-gradient-to-br from-[#dcfce7]/50 to-transparent z-10"></div>
 <div className="absolute top-6 left-6 z-20">
 <h3 className="font-editorial text-2xl font-bold text-on-surface group-hover:text-primary transition-colors">Children's</h3>
@@ -145,7 +147,7 @@ export default function Homepage() {
 <div className="absolute bottom-[-30px] right-[-10px] w-56 h-40 opacity-90 group-hover:scale-105 group-hover:-rotate-3 transition-all duration-500">
 <img className="w-full h-full object-cover rounded-lg shadow-md" data-alt="Several brightly colored, large-format children's picture books lying open and slightly overlapping on a soft, light-colored textured rug. The illustrations visible on the pages are whimsical and soft. The lighting is bright, cheerful, and even, perfectly suited for a vibrant, family-friendly light-mode design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj2kHRIyql4sQMpjXvX7NqpqjjdV0Enw09vpRx3YaWUHVgI5ftVxDjWjsc0qmtb95ACZ7NKrETz-6BNsaXvfER_eH-ftA53EUg2B-uGd_tf2ucFlqkqnIjgDR5ii1MxYkIu1WKT_rCvELh4jRt1-IEHqsLdEbkc0himk5scT3ux_Z6kYvn5Qjrk7Mi0ZJG2sDji9rlB-Nm4Yx43bw4ccrXV_MwxxZgFvZ4gSIf3ICZdniC-kuAO6TK" />
 </div>
-</a>
+</Link>
 </div>
 </section>
 {/* Featured Books (Horizontal Shelf) */}
@@ -186,7 +188,7 @@ export default function Homepage() {
 </div>
 <div className="flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-on-surface">$24.99</span>
-<button className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors">Add to Cart</button>
+<button className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors" onClick={() => navigate('/shoppingcartyourbookcollection')}>Add to Cart</button>
 </div>
 </div>
 </div>
@@ -213,7 +215,7 @@ export default function Homepage() {
 </div>
 <div className="flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-on-surface">$19.50</span>
-<button className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors">Add to Cart</button>
+<button className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors" onClick={() => navigate('/shoppingcartyourbookcollection')}>Add to Cart</button>
 </div>
 </div>
 </div>
@@ -240,7 +242,7 @@ export default function Homepage() {
 <div className="flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-on-surface text-surface-tint line-through text-xs mr-2">$30.00</span>
 <span className="font-label-md text-label-md font-bold text-danger-rose">$22.00</span>
-<button className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors ml-auto">Add to Cart</button>
+<button className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors ml-auto" onClick={() => navigate('/shoppingcartyourbookcollection')}>Add to Cart</button>
 </div>
 </div>
 </div>
@@ -256,7 +258,7 @@ export default function Homepage() {
 <div className="w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
 {/* Brand Column */}
 <div className="col-span-1 md:col-span-1">
-<a className="font-headline-md text-headline-md font-bold text-on-primary font-editorial block mb-4" href="#">BookNest</a>
+<Link className="font-headline-md text-headline-md font-bold text-on-primary font-editorial block mb-4" to="/">BookNest</Link>
 <p className="font-body-sm text-body-sm text-outline-variant mb-6 opacity-80 hover:opacity-100 transition-opacity">Books that find their way home. Your private library, curated with care.</p>
 <div className="flex space-x-4">
 {/* Social icons could go here */}
@@ -267,20 +269,20 @@ export default function Homepage() {
 <div>
 <h4 className="font-label-md text-label-md text-on-primary mb-4 font-bold tracking-wider">Store</h4>
 <ul className="space-y-3 font-body-sm text-body-sm">
-<li><a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" href="#">Shop All</a></li>
-<li><a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" href="#">New Arrivals</a></li>
-<li><a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" href="#">Best Sellers</a></li>
-<li><a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" href="#">Categories</a></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Shop All</Link></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">New Arrivals</Link></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Best Sellers</Link></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Categories</Link></li>
 </ul>
 </div>
 <div>
 <h4 className="font-label-md text-label-md text-on-primary mb-4 font-bold tracking-wider">Support</h4>
 <ul className="space-y-3 font-body-sm text-body-sm">
-<li><a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" href="#">About Us</a></li>
-<li><a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" href="#">Contact</a></li>
-<li><a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" href="#">Shipping Policy</a></li>
-<li><a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" href="#">Terms of Service</a></li>
-<li><a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" href="#">Privacy Policy</a></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/aboutusourstorybooknest">About Us</Link></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/contactusbooknestsupport">Contact</Link></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Shipping Policy</Link></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Terms of Service</Link></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 transition-opacity block" to="/shopbrowsebooks">Privacy Policy</Link></li>
 </ul>
 </div>
 </div>

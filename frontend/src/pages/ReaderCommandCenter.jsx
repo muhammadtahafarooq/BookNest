@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './ReaderCommandCenter.css';
 
 export default function ReaderCommandCenter() {
@@ -18,7 +20,8 @@ export default function ReaderCommandCenter() {
                 observer.observe(el);
             });
         });
-    return () => {
+      const navigate = useNavigate();
+  return () => {
         if (typeof observer !== 'undefined') observer.disconnect();
     };
   }, []);
@@ -29,14 +32,14 @@ return (
 <nav className="bg-primary dark:bg-primary-container docked full-width top-0 border-b border-outline dark:border-outline-variant shadow-sm dark:shadow-none sticky z-50">
 <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
 {/* Brand */}
-<a className="font-headline-sm text-headline-sm font-bold text-on-primary dark:text-on-primary-container tracking-tight" href="#">BookNest</a>
+<Link className="font-headline-sm text-headline-sm font-bold text-on-primary dark:text-on-primary-container tracking-tight" to="/">BookNest</Link>
 {/* Navigation Links (Web) */}
 <div className="hidden md:flex space-x-lg">
-<a className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" href="#">Home</a>
-<a className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" href="#">Shop</a>
-<a className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" href="#">Categories</a>
-<a className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" href="#">Blog</a>
-<a className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" href="#">About</a>
+<Link className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" to="/">Home</Link>
+<Link className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" to="/shopbrowsebooks">Shop</Link>
+<Link className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" to="/shopbrowsebooks">Categories</Link>
+<Link className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" to="/shopbrowsebooks">Blog</Link>
+<Link className="font-label-md text-label-md text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300" to="/aboutusourstorybooknest">About</Link>
 {/* We consider Profile as active here logically, but it's not in the main links array. We highlight nothing in main nav for dashboard if not listed */}
 </div>
 {/* Actions & Search */}
@@ -44,7 +47,7 @@ return (
 <button className="scale-95 duration-200 ease-in-out hover:opacity-80 transition-opacity">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>shopping_bag</span>
 </button>
-<button className="scale-95 duration-200 ease-in-out hover:opacity-80 transition-opacity">
+<button className="scale-95 duration-200 ease-in-out hover:opacity-80 transition-opacity" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>person</span>
 </button>
 </div>
@@ -75,11 +78,11 @@ return (
 <span className="material-symbols-outlined text-outline">local_shipping</span>
 <span className="font-label-md text-label-md">Track Active Orders</span>
 </button>
-<button className="w-full text-left bg-surface-container-low hover:bg-surface-variant transition-colors rounded p-md flex items-center gap-sm">
+<button className="w-full text-left bg-surface-container-low hover:bg-surface-variant transition-colors rounded p-md flex items-center gap-sm" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined text-outline">favorite</span>
 <span className="font-label-md text-label-md">View Wishlist Archive</span>
 </button>
-<button className="w-full text-left bg-surface-container-low hover:bg-surface-variant transition-colors rounded p-md flex items-center gap-sm">
+<button className="w-full text-left bg-surface-container-low hover:bg-surface-variant transition-colors rounded p-md flex items-center gap-sm" onClick={() => navigate('/admin/admindashboardbooknestcommandcenter')}>
 <span className="material-symbols-outlined text-outline">settings</span>
 <span className="font-label-md text-label-md">Library Settings</span>
 </button>
@@ -102,7 +105,7 @@ return (
 <section>
 <div className="flex justify-between items-end mb-md border-b border-outline-variant pb-xs">
 <h2 className="font-headline-md text-headline-md text-primary">Recent Acquisitions</h2>
-<a className="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">View Complete Ledger</a>
+<Link className="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" to="/shopbrowsebooks">View Complete Ledger</Link>
 </div>
 <div className="flex flex-col gap-md">
 {/* Order Card 1 */}
@@ -149,7 +152,7 @@ return (
 <section className="reveal-on-scroll">
 <div className="flex justify-between items-end mb-md border-b border-outline-variant pb-xs">
 <h2 className="font-headline-md text-headline-md text-primary">Curated for Your Library</h2>
-<a className="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Browse Collections</a>
+<Link className="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" to="/browsecollections">Browse Collections</Link>
 </div>
 <div className="grid grid-cols-2 md:grid-cols-3 gap-lg">
 {/* Book 1 */}
@@ -197,10 +200,10 @@ return (
 <div className="font-headline-md text-headline-md text-on-primary">BookNest</div>
 {/* Links */}
 <div className="flex flex-wrap justify-center gap-md">
-<a className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Terms of Service</a>
-<a className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Privacy Policy</a>
-<a className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Archival Standards</a>
-<a className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Contact Us</a>
+<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Archival Standards</Link>
+<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/contactusbooknestsupport">Contact Us</Link>
 </div>
 {/* Copyright */}
 <div className="font-body-md text-body-md text-on-primary-fixed-variant text-center md:text-right text-sm">

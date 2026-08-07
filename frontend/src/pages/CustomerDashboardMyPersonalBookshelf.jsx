@@ -1,34 +1,37 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './CustomerDashboardMyPersonalBookshelf.css';
 
 export default function CustomerDashboardMyPersonalBookshelf() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
 <nav className="bg-primary dark:bg-primary docked full-width top-0 shadow-md z-50">
 <div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
 <div className="flex items-center gap-8">
-<a className="font-display-lg text-display-lg font-bold text-on-primary tracking-tight" href="#">BookNest</a>
+<Link className="font-display-lg text-display-lg font-bold text-on-primary tracking-tight" to="/">BookNest</Link>
 {/* Navigation Links */}
 <div className="hidden md:flex gap-6 items-center">
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="#">Shop</a>
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="#">Categories</a>
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="#">Best Sellers</a>
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="#">New Arrivals</a>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">Shop</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">Categories</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">Best Sellers</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">New Arrivals</Link>
 </div>
 </div>
 {/* Trailing Icons */}
 <div className="flex items-center gap-4">
-<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out">
+<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/searchresultsbooknest')}>
 <span className="material-symbols-outlined" data-icon="search">search</span>
 </button>
-<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out">
+<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined" data-icon="favorite">favorite</span>
 </button>
-<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out">
+<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
 </button>
-<button className="text-on-primary border-b-2 border-secondary-fixed pb-1 hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out">
+<button className="text-on-primary border-b-2 border-secondary-fixed pb-1 hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="account_circle">account_circle</span>
 </button>
 </div>
@@ -49,30 +52,30 @@ export default function CustomerDashboardMyPersonalBookshelf() {
 </div>
 </div>
 <nav className="flex flex-col gap-2">
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-container-highest text-on-surface font-body-md text-body-md font-medium transition-colors" href="#">
+<Link className="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-container-highest text-on-surface font-body-md text-body-md font-medium transition-colors" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined" data-icon="person">person</span>
                         Profile
-                    </a>
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-body-md text-body-md transition-colors" href="#">
+                    </Link>
+<Link className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-body-md text-body-md transition-colors" to="/dashboard/yourordersbooknesthistory">
 <span className="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
                         Orders
-                    </a>
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-body-md text-body-md transition-colors" href="#">
+                    </Link>
+<Link className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-body-md text-body-md transition-colors" to="/dashboard/myreadingshelfbooknestwishlist">
 <span className="material-symbols-outlined" data-icon="favorite_border">favorite_border</span>
                         Wishlist
-                    </a>
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-body-md text-body-md transition-colors" href="#">
+                    </Link>
+<Link className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-body-md text-body-md transition-colors" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="location_on">location_on</span>
                         Addresses
-                    </a>
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-body-md text-body-md transition-colors" href="#">
+                    </Link>
+<Link className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-body-md text-body-md transition-colors" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="star_outline">star_outline</span>
                         Reviews
-                    </a>
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-body-md text-body-md transition-colors" href="#">
+                    </Link>
+<Link className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-body-md text-body-md transition-colors" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined" data-icon="settings">settings</span>
                         Account Settings
-                    </a>
+                    </Link>
 </nav>
 </div>
 </aside>
@@ -108,7 +111,7 @@ export default function CustomerDashboardMyPersonalBookshelf() {
 <section>
 <div className="flex justify-between items-end mb-6">
 <h2 className="font-headline-lg text-headline-lg text-on-background">Recent Discoveries</h2>
-<a className="font-label-md text-label-md text-secondary hover:underline" href="#">View all orders</a>
+<Link className="font-label-md text-label-md text-secondary hover:underline" to="/dashboard/yourordersbooknesthistory">View all orders</Link>
 </div>
 <div className="flex flex-col gap-4">
 {/* Order Item 1 */}
@@ -126,7 +129,7 @@ export default function CustomerDashboardMyPersonalBookshelf() {
 <span className="font-label-md text-label-md text-on-surface-variant">Order #BN-9823</span>
 </div>
 <div className="mt-6 flex gap-4">
-<button className="px-6 py-2 bg-on-tertiary-fixed text-tertiary-fixed rounded font-label-md text-label-md hover:bg-on-tertiary-fixed-variant transition-colors">Track Order</button>
+<button className="px-6 py-2 bg-on-tertiary-fixed text-tertiary-fixed rounded font-label-md text-label-md hover:bg-on-tertiary-fixed-variant transition-colors" onClick={() => navigate('/dashboard/ordertrackingbooknestprivatelibrary')}>Track Order</button>
 <button className="px-6 py-2 border border-outline text-on-surface rounded font-label-md text-label-md hover:bg-surface-container transition-colors">View Details</button>
 </div>
 </div>
@@ -163,15 +166,15 @@ export default function CustomerDashboardMyPersonalBookshelf() {
 <p className="font-body-sm text-body-sm text-outline-variant opacity-80">© 2024 BookNest Pakistan. All rights reserved.</p>
 </div>
 <div className="col-span-1 flex flex-col gap-2">
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">About Us</a>
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">Contact</a>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/aboutusourstorybooknest">About Us</Link>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/contactusbooknestsupport">Contact</Link>
 </div>
 <div className="col-span-1 flex flex-col gap-2">
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">Shipping Policy</a>
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Shipping Policy</Link>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Terms of Service</Link>
 </div>
 <div className="col-span-1 flex flex-col gap-2">
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Privacy Policy</Link>
 </div>
 </div>
 </footer>

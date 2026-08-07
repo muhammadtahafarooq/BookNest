@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './BookCollectionManagementAdminArchive.css';
 
 export default function BookCollectionManagementAdminArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* Sidebar */}
@@ -10,41 +13,41 @@ export default function BookCollectionManagementAdminArchive() {
 <span className="font-fraunces text-2xl text-white font-bold tracking-tight">BookNest</span>
 </div>
 <nav className="flex-1 overflow-y-auto custom-scrollbar py-6 px-4 space-y-1">
-<a className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" href="#">
+<Link className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined mr-3 text-[20px] group-hover:text-white transition-colors">dashboard</span>
 <span className="font-inter text-sm font-medium">Dashboard</span>
-</a>
-<a className="flex items-center px-4 py-3 text-antique-brass bg-antique-brass/10 rounded-lg transition-colors group relative overflow-hidden" href="#">
+</Link>
+<Link className="flex items-center px-4 py-3 text-antique-brass bg-antique-brass/10 rounded-lg transition-colors group relative overflow-hidden" to="/catalogarchive">
 <div className="absolute left-0 top-0 bottom-0 w-1 bg-antique-brass rounded-r-full"></div>
 <span className="material-symbols-outlined mr-3 text-[20px]" style={{fontVariationSettings: '\'FILL\' 1'}}>book</span>
 <span className="font-inter text-sm font-medium">Books</span>
-</a>
-<a className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" href="#">
+</Link>
+<Link className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-3 text-[20px] group-hover:text-white transition-colors">category</span>
 <span className="font-inter text-sm font-medium">Categories</span>
-</a>
-<a className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" href="#">
+</Link>
+<Link className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" to="/aboutusourstorybooknest">
 <span className="material-symbols-outlined mr-3 text-[20px] group-hover:text-white transition-colors">history_edu</span>
 <span className="font-inter text-sm font-medium">Authors</span>
-</a>
-<a className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" href="#">
+</Link>
+<Link className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined mr-3 text-[20px] group-hover:text-white transition-colors">inventory_2</span>
 <span className="font-inter text-sm font-medium">Inventory</span>
-</a>
-<a className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" href="#">
+</Link>
+<Link className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" to="/dashboard/yourordersbooknesthistory">
 <span className="material-symbols-outlined mr-3 text-[20px] group-hover:text-white transition-colors">receipt_long</span>
 <span className="font-inter text-sm font-medium">Orders</span>
-</a>
-<a className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" href="#">
+</Link>
+<Link className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-3 text-[20px] group-hover:text-white transition-colors">group</span>
 <span className="font-inter text-sm font-medium">Customers</span>
-</a>
+</Link>
 </nav>
 <div className="p-4 border-t border-white/10">
-<a className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" href="#">
+<Link className="flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors group" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-3 text-[20px] group-hover:text-white transition-colors">settings</span>
 <span className="font-inter text-sm font-medium">Settings</span>
-</a>
+</Link>
 <div className="mt-4 flex items-center px-4">
 <img className="w-8 h-8 rounded-full object-cover border border-white/20" data-alt="A professional headshot of a distinguished librarian with silver hair and wire-rimmed glasses, soft natural lighting highlighting their features against a dark, out-of-focus background of ancient bookshelves. The mood is wise and approachable, with high-end corporate portraiture aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-IvHV0Do7tDz-7zbe5XxJQTfX3_fubbOAprnHU5cKqRKk3T2Ml-Q_hRUdwCDqBmAk9JsPVk5qRbcplw0ENcFOsE9k_PAopjnzIsFh14YwtTejqKy6WbOcYtVWdNOOILPo1-k3wDdqjJGEQAasvjUTl5GjYQ9ECiY-ZBDzUZR7RX18UybwfdAYetyw-688yDNI8BOt4mWn6XbowP4xSlU2Lv7PHQPALr3DcvxEhFloDndUsFiXmv-1" />
 <div className="ml-3">
@@ -255,7 +258,7 @@ export default function BookCollectionManagementAdminArchive() {
 <button className="p-1.5 text-on-surface-variant hover:text-secondary hover:bg-secondary/10 rounded-md transition-colors" title="Edit">
 <span className="material-symbols-outlined text-[18px]">edit</span>
 </button>
-<button className="p-1.5 text-on-surface-variant hover:text-secondary hover:bg-secondary/10 rounded-md transition-colors" title="Restock">
+<button className="p-1.5 text-on-surface-variant hover:text-secondary hover:bg-secondary/10 rounded-md transition-colors" title="Restock" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>
 </button>
 </div>

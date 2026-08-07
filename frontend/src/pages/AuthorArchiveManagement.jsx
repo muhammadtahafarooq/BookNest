@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './AuthorArchiveManagement.css';
 
 export default function AuthorArchiveManagement() {
+    const navigate = useNavigate();
   return (
     <>
       {/* SideNavBar */}
@@ -14,26 +17,26 @@ export default function AuthorArchiveManagement() {
 <p className="font-label-sm text-label-sm text-on-primary-container">Management Center</p>
 </div>
 <div className="flex-1 space-y-unit">
-<a className="flex items-center gap-sm px-sm py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#">
+<Link className="flex items-center gap-sm px-sm py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>dashboard</span>
 <span className="font-label-md text-label-md">Dashboard</span>
-</a>
-<a className="flex items-center gap-sm px-sm py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#">
+</Link>
+<Link className="flex items-center gap-sm px-sm py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/catalogarchive">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>book</span>
 <span className="font-label-md text-label-md">Books</span>
-</a>
-<a className="flex items-center gap-sm px-sm py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#">
+</Link>
+<Link className="flex items-center gap-sm px-sm py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>category</span>
 <span className="font-label-md text-label-md">Categories</span>
-</a>
-<a className="flex items-center gap-sm px-sm py-sm rounded-lg text-primary bg-secondary-container dark:bg-secondary-fixed-dim font-bold scale-95 duration-150" href="#">
+</Link>
+<Link className="flex items-center gap-sm px-sm py-sm rounded-lg text-primary bg-secondary-container dark:bg-secondary-fixed-dim font-bold scale-95 duration-150" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>person_edit</span>
 <span className="font-label-md text-label-md">Authors</span>
-</a>
-<a className="flex items-center gap-sm px-sm py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#">
+</Link>
+<Link className="flex items-center gap-sm px-sm py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/admin/publishermanagementarchive">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>domain</span>
 <span className="font-label-md text-label-md">Publishers</span>
-</a>
+</Link>
 </div>
 <div className="mt-auto pt-lg border-t border-outline-variant/30 flex items-center gap-sm">
 <img className="w-8 h-8 rounded-full object-cover" data-alt="A small circular avatar portrait of an administrative user, professional lighting, corporate yet elegant style, high resolution, dark background, luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3IM8DtS1-pVrZK2t75kZIX_U1y-tw8Rc8PgQ_Opn1HBs6HZEvXilnE_K6JsBGoU2gREbPIo-mIebrKo3iqUePCweYDYBR8MxquPX68p-bbRynIiA9wLuH0oZifTZoNcVb1dIPwMoU0_LXqG4DzjXssvVQsZqzB6bPv3Ym8A8Eu8nat3i--ts3Wm-OnwLIiMkal2OrJT3AQIpUPKsBSqcj3Y6vt0epcLDHbk7_ca45uuqtnjbZxgaGEw" />
@@ -57,10 +60,10 @@ export default function AuthorArchiveManagement() {
 </div>
 </div>
 <div className="flex items-center gap-md ml-auto">
-<button className="text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100">
+<button className="text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>notifications</span>
 </button>
-<button className="text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100">
+<button className="text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>account_circle</span>
 </button>
 </div>

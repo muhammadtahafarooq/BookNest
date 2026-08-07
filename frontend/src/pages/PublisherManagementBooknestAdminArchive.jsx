@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './PublisherManagementBooknestAdminArchive.css';
 
 export default function PublisherManagementBooknestAdminArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* SideNavBar */}
@@ -18,47 +21,47 @@ export default function PublisherManagementBooknestAdminArchive() {
 <div className="flex-1 py-6 overflow-y-auto">
 <ul className="space-y-1">
 <li>
-<a className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">dashboard</span>
 <span className="font-label-md text-label-md">Dashboard</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined">menu_book</span>
 <span className="font-label-md text-label-md">Inventory</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">person_edit</span>
 <span className="font-label-md text-label-md">Author Management</span>
-</a>
+</Link>
 </li>
 <li>
 {/* Active State */}
-<a className="flex items-center gap-3 px-4 py-3 text-secondary-fixed-dim font-bold border-l-4 border-secondary-fixed-dim bg-on-primary-fixed-variant/50" href="#">
+<Link className="flex items-center gap-3 px-4 py-3 text-secondary-fixed-dim font-bold border-l-4 border-secondary-fixed-dim bg-on-primary-fixed-variant/50" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined filled">account_balance</span>
 <span className="font-label-md text-label-md">Publishing Partners</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/dashboard/yourordersbooknesthistory">
 <span className="material-symbols-outlined">receipt_long</span>
 <span className="font-label-md text-label-md">Orders</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">group</span>
 <span className="font-label-md text-label-md">Customers</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 px-5 py-3 text-on-primary-container font-medium hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">analytics</span>
 <span className="font-label-md text-label-md">Analytics</span>
-</a>
+</Link>
 </li>
 </ul>
 </div>
@@ -69,16 +72,16 @@ export default function PublisherManagementBooknestAdminArchive() {
             </button>
 <ul className="space-y-1">
 <li>
-<a className="flex items-center gap-3 px-2 py-2 text-on-primary-container font-medium hover:text-surface-bright transition-colors duration-300" href="#">
+<Link className="flex items-center gap-3 px-2 py-2 text-on-primary-container font-medium hover:text-surface-bright transition-colors duration-300" to="/shopbrowsebooks">
 <span className="material-symbols-outlined text-[20px]">settings</span>
 <span className="font-label-sm text-label-sm">Settings</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 px-2 py-2 text-on-primary-container font-medium hover:text-surface-bright transition-colors duration-300" href="#">
+<Link className="flex items-center gap-3 px-2 py-2 text-on-primary-container font-medium hover:text-surface-bright transition-colors duration-300" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined text-[20px]">help_outline</span>
 <span className="font-label-sm text-label-sm">Support</span>
-</a>
+</Link>
 </li>
 </ul>
 </div>
@@ -94,7 +97,7 @@ export default function PublisherManagementBooknestAdminArchive() {
 </div>
 </div>
 <div className="flex items-center gap-6">
-<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400">
+<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">notifications</span>
 </button>
 <button className="text-on-surface-variant hover:text-secondary transition-colors duration-400">

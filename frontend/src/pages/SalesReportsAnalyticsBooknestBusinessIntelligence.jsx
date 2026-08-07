@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './SalesReportsAnalyticsBooknestBusinessIntelligence.css';
 
 export default function SalesReportsAnalyticsBooknestBusinessIntelligence() {
@@ -17,40 +19,40 @@ export default function SalesReportsAnalyticsBooknestBusinessIntelligence() {
 {/* Main Navigation */}
 <ul className="flex flex-col flex-grow">
 <li>
-<a className="flex items-center gap-3 text-surface-bright font-medium pl-5 py-3 hover:bg-white/10 transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-surface-bright font-medium pl-5 py-3 hover:bg-white/10 transition-colors duration-400" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">dashboard</span>
 <span>Dashboard</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-surface-bright font-medium pl-5 py-3 hover:bg-white/10 transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-surface-bright font-medium pl-5 py-3 hover:bg-white/10 transition-colors duration-400" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined">menu_book</span>
 <span>Inventory</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-surface-bright font-medium pl-5 py-3 hover:bg-white/10 transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-surface-bright font-medium pl-5 py-3 hover:bg-white/10 transition-colors duration-400" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">person_edit</span>
 <span>Author Management</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-surface-bright font-medium pl-5 py-3 hover:bg-white/10 transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-surface-bright font-medium pl-5 py-3 hover:bg-white/10 transition-colors duration-400" to="/dashboard/yourordersbooknesthistory">
 <span className="material-symbols-outlined">receipt_long</span>
 <span>Orders</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-surface-bright font-medium pl-5 py-3 hover:bg-white/10 transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-surface-bright font-medium pl-5 py-3 hover:bg-white/10 transition-colors duration-400" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">group</span>
 <span>Customers</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-antique-brass font-bold border-l-4 border-antique-brass pl-4 py-3 bg-white/5" href="#">
+<Link className="flex items-center gap-3 text-antique-brass font-bold border-l-4 border-antique-brass pl-4 py-3 bg-white/5" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">analytics</span>
 <span>Analytics</span>
-</a>
+</Link>
 </li>
 </ul>
 {/* Footer / CTA */}
@@ -60,16 +62,16 @@ export default function SalesReportsAnalyticsBooknestBusinessIntelligence() {
             </button>
 <ul className="flex flex-col gap-2">
 <li>
-<a className="flex items-center gap-3 text-surface-bright opacity-70 hover:opacity-100 font-medium py-2 transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-surface-bright opacity-70 hover:opacity-100 font-medium py-2 transition-colors duration-400" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">settings</span>
 <span>Settings</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-surface-bright opacity-70 hover:opacity-100 font-medium py-2 transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-surface-bright opacity-70 hover:opacity-100 font-medium py-2 transition-colors duration-400" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined">help_outline</span>
 <span>Support</span>
-</a>
+</Link>
 </li>
 </ul>
 </div>

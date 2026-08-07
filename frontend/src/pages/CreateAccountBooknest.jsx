@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './CreateAccountBooknest.css';
 
 export default function CreateAccountBooknest() {
@@ -7,7 +9,7 @@ export default function CreateAccountBooknest() {
       {/* TopNavBar (Suppressed due to Transactional Page Rule) */}
 {/* The user is in a focused journey (Registration), so the global nav is hidden to prioritize the Canvas. */}
 <header className="w-full px-margin-desktop py-4 flex justify-between items-center absolute top-0 z-50">
-<a className="text-headline-lg font-display-lg font-bold text-primary" href="#">BookNest</a>
+<Link className="text-headline-lg font-display-lg font-bold text-primary" to="/">BookNest</Link>
 </header>
 <main className="flex-grow flex items-center justify-center p-margin-mobile md:p-margin-desktop min-h-screen">
 <div className="w-full max-w-container-max-width mx-auto flex flex-col md:flex-row bg-surface-container-lowest rounded-xl overflow-hidden" style={{boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.04)'}}>
@@ -105,7 +107,7 @@ export default function CreateAccountBooknest() {
 <input className="w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary bg-surface-container-lowest" id="terms" name="terms" type="checkbox" />
 </div>
 <div className="ml-3 text-sm">
-<label className="font-body-sm text-body-sm text-on-surface-variant" htmlFor="terms">I agree to the <a className="text-secondary hover:underline" href="#">Terms of Service</a> and <a className="text-secondary hover:underline" href="#">Privacy Policy</a>.</label>
+<label className="font-body-sm text-body-sm text-on-surface-variant" htmlFor="terms">I agree to the <Link className="text-secondary hover:underline" to="/shopbrowsebooks">Terms of Service</Link> and <Link className="text-secondary hover:underline" to="/shopbrowsebooks">Privacy Policy</Link>.</label>
 </div>
 </div>
 {/* Submit Button */}
@@ -119,7 +121,7 @@ export default function CreateAccountBooknest() {
 {/* Secondary Link */}
 <div className="mt-8 text-center">
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-                            Already have an account? <a className="font-medium text-primary hover:text-secondary transition-colors" href="#">Login</a>
+                            Already have an account? <Link className="font-medium text-primary hover:text-secondary transition-colors" to="/loginbooknestprivatelibrary">Login</Link>
 </p>
 </div>
 </div>

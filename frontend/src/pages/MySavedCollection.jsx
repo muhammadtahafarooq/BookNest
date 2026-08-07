@@ -1,43 +1,46 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './MySavedCollection.css';
 
 export default function MySavedCollection() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
 <nav className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-headline-md text-headline-md font-body-md text-body-md font-label-md text-label-md sticky w-full top-0 border-b border-outline dark:border-outline-variant shadow-sm dark:shadow-none z-50">
 <div className="flex justify-between items-center w-full px-margin-desktop py-md max-w-[1280px] mx-auto hidden md:flex">
 {/* Brand Logo */}
-<a className="font-headline-sm text-headline-sm font-bold text-on-primary dark:text-on-primary-container tracking-tight scale-95 duration-200 ease-in-out hover:opacity-80 transition-opacity duration-300" href="#">
+<Link className="font-headline-sm text-headline-sm font-bold text-on-primary dark:text-on-primary-container tracking-tight scale-95 duration-200 ease-in-out hover:opacity-80 transition-opacity duration-300" to="/">
                 BookNest
-            </a>
+            </Link>
 {/* Navigation Links */}
 <div className="flex items-center space-x-gutter">
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" href="#">Home</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" href="#">Shop</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" href="#">Categories</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" href="#">Blog</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" href="#">About</a>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" to="/">Home</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" to="/shopbrowsebooks">Shop</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" to="/shopbrowsebooks">Categories</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" to="/shopbrowsebooks">Blog</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" to="/aboutusourstorybooknest">About</Link>
 </div>
 {/* Trailing Icons */}
 <div className="flex items-center space-x-md">
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out relative" href="#">
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out relative" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>shopping_bag</span>
-</a>
-<a className="text-on-primary dark:text-on-primary-container border-b-2 border-secondary pb-1 scale-95 duration-200 ease-in-out relative group" href="#">
+</Link>
+<Link className="text-on-primary dark:text-on-primary-container border-b-2 border-secondary pb-1 scale-95 duration-200 ease-in-out relative group" to="/dashboard/myreadingshelfbooknestwishlist">
 <span className="material-symbols-outlined text-secondary" style={{fontVariationSettings: '\'FILL\' 1'}}>favorite</span>
-</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" href="#">
+</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>person</span>
-</a>
+</Link>
 </div>
 </div>
 {/* Mobile Nav (simplified for demo) */}
 <div className="flex md:hidden justify-between items-center w-full px-margin-mobile py-md">
-<a className="font-headline-sm text-headline-sm font-bold text-on-primary tracking-tight" href="#">BookNest</a>
+<Link className="font-headline-sm text-headline-sm font-bold text-on-primary tracking-tight" to="/">BookNest</Link>
 <div className="flex space-x-md">
-<a className="text-secondary" href="#"><span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>favorite</span></a>
-<a className="text-on-primary" href="#"><span className="material-symbols-outlined">menu</span></a>
+<Link className="text-secondary" to="/dashboard/myreadingshelfbooknestwishlist"><span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>favorite</span></Link>
+<Link className="text-on-primary" to="/shopbrowsebooks"><span className="material-symbols-outlined">menu</span></Link>
 </div>
 </div>
 </nav>
@@ -70,7 +73,7 @@ export default function MySavedCollection() {
 </div>
 </div>
 <div className="mt-lg flex flex-col gap-sm">
-<button className="w-full bg-secondary text-white font-label-md text-label-md py-3 px-4 rounded hover:bg-secondary/90 transition-colors shadow-sm flex justify-center items-center gap-2">
+<button className="w-full bg-secondary text-white font-label-md text-label-md py-3 px-4 rounded hover:bg-secondary/90 transition-colors shadow-sm flex justify-center items-center gap-2" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined text-sm">shopping_cart</span>
                         Move to Cart
                     </button>
@@ -97,7 +100,7 @@ export default function MySavedCollection() {
 </div>
 </div>
 <div className="mt-lg flex flex-col gap-sm">
-<button className="w-full bg-secondary text-white font-label-md text-label-md py-3 px-4 rounded hover:bg-secondary/90 transition-colors shadow-sm flex justify-center items-center gap-2">
+<button className="w-full bg-secondary text-white font-label-md text-label-md py-3 px-4 rounded hover:bg-secondary/90 transition-colors shadow-sm flex justify-center items-center gap-2" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined text-sm">shopping_cart</span>
                         Move to Cart
                     </button>
@@ -124,7 +127,7 @@ export default function MySavedCollection() {
 </div>
 </div>
 <div className="mt-lg flex flex-col gap-sm">
-<button className="w-full bg-secondary text-white font-label-md text-label-md py-3 px-4 rounded hover:bg-secondary/90 transition-colors shadow-sm flex justify-center items-center gap-2">
+<button className="w-full bg-secondary text-white font-label-md text-label-md py-3 px-4 rounded hover:bg-secondary/90 transition-colors shadow-sm flex justify-center items-center gap-2" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined text-sm">shopping_cart</span>
                         Move to Cart
                     </button>
@@ -165,7 +168,7 @@ export default function MySavedCollection() {
             <span className="material-symbols-outlined text-6xl text-outline-variant mb-md" style={{fontVariationSettings: '\'wght\' 200'}}>shelves</span>
             <h3 className="font-headline-md text-headline-md text-primary mb-sm">Your collection is waiting</h3>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-lg">Discover new volumes to add to your personal archive.</p>
-            <button className="bg-primary text-white font-label-md text-label-md py-3 px-6 rounded hover:bg-primary/90 transition-colors">
+            <button className="bg-primary text-white font-label-md text-label-md py-3 px-6 rounded hover:bg-primary/90 transition-colors" onClick={() => navigate('/shopbrowsebooks')}>
                 Explore Books
             </button>
         </section> */}
@@ -177,10 +180,10 @@ export default function MySavedCollection() {
                 BookNest
             </div>
 <div className="flex flex-wrap justify-center gap-md mb-md md:mb-0">
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Terms of Service</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Privacy Policy</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Archival Standards</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Contact Us</a>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Archival Standards</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/contactusbooknestsupport">Contact Us</Link>
 </div>
 <div className="text-on-primary-fixed-variant text-center md:text-right">
                 © 2024 BookNest. The Private Collector's Digital Archive.

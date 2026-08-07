@@ -1,25 +1,28 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './FaqBooknestSupport.css';
 
 export default function FaqBooknestSupport() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
 <nav className="bg-surface-container-lowest shadow-sm docked full-width top-0 z-50">
 <div className="flex justify-between items-center w-full px-margin-desktop max-w-container-max-width mx-auto h-20">
 <div className="flex items-center gap-8">
-<a className="font-headline-lg text-primary font-bold tracking-tight" href="#">BookNest</a>
+<Link className="font-headline-lg text-primary font-bold tracking-tight" to="/">BookNest</Link>
 <div className="hidden md:flex items-center gap-6">
-<a className="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-400" href="#">Shop</a>
-<a className="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-400" href="#">Categories</a>
-<a className="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-400" href="#">Best Sellers</a>
+<Link className="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Shop</Link>
+<Link className="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Categories</Link>
+<Link className="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Best Sellers</Link>
 </div>
 </div>
 <div className="flex items-center gap-4">
 <button className="p-2 text-primary hover:text-secondary transition-colors duration-400">
 <span className="material-symbols-outlined">shopping_bag</span>
 </button>
-<button className="p-2 text-primary hover:text-secondary transition-colors duration-400">
+<button className="p-2 text-primary hover:text-secondary transition-colors duration-400" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">person</span>
 </button>
 </div>
@@ -124,9 +127,9 @@ export default function FaqBooknestSupport() {
 <div className="max-w-container-max-width mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
 <div className="font-headline-md text-headline-md text-on-primary-fixed font-bold">BookNest</div>
 <div className="flex gap-6">
-<a className="font-body-sm text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-400" href="#">About Us</a>
-<a className="font-body-sm text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-400" href="#">Contact</a>
-<a className="font-body-sm text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-400" href="#">Policies</a>
+<Link className="font-body-sm text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-400" to="/aboutusourstorybooknest">About Us</Link>
+<Link className="font-body-sm text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-400" to="/contactusbooknestsupport">Contact</Link>
+<Link className="font-body-sm text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-400" to="/shopbrowsebooks">Policies</Link>
 </div>
 <div className="font-body-sm text-on-primary-fixed-variant">© 2024 BookNest. All rights reserved.</div>
 </div>

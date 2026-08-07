@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './LoginBooknestPrivateLibrary.css';
 
 export default function LoginBooknestPrivateLibrary() {
@@ -48,9 +50,9 @@ export default function LoginBooknestPrivateLibrary() {
                         </label>
 </div>
 <div className="text-sm">
-<a className="font-body-sm text-body-sm text-midnight-ink hover:text-antique-brass transition-colors duration-300" href="#">
+<Link className="font-body-sm text-body-sm text-midnight-ink hover:text-antique-brass transition-colors duration-300" to="/shopbrowsebooks">
                             Forgot password?
-                        </a>
+                        </Link>
 </div>
 </div>
 <div className="pt-2">
@@ -62,9 +64,9 @@ export default function LoginBooknestPrivateLibrary() {
 <div className="mt-8 text-center">
 <p className="font-body-sm text-body-sm text-on-surface-variant">
                     Don't have an account? 
-                    <a className="font-body-sm text-body-sm font-semibold text-midnight-ink hover:text-antique-brass transition-colors duration-300 border-b border-transparent hover:border-antique-brass pb-0.5" href="#">
+                    <Link className="font-body-sm text-body-sm font-semibold text-midnight-ink hover:text-antique-brass transition-colors duration-300 border-b border-transparent hover:border-antique-brass pb-0.5" to="/dashboard/customerdashboardmypersonalbookshelf">
                         Create Account
-                    </a>
+                    </Link>
 </p>
 </div>
 </div>

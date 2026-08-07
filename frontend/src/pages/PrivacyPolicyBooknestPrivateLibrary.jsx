@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './PrivacyPolicyBooknestPrivateLibrary.css';
 
 export default function PrivacyPolicyBooknestPrivateLibrary() {
@@ -34,13 +36,13 @@ export default function PrivacyPolicyBooknestPrivateLibrary() {
 </div>
 <div className="col-span-1 md:col-span-2 flex flex-col md:flex-row gap-8 md:justify-end">
 <div className="flex flex-col gap-4">
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">About Us</a>
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">Contact</a>
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">Shipping Policy</a>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/aboutusourstorybooknest">About Us</Link>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/contactusbooknestsupport">Contact</Link>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Shipping Policy</Link>
 </div>
 <div className="flex flex-col gap-4">
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
-<a className="font-label-sm text-label-sm text-secondary-fixed font-bold opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="font-label-sm text-label-sm text-secondary-fixed font-bold opacity-80 hover:opacity-100 transition-opacity" to="/shopbrowsebooks">Privacy Policy</Link>
 </div>
 </div>
 </div>

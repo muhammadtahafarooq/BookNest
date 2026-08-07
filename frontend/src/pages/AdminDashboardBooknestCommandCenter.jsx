@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './AdminDashboardBooknestCommandCenter.css';
 
 export default function AdminDashboardBooknestCommandCenter() {
+    const navigate = useNavigate();
   return (
     <>
       {/* SIDEBAR */}
@@ -13,55 +16,55 @@ export default function AdminDashboardBooknestCommandCenter() {
 <nav className="flex-1 overflow-y-auto py-6 px-4 space-y-1 scrollbar-hide">
 {/* Main */}
 <div className="text-white/40 font-label-sm uppercase tracking-wider mb-2 px-4">Core</div>
-<a className="flex items-center px-4 py-2.5 rounded-xl bg-white/10 text-white font-label-md group transition-all duration-200" href="#">
+<Link className="flex items-center px-4 py-2.5 rounded-xl bg-white/10 text-white font-label-md group transition-all duration-200" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined mr-3 text-antique-brass text-[20px]" style={{fontVariationSettings: '\'FILL\' 1'}}>dashboard</span>
                 Dashboard
-            </a>
-<a className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" href="#">
+            </Link>
+<Link className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" to="/catalogarchive">
 <span className="material-symbols-outlined mr-3 text-white/50 group-hover:text-white/80 text-[20px]">menu_book</span>
                 Books
-            </a>
-<a className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" href="#">
+            </Link>
+<Link className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-3 text-white/50 group-hover:text-white/80 text-[20px]">category</span>
                 Categories
-            </a>
-<a className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" href="#">
+            </Link>
+<Link className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" to="/aboutusourstorybooknest">
 <span className="material-symbols-outlined mr-3 text-white/50 group-hover:text-white/80 text-[20px]">history_edu</span>
                 Authors
-            </a>
+            </Link>
 {/* Commerce */}
 <div className="text-white/40 font-label-sm uppercase tracking-wider mt-6 mb-2 px-4">Commerce</div>
-<a className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" href="#">
+<Link className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined mr-3 text-white/50 group-hover:text-white/80 text-[20px]">inventory_2</span>
                 Inventory
-            </a>
-<a className="flex items-center justify-between px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" href="#">
+            </Link>
+<Link className="flex items-center justify-between px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" to="/shopbrowsebooks">
 <div className="flex items-center">
 <span className="material-symbols-outlined mr-3 text-white/50 group-hover:text-white/80 text-[20px]">shopping_cart</span>
                     Orders
                 </div>
 <span className="bg-antique-brass text-white font-label-sm px-2 py-0.5 rounded-full">12</span>
-</a>
-<a className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" href="#">
+</Link>
+<Link className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-3 text-white/50 group-hover:text-white/80 text-[20px]">group</span>
                 Customers
-            </a>
+            </Link>
 {/* Insights */}
 <div className="text-white/40 font-label-sm uppercase tracking-wider mt-6 mb-2 px-4">Insights</div>
-<a className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" href="#">
+<Link className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-3 text-white/50 group-hover:text-white/80 text-[20px]">bar_chart</span>
                 Reports
-            </a>
-<a className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" href="#">
+            </Link>
+<Link className="flex items-center px-4 py-2.5 rounded-xl text-white/70 hover:bg-white/5 hover:text-white font-label-md group transition-all duration-200" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-3 text-white/50 group-hover:text-white/80 text-[20px]">rate_review</span>
                 Reviews
-            </a>
+            </Link>
 </nav>
 <div className="p-4 border-t border-white/10">
-<a className="flex items-center px-4 py-2 rounded-xl text-white/50 hover:text-white font-label-md transition-colors" href="#">
+<Link className="flex items-center px-4 py-2 rounded-xl text-white/50 hover:text-white font-label-md transition-colors" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-3 text-[20px]">settings</span>
                 Settings
-            </a>
+            </Link>
 </div>
 </aside>
 {/* MAIN CONTENT */}
@@ -75,7 +78,7 @@ export default function AdminDashboardBooknestCommandCenter() {
 </div>
 </div>
 <div className="flex items-center space-x-4">
-<button className="relative p-2 rounded-full text-slate-binding hover:bg-black/5 transition-colors">
+<button className="relative p-2 rounded-full text-slate-binding hover:bg-black/5 transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">notifications</span>
 <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-antique-brass rounded-full border border-paper-mist"></span>
 </button>
@@ -217,9 +220,9 @@ export default function AdminDashboardBooknestCommandCenter() {
 <div className="bg-white rounded-xl border border-slate-binding/10 shadow-ambient overflow-hidden">
 <div className="p-6 border-b border-slate-binding/10 flex justify-between items-center bg-surface-muted/50">
 <h2 className="font-headline-md text-midnight-ink text-xl">Recent Orders</h2>
-<a className="text-antique-brass font-label-md hover:underline flex items-center" href="#">
+<Link className="text-antique-brass font-label-md hover:underline flex items-center" to="/shopbrowsebooks">
                                     View All <span className="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
-</a>
+</Link>
 </div>
 <div className="overflow-x-auto">
 <table className="w-full text-left border-collapse">

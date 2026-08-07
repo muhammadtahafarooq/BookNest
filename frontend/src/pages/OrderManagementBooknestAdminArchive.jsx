@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './OrderManagementBooknestAdminArchive.css';
 
 export default function OrderManagementBooknestAdminArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* Persistent SideNavBar */}
@@ -12,53 +15,53 @@ export default function OrderManagementBooknestAdminArchive() {
 </div>
 <ul className="flex-1 space-y-2 mt-4">
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">dashboard</span>
 <span className="font-label-md text-label-md">Dashboard</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined">menu_book</span>
 <span className="font-label-md text-label-md">Inventory</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">person_edit</span>
 <span className="font-label-md text-label-md">Author Management</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-secondary-fixed-dim font-bold border-l-4 border-secondary-fixed-dim pl-4 py-3 opacity-90 transition-all duration-200 bg-on-primary-fixed-variant/20" href="#">
+<Link className="flex items-center gap-3 text-secondary-fixed-dim font-bold border-l-4 border-secondary-fixed-dim pl-4 py-3 opacity-90 transition-all duration-200 bg-on-primary-fixed-variant/20" to="/dashboard/yourordersbooknesthistory">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>receipt_long</span>
 <span className="font-label-md text-label-md">Orders</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">group</span>
 <span className="font-label-md text-label-md">Customers</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">analytics</span>
 <span className="font-label-md text-label-md">Analytics</span>
-</a>
+</Link>
 </li>
 </ul>
 <div className="px-6 mt-auto">
 <button className="w-full bg-secondary-container text-on-secondary-container font-label-md text-label-md py-3 rounded hover:opacity-90 transition-opacity">Add New Title</button>
 <div className="mt-6 border-t border-on-primary-fixed-variant pt-4 space-y-2">
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-2 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-2 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">settings</span>
 <span className="font-label-sm text-label-sm">Settings</span>
-</a>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-2 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+</Link>
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-2 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined">help_outline</span>
 <span className="font-label-sm text-label-sm">Support</span>
-</a>
+</Link>
 </div>
 </div>
 </nav>
@@ -71,7 +74,7 @@ export default function OrderManagementBooknestAdminArchive() {
 </div>
 </div>
 <div className="flex items-center gap-6">
-<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400">
+<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">notifications</span>
 </button>
 <button className="text-on-surface-variant hover:text-secondary transition-colors duration-400">

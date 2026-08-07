@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './AdminCommandCenter.css';
 
 export default function AdminCommandCenter() {
+    const navigate = useNavigate();
   return (
     <>
       <aside className="w-64 bg-primary-container text-on-primary-container hidden md:flex flex-col flex-shrink-0 border-r border-outline-variant h-screen sticky top-0">
@@ -10,44 +13,44 @@ export default function AdminCommandCenter() {
 <span className="font-headline-sm text-headline-sm font-bold text-on-primary tracking-tight">BookNest Admin</span>
 </div>
 <nav className="flex-1 overflow-y-auto p-md space-y-sm">
-<a className="flex items-center gap-md px-md py-sm rounded-lg bg-secondary-container/20 text-on-primary font-label-md text-label-md border-l-2 border-secondary-container" href="#">
+<Link className="flex items-center gap-md px-md py-sm rounded-lg bg-secondary-container/20 text-on-primary font-label-md text-label-md border-l-2 border-secondary-container" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>dashboard</span>
                 Dashboard
-            </a>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" href="#">
+            </Link>
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" to="/catalogarchive">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>book</span>
                 Books
-            </a>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" href="#">
+            </Link>
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>category</span>
                 Categories
-            </a>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" href="#">
+            </Link>
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>group</span>
                 Authors
-            </a>
+            </Link>
 <div className="pt-md pb-xs">
 <span className="px-md font-label-sm text-label-sm text-outline uppercase tracking-wider">Commerce</span>
 </div>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>shopping_cart</span>
                 Orders
-            </a>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" href="#">
+            </Link>
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>inventory_2</span>
                 Inventory
-            </a>
+            </Link>
 <div className="pt-md pb-xs">
 <span className="px-md font-label-sm text-label-sm text-outline uppercase tracking-wider">System</span>
 </div>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>analytics</span>
                 Analytics
-            </a>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" href="#">
+            </Link>
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container hover:text-on-primary hover:bg-secondary-container/10 transition-colors font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>settings</span>
                 Settings
-            </a>
+            </Link>
 </nav>
 <div className="p-lg border-t border-outline-variant/30 flex items-center gap-md">
 <div className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden border border-outline-variant">
@@ -68,7 +71,7 @@ export default function AdminCommandCenter() {
 </div>
 </div>
 <div className="flex items-center gap-lg ml-auto">
-<button className="relative text-on-surface-variant hover:text-primary transition-colors">
+<button className="relative text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">notifications</span>
 <span className="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
 </button>
@@ -161,7 +164,7 @@ export default function AdminCommandCenter() {
 <span className="bg-error-container text-on-error-container px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">1 Left</span>
 </li>
 </ul>
-<button className="w-full mt-md py-sm text-center font-label-sm text-label-sm text-primary border border-outline-variant rounded hover:bg-surface-container transition-colors">View All Inventory</button>
+<button className="w-full mt-md py-sm text-center font-label-sm text-label-sm text-primary border border-outline-variant rounded hover:bg-surface-container transition-colors" onClick={() => navigate('/shopbrowsebooks')}>View All Inventory</button>
 </div>
 </div>
 </div>

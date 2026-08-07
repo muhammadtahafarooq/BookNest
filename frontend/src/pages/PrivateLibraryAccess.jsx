@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './PrivateLibraryAccess.css';
 
 export default function PrivateLibraryAccess() {
@@ -30,7 +32,7 @@ export default function PrivateLibraryAccess() {
 <input className="w-full bg-soft-archive border border-stone-manuscript rounded text-obsidian font-body-md px-md py-sm focus:border-obsidian focus:ring-0 transition-colors" id="password" name="password" required={true} type="password" />
 </div>
 <div className="flex items-center justify-between pt-sm">
-<a className="font-label-sm text-label-sm text-on-surface-variant hover:text-obsidian transition-colors" href="#">Forgot Password?</a>
+<Link className="font-label-sm text-label-sm text-on-surface-variant hover:text-obsidian transition-colors" to="/shopbrowsebooks">Forgot Password?</Link>
 </div>
 <button className="w-full bg-obsidian text-on-primary font-label-md text-label-md py-md rounded hover:opacity-90 transition-opacity" type="submit">
                     Sign In
@@ -38,7 +40,7 @@ export default function PrivateLibraryAccess() {
 </form>
 <div className="mt-lg text-center border-t border-stone-manuscript pt-md">
 <p className="font-body-md text-body-md text-on-surface-variant">
-                    New to BookNest? <a className="text-obsidian font-bold hover:text-burnished-brass transition-colors" href="#">Create Account</a>
+                    New to BookNest? <Link className="text-obsidian font-bold hover:text-burnished-brass transition-colors" to="/dashboard/customerdashboardmypersonalbookshelf">Create Account</Link>
 </p>
 </div>
 </div>
@@ -54,10 +56,10 @@ export default function PrivateLibraryAccess() {
                     © 2024 BookNest. The Private Collector's Digital Archive.
                 </p>
 <div className="flex gap-md font-label-sm text-label-sm">
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Terms of Service</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Privacy Policy</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Archival Standards</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" href="#">Contact Us</a>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/shopbrowsebooks">Archival Standards</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200" to="/contactusbooknestsupport">Contact Us</Link>
 </div>
 </div>
 </div>

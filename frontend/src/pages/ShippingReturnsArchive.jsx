@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './ShippingReturnsArchive.css';
 
 export default function ShippingReturnsArchive() {
@@ -28,7 +30,8 @@ export default function ShippingReturnsArchive() {
         });
   }, []);
 
-return (
+  const navigate = useNavigate();
+  return (
     <>
       {/* TopNavBar */}
 <header className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-headline-md text-headline-md font-body-md text-body-md shadow-sm sticky top-0 z-50">
@@ -39,13 +42,13 @@ return (
             </div>
 {/* Actions */}
 <div className="flex items-center gap-md">
-<button aria-label="favorite" className="hover:text-secondary-fixed transition-colors duration-200">
+<button aria-label="favorite" className="hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined" data-icon="favorite">favorite</span>
 </button>
-<button aria-label="shopping_cart" className="hover:text-secondary-fixed transition-colors duration-200">
+<button aria-label="shopping_cart" className="hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
 </button>
-<button aria-label="account_circle" className="hover:text-secondary-fixed transition-colors duration-200">
+<button aria-label="account_circle" className="hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="account_circle">account_circle</span>
 </button>
 </div>
@@ -249,11 +252,11 @@ return (
                 BookNest
             </div>
 <nav className="flex flex-wrap justify-center gap-md md:gap-lg">
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">The Collection</a>
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Research Guides</a>
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Archives</a>
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Privacy Policy</a>
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Terms of Service</a>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/searchresultsbooknest">Research Guides</Link>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archives</Link>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
 </nav>
 <div className="text-on-primary-fixed-variant text-sm">
                 © 2024 BookNest Digital Archive. All Rights Reserved.

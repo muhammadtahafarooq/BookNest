@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './CatalogArchive.css';
 
 export default function CatalogArchive() {
@@ -30,7 +32,8 @@ export default function CatalogArchive() {
                 observer.observe(card);
             });
         });
-    return () => {
+      const navigate = useNavigate();
+  return () => {
         if (typeof observer !== 'undefined') observer.disconnect();
     };
   }, []);
@@ -40,19 +43,19 @@ return (
       {/* TopNavBar */}
 <nav className="bg-primary dark:bg-primary-container docked full-width top-0 border-b border-outline dark:border-outline-variant shadow-sm dark:shadow-none sticky z-50">
 <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
-<a className="font-headline-sm text-headline-sm font-bold text-on-primary dark:text-on-primary-container tracking-tight" href="#">BookNest</a>
+<Link className="font-headline-sm text-headline-sm font-bold text-on-primary dark:text-on-primary-container tracking-tight" to="/">BookNest</Link>
 <div className="hidden md:flex items-center space-x-lg">
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 font-label-md text-label-md" href="#">Home</a>
-<a className="text-on-primary dark:text-on-primary-container border-b-2 border-on-secondary-container hover:opacity-80 transition-opacity duration-300 font-label-md text-label-md" href="#">Shop</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 font-label-md text-label-md" href="#">Categories</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 font-label-md text-label-md" href="#">Blog</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 font-label-md text-label-md" href="#">About</a>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 font-label-md text-label-md" to="/">Home</Link>
+<Link className="text-on-primary dark:text-on-primary-container border-b-2 border-on-secondary-container hover:opacity-80 transition-opacity duration-300 font-label-md text-label-md" to="/shopbrowsebooks">Shop</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 font-label-md text-label-md" to="/shopbrowsebooks">Categories</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 font-label-md text-label-md" to="/shopbrowsebooks">Blog</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed-variant hover:text-on-primary hover:opacity-80 transition-opacity duration-300 font-label-md text-label-md" to="/aboutusourstorybooknest">About</Link>
 </div>
 <div className="flex items-center space-x-sm">
 <button aria-label="Shopping Bag" className="p-sm text-on-primary dark:text-on-primary-container hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out">
 <span className="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
 </button>
-<button aria-label="Person" className="p-sm text-on-primary dark:text-on-primary-container hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out">
+<button aria-label="Person" className="p-sm text-on-primary dark:text-on-primary-container hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="person">person</span>
 </button>
 </div>
@@ -64,7 +67,7 @@ return (
 <header className="mb-xl text-center md:text-left fade-in-up">
 <nav aria-label="Breadcrumb" className="mb-md">
 <ol className="flex items-center justify-center md:justify-start space-x-2 text-label-sm font-label-sm text-on-surface-variant">
-<li><a className="hover:text-burnished-brass transition-colors" href="#">Home</a></li>
+<li><Link className="hover:text-burnished-brass transition-colors" to="/">Home</Link></li>
 <li><span className="text-outline">/</span></li>
 <li aria-current="page" className="text-obsidian-ink font-semibold">Shop</li>
 </ol>
@@ -168,7 +171,7 @@ return (
 <p className="font-body-md text-body-md text-on-surface-variant mb-md">E.L. Sterling</p>
 <div className="mt-auto flex items-center justify-between pt-md border-t border-stone-manuscript border-opacity-50">
 <span className="font-headline-sm text-headline-sm text-obsidian-ink">$145.00</span>
-<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300">
+<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
 </button>
 </div>
@@ -187,7 +190,7 @@ return (
 <p className="font-body-md text-body-md text-on-surface-variant mb-md">Marcus Vance</p>
 <div className="mt-auto flex items-center justify-between pt-md border-t border-stone-manuscript border-opacity-50">
 <span className="font-headline-sm text-headline-sm text-obsidian-ink">$68.00</span>
-<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300">
+<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
 </button>
 </div>
@@ -209,7 +212,7 @@ return (
 <p className="font-body-md text-body-md text-on-surface-variant mb-md">Dr. Helena Croft</p>
 <div className="mt-auto flex items-center justify-between pt-md border-t border-stone-manuscript border-opacity-50">
 <span className="font-headline-sm text-headline-sm text-obsidian-ink">$320.00</span>
-<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300">
+<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
 </button>
 </div>
@@ -238,10 +241,10 @@ return (
 <div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-xl max-w-[1280px] mx-auto space-y-md md:space-y-0">
 <div className="font-headline-md text-headline-md text-on-primary">BookNest</div>
 <nav className="flex flex-wrap justify-center md:justify-end gap-x-lg gap-y-sm">
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Terms of Service</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Privacy Policy</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Archival Standards</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Contact Us</a>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" to="/shopbrowsebooks">Archival Standards</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm" to="/contactusbooknestsupport">Contact Us</Link>
 </nav>
 <div className="w-full md:w-auto text-center md:text-right mt-md md:mt-0 pt-md md:pt-0 border-t border-outline-variant md:border-t-0 md:ml-lg">
 <p className="text-on-primary-fixed-variant font-label-sm text-label-sm">© 2024 BookNest. The Private Collector's Digital Archive.</p>

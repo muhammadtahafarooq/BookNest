@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './YourOrdersBooknestHistory.css';
 
 export default function YourOrdersBooknestHistory() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
@@ -9,19 +12,19 @@ export default function YourOrdersBooknestHistory() {
 <div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
 <div className="font-display-lg text-headline-md font-bold text-on-primary">BookNest</div>
 <div className="hidden md:flex gap-8 items-center h-full">
-<a className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors flex items-center h-full px-2" href="#">Shop</a>
-<a className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors flex items-center h-full px-2" href="#">Categories</a>
-<a className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors flex items-center h-full px-2" href="#">Best Sellers</a>
-<a className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors flex items-center h-full px-2" href="#">New Arrivals</a>
+<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors flex items-center h-full px-2" to="/shopbrowsebooks">Shop</Link>
+<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors flex items-center h-full px-2" to="/shopbrowsebooks">Categories</Link>
+<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors flex items-center h-full px-2" to="/shopbrowsebooks">Best Sellers</Link>
+<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors flex items-center h-full px-2" to="/shopbrowsebooks">New Arrivals</Link>
 </div>
 <div className="flex items-center gap-4">
-<button className="p-2 hover:bg-primary-container/50 transition-all duration-400 rounded-full scale-95 hover:scale-100 ease-in-out">
+<button className="p-2 hover:bg-primary-container/50 transition-all duration-400 rounded-full scale-95 hover:scale-100 ease-in-out" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>favorite</span>
 </button>
-<button className="p-2 hover:bg-primary-container/50 transition-all duration-400 rounded-full scale-95 hover:scale-100 ease-in-out">
+<button className="p-2 hover:bg-primary-container/50 transition-all duration-400 rounded-full scale-95 hover:scale-100 ease-in-out" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>shopping_cart</span>
 </button>
-<button className="p-2 hover:bg-primary-container/50 transition-all duration-400 rounded-full scale-95 hover:scale-100 ease-in-out">
+<button className="p-2 hover:bg-primary-container/50 transition-all duration-400 rounded-full scale-95 hover:scale-100 ease-in-out" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>account_circle</span>
 </button>
 </div>
@@ -116,11 +119,11 @@ export default function YourOrdersBooknestHistory() {
 <p className="font-body-sm text-body-sm text-outline-variant">© 2024 BookNest Pakistan. All rights reserved.</p>
 </div>
 <div className="col-span-1 md:col-span-3 flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-start pt-2">
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">About Us</a>
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">Contact</a>
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">Shipping Policy</a>
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/aboutusourstorybooknest">About Us</Link>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/contactusbooknestsupport">Contact</Link>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Shipping Policy</Link>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shopbrowsebooks">Privacy Policy</Link>
 </div>
 </footer>
     </>

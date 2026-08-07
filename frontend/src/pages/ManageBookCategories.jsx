@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './ManageBookCategories.css';
 
 export default function ManageBookCategories() {
+    const navigate = useNavigate();
   return (
     <>
       {/* SideNavBar Component */}
@@ -12,28 +15,28 @@ export default function ManageBookCategories() {
 </div>
 <ul className="flex flex-col gap-2 flex-grow">
 <li>
-<a className="flex items-center gap-4 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/5 transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-4 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/5 transition-colors duration-200 ease-in-out font-label-md text-label-md" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined" data-icon="dashboard">dashboard</span>
                     Dashboard
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-4 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/5 transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-4 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/5 transition-colors duration-200 ease-in-out font-label-md text-label-md" to="/catalogarchive">
 <span className="material-symbols-outlined" data-icon="menu_book">menu_book</span>
                     Books
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-4 px-4 py-3 rounded-lg text-primary font-bold border-l-4 border-primary bg-surface-container-highest/10 transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-4 px-4 py-3 rounded-lg text-primary font-bold border-l-4 border-primary bg-surface-container-highest/10 transition-colors duration-200 ease-in-out font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="category">category</span>
                     Categories
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-4 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/5 transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-4 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/5 transition-colors duration-200 ease-in-out font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
                     Orders
-                </a>
+                </Link>
 </li>
 </ul>
 <div className="mt-auto border-t border-outline-variant pt-4 flex items-center gap-3">
@@ -56,10 +59,10 @@ export default function ManageBookCategories() {
 </div>
 </div>
 <div className="flex items-center gap-6">
-<button className="text-on-surface-variant hover:text-primary transition-colors">
+<button className="text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="notifications">notifications</span>
 </button>
-<button className="text-on-surface-variant hover:text-primary transition-colors">
+<button className="text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/admin/admindashboardbooknestcommandcenter')}>
 <span className="material-symbols-outlined" data-icon="settings">settings</span>
 </button>
 <img alt="Admin User" className="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A subtle, high-quality, professional headshot of an administrator in a well-lit, minimal studio environment. The aesthetic is clean, modern, and trustworthy, with soft, diffused lighting and a neutral background. The tone is authoritative yet approachable, fitting for a premium library management system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJnyoGjLnuo_JZH5u3dXCmwKZRxhu6syIH8DsHcXF-jtnuS68q2DedZuyno6IU0E8JcEyggl5pa-Mdszb7LCmInyhAz5Vm6dxUqDZPJNh_gvUJVNV0wxLwG4bDvjntd9p2jEBf7HDViAf9hcfOegAhizpxvaIZJxvbglBPykfhg0751ECOhTZgipY98AawoOS88p8TZvL2xtRlHsDKni7YKWdBo5nKPhxvIJyPIcKrfsYZJxOIT2eOXw" />

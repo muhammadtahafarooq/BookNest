@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './StaffManagementArchive2.css';
 
 export default function StaffManagementArchive2() {
@@ -17,22 +19,23 @@ export default function StaffManagementArchive2() {
         });
   }, []);
 
-return (
+  const navigate = useNavigate();
+  return (
     <>
       {/* TopNavBar (Shared Component) */}
 <nav className="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container docked full-width top-0 border-b border-outline-variant dark:border-outline shadow-md z-50">
 <div className="flex justify-between items-center w-full px-margin-desktop py-md max-w-[1280px] mx-auto">
 {/* Brand */}
-<a className="font-headline-md text-headline-md font-bold text-on-primary dark:text-on-primary-container flex items-center gap-2 scale-95 active:scale-90 transition-transform" href="#">
+<Link className="font-headline-md text-headline-md font-bold text-on-primary dark:text-on-primary-container flex items-center gap-2 scale-95 active:scale-90 transition-transform" to="/">
 <span className="material-symbols-outlined" data-weight="fill" style={{fontVariationSettings: '\'FILL\' 1'}}>book</span>
                 BookNest
-            </a>
+            </Link>
 {/* Navigation Links (Desktop) */}
 <div className="hidden md:flex items-center gap-xl font-label-md text-label-md">
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform" href="#">Catalog</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform" href="#">Collections</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform" href="#">Archives</a>
-<a className="text-on-primary dark:text-on-primary-container border-b-2 border-secondary-container pb-1 scale-95 active:scale-90 transition-transform" href="#">Curations</a> {/* Highlighting Curations as Staff Management falls under internal curation/admin */}
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform" to="/catalogarchive">Catalog</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform" to="/browsecollections">Collections</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform" to="/shopbrowsebooks">Archives</Link>
+<Link className="text-on-primary dark:text-on-primary-container border-b-2 border-secondary-container pb-1 scale-95 active:scale-90 transition-transform" to="/shopbrowsebooks">Curations</Link> {/* Highlighting Curations as Staff Management falls under internal curation/admin */}
 </div>
 {/* Trailing Actions */}
 <div className="flex items-center gap-md">
@@ -42,7 +45,7 @@ return (
 <button className="hidden md:flex items-center gap-xs text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform">
 <span className="material-symbols-outlined">history</span>
 </button>
-<button className="font-label-md text-label-md font-bold hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform">
+<button className="font-label-md text-label-md font-bold hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform" onClick={() => navigate('/loginbooknestprivatelibrary')}>
                     Sign In
                 </button>
 </div>
@@ -56,7 +59,7 @@ return (
 <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Staff Registry</h1>
 <p className="font-body-md text-body-md text-on-surface-variant mt-sm max-w-2xl">Manage archival personnel, curatorial access, and administrative privileges across the BookNest vault.</p>
 </div>
-<button className="bg-primary text-on-primary font-label-md text-label-md px-lg py-sm rounded flex items-center gap-sm hover:bg-inverse-surface transition-colors ambient-shadow-level-1">
+<button className="bg-primary text-on-primary font-label-md text-label-md px-lg py-sm rounded flex items-center gap-sm hover:bg-inverse-surface transition-colors ambient-shadow-level-1" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined text-[18px]">person_add</span>
                 New Member
             </button>
@@ -96,7 +99,7 @@ return (
 </div>
 <div className="col-span-2 flex justify-end gap-sm pr-sm">
 <button className="text-outline hover:text-primary transition-colors"><span className="material-symbols-outlined text-[20px]">edit_document</span></button>
-<button className="text-outline hover:text-error transition-colors"><span className="material-symbols-outlined text-[20px]">person_remove</span></button>
+<button className="text-outline hover:text-error transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}><span className="material-symbols-outlined text-[20px]">person_remove</span></button>
 </div>
 </div>
 {/* Item 2 */}
@@ -120,7 +123,7 @@ return (
 </div>
 <div className="col-span-2 flex justify-end gap-sm pr-sm">
 <button className="text-outline hover:text-primary transition-colors"><span className="material-symbols-outlined text-[20px]">edit_document</span></button>
-<button className="text-outline hover:text-error transition-colors"><span className="material-symbols-outlined text-[20px]">person_remove</span></button>
+<button className="text-outline hover:text-error transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}><span className="material-symbols-outlined text-[20px]">person_remove</span></button>
 </div>
 </div>
 </div>
@@ -205,10 +208,10 @@ return (
 </div>
 {/* Footer Links */}
 <div className="flex flex-wrap justify-center gap-lg font-body-md text-body-md">
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">Archival Standards</a>
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">Conservation Policy</a>
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">Terms of Access</a>
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">The Vault</a>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Archival Standards</Link>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Conservation Policy</Link>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Terms of Access</Link>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">The Vault</Link>
 </div>
 </div>
 </footer>

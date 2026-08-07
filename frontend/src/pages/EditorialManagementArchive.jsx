@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './EditorialManagementArchive.css';
 
 export default function EditorialManagementArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* SideNavBar */}
@@ -15,36 +18,36 @@ export default function EditorialManagementArchive() {
 </div>
 <nav className="flex-1 space-y-2">
 {/* Active Navigation Item */}
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-primary bg-surface-container-high transition-colors duration-200 opacity-80 scale-95" href="#">
+<Link className="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-primary bg-surface-container-high transition-colors duration-200 opacity-80 scale-95" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>menu_book</span>
 <span className="font-label-md text-label-md">Article Registry</span>
-</a>
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" href="#">
+</Link>
+<Link className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">badge</span>
 <span className="font-label-md text-label-md">Staff Registry</span>
-</a>
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" href="#">
+</Link>
+<Link className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined">inventory_2</span>
 <span className="font-label-md text-label-md">Inventory Control</span>
-</a>
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" href="#">
+</Link>
+<Link className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">insights</span>
 <span className="font-label-md text-label-md">Analytics</span>
-</a>
-<a className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" href="#">
+</Link>
+<Link className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" to="/aboutusourstorybooknest">
 <span className="material-symbols-outlined">history</span>
 <span className="font-label-md text-label-md">Archives</span>
-</a>
+</Link>
 </nav>
 <div className="mt-auto pt-6 border-t border-outline-variant space-y-2">
-<a className="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" href="#">
+<Link className="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">settings</span>
 <span className="font-label-md text-label-md">Settings</span>
-</a>
-<a className="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" href="#">
+</Link>
+<Link className="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-colors duration-200" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined">help_outline</span>
 <span className="font-label-md text-label-md">Support</span>
-</a>
+</Link>
 </div>
 </aside>
 {/* Main Content Area Wrapper */}
@@ -54,9 +57,9 @@ export default function EditorialManagementArchive() {
 <div className="flex items-center gap-8">
 <span className="font-headline-sm text-headline-sm text-primary font-bold md:hidden">BookNest</span>
 <nav className="hidden md:flex gap-6">
-<a className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dashboard</a>
-<a className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Workflows</a>
-<a className="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 scale-98" href="#">Peer Review</a>
+<Link className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" to="/dashboard/customerdashboardmypersonalbookshelf">Dashboard</Link>
+<Link className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" to="/shopbrowsebooks">Workflows</Link>
+<Link className="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 scale-98" to="/shopbrowsebooks">Peer Review</Link>
 </nav>
 </div>
 <div className="flex items-center gap-4">
@@ -64,10 +67,10 @@ export default function EditorialManagementArchive() {
 <input className="bg-surface-container-lowest border border-outline-variant rounded-full py-1.5 px-4 pl-10 text-body-md focus:border-primary focus:ring-0 w-64 transition-colors" placeholder="Search archives..." type="text" />
 <span className="material-symbols-outlined absolute left-3 top-2 text-on-surface-variant text-sm">search</span>
 </div>
-<button className="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-highest">
+<button className="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-highest" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">notifications</span>
 </button>
-<button className="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-highest">
+<button className="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-highest" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">account_circle</span>
 </button>
 </div>

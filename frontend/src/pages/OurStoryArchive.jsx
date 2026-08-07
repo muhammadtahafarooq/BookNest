@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './OurStoryArchive.css';
 
 export default function OurStoryArchive() {
@@ -25,7 +27,8 @@ export default function OurStoryArchive() {
                 observer.observe(section);
             });
         });
-    return () => {
+      const navigate = useNavigate();
+  return () => {
         if (typeof observer !== 'undefined') observer.disconnect();
     };
   }, []);
@@ -36,9 +39,9 @@ return (
 <header className="bg-obsidian dark:bg-primary-container text-on-primary dark:text-on-primary-container font-headline-md text-headline-md font-body-md text-body-md docked full-width top-0 border-b border-outline-variant shadow-sm w-full sticky z-50">
 <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
 <div className="flex items-center gap-4">
-<a className="font-headline-md text-headline-md text-on-primary tracking-tight" href="#">
+<Link className="font-headline-md text-headline-md text-on-primary tracking-tight" to="/">
                     BookNest
-                </a>
+                </Link>
 </div>
 <div className="hidden md:flex items-center bg-surface-container-low/10 rounded-full px-4 py-2 border border-outline-variant/30 focus-within:border-on-primary transition-colors">
 <span className="material-symbols-outlined text-on-primary-fixed-variant mr-2 text-[20px]" data-icon="search">search</span>
@@ -46,18 +49,18 @@ return (
 </div>
 <div className="flex items-center gap-6">
 <nav className="hidden md:flex gap-6">
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">The Collection</a>
-<a className="text-secondary-fixed font-bold border-b-2 border-secondary-fixed pb-1" href="#">About Us</a>
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Journal</a>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link>
+<Link className="text-secondary-fixed font-bold border-b-2 border-secondary-fixed pb-1" to="/aboutusourstorybooknest">About Us</Link>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Journal</Link>
 </nav>
 <div className="flex items-center gap-4 text-on-primary">
-<button aria-label="Favorite" className="hover:text-secondary-fixed transition-colors duration-200 flex items-center justify-center opacity-80">
+<button aria-label="Favorite" className="hover:text-secondary-fixed transition-colors duration-200 flex items-center justify-center opacity-80" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined" data-icon="favorite">favorite</span>
 </button>
-<button aria-label="Shopping Cart" className="hover:text-secondary-fixed transition-colors duration-200 flex items-center justify-center opacity-80">
+<button aria-label="Shopping Cart" className="hover:text-secondary-fixed transition-colors duration-200 flex items-center justify-center opacity-80" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
 </button>
-<button aria-label="Account Circle" className="hover:text-secondary-fixed transition-colors duration-200 flex items-center justify-center opacity-80">
+<button aria-label="Account Circle" className="hover:text-secondary-fixed transition-colors duration-200 flex items-center justify-center opacity-80" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="account_circle">account_circle</span>
 </button>
 </div>
@@ -72,7 +75,7 @@ return (
 <h1 className="font-display-lg text-display-lg text-on-surface">Where Every Book Finds Its Reader.</h1>
 <p className="font-body-lg text-body-lg text-on-surface-variant max-w-md">BookNest brings carefully selected books into a beautiful digital library experience. Curated for the discerning mind.</p>
 <div className="mt-4">
-<button className="bg-[#B08953] text-primary px-8 py-4 font-label-md text-label-md rounded uppercase tracking-wider hover:opacity-90 transition-opacity">Explore Collection</button>
+<button className="bg-[#B08953] text-primary px-8 py-4 font-label-md text-label-md rounded uppercase tracking-wider hover:opacity-90 transition-opacity" onClick={() => navigate('/browsecollections')}>Explore Collection</button>
 </div>
 </div>
 <div className="lg:col-span-7 relative h-[500px] w-full rounded-xl overflow-hidden editorial-shadow">
@@ -147,11 +150,11 @@ return (
 <span className="text-on-primary-fixed-variant">© 2024 BookNest Digital Archive. All Rights Reserved.</span>
 </div>
 <nav className="flex flex-wrap justify-center gap-6">
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">The Collection</a>
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Research Guides</a>
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Archives</a>
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Privacy Policy</a>
-<a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Terms of Service</a>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/searchresultsbooknest">Research Guides</Link>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archives</Link>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
 </nav>
 </div>
 </footer>

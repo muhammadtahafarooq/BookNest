@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './PublisherManagementArchive.css';
 
 export default function PublisherManagementArchive() {
@@ -8,23 +10,23 @@ export default function PublisherManagementArchive() {
 <nav className="bg-primary dark:bg-primary-container font-headline-md text-headline-md. UI: font-label-md text-label-md. docked full-width top-0 border-b border-outline-variant dark:border-outline shadow-md sticky z-50">
 <div className="flex justify-between items-center w-full px-margin-desktop py-md max-w-[1280px] mx-auto hidden md:flex">
 {/* Brand Logo */}
-<a className="font-headline-md text-headline-md font-bold text-on-primary dark:text-on-primary-container tracking-tight" href="#">
+<Link className="font-headline-md text-headline-md font-bold text-on-primary dark:text-on-primary-container tracking-tight" to="/">
                 BookNest
-            </a>
+            </Link>
 {/* Navigation Links */}
 <div className="flex items-center gap-lg">
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform font-label-md text-label-md" href="#">
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform font-label-md text-label-md" to="/catalogarchive">
                     Catalog
-                </a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform font-label-md text-label-md" href="#">
+                </Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform font-label-md text-label-md" to="/browsecollections">
                     Collections
-                </a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform font-label-md text-label-md" href="#">
+                </Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform font-label-md text-label-md" to="/shopbrowsebooks">
                     Archives
-                </a>
-<a aria-current="page" className="text-on-primary dark:text-on-primary-container border-b-2 border-secondary-container pb-1 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform font-label-md text-label-md" href="#">
+                </Link>
+<Link aria-current="page" className="text-on-primary dark:text-on-primary-container border-b-2 border-secondary-container pb-1 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 scale-95 active:scale-90 transition-transform font-label-md text-label-md" to="/shopbrowsebooks">
                     Curations
-                </a>
+                </Link>
 </div>
 {/* Actions */}
 <div className="flex items-center gap-md">
@@ -34,16 +36,16 @@ export default function PublisherManagementArchive() {
 <button className="text-on-primary dark:text-on-primary-container hover:opacity-80 transition-opacity flex items-center justify-center p-sm rounded-full">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>history</span>
 </button>
-<a className="font-label-md text-label-md bg-surface text-on-surface px-md py-sm rounded-DEFAULT border border-outline hover:bg-surface-variant transition-colors ml-sm shadow-ambient-1" href="#">
+<Link className="font-label-md text-label-md bg-surface text-on-surface px-md py-sm rounded-DEFAULT border border-outline hover:bg-surface-variant transition-colors ml-sm shadow-ambient-1" to="/loginbooknestprivatelibrary">
                     Sign In
-                </a>
+                </Link>
 </div>
 </div>
 {/* Mobile Navigation Fallback (Simplified Top Bar for Mobile) */}
 <div className="flex md:hidden justify-between items-center w-full px-margin-mobile py-md">
-<a className="font-headline-md text-headline-md font-bold text-on-primary dark:text-on-primary-container tracking-tight" href="#">
+<Link className="font-headline-md text-headline-md font-bold text-on-primary dark:text-on-primary-container tracking-tight" to="/">
                 BookNest
-            </a>
+            </Link>
 <button className="text-on-primary flex items-center justify-center p-sm">
 <span className="material-symbols-outlined">menu</span>
 </button>
@@ -277,18 +279,18 @@ export default function PublisherManagementArchive() {
             </div>
 {/* Footer Links */}
 <div className="flex flex-wrap justify-center gap-x-lg gap-y-sm">
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" href="#">
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">
                     Archival Standards
-                </a>
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" href="#">
+                </Link>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">
                     Conservation Policy
-                </a>
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" href="#">
+                </Link>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">
                     Terms of Access
-                </a>
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" href="#">
+                </Link>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">
                     The Vault
-                </a>
+                </Link>
 </div>
 {/* Copyright */}
 <div className="font-body-md text-body-md text-on-primary-fixed-variant opacity-70 text-center md:text-right">

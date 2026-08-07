@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './BookCollectionManagement.css';
 
 export default function BookCollectionManagement() {
+    const navigate = useNavigate();
   return (
     <>
       {/* Desktop Side Navigation Shell */}
@@ -19,16 +22,16 @@ export default function BookCollectionManagement() {
 </div>
 <div className="flex-1 overflow-y-auto w-full px-2">
 <ul className="space-y-2">
-<li><a className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" href="#"><span className="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard</a></li>
-<li><a className="flex items-center gap-4 bg-secondary-container text-on-secondary-container rounded-lg mx-2 px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150" href="#"><span className="material-symbols-outlined" data-icon="menu_book">menu_book</span> Books</a></li>
-<li><a className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" href="#"><span className="material-symbols-outlined" data-icon="category">category</span> Categories</a></li>
-<li><a className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" href="#"><span className="material-symbols-outlined" data-icon="person_edit">person_edit</span> Authors</a></li>
-<li><a className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" href="#"><span className="material-symbols-outlined" data-icon="domain">domain</span> Publishers</a></li>
-<li><a className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" href="#"><span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span> Orders</a></li>
-<li><a className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" href="#"><span className="material-symbols-outlined" data-icon="group">group</span> Customers</a></li>
-<li><a className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" href="#"><span className="material-symbols-outlined" data-icon="badge">badge</span> Staff</a></li>
-<li><a className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" href="#"><span className="material-symbols-outlined" data-icon="inventory_2">inventory_2</span> Inventory</a></li>
-<li><a className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" href="#"><span className="material-symbols-outlined" data-icon="analytics">analytics</span> Analytics</a></li>
+<li><Link className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" to="/dashboard/customerdashboardmypersonalbookshelf"><span className="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard</Link></li>
+<li><Link className="flex items-center gap-4 bg-secondary-container text-on-secondary-container rounded-lg mx-2 px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150" to="/catalogarchive"><span className="material-symbols-outlined" data-icon="menu_book">menu_book</span> Books</Link></li>
+<li><Link className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" to="/shopbrowsebooks"><span className="material-symbols-outlined" data-icon="category">category</span> Categories</Link></li>
+<li><Link className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" to="/dashboard/customerdashboardmypersonalbookshelf"><span className="material-symbols-outlined" data-icon="person_edit">person_edit</span> Authors</Link></li>
+<li><Link className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" to="/admin/publishermanagementarchive"><span className="material-symbols-outlined" data-icon="domain">domain</span> Publishers</Link></li>
+<li><Link className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" to="/shopbrowsebooks"><span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span> Orders</Link></li>
+<li><Link className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" to="/shopbrowsebooks"><span className="material-symbols-outlined" data-icon="group">group</span> Customers</Link></li>
+<li><Link className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" to="/shopbrowsebooks"><span className="material-symbols-outlined" data-icon="badge">badge</span> Staff</Link></li>
+<li><Link className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" to="/admin/inventorycontrolcenter"><span className="material-symbols-outlined" data-icon="inventory_2">inventory_2</span> Inventory</Link></li>
+<li><Link className="flex items-center gap-4 text-on-primary-container hover:text-on-primary px-4 py-3 font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg" to="/shopbrowsebooks"><span className="material-symbols-outlined" data-icon="analytics">analytics</span> Analytics</Link></li>
 </ul>
 </div>
 </nav>
@@ -49,10 +52,10 @@ export default function BookCollectionManagement() {
 </div>
 </div>
 <div className="flex items-center gap-6 ml-auto lg:ml-6">
-<button aria-label="Notifications" className="text-on-surface-variant hover:text-primary transition-colors">
+<button aria-label="Notifications" className="text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="notifications">notifications</span>
 </button>
-<button aria-label="Settings" className="text-on-surface-variant hover:text-primary transition-colors">
+<button aria-label="Settings" className="text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/admin/admindashboardbooknestcommandcenter')}>
 <span className="material-symbols-outlined" data-icon="settings">settings</span>
 </button>
 <div className="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">

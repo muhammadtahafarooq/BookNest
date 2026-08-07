@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './PromotionManagementBooknestAdminArchive.css';
 
 export default function PromotionManagementBooknestAdminArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* SideNavBar */}
@@ -24,56 +27,56 @@ export default function PromotionManagementBooknestAdminArchive() {
 <nav className="flex-1 overflow-y-auto px-4">
 <ul className="space-y-1">
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined" data-icon="dashboard">dashboard</span>
 <span className="font-label-md text-label-md">Dashboard</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined" data-icon="menu_book">menu_book</span>
 <span className="font-label-md text-label-md">Inventory</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined" data-icon="person_edit">person_edit</span>
 <span className="font-label-md text-label-md">Author Management</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-secondary-fixed-dim font-bold border-l-4 border-secondary-fixed-dim pl-4 py-3 bg-on-primary-fixed-variant text-surface-bright rounded-r-lg opacity-90 transition-all duration-200" href="#">
+<Link className="flex items-center gap-3 text-secondary-fixed-dim font-bold border-l-4 border-secondary-fixed-dim pl-4 py-3 bg-on-primary-fixed-variant text-surface-bright rounded-r-lg opacity-90 transition-all duration-200" to="/dashboard/yourordersbooknesthistory">
 <span className="material-symbols-outlined filled" data-icon="receipt_long">receipt_long</span>
 <span className="font-label-md text-label-md">Orders &amp; Promotions</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="group">group</span>
 <span className="font-label-md text-label-md">Customers</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="analytics">analytics</span>
 <span className="font-label-md text-label-md">Analytics</span>
-</a>
+</Link>
 </li>
 </ul>
 </nav>
 <div className="px-4 mt-auto pt-6 border-t border-on-primary-fixed-variant">
 <ul className="space-y-1">
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="settings">settings</span>
 <span className="font-label-md text-label-md">Settings</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined" data-icon="help_outline">help_outline</span>
 <span className="font-label-md text-label-md">Support</span>
-</a>
+</Link>
 </li>
 </ul>
 </div>
@@ -91,7 +94,7 @@ export default function PromotionManagementBooknestAdminArchive() {
 <input className="w-full pl-10 pr-4 py-2 bg-surface border border-outline-variant rounded-full text-body-sm focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all" placeholder="Search campaigns..." type="text" />
 </div>
 <div className="flex items-center gap-4">
-<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400 p-2">
+<button className="text-on-surface-variant hover:text-secondary transition-colors duration-400 p-2" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="notifications">notifications</span>
 </button>
 <button className="text-on-surface-variant hover:text-secondary transition-colors duration-400 p-2">

@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './BlogStoriesInspiration.css';
 
 export default function BlogStoriesInspiration() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar Component */}
@@ -13,20 +16,20 @@ export default function BlogStoriesInspiration() {
             </div>
 {/* Navigation Links (Desktop) */}
 <nav className="hidden md:flex space-x-8 items-center">
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="#">Shop</a>
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="#">Categories</a>
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="#">Best Sellers</a>
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="#">New Arrivals</a>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">Shop</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">Categories</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">Best Sellers</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">New Arrivals</Link>
 </nav>
 {/* Trailing Icons */}
 <div className="flex items-center space-x-6">
-<button className="text-on-primary hover:text-outline-variant transition-colors group relative scale-95 duration-200 ease-in-out">
+<button className="text-on-primary hover:text-outline-variant transition-colors group relative scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined text-[24px]">favorite</span>
 </button>
-<button className="text-on-primary hover:text-outline-variant transition-colors group relative scale-95 duration-200 ease-in-out">
+<button className="text-on-primary hover:text-outline-variant transition-colors group relative scale-95 duration-200 ease-in-out" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined text-[24px]">shopping_cart</span>
 </button>
-<button className="text-on-primary hover:text-outline-variant transition-colors group relative scale-95 duration-200 ease-in-out">
+<button className="text-on-primary hover:text-outline-variant transition-colors group relative scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined text-[24px]">account_circle</span>
 </button>
 </div>
@@ -165,11 +168,11 @@ export default function BlogStoriesInspiration() {
 {/* Links Columns */}
 <div className="col-span-1 md:col-span-3 flex flex-wrap gap-8 justify-start md:justify-end">
 <ul className="space-y-3">
-<li><a className="text-outline-variant hover:text-on-primary transition-all font-body-sm text-body-sm opacity-80 hover:opacity-100 transition-opacity" href="#">About Us</a></li>
-<li><a className="text-outline-variant hover:text-on-primary transition-all font-body-sm text-body-sm opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a></li>
-<li><a className="text-outline-variant hover:text-on-primary transition-all font-body-sm text-body-sm opacity-80 hover:opacity-100 transition-opacity" href="#">Shipping Policy</a></li>
-<li><a className="text-outline-variant hover:text-on-primary transition-all font-body-sm text-body-sm opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a></li>
-<li><a className="text-outline-variant hover:text-on-primary transition-all font-body-sm text-body-sm opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all font-body-sm text-body-sm opacity-80 hover:opacity-100 transition-opacity" to="/aboutusourstorybooknest">About Us</Link></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all font-body-sm text-body-sm opacity-80 hover:opacity-100 transition-opacity" to="/contactusbooknestsupport">Contact</Link></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all font-body-sm text-body-sm opacity-80 hover:opacity-100 transition-opacity" to="/shopbrowsebooks">Shipping Policy</Link></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all font-body-sm text-body-sm opacity-80 hover:opacity-100 transition-opacity" to="/shopbrowsebooks">Terms of Service</Link></li>
+<li><Link className="text-outline-variant hover:text-on-primary transition-all font-body-sm text-body-sm opacity-80 hover:opacity-100 transition-opacity" to="/shopbrowsebooks">Privacy Policy</Link></li>
 </ul>
 </div>
 </div>

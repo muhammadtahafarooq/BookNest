@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './LibraryManagementArchive.css';
 
 export default function LibraryManagementArchive() {
@@ -12,26 +14,26 @@ export default function LibraryManagementArchive() {
 <span className="font-headline-sm text-headline-sm">BookNest</span>
 </div>
 <nav className="flex flex-col gap-md">
-<a className="sidebar-active flex items-center gap-sm font-label-md text-label-md" href="#">
+<Link className="sidebar-active flex items-center gap-sm font-label-md text-label-md" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">dashboard</span>
                     Dashboard
-                </a>
-<a className="sidebar-inactive hover:text-white transition-colors duration-300 flex items-center gap-sm font-label-md text-label-md" href="#">
+                </Link>
+<Link className="sidebar-inactive hover:text-white transition-colors duration-300 flex items-center gap-sm font-label-md text-label-md" to="/browsecollections">
 <span className="material-symbols-outlined">collections_bookmark</span>
                     Catalog Management
-                </a>
-<a className="sidebar-inactive hover:text-white transition-colors duration-300 flex items-center gap-sm font-label-md text-label-md" href="#">
+                </Link>
+<Link className="sidebar-inactive hover:text-white transition-colors duration-300 flex items-center gap-sm font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">shopping_cart</span>
                     Acquisition Orders
-                </a>
-<a className="sidebar-inactive hover:text-white transition-colors duration-300 flex items-center gap-sm font-label-md text-label-md" href="#">
+                </Link>
+<Link className="sidebar-inactive hover:text-white transition-colors duration-300 flex items-center gap-sm font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">group</span>
                     Reader Archive
-                </a>
-<a className="sidebar-inactive hover:text-white transition-colors duration-300 flex items-center gap-sm font-label-md text-label-md" href="#">
+                </Link>
+<Link className="sidebar-inactive hover:text-white transition-colors duration-300 flex items-center gap-sm font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">settings</span>
                     System Settings
-                </a>
+                </Link>
 </nav>
 </div>
 <div className="font-label-sm text-label-sm text-outline-variant">
@@ -110,7 +112,7 @@ export default function LibraryManagementArchive() {
 <div className="lg:col-span-2 card p-lg border">
 <div className="flex justify-between items-center mb-lg">
 <h2 className="font-headline-md text-headline-md text-primary">Recent Acquisitions</h2>
-<a className="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">View All</a>
+<Link className="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" to="/shopbrowsebooks">View All</Link>
 </div>
 <div className="overflow-x-auto">
 <table className="w-full text-left border-collapse">

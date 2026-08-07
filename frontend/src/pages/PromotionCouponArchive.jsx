@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './PromotionCouponArchive.css';
 
 export default function PromotionCouponArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* SideNavBar (Shared Component) */}
@@ -13,34 +16,34 @@ export default function PromotionCouponArchive() {
 <div className="flex-1 overflow-y-auto">
 <ul className="space-y-sm">
 <li>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 scale-95 active:opacity-80 transition-all font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 scale-95 active:opacity-80 transition-all font-label-md text-label-md" to="/catalogarchive">
 <span className="material-symbols-outlined" data-icon="library_books">library_books</span>
                         Catalog
-                    </a>
+                    </Link>
 </li>
 <li>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-primary dark:text-primary-fixed font-bold border-r-4 border-primary dark:border-primary-fixed bg-surface-container-high dark:bg-surface-container hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 scale-95 active:opacity-80 transition-all font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-primary dark:text-primary-fixed font-bold border-r-4 border-primary dark:border-primary-fixed bg-surface-container-high dark:bg-surface-container hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 scale-95 active:opacity-80 transition-all font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
                         Acquisitions
-                    </a>
+                    </Link>
 </li>
 <li>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 scale-95 active:opacity-80 transition-all font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 scale-95 active:opacity-80 transition-all font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
                         Circulation
-                    </a>
+                    </Link>
 </li>
 <li>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 scale-95 active:opacity-80 transition-all font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 scale-95 active:opacity-80 transition-all font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="analytics">analytics</span>
                         Analytics
-                    </a>
+                    </Link>
 </li>
 <li>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 scale-95 active:opacity-80 transition-all font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 scale-95 active:opacity-80 transition-all font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="settings">settings</span>
                         Settings
-                    </a>
+                    </Link>
 </li>
 </ul>
 </div>
@@ -50,16 +53,16 @@ export default function PromotionCouponArchive() {
             </button>
 <ul className="space-y-sm">
 <li>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 font-label-md text-label-md" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined" data-icon="help_outline">help_outline</span>
                         Support
-                    </a>
+                    </Link>
 </li>
 <li>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-container-low dark:hover:bg-surface-container-highest hover:text-primary transition-colors duration-200 font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="logout">logout</span>
                         Sign Out
-                    </a>
+                    </Link>
 </li>
 </ul>
 </div>
@@ -71,9 +74,9 @@ export default function PromotionCouponArchive() {
 <div className="flex items-center gap-xl">
 <span className="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">BookNest Control</span>
 <nav className="hidden md:flex gap-lg">
-<a className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity cursor-pointer active:opacity-70 font-label-sm text-label-sm" href="#">Dashboard</a>
-<a className="text-primary dark:text-primary-fixed-dim border-b-2 border-primary pb-1 font-label-sm text-label-sm" href="#">Promotions</a>
-<a className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity cursor-pointer active:opacity-70 font-label-sm text-label-sm" href="#">Archives</a>
+<Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity cursor-pointer active:opacity-70 font-label-sm text-label-sm" to="/dashboard/customerdashboardmypersonalbookshelf">Dashboard</Link>
+<Link className="text-primary dark:text-primary-fixed-dim border-b-2 border-primary pb-1 font-label-sm text-label-sm" to="/shopbrowsebooks">Promotions</Link>
+<Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-opacity cursor-pointer active:opacity-70 font-label-sm text-label-sm" to="/shopbrowsebooks">Archives</Link>
 </nav>
 </div>
 <div className="flex items-center gap-lg">
@@ -81,7 +84,7 @@ export default function PromotionCouponArchive() {
 <span className="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
 <input className="pl-xl pr-md py-sm rounded-full bg-surface-container-highest border-none text-body-md focus:ring-1 focus:ring-primary w-64 text-on-surface placeholder:text-on-surface-variant" placeholder="Search archive..." type="text" />
 </div>
-<button className="text-on-surface-variant hover:text-primary transition-colors">
+<button className="text-on-surface-variant hover:text-primary transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="notifications">notifications</span>
 </button>
 <button className="text-on-surface-variant hover:text-primary transition-colors">

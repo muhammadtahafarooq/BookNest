@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './YourReadingSelection.css';
 
 export default function YourReadingSelection() {
@@ -20,7 +22,8 @@ export default function YourReadingSelection() {
                 observer.observe(el);
             });
         });
-    return () => {
+      const navigate = useNavigate();
+  return () => {
         if (typeof observer !== 'undefined') observer.disconnect();
     };
   }, []);
@@ -31,18 +34,18 @@ return (
 <nav className="bg-primary dark:bg-primary-container font-headline-md text-headline-md font-body-md text-body-md docked full-width top-0 border-b border-outline-variant shadow-sm w-full sticky z-50">
 <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
 {/* Brand */}
-<a className="font-headline-md text-headline-md text-on-primary tracking-tight" href="#">BookNest</a>
+<Link className="font-headline-md text-headline-md text-on-primary tracking-tight" to="/">BookNest</Link>
 {/* Trailing Icons */}
 <div className="flex items-center gap-lg">
-<a aria-label="favorite" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">
+<Link aria-label="favorite" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/dashboard/myreadingshelfbooknestwishlist">
 <span className="material-symbols-outlined">favorite</span>
-</a>
-<a aria-label="shopping_cart" className="text-secondary-fixed font-bold border-b-2 border-secondary-fixed pb-xs hover:text-secondary-fixed transition-colors duration-200 opacity-80" href="#">
+</Link>
+<Link aria-label="shopping_cart" className="text-secondary-fixed font-bold border-b-2 border-secondary-fixed pb-xs hover:text-secondary-fixed transition-colors duration-200 opacity-80" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">shopping_cart</span>
-</a>
-<a aria-label="account_circle" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">
+</Link>
+<Link aria-label="account_circle" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">account_circle</span>
-</a>
+</Link>
 </div>
 </div>
 </nav>
@@ -151,7 +154,7 @@ return (
 <span className="font-headline-md text-headline-md text-obsidian-ink">$45.00</span>
 </div>
 {/* CTA */}
-<button className="w-full bg-[#171A1C] text-[#FAF8F3] font-label-md text-label-md py-md rounded hover:opacity-90 transition-opacity flex justify-center items-center gap-sm">
+<button className="w-full bg-[#171A1C] text-[#FAF8F3] font-label-md text-label-md py-md rounded hover:opacity-90 transition-opacity flex justify-center items-center gap-sm" onClick={() => navigate('/securecheckoutarchive')}>
                         Proceed To Checkout
                         <span className="material-symbols-outlined text-sm">arrow_forward</span>
 </button>
@@ -199,11 +202,11 @@ return (
 <div className="font-headline-sm text-headline-sm text-on-primary">BookNest</div>
 {/* Links */}
 <ul className="flex flex-wrap justify-center gap-md md:gap-lg">
-<li><a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">The Collection</a></li>
-<li><a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Research Guides</a></li>
-<li><a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Archives</a></li>
-<li><a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Privacy Policy</a></li>
-<li><a className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Terms of Service</a></li>
+<li><Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link></li>
+<li><Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/searchresultsbooknest">Research Guides</Link></li>
+<li><Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archives</Link></li>
+<li><Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link></li>
+<li><Link className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link></li>
 </ul>
 {/* Copyright */}
 <div className="text-on-primary-fixed-variant font-label-sm text-label-sm text-center md:text-right">

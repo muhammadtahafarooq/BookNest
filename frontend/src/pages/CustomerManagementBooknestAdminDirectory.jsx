@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './CustomerManagementBooknestAdminDirectory.css';
 
 export default function CustomerManagementBooknestAdminDirectory() {
@@ -18,55 +20,55 @@ export default function CustomerManagementBooknestAdminDirectory() {
 </div>
 <ul className="flex-grow space-y-2">
 <li>
-<a className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" href="#">
+<Link className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined mr-4" data-icon="dashboard">dashboard</span>
                     Dashboard
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" href="#">
+<Link className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined mr-4" data-icon="menu_book">menu_book</span>
                     Inventory
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" href="#">
+<Link className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-4" data-icon="payments">payments</span>
                     Sales
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" href="#">
+<Link className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined mr-4" data-icon="person_edit">person_edit</span>
                     Authors
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center px-6 py-3 font-label-md text-label-md text-tertiary-fixed dark:text-tertiary-fixed-dim border-l-4 border-tertiary-fixed font-bold bg-primary-fixed-dim/5 transition-transform duration-200 scale-[0.98]" href="#">
+<Link className="flex items-center px-6 py-3 font-label-md text-label-md text-tertiary-fixed dark:text-tertiary-fixed-dim border-l-4 border-tertiary-fixed font-bold bg-primary-fixed-dim/5 transition-transform duration-200 scale-[0.98]" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-4" data-icon="group">group</span>
                     Customers
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" href="#">
+<Link className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-4" data-icon="settings">settings</span>
                     Settings
-                </a>
+                </Link>
 </li>
 </ul>
 <div className="px-0 pt-8 border-t border-primary-fixed-dim/20">
 <ul className="space-y-2">
 <li>
-<a className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" href="#">
+<Link className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined mr-4" data-icon="help">help</span>
                         Support
-                    </a>
+                    </Link>
 </li>
 <li>
-<a className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" href="#">
+<Link className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-4" data-icon="logout">logout</span>
                         Log Out
-                    </a>
+                    </Link>
 </li>
 </ul>
 </div>

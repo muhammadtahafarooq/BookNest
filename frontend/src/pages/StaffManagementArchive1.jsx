@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './StaffManagementArchive1.css';
 
 export default function StaffManagementArchive1() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
@@ -9,16 +12,16 @@ export default function StaffManagementArchive1() {
 <div className="flex items-center gap-gutter">
 <span className="font-headline-md text-headline-md font-bold text-on-primary dark:text-on-primary-container">BookNest</span>
 <div className="hidden md:flex gap-lg font-label-md text-label-md">
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200" href="#">Catalog</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200" href="#">Collections</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200" href="#">Archives</a>
-<a className="text-on-primary dark:text-on-primary-container border-b-2 border-secondary-container pb-1" href="#">Curations</a>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200" to="/catalogarchive">Catalog</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200" to="/browsecollections">Collections</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200" to="/shopbrowsebooks">Archives</Link>
+<Link className="text-on-primary dark:text-on-primary-container border-b-2 border-secondary-container pb-1" to="/shopbrowsebooks">Curations</Link>
 </div>
 </div>
 <div className="flex items-center gap-md">
 <span className="material-symbols-outlined text-on-primary cursor-pointer hover:opacity-80 transition-opacity" data-icon="menu_book">menu_book</span>
 <span className="material-symbols-outlined text-on-primary cursor-pointer hover:opacity-80 transition-opacity" data-icon="history">history</span>
-<button className="font-label-md text-label-md bg-transparent text-on-primary px-4 py-2 border border-on-primary rounded hover:bg-on-primary hover:text-primary transition-colors">Sign In</button>
+<button className="font-label-md text-label-md bg-transparent text-on-primary px-4 py-2 border border-on-primary rounded hover:bg-on-primary hover:text-primary transition-colors" onClick={() => navigate('/loginbooknestprivatelibrary')}>Sign In</button>
 </div>
 </nav>
 {/* Main Workspace */}
@@ -27,10 +30,10 @@ export default function StaffManagementArchive1() {
 <aside className="hidden lg:flex flex-col w-64 shrink-0 bg-primary-container rounded-lg p-lg text-on-primary-container shadow-sm h-[calc(100vh-160px)] sticky top-xl">
 <h2 className="font-headline-sm text-headline-sm mb-lg text-on-primary">Admin</h2>
 <nav className="flex flex-col gap-sm font-label-md text-label-md">
-<a className="py-2 px-3 rounded hover:bg-surface-variant/10 text-on-primary-container" href="#">Library Management</a>
-<a className="py-2 px-3 rounded bg-surface-variant/20 text-on-primary border-l-2 border-[#8A6F4A]" href="#">Staff Management</a>
-<a className="py-2 px-3 rounded hover:bg-surface-variant/10 text-on-primary-container" href="#">Financial Records</a>
-<a className="py-2 px-3 rounded hover:bg-surface-variant/10 text-on-primary-container" href="#">System Settings</a>
+<Link className="py-2 px-3 rounded hover:bg-surface-variant/10 text-on-primary-container" to="/shopbrowsebooks">Library Management</Link>
+<Link className="py-2 px-3 rounded bg-surface-variant/20 text-on-primary border-l-2 border-[#8A6F4A]" to="/shopbrowsebooks">Staff Management</Link>
+<Link className="py-2 px-3 rounded hover:bg-surface-variant/10 text-on-primary-container" to="/shopbrowsebooks">Financial Records</Link>
+<Link className="py-2 px-3 rounded hover:bg-surface-variant/10 text-on-primary-container" to="/shopbrowsebooks">System Settings</Link>
 </nav>
 </aside>
 {/* Main Content Area */}
@@ -192,10 +195,10 @@ export default function StaffManagementArchive1() {
 <div className="font-headline-sm text-headline-sm font-bold text-on-primary mb-lg md:mb-0">BookNest</div>
 <div className="flex flex-col items-center md:items-end gap-md">
 <div className="flex gap-lg font-label-sm text-label-sm">
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">Archival Standards</a>
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">Conservation Policy</a>
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">Terms of Access</a>
-<a className="text-secondary-fixed font-bold hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">The Vault</a>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Archival Standards</Link>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Conservation Policy</Link>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Terms of Access</Link>
+<Link className="text-secondary-fixed font-bold hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">The Vault</Link>
 </div>
 <p className="font-body-md text-body-md text-on-primary-fixed-variant opacity-70">© 1892-2024 BookNest Archival Society. All rights reserved.</p>
 </div>

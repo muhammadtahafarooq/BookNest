@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './InventoryManagementBooknestAdminControl.css';
 
 export default function InventoryManagementBooknestAdminControl() {
+    const navigate = useNavigate();
   return (
     <>
       {/* SideNavBar */}
@@ -25,55 +28,55 @@ export default function InventoryManagementBooknestAdminControl() {
 </div>
 <ul className="flex-1 flex flex-col gap-1 overflow-y-auto w-full px-2">
 <li>
-<a className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">dashboard</span>
 <span className="font-label-md text-label-md">Dashboard</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-4 text-secondary-fixed-dim font-bold border-l-4 border-antique-brass bg-on-primary-fixed-variant text-surface-bright pl-4 py-3 rounded-r-lg Active: opacity-90 transition-all duration-200" href="#">
+<Link className="flex items-center gap-4 text-secondary-fixed-dim font-bold border-l-4 border-antique-brass bg-on-primary-fixed-variant text-surface-bright pl-4 py-3 rounded-r-lg Active: opacity-90 transition-all duration-200" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined">menu_book</span>
 <span className="font-label-md text-label-md">Inventory</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">person_edit</span>
 <span className="font-label-md text-label-md">Author Management</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/dashboard/yourordersbooknesthistory">
 <span className="material-symbols-outlined">receipt_long</span>
 <span className="font-label-md text-label-md">Orders</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">group</span>
 <span className="font-label-md text-label-md">Customers</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">analytics</span>
 <span className="font-label-md text-label-md">Analytics</span>
-</a>
+</Link>
 </li>
 </ul>
 <div className="mt-auto px-2 pt-4 border-t border-on-primary-fixed-variant">
 <ul className="flex flex-col gap-1 w-full">
 <li>
-<a className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">settings</span>
 <span className="font-label-md text-label-md">Settings</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" href="#">
+<Link className="flex items-center gap-4 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined">help_outline</span>
 <span className="font-label-md text-label-md">Support</span>
-</a>
+</Link>
 </li>
 </ul>
 </div>
@@ -88,7 +91,7 @@ export default function InventoryManagementBooknestAdminControl() {
 </div>
 </div>
 <div className="flex items-center gap-6">
-<button className="text-on-surface-variant hover:text-antique-brass transition-colors duration-400 relative">
+<button className="text-on-surface-variant hover:text-antique-brass transition-colors duration-400 relative" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">notifications</span>
 <span className="absolute top-0 right-0 w-2 h-2 bg-danger-rose rounded-full"></span>
 </button>
@@ -366,7 +369,7 @@ export default function InventoryManagementBooknestAdminControl() {
 </div>
 </div>
 </div>
-<button className="w-full mt-6 py-3 border border-antique-brass text-antique-brass rounded-lg hover:bg-antique-brass hover:text-midnight-ink transition-colors font-label-md">
+<button className="w-full mt-6 py-3 border border-antique-brass text-antique-brass rounded-lg hover:bg-antique-brass hover:text-midnight-ink transition-colors font-label-md" onClick={() => navigate('/shopbrowsebooks')}>
                         Review All Alerts
                     </button>
 </div>

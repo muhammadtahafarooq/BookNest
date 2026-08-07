@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './PremiumDigitalLibrary.css';
 
 export default function PremiumDigitalLibrary() {
@@ -27,7 +29,8 @@ export default function PremiumDigitalLibrary() {
                 observer.observe(el);
             });
         });
-    return () => {
+      const navigate = useNavigate();
+  return () => {
         if (typeof observer !== 'undefined') observer.disconnect();
     };
   }, []);
@@ -38,18 +41,18 @@ return (
 <nav className="bg-[#171A1C] text-on-primary font-headline-md text-headline-md font-body-md text-body-md font-label-md text-label-md full-width top-0 border-b border-[#313030] shadow-sm sticky z-50">
 <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
 {/* Brand Logo */}
-<a className="font-headline-sm text-headline-sm font-bold text-on-primary tracking-tight" href="#">
+<Link className="font-headline-sm text-headline-sm font-bold text-on-primary tracking-tight" to="/">
                 BookNest
-            </a>
+            </Link>
 {/* Desktop Navigation Links (Hidden on Mobile) */}
 <div className="hidden md:flex items-center space-x-8">
 {/* Active: Home */}
-<a className="text-on-primary border-b-2 border-[#A67C42] pb-1 hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out font-label-md text-label-md" href="#">Home</a>
+<Link className="text-on-primary border-b-2 border-[#A67C42] pb-1 hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out font-label-md text-label-md" to="/">Home</Link>
 {/* Inactive Links */}
-<a className="text-on-primary-fixed-variant hover:text-on-primary pb-1 hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out font-label-md text-label-md" href="#">Shop</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary pb-1 hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out font-label-md text-label-md" href="#">Categories</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary pb-1 hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out font-label-md text-label-md" href="#">Blog</a>
-<a className="text-on-primary-fixed-variant hover:text-on-primary pb-1 hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out font-label-md text-label-md" href="#">About</a>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary pb-1 hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out font-label-md text-label-md" to="/shopbrowsebooks">Shop</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary pb-1 hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out font-label-md text-label-md" to="/shopbrowsebooks">Categories</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary pb-1 hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out font-label-md text-label-md" to="/shopbrowsebooks">Blog</Link>
+<Link className="text-on-primary-fixed-variant hover:text-on-primary pb-1 hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out font-label-md text-label-md" to="/aboutusourstorybooknest">About</Link>
 </div>
 {/* Trailing Icon Actions & Search */}
 <div className="flex items-center space-x-6">
@@ -61,7 +64,7 @@ return (
 <button className="text-on-primary hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out">
 <span className="material-symbols-outlined">shopping_bag</span>
 </button>
-<button className="text-on-primary hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out hidden md:block">
+<button className="text-on-primary hover:opacity-80 transition-opacity duration-300 transform scale-95 duration-200 ease-in-out hidden md:block" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">person</span>
 </button>
 {/* Mobile Menu Toggle */}
@@ -92,10 +95,10 @@ return (
                         Curating the finest selection of academic texts, profound novels, children's classics, and authoritative Islamic literature for the discerning collector.
                     </p>
 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-<button className="bg-[#A67C42] text-[#171A1C] px-8 py-4 font-label-md text-label-md rounded-sm hover:bg-opacity-90 transition-all shadow-md transform hover:-translate-y-1">
+<button className="bg-[#A67C42] text-[#171A1C] px-8 py-4 font-label-md text-label-md rounded-sm hover:bg-opacity-90 transition-all shadow-md transform hover:-translate-y-1" onClick={() => navigate('/shopbrowsebooks')}>
                             Shop Books
                         </button>
-<button className="border border-outline-variant text-on-primary px-8 py-4 font-label-md text-label-md rounded-sm hover:bg-surface-variant hover:text-primary transition-all">
+<button className="border border-outline-variant text-on-primary px-8 py-4 font-label-md text-label-md rounded-sm hover:bg-surface-variant hover:text-primary transition-all" onClick={() => navigate('/categoriesexploration')}>
                             Explore Categories
                         </button>
 </div>
@@ -132,10 +135,10 @@ return (
 <p className="text-[#F3F0E8] opacity-70 font-body-md text-body-md">© 2024 BookNest. The Private Collector's Digital Archive.</p>
 </div>
 <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
-<a className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" href="#">Terms of Service</a>
-<a className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" href="#">Privacy Policy</a>
-<a className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" href="#">Archival Standards</a>
-<a className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" href="#">Contact Us</a>
+<Link className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" to="/shopbrowsebooks">Archival Standards</Link>
+<Link className="text-[#F3F0E8] opacity-70 hover:text-on-primary transition-colors duration-200 font-label-sm text-label-sm tracking-wider uppercase" to="/contactusbooknestsupport">Contact Us</Link>
 </div>
 </div>
 </footer>

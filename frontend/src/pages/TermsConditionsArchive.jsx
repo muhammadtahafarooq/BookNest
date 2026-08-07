@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './TermsConditionsArchive.css';
 
 export default function TermsConditionsArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar: Standardized from Shared Components */}
@@ -17,13 +20,13 @@ export default function TermsConditionsArchive() {
 </nav>
 {/* Trailing Icon Actions */}
 <div className="flex gap-md items-center">
-<button aria-label="favorite" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200">
+<button aria-label="favorite" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined text-body-lg">favorite</span>
 </button>
-<button aria-label="shopping_cart" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200">
+<button aria-label="shopping_cart" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined text-body-lg">shopping_cart</span>
 </button>
-<button aria-label="account_circle" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200">
+<button aria-label="account_circle" className="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined text-body-lg">account_circle</span>
 </button>
 </div>
@@ -48,11 +51,11 @@ export default function TermsConditionsArchive() {
 <aside className="md:col-span-4 hidden md:block border-r border-stone-manuscript pr-lg">
 <h3 className="font-headline-sm text-headline-sm text-obsidian-ink mb-md border-b border-stone-manuscript pb-sm">Contents</h3>
 <ul className="space-y-sm font-label-md text-label-md">
-<li><a className="text-surface-tint hover:text-obsidian-ink transition-colors" href="#account">1. Account Terms</a></li>
-<li><a className="text-surface-tint hover:text-obsidian-ink transition-colors" href="#orders">2. Orders &amp; Shipping</a></li>
-<li><a className="text-surface-tint hover:text-obsidian-ink transition-colors" href="#payments">3. Payments &amp; Security</a></li>
-<li><a className="text-surface-tint hover:text-obsidian-ink transition-colors" href="#returns">4. Returns &amp; Archival Policy</a></li>
-<li><a className="text-surface-tint hover:text-obsidian-ink transition-colors" href="#liability">5. Liability &amp; Governing Law</a></li>
+<li><Link className="text-surface-tint hover:text-obsidian-ink transition-colors" to="#account">1. Account Terms</Link></li>
+<li><Link className="text-surface-tint hover:text-obsidian-ink transition-colors" to="#orders">2. Orders &amp; Shipping</Link></li>
+<li><Link className="text-surface-tint hover:text-obsidian-ink transition-colors" to="#payments">3. Payments &amp; Security</Link></li>
+<li><Link className="text-surface-tint hover:text-obsidian-ink transition-colors" to="#returns">4. Returns &amp; Archival Policy</Link></li>
+<li><Link className="text-surface-tint hover:text-obsidian-ink transition-colors" to="#liability">5. Liability &amp; Governing Law</Link></li>
 </ul>
 </aside>
 {/* Main Legal Text */}
@@ -116,11 +119,11 @@ export default function TermsConditionsArchive() {
 </div>
 {/* Footer Links */}
 <div className="flex flex-wrap justify-center gap-md font-label-sm text-label-sm text-on-primary-fixed-variant">
-<a className="hover:text-secondary-fixed transition-colors duration-200" href="#">The Collection</a>
-<a className="hover:text-secondary-fixed transition-colors duration-200" href="#">Research Guides</a>
-<a className="hover:text-secondary-fixed transition-colors duration-200" href="#">Archives</a>
-<a className="text-on-primary font-bold" href="#">Privacy Policy</a>
-<a className="text-on-primary font-bold" href="#">Terms of Service</a>
+<Link className="hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link>
+<Link className="hover:text-secondary-fixed transition-colors duration-200" to="/searchresultsbooknest">Research Guides</Link>
+<Link className="hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archives</Link>
+<Link className="text-on-primary font-bold" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="text-on-primary font-bold" to="/shopbrowsebooks">Terms of Service</Link>
 </div>
 </div>
 </footer>

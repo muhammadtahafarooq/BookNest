@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './BeginYourArchive.css';
 
 export default function BeginYourArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar (Suppressed due to Linear/Transactional intent, but instructions said "Use the TopNavBar". Resolving conflict: Instructions explicitly said "Layout: Use the TopNavBar (dark/Obsidian Ink)". Proceeding to render TopNavBar despite general shell rules, as specific prompt overrides general rules.) */}
@@ -11,10 +14,10 @@ export default function BeginYourArchive() {
                 BookNest
             </div>
 <nav className="hidden md:flex space-x-gutter">
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" href="#">Catalog</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" href="#">Collections</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" href="#">Archives</a>
-<a className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" href="#">Curations</a>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" to="/catalogarchive">Catalog</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" to="/browsecollections">Collections</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" to="/shopbrowsebooks">Archives</Link>
+<Link className="text-on-primary-fixed-variant dark:text-on-primary-fixed opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md" to="/shopbrowsebooks">Curations</Link>
 </nav>
 <div className="flex items-center space-x-lg">
 <div className="hidden md:flex space-x-sm">
@@ -25,7 +28,7 @@ export default function BeginYourArchive() {
 <span className="material-symbols-outlined" data-icon="history">history</span>
 </button>
 </div>
-<a className="font-label-md text-label-md text-on-primary dark:text-on-primary-container hover:opacity-80 transition-opacity" href="#">Sign In</a>
+<Link className="font-label-md text-label-md text-on-primary dark:text-on-primary-container hover:opacity-80 transition-opacity" to="/loginbooknestprivatelibrary">Sign In</Link>
 </div>
 </div>
 </header>
@@ -60,16 +63,16 @@ export default function BeginYourArchive() {
 <input className="w-4 h-4 border border-stone-manuscript rounded bg-soft-archive focus:ring-3 focus:ring-obsidian-ink/20 text-obsidian-ink" id="terms" type="checkbox" />
 </div>
 <label className="ml-sm font-body-md text-body-md text-obsidian-ink opacity-90" htmlFor="terms">
-                            I agree to the <a className="underline hover:text-burnished-brass transition-colors" href="#">Archival Terms &amp; Conditions</a>
+                            I agree to the <Link className="underline hover:text-burnished-brass transition-colors" to="/shopbrowsebooks">Archival Terms &amp; Conditions</Link>
 </label>
 </div>
-<button className="w-full bg-obsidian-ink text-aged-ivory font-label-md text-label-md py-md rounded-md hover:bg-obsidian-ink/90 transition-colors mt-xl" type="button">
+<button className="w-full bg-obsidian-ink text-aged-ivory font-label-md text-label-md py-md rounded-md hover:bg-obsidian-ink/90 transition-colors mt-xl" type="button" onClick={() => navigate('/createaccountbooknest')}>
                         Register Account
                     </button>
 </form>
 <div className="mt-xl text-center border-t border-stone-manuscript pt-md">
 <p className="font-body-md text-body-md text-stone-manuscript">
-                        Already have an account? <a className="text-obsidian-ink font-semibold hover:text-burnished-brass transition-colors" href="#">Sign In</a>
+                        Already have an account? <Link className="text-obsidian-ink font-semibold hover:text-burnished-brass transition-colors" to="/loginbooknestprivatelibrary">Sign In</Link>
 </p>
 </div>
 </div>
@@ -82,10 +85,10 @@ export default function BeginYourArchive() {
                 BookNest
             </div>
 <nav className="flex flex-wrap justify-center gap-x-lg gap-y-sm">
-<a className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">Archival Standards</a>
-<a className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">Conservation Policy</a>
-<a className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">Terms of Access</a>
-<a className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" href="#">The Vault</a>
+<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Archival Standards</Link>
+<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Conservation Policy</Link>
+<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">Terms of Access</Link>
+<Link className="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline" to="/shopbrowsebooks">The Vault</Link>
 </nav>
 <div className="font-body-md text-body-md text-on-primary-fixed-variant opacity-70 text-center md:text-right">
                 © 1892-2024 BookNest Archival Society. All rights reserved.

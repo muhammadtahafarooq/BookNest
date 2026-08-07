@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link } from 'react-router-dom';
 import './ReaderBehaviorInsights.css';
 
 export default function ReaderBehaviorInsights() {
@@ -141,46 +143,46 @@ return (
 </div>
 {/* Navigation Links */}
 <div className="flex-1 overflow-y-auto w-full px-sm">
-<a className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" href="#">
+<Link className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined mr-md">dashboard</span>
 <span>Dashboard</span>
-</a>
-<a className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" href="#">
+</Link>
+<Link className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" to="/catalogarchive">
 <span className="material-symbols-outlined mr-md">menu_book</span>
 <span>Books</span>
-</a>
-<a className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" href="#">
+</Link>
+<Link className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-md">category</span>
 <span>Categories</span>
-</a>
-<a className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" href="#">
+</Link>
+<Link className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined mr-md">person_edit</span>
 <span>Authors</span>
-</a>
-<a className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" href="#">
+</Link>
+<Link className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" to="/admin/publishermanagementarchive">
 <span className="material-symbols-outlined mr-md">domain</span>
 <span>Publishers</span>
-</a>
-<a className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" href="#">
+</Link>
+<Link className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-md">shopping_cart</span>
 <span>Orders</span>
-</a>
-<a className="flex items-center bg-secondary-container text-on-secondary-container mx-2 px-4 py-3 rounded-lg group" href="#">
+</Link>
+<Link className="flex items-center bg-secondary-container text-on-secondary-container mx-2 px-4 py-3 rounded-lg group" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-md" style={{fontVariationSettings: '\'FILL\' 1'}}>group</span>
 <span>Customers</span>
-</a>
-<a className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" href="#">
+</Link>
+<Link className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-md">badge</span>
 <span>Staff</span>
-</a>
-<a className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" href="#">
+</Link>
+<Link className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined mr-md">inventory_2</span>
 <span>Inventory</span>
-</a>
-<a className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" href="#">
+</Link>
+<Link className="flex items-center text-on-primary-container hover:text-on-primary px-4 py-3 hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150 rounded-lg group" to="/shopbrowsebooks">
 <span className="material-symbols-outlined mr-md">analytics</span>
 <span>Analytics</span>
-</a>
+</Link>
 </div>
 </nav>
 {/* Main Content Canvas */}
@@ -305,7 +307,7 @@ return (
 <div className="md:col-span-12 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-editorial overflow-hidden reveal-chart delay-300">
 <div className="p-lg divider-horizontal flex justify-between items-center bg-surface-container-low">
 <h2 className="font-headline-sm text-headline-sm text-primary">Elite Readers</h2>
-<a className="font-label-md text-label-md text-secondary hover:underline" href="#">View Full Roster</a>
+<Link className="font-label-md text-label-md text-secondary hover:underline" to="/shopbrowsebooks">View Full Roster</Link>
 </div>
 <ul className="divide-y divide-outline-variant">
 {/* ListItem 1 */}

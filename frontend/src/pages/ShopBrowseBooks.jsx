@@ -1,35 +1,38 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './ShopBrowseBooks.css';
 
 export default function ShopBrowseBooks() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar (Shared Component) */}
 <header className="bg-primary shadow-sm docked full-width top-0 z-50 sticky transition-all duration-300">
 <div className="flex justify-between items-center w-full px-margin-desktop max-w-container-max-width mx-auto py-4">
 {/* Brand Logo */}
-<a className="text-headline-lg font-display-lg font-bold text-on-primary" href="#">
+<Link className="text-headline-lg font-display-lg font-bold text-on-primary" to="/">
                 BookNest
-            </a>
+            </Link>
 {/* Navigation Links (Hidden on mobile) */}
 <nav className="hidden md:flex items-center space-x-8">
 {/* Shop - Active */}
-<a className="text-secondary-fixed font-bold border-b-2 border-secondary-fixed pb-1 font-label-md text-label-md transition-colors duration-400" href="#">
+<Link className="text-secondary-fixed font-bold border-b-2 border-secondary-fixed pb-1 font-label-md text-label-md transition-colors duration-400" to="/shopbrowsebooks">
                     Shop
-                </a>
-<a className="text-on-primary/80 hover:text-secondary-fixed font-label-md text-label-md transition-colors duration-400" href="#">
+                </Link>
+<Link className="text-on-primary/80 hover:text-secondary-fixed font-label-md text-label-md transition-colors duration-400" to="/shopbrowsebooks">
                     Categories
-                </a>
-<a className="text-on-primary/80 hover:text-secondary-fixed font-label-md text-label-md transition-colors duration-400" href="#">
+                </Link>
+<Link className="text-on-primary/80 hover:text-secondary-fixed font-label-md text-label-md transition-colors duration-400" to="/shopbrowsebooks">
                     New Arrivals
-                </a>
+                </Link>
 </nav>
 {/* Trailing Icons */}
 <div className="flex items-center space-x-4">
-<button aria-label="shopping_cart" className="text-on-primary hover:text-secondary-fixed transition-colors duration-400 p-2">
+<button aria-label="shopping_cart" className="text-on-primary hover:text-secondary-fixed transition-colors duration-400 p-2" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined">shopping_cart</span>
 </button>
-<button aria-label="person" className="text-on-primary hover:text-secondary-fixed transition-colors duration-400 p-2">
+<button aria-label="person" className="text-on-primary hover:text-secondary-fixed transition-colors duration-400 p-2" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">person</span>
 </button>
 {/* Mobile Menu Button */}
@@ -91,7 +94,7 @@ export default function ShopBrowseBooks() {
 <div className="mb-10">
 <nav aria-label="Breadcrumb" className="flex items-center text-on-surface-variant font-label-sm text-label-sm mb-4">
 <ol className="flex items-center space-x-2">
-<li><a className="hover:text-secondary transition-colors" href="#">Home</a></li>
+<li><Link className="hover:text-secondary transition-colors" to="/">Home</Link></li>
 <li><span className="material-symbols-outlined text-[16px]">chevron_right</span></li>
 <li aria-current="page" className="text-on-surface font-medium">Browse Books</li>
 </ol>
@@ -139,7 +142,7 @@ export default function ShopBrowseBooks() {
 <div className="absolute bottom-0 left-0 w-full h-2 bg-surface-container-highest rounded-full shadow-inner z-0"></div>
 <div className="book-shadow"></div>
 {/* Wishlist FAB */}
-<button aria-label="favorite" className="absolute top-2 right-2 bg-surface-container-lowest/80 backdrop-blur-sm p-2 rounded-full text-on-surface-variant hover:text-danger-rose hover:bg-surface-container-lowest transition-all shadow-sm opacity-0 group-hover:opacity-100 focus:opacity-100">
+<button aria-label="favorite" className="absolute top-2 right-2 bg-surface-container-lowest/80 backdrop-blur-sm p-2 rounded-full text-on-surface-variant hover:text-danger-rose hover:bg-surface-container-lowest transition-all shadow-sm opacity-0 group-hover:opacity-100 focus:opacity-100" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined text-[20px]">favorite</span>
 </button>
 </div>
@@ -156,7 +159,7 @@ export default function ShopBrowseBooks() {
 </div>
 <div className="mt-auto pt-4 flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-primary">$24.99</span>
-<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300">
+<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
                                 Add to Cart
                             </button>
 </div>
@@ -171,7 +174,7 @@ export default function ShopBrowseBooks() {
 </div>
 <div className="absolute bottom-0 left-0 w-full h-2 bg-surface-container-highest rounded-full shadow-inner z-0"></div>
 <div className="book-shadow"></div>
-<button aria-label="favorite" className="absolute top-2 right-2 bg-surface-container-lowest/80 backdrop-blur-sm p-2 rounded-full text-danger-rose hover:bg-surface-container-lowest transition-all shadow-sm opacity-0 group-hover:opacity-100 focus:opacity-100">
+<button aria-label="favorite" className="absolute top-2 right-2 bg-surface-container-lowest/80 backdrop-blur-sm p-2 rounded-full text-danger-rose hover:bg-surface-container-lowest transition-all shadow-sm opacity-0 group-hover:opacity-100 focus:opacity-100" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined fill text-[20px]">favorite</span>
 </button>
 </div>
@@ -188,7 +191,7 @@ export default function ShopBrowseBooks() {
 </div>
 <div className="mt-auto pt-4 flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-primary">$18.50</span>
-<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300">
+<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
                                 Add to Cart
                             </button>
 </div>
@@ -203,7 +206,7 @@ export default function ShopBrowseBooks() {
 </div>
 <div className="absolute bottom-0 left-0 w-full h-2 bg-surface-container-highest rounded-full shadow-inner z-0"></div>
 <div className="book-shadow"></div>
-<button aria-label="favorite" className="absolute top-2 right-2 bg-surface-container-lowest/80 backdrop-blur-sm p-2 rounded-full text-on-surface-variant hover:text-danger-rose hover:bg-surface-container-lowest transition-all shadow-sm opacity-0 group-hover:opacity-100 focus:opacity-100">
+<button aria-label="favorite" className="absolute top-2 right-2 bg-surface-container-lowest/80 backdrop-blur-sm p-2 rounded-full text-on-surface-variant hover:text-danger-rose hover:bg-surface-container-lowest transition-all shadow-sm opacity-0 group-hover:opacity-100 focus:opacity-100" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined text-[20px]">favorite</span>
 </button>
 </div>
@@ -220,7 +223,7 @@ export default function ShopBrowseBooks() {
 </div>
 <div className="mt-auto pt-4 flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-primary">$32.00</span>
-<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300">
+<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
                                 Add to Cart
                             </button>
 </div>
@@ -235,7 +238,7 @@ export default function ShopBrowseBooks() {
 </div>
 <div className="absolute bottom-0 left-0 w-full h-2 bg-surface-container-highest rounded-full shadow-inner z-0"></div>
 <div className="book-shadow"></div>
-<button aria-label="favorite" className="absolute top-2 right-2 bg-surface-container-lowest/80 backdrop-blur-sm p-2 rounded-full text-on-surface-variant hover:text-danger-rose hover:bg-surface-container-lowest transition-all shadow-sm opacity-0 group-hover:opacity-100 focus:opacity-100">
+<button aria-label="favorite" className="absolute top-2 right-2 bg-surface-container-lowest/80 backdrop-blur-sm p-2 rounded-full text-on-surface-variant hover:text-danger-rose hover:bg-surface-container-lowest transition-all shadow-sm opacity-0 group-hover:opacity-100 focus:opacity-100" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined text-[20px]">favorite</span>
 </button>
 </div>
@@ -252,7 +255,7 @@ export default function ShopBrowseBooks() {
 </div>
 <div className="mt-auto pt-4 flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-primary">$19.99</span>
-<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300">
+<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
                                 Add to Cart
                             </button>
 </div>
@@ -284,9 +287,9 @@ export default function ShopBrowseBooks() {
 <div className="w-full px-margin-desktop py-12 max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter relative z-20">
 {/* Brand Column */}
 <div className="col-span-1 md:col-span-1 flex flex-col justify-start">
-<a className="text-headline-md font-display-lg text-on-primary mb-4 block font-fraunces" href="#">
+<Link className="text-headline-md font-display-lg text-on-primary mb-4 block font-fraunces" to="/">
                     BookNest
-                </a>
+                </Link>
 <p className="text-on-primary/60 font-body-sm text-body-sm mb-6">
                     Curating the finest literature for discerning minds. Your personal digital library.
                 </p>
@@ -299,16 +302,16 @@ export default function ShopBrowseBooks() {
 <div>
 <h4 className="font-label-md text-label-md text-secondary-fixed-dim uppercase tracking-widest mb-4">Explore</h4>
 <ul className="space-y-3 font-body-sm text-body-sm text-on-primary/60">
-<li><a className="hover:text-on-primary transition-colors duration-400 pointer-cursor" href="#">About Us</a></li>
-<li><a className="hover:text-on-primary transition-colors duration-400 pointer-cursor" href="#">Contact</a></li>
-<li><a className="hover:text-on-primary transition-colors duration-400 pointer-cursor" href="#">Shipping Policy</a></li>
+<li><Link className="hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/aboutusourstorybooknest">About Us</Link></li>
+<li><Link className="hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/contactusbooknestsupport">Contact</Link></li>
+<li><Link className="hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Shipping Policy</Link></li>
 </ul>
 </div>
 <div>
 <h4 className="font-label-md text-label-md text-secondary-fixed-dim uppercase tracking-widest mb-4">Legal</h4>
 <ul className="space-y-3 font-body-sm text-body-sm text-on-primary/60">
-<li><a className="hover:text-on-primary transition-colors duration-400 pointer-cursor" href="#">Privacy Policy</a></li>
-<li><a className="hover:text-on-primary transition-colors duration-400 pointer-cursor" href="#">Terms of Service</a></li>
+<li><Link className="hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Privacy Policy</Link></li>
+<li><Link className="hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Terms of Service</Link></li>
 </ul>
 </div>
 </div>

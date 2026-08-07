@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './ConnectWithTheArchive.css';
 
 export default function ConnectWithTheArchive() {
@@ -24,7 +26,8 @@ export default function ConnectWithTheArchive() {
                 observer.observe(el);
             });
         });
-    return () => {
+      const navigate = useNavigate();
+  return () => {
         if (typeof observer !== 'undefined') observer.disconnect();
     };
   }, []);
@@ -47,13 +50,13 @@ return (
 </div>
 {/* Trailing Icons */}
 <div className="flex items-center gap-md">
-<button aria-label="favorite" className="text-on-primary hover:text-secondary-fixed transition-colors duration-200">
+<button aria-label="favorite" className="text-on-primary hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'wght\' 300'}}>favorite</span>
 </button>
-<button aria-label="shopping_cart" className="text-on-primary hover:text-secondary-fixed transition-colors duration-200">
+<button aria-label="shopping_cart" className="text-on-primary hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'wght\' 300'}}>shopping_cart</span>
 </button>
-<button aria-label="account_circle" className="text-on-primary hover:text-secondary-fixed transition-colors duration-200">
+<button aria-label="account_circle" className="text-on-primary hover:text-secondary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'wght\' 300'}}>account_circle</span>
 </button>
 </div>
@@ -89,7 +92,7 @@ return (
 <div>
 <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Phone</h3>
 <p className="font-body-md text-body-md text-on-surface-variant mb-xs">Mon-Fri, 9am to 6pm EST</p>
-<a className="font-label-md text-label-md text-primary hover:text-secondary-fixed transition-colors" href="tel:+18005550199">+1 (800) 555-0199</a>
+<Link className="font-label-md text-label-md text-primary hover:text-secondary-fixed transition-colors" to="tel:+18005550199">+1 (800) 555-0199</Link>
 </div>
 </div>
 {/* Card 2: Email */}
@@ -100,7 +103,7 @@ return (
 <div>
 <h3 className="font-headline-sm text-headline-sm text-primary mb-xs">Email</h3>
 <p className="font-body-md text-body-md text-on-surface-variant mb-xs">We typically reply within 24 hours.</p>
-<a className="font-label-md text-label-md text-primary hover:text-secondary-fixed transition-colors" href="mailto:archives@booknest.com">archives@booknest.com</a>
+<Link className="font-label-md text-label-md text-primary hover:text-secondary-fixed transition-colors" to="mailto:archives@booknest.com">archives@booknest.com</Link>
 </div>
 </div>
 {/* Card 3: Address */}
@@ -156,7 +159,7 @@ return (
 <div className="w-24 h-px bg-outline-variant mx-auto mb-lg"></div>
 <p className="font-body-lg text-body-lg text-on-surface-variant">
                 Curious about something else? 
-                <a className="text-primary font-bold border-b border-primary hover:text-secondary-fixed hover:border-secondary-fixed transition-colors" href="#">Visit our Archive FAQs.</a>
+                <Link className="text-primary font-bold border-b border-primary hover:text-secondary-fixed hover:border-secondary-fixed transition-colors" to="/faqbooknestsupport">Visit our Archive FAQs.</Link>
 </p>
 </section>
 </main>
@@ -170,11 +173,11 @@ return (
 </div>
 {/* Links */}
 <nav className="flex flex-wrap justify-center gap-lg">
-<a className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">The Collection</a>
-<a className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Research Guides</a>
-<a className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Archives</a>
-<a className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Privacy Policy</a>
-<a className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" href="#">Terms of Service</a>
+<Link className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/browsecollections">The Collection</Link>
+<Link className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/searchresultsbooknest">Research Guides</Link>
+<Link className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archives</Link>
+<Link className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="font-body-md text-body-md text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors duration-200" to="/shopbrowsebooks">Terms of Service</Link>
 </nav>
 </div>
 </footer>

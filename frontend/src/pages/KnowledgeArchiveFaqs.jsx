@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './KnowledgeArchiveFaqs.css';
 
 export default function KnowledgeArchiveFaqs() {
@@ -30,42 +32,43 @@ export default function KnowledgeArchiveFaqs() {
         });
   }, []);
 
-return (
+  const navigate = useNavigate();
+  return (
     <>
       {/* TopNavBar */}
 <nav className="bg-primary-container dark:bg-tertiary-container sticky docked full-width top-0 shadow-md bg-primary-container border-b border-outline-variant z-50 transition-all duration-300 ease-in-out">
 <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
 {/* Left: Logo & Search (if applicable, but JSON says on_left) */}
 <div className="flex items-center gap-gutter">
-<a className="font-headline-sm text-headline-sm font-bold text-on-primary dark:text-on-tertiary hover:opacity-80 transition-opacity" href="#">
+<Link className="font-headline-sm text-headline-sm font-bold text-on-primary dark:text-on-tertiary hover:opacity-80 transition-opacity" to="/">
                     BookNest
-                </a>
+                </Link>
 <div className="hidden md:flex items-center text-on-primary-container">
 <span className="material-symbols-outlined" data-icon="search">search</span>
 </div>
 </div>
 {/* Center: Navigation Links */}
 <div className="hidden md:flex items-center gap-lg">
-<a className="font-label-md text-label-md text-on-primary-container/70 hover:text-on-primary transition-colors hover:bg-on-primary-fixed-variant/10 px-sm py-xs rounded" href="#">
+<Link className="font-label-md text-label-md text-on-primary-container/70 hover:text-on-primary transition-colors hover:bg-on-primary-fixed-variant/10 px-sm py-xs rounded" to="/catalogarchive">
                     Catalog
-                </a>
-<a className="font-label-md text-label-md text-on-primary-container/70 hover:text-on-primary transition-colors hover:bg-on-primary-fixed-variant/10 px-sm py-xs rounded" href="#">
+                </Link>
+<Link className="font-label-md text-label-md text-on-primary-container/70 hover:text-on-primary transition-colors hover:bg-on-primary-fixed-variant/10 px-sm py-xs rounded" to="/shopbrowsebooks">
                     Curations
-                </a>
-<a className="font-label-md text-label-md text-on-primary-container/70 hover:text-on-primary transition-colors hover:bg-on-primary-fixed-variant/10 px-sm py-xs rounded" href="#">
+                </Link>
+<Link className="font-label-md text-label-md text-on-primary-container/70 hover:text-on-primary transition-colors hover:bg-on-primary-fixed-variant/10 px-sm py-xs rounded" to="/shopbrowsebooks">
                     Archives
-                </a>
-<a className="font-label-md text-label-md text-on-primary border-b-2 border-surface-tint pb-1 px-sm py-xs hover:bg-on-primary-fixed-variant/10" href="#">
+                </Link>
+<Link className="font-label-md text-label-md text-on-primary border-b-2 border-surface-tint pb-1 px-sm py-xs hover:bg-on-primary-fixed-variant/10" to="/shopbrowsebooks">
                     Rare Finds
-                </a>
+                </Link>
 </div>
 {/* Right: Actions */}
 <div className="flex items-center gap-md">
-<button className="text-on-primary-container hover:text-on-primary transition-colors flex items-center gap-xs">
+<button className="text-on-primary-container hover:text-on-primary transition-colors flex items-center gap-xs" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined text-[20px]" data-icon="shopping_cart">shopping_cart</span>
 <span className="hidden md:inline font-label-md text-label-md">Cart</span>
 </button>
-<button className="text-on-primary-container hover:text-on-primary transition-colors flex items-center gap-xs">
+<button className="text-on-primary-container hover:text-on-primary transition-colors flex items-center gap-xs" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined text-[20px]" data-icon="person">person</span>
 <span className="hidden md:inline font-label-md text-label-md">Account</span>
 </button>
@@ -150,18 +153,18 @@ return (
 <span className="font-body-md text-body-md text-on-primary-container dark:text-on-tertiary-container">© 2024 BookNest. Curating the weight of information.</span>
 </div>
 <nav className="flex flex-wrap justify-center gap-md md:gap-lg">
-<a className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" href="#">
+<Link className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" to="/shopbrowsebooks">
                     Terms of Service
-                </a>
-<a className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" href="#">
+                </Link>
+<Link className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" to="/shopbrowsebooks">
                     Privacy Policy
-                </a>
-<a className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" href="#">
+                </Link>
+<Link className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" to="/shopbrowsebooks">
                     Shipping &amp; Returns
-                </a>
-<a className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" href="#">
+                </Link>
+<Link className="font-label-sm text-label-sm text-on-primary-container/60 hover:text-on-primary underline decoration-surface-tint transition-all" to="/contactusbooknestsupport">
                     Contact Archive
-                </a>
+                </Link>
 </nav>
 </div>
 </footer>

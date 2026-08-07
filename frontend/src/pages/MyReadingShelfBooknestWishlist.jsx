@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './MyReadingShelfBooknestWishlist.css';
 
 export default function MyReadingShelfBooknestWishlist() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
@@ -13,11 +16,11 @@ export default function MyReadingShelfBooknestWishlist() {
             </div>
 {/* Center Nav Links */}
 <div className="hidden md:flex space-x-8 font-body-md font-medium text-sm">
-<a className="text-on-primary/70 hover:text-secondary transition-colors duration-400" href="#">Home</a>
-<a className="text-on-primary/70 hover:text-secondary transition-colors duration-400" href="#">Shop</a>
-<a className="text-on-primary/70 hover:text-secondary transition-colors duration-400" href="#">Categories</a>
-<a className="text-on-primary/70 hover:text-secondary transition-colors duration-400" href="#">Blog</a>
-<a className="text-on-primary/70 hover:text-secondary transition-colors duration-400" href="#">About</a>
+<Link className="text-on-primary/70 hover:text-secondary transition-colors duration-400" to="/">Home</Link>
+<Link className="text-on-primary/70 hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Shop</Link>
+<Link className="text-on-primary/70 hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Categories</Link>
+<Link className="text-on-primary/70 hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Blog</Link>
+<Link className="text-on-primary/70 hover:text-secondary transition-colors duration-400" to="/aboutusourstorybooknest">About</Link>
 </div>
 {/* Actions */}
 <div className="flex items-center space-x-6">
@@ -28,14 +31,14 @@ export default function MyReadingShelfBooknestWishlist() {
 </div>
 {/* Icons */}
 <div className="flex space-x-4">
-<button aria-label="Wishlist" className="text-secondary border-b-2 border-secondary pb-1 relative">
+<button aria-label="Wishlist" className="text-secondary border-b-2 border-secondary pb-1 relative" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined">favorite</span>
 <span className="absolute -top-1 -right-1 bg-secondary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">3</span>
 </button>
-<button aria-label="Cart" className="text-on-primary/70 hover:text-secondary transition-colors duration-400">
+<button aria-label="Cart" className="text-on-primary/70 hover:text-secondary transition-colors duration-400" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined">shopping_cart</span>
 </button>
-<button aria-label="Account" className="text-on-primary/70 hover:text-secondary transition-colors duration-400">
+<button aria-label="Account" className="text-on-primary/70 hover:text-secondary transition-colors duration-400" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">account_circle</span>
 </button>
 </div>
@@ -162,30 +165,30 @@ export default function MyReadingShelfBooknestWishlist() {
 <span className="font-headline-md font-bold text-on-primary-fixed">BookNest</span>
 <p className="text-on-primary-container max-w-xs">The Private Library Experience. Curating exceptional literary journeys for the modern reader.</p>
 <div className="flex space-x-4 mt-2">
-<a className="hover:text-secondary transition-colors" href="#"><span className="material-symbols-outlined">public</span></a>
-<a className="hover:text-secondary transition-colors" href="#"><span className="material-symbols-outlined">mail</span></a>
+<Link className="hover:text-secondary transition-colors" to="/shopbrowsebooks"><span className="material-symbols-outlined">public</span></Link>
+<Link className="hover:text-secondary transition-colors" to="/shopbrowsebooks"><span className="material-symbols-outlined">mail</span></Link>
 </div>
 </div>
 {/* Links Column 1 */}
 <div className="flex flex-col space-y-3">
 <h4 className="font-bold text-on-primary-fixed mb-2">Collections</h4>
-<a className="text-on-primary-container hover:text-secondary transition-colors duration-400" href="#">Curated Collections</a>
-<a className="text-on-primary-container hover:text-secondary transition-colors duration-400" href="#">Editorial Picks</a>
-<a className="text-on-primary-container hover:text-secondary transition-colors duration-400" href="#">Rare Finds</a>
+<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/browsecollections">Curated Collections</Link>
+<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Editorial Picks</Link>
+<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Rare Finds</Link>
 </div>
 {/* Links Column 2 */}
 <div className="flex flex-col space-y-3">
 <h4 className="font-bold text-on-primary-fixed mb-2">Support</h4>
-<a className="text-on-primary-container hover:text-secondary transition-colors duration-400" href="#">Shipping</a>
-<a className="text-on-primary-container hover:text-secondary transition-colors duration-400" href="#">Contact</a>
-<a className="text-on-primary-container hover:text-secondary transition-colors duration-400" href="#">FAQ</a>
+<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Shipping</Link>
+<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/contactusbooknestsupport">Contact</Link>
+<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/faqbooknestsupport">FAQ</Link>
 </div>
 {/* Links Column 3 */}
 <div className="flex flex-col space-y-3">
 <h4 className="font-bold text-on-primary-fixed mb-2">Company</h4>
-<a className="text-on-primary-container hover:text-secondary transition-colors duration-400" href="#">Our Story</a>
-<a className="text-on-primary-container hover:text-secondary transition-colors duration-400" href="#">Careers</a>
-<a className="text-on-primary-container hover:text-secondary transition-colors duration-400" href="#">Terms of Service</a>
+<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/aboutusourstorybooknest">Our Story</Link>
+<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Careers</Link>
+<Link className="text-on-primary-container hover:text-secondary transition-colors duration-400" to="/shopbrowsebooks">Terms of Service</Link>
 </div>
 </div>
 <div className="w-full border-t border-on-primary-container/20 py-6 px-margin-desktop text-center">

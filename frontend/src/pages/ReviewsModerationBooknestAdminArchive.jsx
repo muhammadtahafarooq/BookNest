@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './ReviewsModerationBooknestAdminArchive.css';
 
 export default function ReviewsModerationBooknestAdminArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* SideNavBar (Generated from JSON guidance) */}
@@ -15,41 +18,41 @@ export default function ReviewsModerationBooknestAdminArchive() {
 </div>
 <ul className="flex-1 space-y-2 mt-4">
 <li>
-<a className="flex items-center space-x-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center space-x-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined" data-icon="dashboard">dashboard</span>
 <span className="font-label-md text-label-md">Dashboard</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center space-x-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center space-x-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined" data-icon="menu_book">menu_book</span>
 <span className="font-label-md text-label-md">Inventory</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center space-x-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center space-x-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined" data-icon="person_edit">person_edit</span>
 <span className="font-label-md text-label-md">Author Management</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center space-x-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center space-x-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/dashboard/yourordersbooknesthistory">
 <span className="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
 <span className="font-label-md text-label-md">Orders</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center space-x-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" href="#">
+<Link className="flex items-center space-x-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="group">group</span>
 <span className="font-label-md text-label-md">Customers</span>
-</a>
+</Link>
 </li>
 {/* Active State */}
 <li>
-<a className="flex items-center space-x-3 text-secondary-fixed-dim font-bold border-l-4 border-secondary-fixed-dim pl-4 py-3 bg-on-primary-fixed-variant opacity-90 transition-all duration-200" href="#">
+<Link className="flex items-center space-x-3 text-secondary-fixed-dim font-bold border-l-4 border-secondary-fixed-dim pl-4 py-3 bg-on-primary-fixed-variant opacity-90 transition-all duration-200" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="analytics">analytics</span>
 <span className="font-label-md text-label-md">Analytics</span>
-</a>
+</Link>
 </li>
 </ul>
 <div className="px-5 mt-auto">
@@ -60,16 +63,16 @@ export default function ReviewsModerationBooknestAdminArchive() {
 </div>
 <ul className="mt-8 space-y-2 border-t border-on-primary-container/20 pt-4 px-2">
 <li>
-<a className="flex items-center space-x-3 text-on-primary-container font-medium pl-3 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-DEFAULT" href="#">
+<Link className="flex items-center space-x-3 text-on-primary-container font-medium pl-3 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-DEFAULT" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" data-icon="settings">settings</span>
 <span className="font-label-md text-label-md">Settings</span>
-</a>
+</Link>
 </li>
 <li>
-<a className="flex items-center space-x-3 text-on-primary-container font-medium pl-3 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-DEFAULT" href="#">
+<Link className="flex items-center space-x-3 text-on-primary-container font-medium pl-3 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-DEFAULT" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined" data-icon="help_outline">help_outline</span>
 <span className="font-label-md text-label-md">Support</span>
-</a>
+</Link>
 </li>
 </ul>
 </nav>
@@ -80,7 +83,7 @@ export default function ReviewsModerationBooknestAdminArchive() {
 </div>
 <div className="flex items-center space-x-6">
 <div className="flex space-x-4 text-primary dark:text-primary-fixed-dim">
-<button className="hover:text-secondary transition-colors duration-400 hover:scale-95 transition-transform"><span className="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button className="hover:text-secondary transition-colors duration-400 hover:scale-95 transition-transform" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}><span className="material-symbols-outlined" data-icon="notifications">notifications</span></button>
 <button className="hover:text-secondary transition-colors duration-400 hover:scale-95 transition-transform"><span className="material-symbols-outlined" data-icon="apps">apps</span></button>
 </div>
 <div className="flex items-center space-x-3 border-l border-outline-variant pl-6 cursor-pointer hover:bg-surface-container-low p-2 rounded-lg transition-colors">
@@ -130,7 +133,7 @@ export default function ReviewsModerationBooknestAdminArchive() {
 </div>
 <div className="mb-4">
 <p className="font-body-sm text-body-sm text-on-surface-variant uppercase tracking-wider mb-2">Reviewed Work:</p>
-<a className="font-headline-lg text-headline-lg font-semibold text-primary hover:text-secondary transition-colors inline-block mb-3 border-b border-transparent hover:border-secondary" href="#">The Haunting of Hill House</a>
+<Link className="font-headline-lg text-headline-lg font-semibold text-primary hover:text-secondary transition-colors inline-block mb-3 border-b border-transparent hover:border-secondary" to="/shopbrowsebooks">The Haunting of Hill House</Link>
 <p className="font-body-md text-body-md text-on-surface leading-relaxed max-w-3xl">
                             "A masterclass in psychological terror. The prose is elegant, almost melodic, winding around you until you realize you're trapped. I found myself checking over my shoulder while reading in broad daylight. Highly recommended for those who prefer their horror to creep in rather than jump out."
                         </p>
@@ -167,7 +170,7 @@ export default function ReviewsModerationBooknestAdminArchive() {
 </div>
 </div>
 <div className="mb-4">
-<a className="font-headline-md text-body-lg font-semibold text-primary hover:text-secondary transition-colors block mb-2" href="#">Dune</a>
+<Link className="font-headline-md text-body-lg font-semibold text-primary hover:text-secondary transition-colors block mb-2" to="/shopbrowsebooks">Dune</Link>
 <p className="font-body-md text-body-md text-on-surface leading-relaxed text-sm line-clamp-3">
                             "The world-building is undeniably brilliant, vast and detailed. However, the pacing in the middle third dragged significantly for me. I respect its place in the canon, but it was a chore to finish."
                         </p>
@@ -202,7 +205,7 @@ export default function ReviewsModerationBooknestAdminArchive() {
 </div>
 </div>
 <div className="mb-4">
-<a className="font-headline-md text-body-lg font-semibold text-primary hover:text-secondary transition-colors block mb-2" href="#">The Secret History</a>
+<Link className="font-headline-md text-body-lg font-semibold text-primary hover:text-secondary transition-colors block mb-2" to="/aboutusourstorybooknest">The Secret History</Link>
 <p className="font-body-md text-body-md text-on-surface leading-relaxed text-sm line-clamp-3">
                             "Absolutely intoxicating. Tartt weaves a narrative that is both deeply intellectual and incredibly suspenseful. The atmosphere of the college campus is captured perfectly. I couldn't put it down."
                         </p>

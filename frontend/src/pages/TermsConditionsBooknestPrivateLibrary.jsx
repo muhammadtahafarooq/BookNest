@@ -1,35 +1,38 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './TermsConditionsBooknestPrivateLibrary.css';
 
 export default function TermsConditionsBooknestPrivateLibrary() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
 <nav className="bg-primary dark:bg-primary docked full-width top-0 shadow-md z-50">
 <div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
 {/* Brand */}
-<a className="font-display-lg text-display-lg font-bold text-on-primary tracking-tight" href="/">
+<Link className="font-display-lg text-display-lg font-bold text-on-primary tracking-tight" to="/">
                 BookNest
-            </a>
+            </Link>
 {/* Desktop Nav */}
 <div className="hidden md:flex items-center space-x-8">
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="/shop">Shop</a>
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="/categories">Categories</a>
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="/best-sellers">Best Sellers</a>
-<a className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" href="/new-arrivals">New Arrivals</a>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shop">Shop</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/categories">Categories</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/best-sellers">Best Sellers</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/new-arrivals">New Arrivals</Link>
 </div>
 {/* Actions */}
 <div className="flex items-center space-x-6 text-on-primary">
-<button aria-label="Search" className="hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out">
+<button aria-label="Search" className="hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/searchresultsbooknest')}>
 <span className="material-symbols-outlined" data-icon="search" style={{fontVariationSettings: '\'FILL\' 0'}}>search</span>
 </button>
-<button aria-label="Favorites" className="hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out">
+<button aria-label="Favorites" className="hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined" data-icon="favorite" style={{fontVariationSettings: '\'FILL\' 0'}}>favorite</span>
 </button>
-<button aria-label="Cart" className="hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out">
+<button aria-label="Cart" className="hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined" data-icon="shopping_cart" style={{fontVariationSettings: '\'FILL\' 0'}}>shopping_cart</span>
 </button>
-<button aria-label="Account" className="hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out">
+<button aria-label="Account" className="hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="account_circle" style={{fontVariationSettings: '\'FILL\' 0'}}>account_circle</span>
 </button>
 </div>
@@ -96,14 +99,14 @@ export default function TermsConditionsBooknestPrivateLibrary() {
 <div className="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
 <div className="flex flex-col space-y-3">
 <span className="font-label-md text-label-md text-on-primary mb-2">Company</span>
-<a className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="/about">About Us</a>
-<a className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="/contact">Contact</a>
+<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/about">About Us</Link>
+<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/contact">Contact</Link>
 </div>
 <div className="flex flex-col space-y-3">
 <span className="font-label-md text-label-md text-on-primary mb-2">Legal</span>
-<a className="font-body-sm text-body-sm text-secondary-fixed font-bold opacity-80 hover:opacity-100 transition-opacity" href="/terms">Terms of Service</a>
-<a className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="/privacy">Privacy Policy</a>
-<a className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" href="/shipping">Shipping Policy</a>
+<Link className="font-body-sm text-body-sm text-secondary-fixed font-bold opacity-80 hover:opacity-100 transition-opacity" to="/terms">Terms of Service</Link>
+<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/privacy">Privacy Policy</Link>
+<Link className="font-body-sm text-body-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100" to="/shipping">Shipping Policy</Link>
 </div>
 </div>
 </div>

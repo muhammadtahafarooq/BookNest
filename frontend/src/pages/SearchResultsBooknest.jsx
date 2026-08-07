@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './SearchResultsBooknest.css';
 
 export default function SearchResultsBooknest() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
@@ -9,22 +12,22 @@ export default function SearchResultsBooknest() {
 <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto h-20">
 {/* Brand */}
 <div className="flex items-center gap-4">
-<a className="font-fraunces text-2xl font-bold tracking-tight text-paper-mist flex items-center gap-2" href="#">
+<Link className="font-fraunces text-2xl font-bold tracking-tight text-paper-mist flex items-center gap-2" to="/">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>auto_stories</span>
                     BookNest
-                </a>
+                </Link>
 </div>
 {/* Navigation Cluster (Hidden on Mobile) */}
 <nav aria-label="Main Navigation" className="hidden md:flex gap-8 items-center">
-<a className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" href="#">Genres</a>
-<a className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" href="#">Best Sellers</a>
-<a className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" href="#">New Releases</a>
-<a className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" href="#">Authors</a>
+<Link className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" to="/shopbrowsebooks">Genres</Link>
+<Link className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" to="/shopbrowsebooks">Best Sellers</Link>
+<Link className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" to="/shopbrowsebooks">New Releases</Link>
+<Link className="text-cloud-linen hover:text-paper-mist hover:text-antique-brass transition-colors duration-400 font-inter text-sm font-medium" to="/shopbrowsebooks">Authors</Link>
 </nav>
 {/* Trailing Actions */}
 <div className="flex items-center gap-6">
 {/* Search Icon (Mobile mostly) */}
-<button className="md:hidden text-cloud-linen hover:text-paper-mist transition-colors">
+<button className="md:hidden text-cloud-linen hover:text-paper-mist transition-colors" onClick={() => navigate('/searchresultsbooknest')}>
 <span className="material-symbols-outlined">search</span>
 </button>
 {/* Icon Actions */}
@@ -38,7 +41,7 @@ export default function SearchResultsBooknest() {
 </button>
 </div>
 {/* Primary Action */}
-<button className="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-antique-brass hover:bg-opacity-90 text-midnight-ink font-inter font-medium text-sm rounded transition-all duration-300">
+<button className="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-antique-brass hover:bg-opacity-90 text-midnight-ink font-inter font-medium text-sm rounded transition-all duration-300" onClick={() => navigate('/loginbooknestprivatelibrary')}>
                     Sign In
                 </button>
 {/* Mobile Menu Toggle */}
@@ -164,7 +167,7 @@ export default function SearchResultsBooknest() {
 </div>
 <div className="mt-auto flex items-center justify-between px-2">
 <span className="font-inter font-semibold text-library-forest text-lg">$24.99</span>
-<button aria-label="Add to cart" className="text-antique-brass hover:text-midnight-ink hover:bg-antique-brass/10 p-2 rounded-full transition-all duration-300 flex items-center justify-center">
+<button aria-label="Add to cart" className="text-antique-brass hover:text-midnight-ink hover:bg-antique-brass/10 p-2 rounded-full transition-all duration-300 flex items-center justify-center" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined">bookmark_add</span>
 </button>
 </div>
@@ -192,7 +195,7 @@ export default function SearchResultsBooknest() {
 </div>
 <div className="mt-auto flex items-center justify-between px-2">
 <span className="font-inter font-semibold text-library-forest text-lg">$21.50</span>
-<button aria-label="Add to cart" className="text-antique-brass hover:text-midnight-ink hover:bg-antique-brass/10 p-2 rounded-full transition-all duration-300 flex items-center justify-center">
+<button aria-label="Add to cart" className="text-antique-brass hover:text-midnight-ink hover:bg-antique-brass/10 p-2 rounded-full transition-all duration-300 flex items-center justify-center" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined">bookmark_add</span>
 </button>
 </div>
@@ -220,7 +223,7 @@ export default function SearchResultsBooknest() {
 </div>
 <div className="mt-auto flex items-center justify-between px-2">
 <span className="font-inter font-semibold text-library-forest text-lg">$18.99</span>
-<button aria-label="Add to cart" className="text-antique-brass hover:text-midnight-ink hover:bg-antique-brass/10 p-2 rounded-full transition-all duration-300 flex items-center justify-center">
+<button aria-label="Add to cart" className="text-antique-brass hover:text-midnight-ink hover:bg-antique-brass/10 p-2 rounded-full transition-all duration-300 flex items-center justify-center" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined">bookmark_add</span>
 </button>
 </div>
@@ -281,10 +284,10 @@ export default function SearchResultsBooknest() {
 <p className="text-sm opacity-80">© 2024 BookNest. Curating the world's finest stories.</p>
 </div>
 <nav aria-label="Footer Navigation" className="flex flex-wrap gap-6 md:gap-8">
-<a className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">About Us</a>
-<a className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Shipping &amp; Returns</a>
-<a className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
-<a className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" href="#">Contact Support</a>
+<Link className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" to="/aboutusourstorybooknest">About Us</Link>
+<Link className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" to="/shopbrowsebooks">Shipping &amp; Returns</Link>
+<Link className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="text-on-primary-container/70 hover:text-secondary-fixed transition-colors" to="/contactusbooknestsupport">Contact Support</Link>
 </nav>
 </footer>
     </>

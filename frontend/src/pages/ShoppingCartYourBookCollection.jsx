@@ -1,29 +1,32 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './ShoppingCartYourBookCollection.css';
 
 export default function ShoppingCartYourBookCollection() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
 <nav className="bg-midnight-ink shadow-sm docked full-width top-0 sticky z-50">
 <div className="flex justify-between items-center w-full px-margin-desktop max-w-container-max-width mx-auto py-4">
 <div className="flex items-center gap-8">
-<a className="text-headline-lg font-display-lg font-bold text-on-primary" href="#">BookNest</a>
+<Link className="text-headline-lg font-display-lg font-bold text-on-primary" to="/">BookNest</Link>
 <div className="hidden md:flex gap-6">
-<a className="text-on-primary/80 font-body-md text-body-md hover:text-antique-brass transition-colors duration-400" href="#">Shop</a>
-<a className="text-on-primary/80 font-body-md text-body-md hover:text-antique-brass transition-colors duration-400" href="#">Categories</a>
-<a className="text-on-primary/80 font-body-md text-body-md hover:text-antique-brass transition-colors duration-400" href="#">New Arrivals</a>
+<Link className="text-on-primary/80 font-body-md text-body-md hover:text-antique-brass transition-colors duration-400" to="/shopbrowsebooks">Shop</Link>
+<Link className="text-on-primary/80 font-body-md text-body-md hover:text-antique-brass transition-colors duration-400" to="/shopbrowsebooks">Categories</Link>
+<Link className="text-on-primary/80 font-body-md text-body-md hover:text-antique-brass transition-colors duration-400" to="/shopbrowsebooks">New Arrivals</Link>
 </div>
 </div>
 <div className="flex items-center gap-4 text-on-primary">
-<button className="p-2 hover:text-antique-brass transition-colors duration-400">
+<button className="p-2 hover:text-antique-brass transition-colors duration-400" onClick={() => navigate('/searchresultsbooknest')}>
 <span className="material-symbols-outlined">search</span>
 </button>
-<button className="p-2 hover:text-antique-brass transition-colors duration-400 relative">
+<button className="p-2 hover:text-antique-brass transition-colors duration-400 relative" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined">shopping_cart</span>
 <span className="absolute top-1 right-1 w-2 h-2 bg-antique-brass rounded-full"></span>
 </button>
-<button className="p-2 hover:text-antique-brass transition-colors duration-400">
+<button className="p-2 hover:text-antique-brass transition-colors duration-400" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">person</span>
 </button>
 </div>
@@ -110,7 +113,7 @@ export default function ShoppingCartYourBookCollection() {
 <span className="font-headline-md text-headline-md text-midnight-ink">Total</span>
 <span className="font-display-lg text-headline-lg text-antique-brass">$90.71</span>
 </div>
-<button className="w-full bg-antique-brass hover:bg-antique-brass/90 text-on-primary font-label-md text-label-md uppercase tracking-widest py-4 rounded-premium transition-all duration-300 shelf-shadow flex justify-center items-center gap-2">
+<button className="w-full bg-antique-brass hover:bg-antique-brass/90 text-on-primary font-label-md text-label-md uppercase tracking-widest py-4 rounded-premium transition-all duration-300 shelf-shadow flex justify-center items-center gap-2" onClick={() => navigate('/securecheckoutarchive')}>
                         Proceed to Checkout
                         <span className="material-symbols-outlined" style={{fontSize: '18px'}}>arrow_forward</span>
 </button>
@@ -163,19 +166,19 @@ export default function ShoppingCartYourBookCollection() {
 <footer className="bg-midnight-ink w-full px-margin-desktop py-12 border-t border-midnight-ink/20 mt-12">
 <div className="max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
 <div>
-<a className="text-headline-md font-display-lg text-on-primary block mb-4" href="#">BookNest</a>
+<Link className="text-headline-md font-display-lg text-on-primary block mb-4" to="/">BookNest</Link>
 <p className="font-body-sm text-body-sm text-on-primary/60">© 2024 BookNest. All rights reserved.</p>
 </div>
 <div className="flex flex-col gap-3">
-<a className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" href="#">About Us</a>
-<a className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" href="#">Contact</a>
+<Link className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/aboutusourstorybooknest">About Us</Link>
+<Link className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/contactusbooknestsupport">Contact</Link>
 </div>
 <div className="flex flex-col gap-3">
-<a className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" href="#">Shipping Policy</a>
-<a className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" href="#">Privacy Policy</a>
+<Link className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Shipping Policy</Link>
+<Link className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Privacy Policy</Link>
 </div>
 <div className="flex flex-col gap-3">
-<a className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" href="#">Newsletter</a>
+<Link className="font-body-sm text-body-sm text-on-primary/60 hover:text-on-primary transition-colors duration-400 pointer-cursor" to="/shopbrowsebooks">Newsletter</Link>
 </div>
 </div>
 </footer>

@@ -1,29 +1,32 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './OrderTrackingBooknestPrivateLibrary.css';
 
 export default function OrderTrackingBooknestPrivateLibrary() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
 <header className="w-full top-0 sticky bg-surface-bright shadow-sm z-50 transition-all duration-300">
 <div className="max-w-container-max-width mx-auto flex justify-between items-center px-margin-desktop py-4">
-<a className="font-headline-lg text-headline-lg font-bold tracking-tight text-primary flex items-center gap-2" href="/">
+<Link className="font-headline-lg text-headline-lg font-bold tracking-tight text-primary flex items-center gap-2" to="/">
 <span className="material-symbols-outlined text-secondary" style={{fontVariationSettings: '\'FILL\' 1'}}>menu_book</span>
                 BookNest
-            </a>
+            </Link>
 {/* Navigation Cluster (Hidden on mobile) */}
 <nav className="hidden md:flex items-center gap-8">
-<a className="text-on-surface-variant transition-colors hover:text-secondary duration-400 font-label-md text-label-md" href="#">Catalog</a>
-<a className="text-secondary border-b-2 border-secondary pb-1 font-label-md text-label-md opacity-80 scale-[0.99] transition-all" href="#">Private Library</a>
-<a className="text-on-surface-variant transition-colors hover:text-secondary duration-400 font-label-md text-label-md" href="#">Journal</a>
-<a className="text-on-surface-variant transition-colors hover:text-secondary duration-400 font-label-md text-label-md" href="#">Curated</a>
-<a className="text-on-surface-variant transition-colors hover:text-secondary duration-400 font-label-md text-label-md" href="#">Archives</a>
+<Link className="text-on-surface-variant transition-colors hover:text-secondary duration-400 font-label-md text-label-md" to="/catalogarchive">Catalog</Link>
+<Link className="text-secondary border-b-2 border-secondary pb-1 font-label-md text-label-md opacity-80 scale-[0.99] transition-all" to="/shopbrowsebooks">Private Library</Link>
+<Link className="text-on-surface-variant transition-colors hover:text-secondary duration-400 font-label-md text-label-md" to="/shopbrowsebooks">Journal</Link>
+<Link className="text-on-surface-variant transition-colors hover:text-secondary duration-400 font-label-md text-label-md" to="/shopbrowsebooks">Curated</Link>
+<Link className="text-on-surface-variant transition-colors hover:text-secondary duration-400 font-label-md text-label-md" to="/shopbrowsebooks">Archives</Link>
 </nav>
 <div className="flex items-center gap-4">
-<button className="hidden md:flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors duration-400">
+<button className="hidden md:flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors duration-400" onClick={() => navigate('/searchresultsbooknest')}>
 <span className="material-symbols-outlined" data-icon="search">search</span>
 </button>
-<button className="bg-surface-container-lowest border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary font-label-md text-label-md px-4 py-2 rounded-lg transition-all duration-400">
+<button className="bg-surface-container-lowest border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary font-label-md text-label-md px-4 py-2 rounded-lg transition-all duration-400" onClick={() => navigate('/loginbooknestprivatelibrary')}>
                     Sign In
                 </button>
 <button className="md:hidden text-on-surface-variant">
@@ -63,7 +66,7 @@ export default function OrderTrackingBooknestPrivateLibrary() {
 </div>
 </div>
 <div className="flex flex-col justify-end">
-<button className="golden-bookmark-btn h-[46px] px-8 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 whitespace-nowrap" type="button">
+<button className="golden-bookmark-btn h-[46px] px-8 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 whitespace-nowrap" type="button" onClick={() => navigate('/dashboard/ordertrackingbooknestprivatelibrary')}>
 <span className="material-symbols-outlined text-sm">explore</span>
                             Track Order
                         </button>
@@ -257,11 +260,11 @@ export default function OrderTrackingBooknestPrivateLibrary() {
                 © 2024 BookNest Private Library. All rights reserved. Registered Academic Partner.
             </div>
 <nav className="flex flex-wrap justify-center gap-4 text-on-surface-variant font-label-sm text-label-sm">
-<a className="hover:text-secondary underline transition-all duration-400" href="#">Provenance</a>
-<a className="hover:text-secondary underline transition-all duration-400" href="#">Terms of Service</a>
-<a className="hover:text-secondary underline transition-all duration-400" href="#">Privacy Policy</a>
-<a className="hover:text-secondary underline transition-all duration-400" href="#">Institutional Access</a>
-<a className="hover:text-secondary underline transition-all duration-400" href="#">Contact Librarian</a>
+<Link className="hover:text-secondary underline transition-all duration-400" to="/shopbrowsebooks">Provenance</Link>
+<Link className="hover:text-secondary underline transition-all duration-400" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="hover:text-secondary underline transition-all duration-400" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="hover:text-secondary underline transition-all duration-400" to="/shopbrowsebooks">Institutional Access</Link>
+<Link className="hover:text-secondary underline transition-all duration-400" to="/contactusbooknestsupport">Contact Librarian</Link>
 </nav>
 </div>
 </footer>

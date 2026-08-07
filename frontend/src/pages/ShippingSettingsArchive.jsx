@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './ShippingSettingsArchive.css';
 
 export default function ShippingSettingsArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* Shared SideNavBar */}
@@ -12,22 +15,22 @@ export default function ShippingSettingsArchive() {
 </div>
 <div className="flex-1 overflow-y-auto pt-sm">
 <ul className="space-y-sm">
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="dashboard">dashboard</span>Dashboard</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="book">book</span>Books</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="category">category</span>Categories</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="person_edit">person_edit</span>Authors</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="domain">domain</span>Publishers</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="shopping_cart">shopping_cart</span>Orders</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="group">group</span>Customers</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="badge">badge</span>Staff</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="inventory_2">inventory_2</span>Inventory</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="confirmation_number">confirmation_number</span>Coupons</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="ad_units">ad_units</span>Banners</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="article">article</span>Blog</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="assessment">assessment</span>Reports</a></li>
-<li><a className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="analytics">analytics</span>Analytics</a></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/dashboard/customerdashboardmypersonalbookshelf"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="dashboard">dashboard</span>Dashboard</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/catalogarchive"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="book">book</span>Books</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/shopbrowsebooks"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="category">category</span>Categories</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/dashboard/customerdashboardmypersonalbookshelf"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="person_edit">person_edit</span>Authors</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/admin/publishermanagementarchive"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="domain">domain</span>Publishers</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/shopbrowsebooks"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="shopping_cart">shopping_cart</span>Orders</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/shopbrowsebooks"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="group">group</span>Customers</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/shopbrowsebooks"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="badge">badge</span>Staff</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/admin/inventorycontrolcenter"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="inventory_2">inventory_2</span>Inventory</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/shopbrowsebooks"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="confirmation_number">confirmation_number</span>Coupons</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/shopbrowsebooks"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="ad_units">ad_units</span>Banners</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/shopbrowsebooks"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="article">article</span>Blog</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/shopbrowsebooks"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="assessment">assessment</span>Reports</Link></li>
+<li><Link className="flex items-center px-md py-sm rounded-lg font-label-md text-label-md text-on-primary-container dark:text-on-surface-variant hover:bg-surface-variant/20 hover:bg-primary-fixed-dim/10 transition-colors scale-95 duration-150" to="/shopbrowsebooks"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="analytics">analytics</span>Analytics</Link></li>
 {/* Active Tab */}
-<li><a className="flex items-center px-md py-sm font-label-md text-label-md text-primary bg-secondary-container dark:bg-secondary-fixed-dim rounded-lg font-bold transition-colors scale-95 duration-150 nav-active-item" href="#"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="settings" style={{fontVariationSettings: '\'FILL\' 1'}}>settings</span>Settings</a></li>
+<li><Link className="flex items-center px-md py-sm font-label-md text-label-md text-primary bg-secondary-container dark:bg-secondary-fixed-dim rounded-lg font-bold transition-colors scale-95 duration-150 nav-active-item" to="/shopbrowsebooks"><span className="material-symbols-outlined mr-sm text-[20px]" data-icon="settings" style={{fontVariationSettings: '\'FILL\' 1'}}>settings</span>Settings</Link></li>
 </ul>
 </div>
 <div className="mt-auto pt-lg border-t border-outline-variant/30 flex items-center gap-sm px-sm">
@@ -50,10 +53,10 @@ export default function ShippingSettingsArchive() {
 </div>
 </div>
 <div className="flex items-center gap-md">
-<button className="w-10 h-10 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100">
+<button className="w-10 h-10 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="notifications">notifications</span>
 </button>
-<button className="w-10 h-10 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100">
+<button className="w-10 h-10 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant hover:text-primary transition-opacity opacity-80 active:opacity-100" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="account_circle">account_circle</span>
 </button>
 </div>
@@ -66,14 +69,14 @@ export default function ShippingSettingsArchive() {
 <nav aria-label="Breadcrumb" className="flex text-on-surface-variant font-label-sm text-label-sm mb-sm">
 <ol className="inline-flex items-center space-x-1 md:space-x-3">
 <li className="inline-flex items-center">
-<a className="hover:text-primary transition-colors flex items-center gap-xs" href="#">
+<Link className="hover:text-primary transition-colors flex items-center gap-xs" to="/shopbrowsebooks">
                         Archive
-                      </a>
+                      </Link>
 </li>
 <li>
 <div className="flex items-center">
 <span className="material-symbols-outlined text-[16px] mx-1">chevron_right</span>
-<a className="hover:text-primary transition-colors ml-1 md:ml-2" href="#">Settings</a>
+<Link className="hover:text-primary transition-colors ml-1 md:ml-2" to="/shopbrowsebooks">Settings</Link>
 </div>
 </li>
 <li aria-current="page">

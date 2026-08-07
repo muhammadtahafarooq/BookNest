@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './OrderManagementArchive.css';
 
 export default function OrderManagementArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* JSON: SideNavBar */}
@@ -24,49 +27,49 @@ export default function OrderManagementArchive() {
 {/* Navigation Links */}
 <ul className="flex-1 flex flex-col gap-sm">
 <li>
-<a className="flex items-center gap-md py-sm pl-5 text-on-primary-container hover:bg-primary-container hover:text-secondary-fixed transition-colors transition-all duration-300 ease-in-out font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md py-sm pl-5 text-on-primary-container hover:bg-primary-container hover:text-secondary-fixed transition-colors transition-all duration-300 ease-in-out font-label-md text-label-md" to="/catalogarchive">
 <span className="material-symbols-outlined">menu_book</span>
                     Catalog
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md py-sm text-secondary-fixed border-l-4 border-secondary-fixed pl-4 font-bold bg-primary-container transition-all duration-300 ease-in-out font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md py-sm text-secondary-fixed border-l-4 border-secondary-fixed pl-4 font-bold bg-primary-container transition-all duration-300 ease-in-out font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">payments</span>
                     Acquisitions
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md py-sm pl-5 text-on-primary-container hover:bg-primary-container hover:text-secondary-fixed transition-colors transition-all duration-300 ease-in-out font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md py-sm pl-5 text-on-primary-container hover:bg-primary-container hover:text-secondary-fixed transition-colors transition-all duration-300 ease-in-out font-label-md text-label-md" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined">import_contacts</span>
                     Circulation
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md py-sm pl-5 text-on-primary-container hover:bg-primary-container hover:text-secondary-fixed transition-colors transition-all duration-300 ease-in-out font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md py-sm pl-5 text-on-primary-container hover:bg-primary-container hover:text-secondary-fixed transition-colors transition-all duration-300 ease-in-out font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">bar_chart</span>
                     Analytics
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md py-sm pl-5 text-on-primary-container hover:bg-primary-container hover:text-secondary-fixed transition-colors transition-all duration-300 ease-in-out font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md py-sm pl-5 text-on-primary-container hover:bg-primary-container hover:text-secondary-fixed transition-colors transition-all duration-300 ease-in-out font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">settings</span>
                     Settings
-                </a>
+                </Link>
 </li>
 </ul>
 {/* Footer Links */}
 <ul className="flex flex-col gap-sm mt-auto px-0 border-t border-[#313030] pt-lg mx-5">
 <li>
-<a className="flex items-center gap-md py-sm text-on-primary-container hover:text-secondary-fixed transition-colors font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md py-sm text-on-primary-container hover:text-secondary-fixed transition-colors font-label-md text-label-md" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined">help_outline</span>
                     Support
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md py-sm text-on-primary-container hover:text-secondary-fixed transition-colors font-label-md text-label-md" href="#">
+<Link className="flex items-center gap-md py-sm text-on-primary-container hover:text-secondary-fixed transition-colors font-label-md text-label-md" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">logout</span>
                     Logout
-                </a>
+                </Link>
 </li>
 </ul>
 </nav>
@@ -76,9 +79,9 @@ export default function OrderManagementArchive() {
 <div className="flex items-center gap-xl h-full">
 <span className="font-headline-sm text-headline-sm font-bold text-primary">Ledger &amp; Folio</span>
 <nav className="hidden md:flex items-end h-full gap-lg pb-4">
-<a className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90" href="#">Dashboard</a>
-<a className="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 scale-95 active:scale-90" href="#">Reports</a>
-<a className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90" href="#">Archive</a>
+<Link className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90" to="/dashboard/customerdashboardmypersonalbookshelf">Dashboard</Link>
+<Link className="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 scale-95 active:scale-90" to="/shopbrowsebooks">Reports</Link>
+<Link className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90" to="/shopbrowsebooks">Archive</Link>
 </nav>
 </div>
 {/* Trailing Actions & Search */}
@@ -88,7 +91,7 @@ export default function OrderManagementArchive() {
 <input className="editorial-input bg-surface-container-low border border-outline-variant rounded-full py-xs pl-xl pr-md font-label-md text-label-md text-primary w-64 focus:border-primary transition-colors" placeholder="Search Ledgers..." type="text" />
 </div>
 <div className="flex items-center gap-md">
-<button className="text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90">
+<button className="text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">notifications</span>
 </button>
 <button className="text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90">

@@ -1,23 +1,26 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './CategoriesExploration.css';
 
 export default function CategoriesExploration() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar Component */}
 <header className="bg-midnight-ink text-white sticky top-0 z-50 w-full shadow-md">
 <div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
 {/* Logo */}
-<a className="font-display-lg text-headline-md lg:text-headline-lg font-bold tracking-tight text-white flex items-center gap-2" href="#">
+<Link className="font-display-lg text-headline-md lg:text-headline-lg font-bold tracking-tight text-white flex items-center gap-2" to="/">
 <span className="material-symbols-outlined icon-fill text-antique-brass text-3xl">auto_stories</span>
                 BookNest
-            </a>
+            </Link>
 {/* Desktop Navigation */}
 <nav className="hidden md:flex items-center gap-8">
-<a className="font-label-md text-label-md text-outline-variant hover:text-white transition-colors" href="#">Shop</a>
-<a className="font-label-md text-label-md text-white border-b-2 border-antique-brass pb-1" href="#">Categories</a>
-<a className="font-label-md text-label-md text-outline-variant hover:text-white transition-colors" href="#">Best Sellers</a>
-<a className="font-label-md text-label-md text-outline-variant hover:text-white transition-colors" href="#">New Arrivals</a>
+<Link className="font-label-md text-label-md text-outline-variant hover:text-white transition-colors" to="/shopbrowsebooks">Shop</Link>
+<Link className="font-label-md text-label-md text-white border-b-2 border-antique-brass pb-1" to="/shopbrowsebooks">Categories</Link>
+<Link className="font-label-md text-label-md text-outline-variant hover:text-white transition-colors" to="/shopbrowsebooks">Best Sellers</Link>
+<Link className="font-label-md text-label-md text-outline-variant hover:text-white transition-colors" to="/shopbrowsebooks">New Arrivals</Link>
 </nav>
 {/* Actions */}
 <div className="flex items-center gap-4">
@@ -25,17 +28,17 @@ export default function CategoriesExploration() {
 <span className="material-symbols-outlined text-outline-variant mr-2" data-icon="search">search</span>
 <input className="bg-transparent border-none text-white text-sm focus:ring-0 placeholder:text-outline-variant w-48" placeholder="Search books, authors..." type="text" />
 </div>
-<button className="md:hidden text-white hover:text-antique-brass transition-colors p-2">
+<button className="md:hidden text-white hover:text-antique-brass transition-colors p-2" onClick={() => navigate('/searchresultsbooknest')}>
 <span className="material-symbols-outlined" data-icon="search">search</span>
 </button>
-<button className="text-white hover:text-antique-brass transition-colors p-2 relative group">
+<button className="text-white hover:text-antique-brass transition-colors p-2 relative group" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined" data-icon="favorite">favorite</span>
 </button>
-<button className="text-white hover:text-antique-brass transition-colors p-2 relative group">
+<button className="text-white hover:text-antique-brass transition-colors p-2 relative group" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
 <span className="absolute top-1 right-1 w-2 h-2 bg-antique-brass rounded-full"></span>
 </button>
-<button className="text-white hover:text-antique-brass transition-colors p-2">
+<button className="text-white hover:text-antique-brass transition-colors p-2" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="account_circle">account_circle</span>
 </button>
 </div>
@@ -51,7 +54,7 @@ export default function CategoriesExploration() {
 <div className="max-w-container-max-width mx-auto px-margin-desktop relative z-10 text-center">
 {/* Breadcrumbs */}
 <nav className="flex justify-center items-center gap-2 font-label-sm text-label-sm text-surface-tint mb-8 opacity-0 animate-fade-in-up">
-<a className="hover:text-midnight-ink transition-colors" href="#">Home</a>
+<Link className="hover:text-midnight-ink transition-colors" to="/">Home</Link>
 <span className="material-symbols-outlined text-[16px]">chevron_right</span>
 <span className="text-midnight-ink font-medium">Categories</span>
 </nav>
@@ -89,10 +92,10 @@ export default function CategoriesExploration() {
 <h3 className="font-headline-md text-headline-md text-midnight-ink mb-2">Academic Books</h3>
 <p className="font-body-sm text-body-sm text-surface-tint">1,240 Titles</p>
 </div>
-<a className="mt-6 inline-flex items-center justify-between w-full font-label-md text-label-md text-midnight-ink border border-outline-variant rounded-full px-6 py-3 group-hover:border-midnight-ink group-hover:bg-midnight-ink group-hover:text-white transition-all duration-300" href="#">
+<Link className="mt-6 inline-flex items-center justify-between w-full font-label-md text-label-md text-midnight-ink border border-outline-variant rounded-full px-6 py-3 group-hover:border-midnight-ink group-hover:bg-midnight-ink group-hover:text-white transition-all duration-300" to="/shopbrowsebooks">
                             Explore
                             <span className="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
+</Link>
 </div>
 </div>
 {/* Category Card 2 */}
@@ -114,10 +117,10 @@ export default function CategoriesExploration() {
 <h3 className="font-headline-md text-headline-md text-midnight-ink mb-2">Novels</h3>
 <p className="font-body-sm text-body-sm text-surface-tint">3,500+ Titles</p>
 </div>
-<a className="mt-6 inline-flex items-center justify-between w-full font-label-md text-label-md text-midnight-ink border border-outline-variant rounded-full px-6 py-3 group-hover:border-midnight-ink group-hover:bg-midnight-ink group-hover:text-white transition-all duration-300" href="#">
+<Link className="mt-6 inline-flex items-center justify-between w-full font-label-md text-label-md text-midnight-ink border border-outline-variant rounded-full px-6 py-3 group-hover:border-midnight-ink group-hover:bg-midnight-ink group-hover:text-white transition-all duration-300" to="/shopbrowsebooks">
                             Explore
                             <span className="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
+</Link>
 </div>
 </div>
 {/* Category Card 3 */}
@@ -142,10 +145,10 @@ export default function CategoriesExploration() {
 <h3 className="font-headline-md text-headline-md text-midnight-ink mb-2">Children's Books</h3>
 <p className="font-body-sm text-body-sm text-surface-tint">850 Titles</p>
 </div>
-<a className="mt-6 inline-flex items-center justify-between w-full font-label-md text-label-md text-midnight-ink border border-outline-variant rounded-full px-6 py-3 group-hover:border-midnight-ink group-hover:bg-midnight-ink group-hover:text-white transition-all duration-300" href="#">
+<Link className="mt-6 inline-flex items-center justify-between w-full font-label-md text-label-md text-midnight-ink border border-outline-variant rounded-full px-6 py-3 group-hover:border-midnight-ink group-hover:bg-midnight-ink group-hover:text-white transition-all duration-300" to="/shopbrowsebooks">
                             Explore
                             <span className="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
+</Link>
 </div>
 </div>
 </div>
@@ -155,10 +158,10 @@ export default function CategoriesExploration() {
 <footer className="bg-midnight-ink text-white border-t border-white/10">
 <div className="w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
 <div className="col-span-1 md:col-span-1">
-<a className="font-display-lg text-headline-md font-bold tracking-tight text-white flex items-center gap-2 mb-4" href="#">
+<Link className="font-display-lg text-headline-md font-bold tracking-tight text-white flex items-center gap-2 mb-4" to="/">
 <span className="material-symbols-outlined icon-fill text-antique-brass text-2xl">auto_stories</span>
                     BookNest
-                </a>
+                </Link>
 <p className="font-body-sm text-body-sm text-surface-tint mb-6 max-w-xs">
                     Your premium digital library. Curated collections for the lifelong learner and avid reader.
                 </p>
@@ -169,31 +172,31 @@ export default function CategoriesExploration() {
 <div className="col-span-1">
 <h4 className="font-label-md text-label-md text-white font-bold mb-4">Explore</h4>
 <ul className="space-y-3">
-<li><a className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" href="#">Shop All</a></li>
-<li><a className="font-body-sm text-body-sm text-antique-brass font-medium" href="#">Categories</a></li>
-<li><a className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" href="#">Best Sellers</a></li>
-<li><a className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" href="#">New Arrivals</a></li>
+<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">Shop All</Link></li>
+<li><Link className="font-body-sm text-body-sm text-antique-brass font-medium" to="/shopbrowsebooks">Categories</Link></li>
+<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">Best Sellers</Link></li>
+<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">New Arrivals</Link></li>
 </ul>
 </div>
 <div className="col-span-1">
 <h4 className="font-label-md text-label-md text-white font-bold mb-4">Support</h4>
 <ul className="space-y-3">
-<li><a className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" href="#">About Us</a></li>
-<li><a className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" href="#">Contact</a></li>
-<li><a className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" href="#">Shipping Policy</a></li>
-<li><a className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" href="#">Terms of Service</a></li>
-<li><a className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" href="#">Privacy Policy</a></li>
+<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/aboutusourstorybooknest">About Us</Link></li>
+<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/contactusbooknestsupport">Contact</Link></li>
+<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">Shipping Policy</Link></li>
+<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">Terms of Service</Link></li>
+<li><Link className="font-body-sm text-body-sm text-outline-variant hover:text-antique-brass transition-all duration-200" to="/shopbrowsebooks">Privacy Policy</Link></li>
 </ul>
 </div>
 <div className="col-span-1">
 <h4 className="font-label-md text-label-md text-white font-bold mb-4">Connect</h4>
 <div className="flex gap-4">
-<a className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-outline-variant hover:bg-antique-brass hover:text-midnight-ink transition-all duration-300" href="#">
+<Link className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-outline-variant hover:bg-antique-brass hover:text-midnight-ink transition-all duration-300" to="/shopbrowsebooks">
 <span className="material-symbols-outlined text-lg">mail</span>
-</a>
-<a className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-outline-variant hover:bg-antique-brass hover:text-midnight-ink transition-all duration-300" href="#">
+</Link>
+<Link className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-outline-variant hover:bg-antique-brass hover:text-midnight-ink transition-all duration-300" to="/shopbrowsebooks">
 <span className="material-symbols-outlined text-lg">share</span>
-</a>
+</Link>
 </div>
 </div>
 </div>

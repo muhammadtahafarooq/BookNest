@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './PaymentConfigurationArchive.css';
 
 export default function PaymentConfigurationArchive() {
@@ -14,16 +16,16 @@ export default function PaymentConfigurationArchive() {
 </div>
 </div>
 <ul className="flex flex-col gap-sm flex-1">
-<li><a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200 scale-98 active:scale-95" href="#"><span className="material-symbols-outlined">menu_book</span> Books</a></li>
-<li><a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200 scale-98 active:scale-95" href="#"><span className="material-symbols-outlined">category</span> Categories</a></li>
-<li><a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200 scale-98 active:scale-95" href="#"><span className="material-symbols-outlined">shopping_bag</span> Orders</a></li>
-<li><a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200 scale-98 active:scale-95" href="#"><span className="material-symbols-outlined">group</span> Customers</a></li>
-<li><a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200 scale-98 active:scale-95" href="#"><span className="material-symbols-outlined">badge</span> Staff</a></li>
-<li><a className="flex items-center gap-md px-md py-sm rounded-lg bg-secondary-container text-on-secondary-container font-semibold scale-98 active:scale-95 transition-transform" href="#"><span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>settings</span> Settings</a></li>
+<li><Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200 scale-98 active:scale-95" to="/catalogarchive"><span className="material-symbols-outlined">menu_book</span> Books</Link></li>
+<li><Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200 scale-98 active:scale-95" to="/shopbrowsebooks"><span className="material-symbols-outlined">category</span> Categories</Link></li>
+<li><Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200 scale-98 active:scale-95" to="/shopbrowsebooks"><span className="material-symbols-outlined">shopping_bag</span> Orders</Link></li>
+<li><Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200 scale-98 active:scale-95" to="/shopbrowsebooks"><span className="material-symbols-outlined">group</span> Customers</Link></li>
+<li><Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200 scale-98 active:scale-95" to="/shopbrowsebooks"><span className="material-symbols-outlined">badge</span> Staff</Link></li>
+<li><Link className="flex items-center gap-md px-md py-sm rounded-lg bg-secondary-container text-on-secondary-container font-semibold scale-98 active:scale-95 transition-transform" to="/shopbrowsebooks"><span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>settings</span> Settings</Link></li>
 </ul>
 <div className="mt-auto flex flex-col gap-sm border-t border-outline-variant pt-lg">
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200" href="#"><span className="material-symbols-outlined">help</span> Support</a>
-<a className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200" href="#"><span className="material-symbols-outlined">logout</span> Sign Out</a>
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200" to="/contactusbooknestsupport"><span className="material-symbols-outlined">help</span> Support</Link>
+<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200" to="/shopbrowsebooks"><span className="material-symbols-outlined">logout</span> Sign Out</Link>
 </div>
 </nav>
 {/* Main Content Area */}

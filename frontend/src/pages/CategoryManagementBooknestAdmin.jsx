@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './CategoryManagementBooknestAdmin.css';
 
 export default function CategoryManagementBooknestAdmin() {
@@ -10,36 +12,36 @@ export default function CategoryManagementBooknestAdmin() {
 <span className="font-display-lg text-display-lg text-on-primary-fixed tracking-tight">BookNest</span>
 </div>
 <nav className="flex-1 py-6 px-4 space-y-2 overflow-y-auto">
-<a className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" href="#">
+<Link className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">dashboard</span>
 <span className="font-body-md text-body-md">Dashboard</span>
-</a>
-<a className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" href="#">
+</Link>
+<Link className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" to="/catalogarchive">
 <span className="material-symbols-outlined">library_books</span>
 <span className="font-body-md text-body-md">Books</span>
-</a>
-<a className="flex items-center space-x-3 px-4 py-3 rounded-lg bg-surface-tint/20 text-on-primary-fixed border-l-2 border-secondary font-medium transition-colors" href="#">
+</Link>
+<Link className="flex items-center space-x-3 px-4 py-3 rounded-lg bg-surface-tint/20 text-on-primary-fixed border-l-2 border-secondary font-medium transition-colors" to="/shopbrowsebooks">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>category</span>
 <span className="font-body-md text-body-md">Categories</span>
-</a>
-<a className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" href="#">
+</Link>
+<Link className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" to="/dashboard/yourordersbooknesthistory">
 <span className="material-symbols-outlined">receipt_long</span>
 <span className="font-body-md text-body-md">Orders</span>
-</a>
-<a className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" href="#">
+</Link>
+<Link className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">group</span>
 <span className="font-body-md text-body-md">Customers</span>
-</a>
-<a className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" href="#">
+</Link>
+<Link className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">settings</span>
 <span className="font-body-md text-body-md">Settings</span>
-</a>
+</Link>
 </nav>
 <div className="p-4 border-t border-outline-variant/10">
-<a className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" href="#">
+<Link className="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-surface-tint/10 transition-colors" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">logout</span>
 <span className="font-body-md text-body-md">Log Out</span>
-</a>
+</Link>
 </div>
 </aside>
 {/* Main Content */}

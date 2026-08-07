@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import './SecureCheckoutArchive.css';
 
 export default function SecureCheckoutArchive() {
@@ -7,7 +9,7 @@ export default function SecureCheckoutArchive() {
       {/* TopNavBar (Simplified for Checkout) */}
 <header className="bg-soft-archive-white border-b border-stone-manuscript shadow-ambient-1 w-full z-50">
 <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
-<a className="font-headline-sm text-headline-sm font-bold text-obsidian-ink tracking-tight" href="#">BookNest</a>
+<Link className="font-headline-sm text-headline-sm font-bold text-obsidian-ink tracking-tight" to="/">BookNest</Link>
 <div className="flex items-center gap-md">
 <span className="material-symbols-outlined text-outline">lock</span>
 <span className="font-label-md text-label-md text-outline">Secure Checkout</span>
@@ -171,8 +173,8 @@ export default function SecureCheckoutArchive() {
 <div className="flex flex-col md:flex-row items-center gap-md">
 <span className="font-label-sm text-label-sm text-outline">© 2024 BookNest. The Private Collector's Digital Archive.</span>
 <div className="flex gap-md font-label-sm text-label-sm text-outline">
-<a className="hover:text-obsidian-ink transition-colors" href="#">Terms of Service</a>
-<a className="hover:text-obsidian-ink transition-colors" href="#">Privacy Policy</a>
+<Link className="hover:text-obsidian-ink transition-colors" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="hover:text-obsidian-ink transition-colors" to="/shopbrowsebooks">Privacy Policy</Link>
 </div>
 </div>
 </div>

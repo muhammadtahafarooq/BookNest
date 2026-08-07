@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './YourReadingArchive.css';
 
 export default function YourReadingArchive() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
@@ -9,16 +12,16 @@ export default function YourReadingArchive() {
 <div className="flex justify-between items-center w-full px-margin-desktop max-w-[1280px] mx-auto h-20">
 <div className="font-headline-md text-headline-md font-bold text-primary dark:text-on-primary-fixed">BookNest</div>
 <nav className="hidden md:flex space-x-lg items-center">
-<a className="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Archive</a>
-<a className="text-primary dark:text-on-primary-fixed border-b-2 border-primary dark:border-on-primary-fixed pb-1 opacity-80 transition-opacity" href="#">Collection</a>
-<a className="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Wishlist</a>
-<a className="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Journal</a>
+<Link className="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" to="/shopbrowsebooks">Archive</Link>
+<Link className="text-primary dark:text-on-primary-fixed border-b-2 border-primary dark:border-on-primary-fixed pb-1 opacity-80 transition-opacity" to="/browsecollections">Collection</Link>
+<Link className="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" to="/dashboard/myreadingshelfbooknestwishlist">Wishlist</Link>
+<Link className="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" to="/shopbrowsebooks">Journal</Link>
 </nav>
 <div className="flex items-center space-x-md text-primary dark:text-on-primary-fixed">
 <button className="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200">
 <span className="material-symbols-outlined">shopping_bag</span>
 </button>
-<button className="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200">
+<button className="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">account_circle</span>
 </button>
 </div>
@@ -137,10 +140,10 @@ export default function YourReadingArchive() {
             BookNest
         </div>
 <nav className="flex flex-wrap justify-center gap-md font-body-md text-body-md font-label-sm text-label-sm mb-md md:mb-0">
-<a className="text-on-surface dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Terms of Service</a>
-<a className="text-on-surface dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
-<a className="text-on-surface dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Archival Guidelines</a>
-<a className="text-on-surface dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Support</a>
+<Link className="text-on-surface dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="text-on-surface dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" to="/shopbrowsebooks">Privacy Policy</Link>
+<Link className="text-on-surface dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" to="/shopbrowsebooks">Archival Guidelines</Link>
+<Link className="text-on-surface dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" to="/contactusbooknestsupport">Support</Link>
 </nav>
 <div className="text-on-surface dark:text-on-surface-variant font-label-sm text-label-sm">
             © 2024 BookNest Archive. All rights reserved.

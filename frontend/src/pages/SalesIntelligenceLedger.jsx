@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './SalesIntelligenceLedger.css';
 
 export default function SalesIntelligenceLedger() {
@@ -35,7 +37,8 @@ export default function SalesIntelligenceLedger() {
         });
   }, []);
 
-return (
+  const navigate = useNavigate();
+  return (
     <>
       {/* SideNavBar (Hidden on Mobile) */}
 <nav className="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline-variant dark:border-outline shadow-sm dark:shadow-none p-md space-y-sm z-50">
@@ -57,49 +60,49 @@ return (
 {/* Navigation Links */}
 <ul className="flex-1 space-y-xs">
 <li>
-<a className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<Link className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" to="/dashboard/customerdashboardmypersonalbookshelf">
 <span className="material-symbols-outlined">dashboard</span>
                     Overview
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<Link className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" to="/browsecollections">
 <span className="material-symbols-outlined">library_books</span>
                     Collections
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<Link className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">shopping_cart</span>
                     Acquisitions
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md px-md py-sm font-label-md text-label-md bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed font-semibold rounded-lg translate-x-1 duration-150 transition-transform" href="#">
+<Link className="flex items-center gap-md px-md py-sm font-label-md text-label-md bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed font-semibold rounded-lg translate-x-1 duration-150 transition-transform" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">payments</span>
                     Revenue
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<Link className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined">inventory_2</span>
                     Archives
-                </a>
+                </Link>
 </li>
 </ul>
 {/* Footer Links */}
 <ul className="space-y-xs mt-auto pt-md border-t border-outline-variant/30">
 <li>
-<a className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<Link className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined">help_outline</span>
                     Support
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<Link className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" to="/shopbrowsebooks">
 <span className="material-symbols-outlined">logout</span>
                     Sign Out
-                </a>
+                </Link>
 </li>
 </ul>
 </nav>
@@ -122,11 +125,11 @@ return (
 <div className="flex items-center gap-xl">
 <span className="font-headline-md text-headline-md font-bold tracking-tight text-primary dark:text-primary-fixed-dim">Librarian Intelligence</span>
 <nav className="flex gap-lg h-full">
-<a className="h-full flex items-center font-label-md text-label-md text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Dashboard</a>
-<a className="h-full flex items-center font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#" style={{marginBottom: '-2px'}}>Analytics</a>
-<a className="h-full flex items-center font-label-md text-label-md text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Inventory</a>
-<a className="h-full flex items-center font-label-md text-label-md text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Reports</a>
-<a className="h-full flex items-center font-label-md text-label-md text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">History</a>
+<Link className="h-full flex items-center font-label-md text-label-md text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" to="/dashboard/customerdashboardmypersonalbookshelf">Dashboard</Link>
+<Link className="h-full flex items-center font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" to="/shopbrowsebooks" style={{marginBottom: '-2px'}}>Analytics</Link>
+<Link className="h-full flex items-center font-label-md text-label-md text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" to="/admin/inventorycontrolcenter">Inventory</Link>
+<Link className="h-full flex items-center font-label-md text-label-md text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" to="/shopbrowsebooks">Reports</Link>
+<Link className="h-full flex items-center font-label-md text-label-md text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" to="/aboutusourstorybooknest">History</Link>
 </nav>
 </div>
 <div className="flex items-center gap-md">
@@ -137,8 +140,8 @@ return (
 </div>
 <div className="flex gap-sm text-on-surface-variant">
 <button className="p-2 hover:bg-surface-container-high rounded-full transition-colors"><span className="material-symbols-outlined">calendar_today</span></button>
-<button className="p-2 hover:bg-surface-container-high rounded-full transition-colors"><span className="material-symbols-outlined">notifications</span></button>
-<button className="p-2 hover:bg-surface-container-high rounded-full transition-colors"><span className="material-symbols-outlined">settings</span></button>
+<button className="p-2 hover:bg-surface-container-high rounded-full transition-colors" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}><span className="material-symbols-outlined">notifications</span></button>
+<button className="p-2 hover:bg-surface-container-high rounded-full transition-colors" onClick={() => navigate('/admin/admindashboardbooknestcommandcenter')}><span className="material-symbols-outlined">settings</span></button>
 </div>
 <div className="w-px h-8 bg-outline-variant mx-2"></div>
 <button className="font-label-md text-label-md text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity font-medium flex items-center gap-xs">

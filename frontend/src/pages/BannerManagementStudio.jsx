@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './BannerManagementStudio.css';
 
 export default function BannerManagementStudio() {
+    const navigate = useNavigate();
   return (
     <>
       {/* Sidebar: Marketing Intent implies Marketing Tab is Active */}
@@ -12,34 +15,34 @@ export default function BannerManagementStudio() {
 </div>
 <ul className="flex flex-col gap-sm flex-1 font-label-md text-label-md">
 <li>
-<a className="flex items-center gap-md text-on-primary-container dark:text-on-primary-fixed-variant px-md py-sm hover:bg-surface-variant/10 dark:hover:bg-surface-variant/5 transition-colors group" href="#">
+<Link className="flex items-center gap-md text-on-primary-container dark:text-on-primary-fixed-variant px-md py-sm hover:bg-surface-variant/10 dark:hover:bg-surface-variant/5 transition-colors group" to="/shopbrowsebooks">
 <span className="material-symbols-outlined text-xl group-hover:scale-95 transition-transform duration-150" data-icon="menu_book">menu_book</span>
                     Library Archive
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md text-on-primary-container dark:text-on-primary-fixed-variant px-md py-sm hover:bg-surface-variant/10 dark:hover:bg-surface-variant/5 transition-colors group" href="#">
+<Link className="flex items-center gap-md text-on-primary-container dark:text-on-primary-fixed-variant px-md py-sm hover:bg-surface-variant/10 dark:hover:bg-surface-variant/5 transition-colors group" to="/admin/inventorycontrolcenter">
 <span className="material-symbols-outlined text-xl group-hover:scale-95 transition-transform duration-150" data-icon="inventory_2">inventory_2</span>
                     Inventory
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md text-on-primary-container dark:text-on-primary-fixed-variant px-md py-sm hover:bg-surface-variant/10 dark:hover:bg-surface-variant/5 transition-colors group" href="#">
+<Link className="flex items-center gap-md text-on-primary-container dark:text-on-primary-fixed-variant px-md py-sm hover:bg-surface-variant/10 dark:hover:bg-surface-variant/5 transition-colors group" to="/shopbrowsebooks">
 <span className="material-symbols-outlined text-xl group-hover:scale-95 transition-transform duration-150" data-icon="badge">badge</span>
                     Staff Registry
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-lg px-md py-sm group active:scale-95 transition-transform duration-150" href="#">
+<Link className="flex items-center gap-md bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-lg px-md py-sm group active:scale-95 transition-transform duration-150" to="/shopbrowsebooks">
 <span className="material-symbols-outlined text-xl" data-icon="campaign" style={{fontVariationSettings: '\'FILL\' 1'}}>campaign</span>
                     Marketing
-                </a>
+                </Link>
 </li>
 <li>
-<a className="flex items-center gap-md text-on-primary-container dark:text-on-primary-fixed-variant px-md py-sm hover:bg-surface-variant/10 dark:hover:bg-surface-variant/5 transition-colors group" href="#">
+<Link className="flex items-center gap-md text-on-primary-container dark:text-on-primary-fixed-variant px-md py-sm hover:bg-surface-variant/10 dark:hover:bg-surface-variant/5 transition-colors group" to="/shopbrowsebooks">
 <span className="material-symbols-outlined text-xl group-hover:scale-95 transition-transform duration-150" data-icon="settings">settings</span>
                     Settings
-                </a>
+                </Link>
 </li>
 </ul>
 <div className="mt-auto pt-lg border-t border-on-primary-container/20">
@@ -49,14 +52,14 @@ export default function BannerManagementStudio() {
             </button>
 <ul className="flex flex-col gap-sm font-label-md text-label-md">
 <li>
-<a className="flex items-center gap-md text-on-primary-container px-md py-sm hover:bg-surface-variant/10 transition-colors" href="#">
+<Link className="flex items-center gap-md text-on-primary-container px-md py-sm hover:bg-surface-variant/10 transition-colors" to="/contactusbooknestsupport">
 <span className="material-symbols-outlined text-xl" data-icon="help">help</span> Support
-                    </a>
+                    </Link>
 </li>
 <li>
-<a className="flex items-center gap-md text-on-primary-container px-md py-sm hover:bg-surface-variant/10 transition-colors" href="#">
+<Link className="flex items-center gap-md text-on-primary-container px-md py-sm hover:bg-surface-variant/10 transition-colors" to="/shopbrowsebooks">
 <span className="material-symbols-outlined text-xl" data-icon="logout">logout</span> Log Out
-                    </a>
+                    </Link>
 </li>
 </ul>
 </div>
@@ -68,9 +71,9 @@ export default function BannerManagementStudio() {
 <div className="flex items-center gap-xl">
 <span className="font-headline-md text-headline-md font-bold text-primary dark:text-on-surface tracking-tight">Lexicon Manager</span>
 <nav className="hidden md:flex gap-md h-full items-center">
-<a className="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md h-full flex items-center px-sm" href="#">Promotions</a>
-<a className="text-primary font-bold border-b-2 border-primary hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md h-full flex items-center px-sm" href="#">Banners</a>
-<a className="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md h-full flex items-center px-sm" href="#">Newsletters</a>
+<Link className="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md h-full flex items-center px-sm" to="/shopbrowsebooks">Promotions</Link>
+<Link className="text-primary font-bold border-b-2 border-primary hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md h-full flex items-center px-sm" to="/shopbrowsebooks">Banners</Link>
+<Link className="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md h-full flex items-center px-sm" to="/shopbrowsebooks">Newsletters</Link>
 </nav>
 </div>
 <div className="flex items-center gap-md">
@@ -78,7 +81,7 @@ export default function BannerManagementStudio() {
 <span className="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" data-icon="search">search</span>
 <input className="input-editorial pl-xl pr-sm py-xs rounded-full text-label-sm font-label-sm w-48 focus:w-64 transition-all bg-surface-container-low border-none" placeholder="Search resources..." type="text" />
 </div>
-<button className="text-on-surface-variant hover:text-primary transition-colors p-xs rounded-full hover:bg-surface-variant focus:outline-none ring-1 ring-outline">
+<button className="text-on-surface-variant hover:text-primary transition-colors p-xs rounded-full hover:bg-surface-variant focus:outline-none ring-1 ring-outline" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="notifications">notifications</span>
 </button>
 <button className="text-on-surface-variant hover:text-primary transition-colors p-xs rounded-full hover:bg-surface-variant focus:outline-none ring-1 ring-outline">

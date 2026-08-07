@@ -1,7 +1,10 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './ProductDetailsTheMidnightLibrary.css';
 
 export default function ProductDetailsTheMidnightLibrary() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar */}
@@ -9,19 +12,19 @@ export default function ProductDetailsTheMidnightLibrary() {
 <div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
 <div className="font-display-lg text-display-lg font-bold text-on-primary">BookNest</div>
 <nav className="hidden md:flex space-x-8 items-center h-full">
-<a className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" href="#">Shop</a>
-<a className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" href="#">Categories</a>
-<a className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" href="#">Best Sellers</a>
-<a className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" href="#">New Arrivals</a>
+<Link className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" to="/shopbrowsebooks">Shop</Link>
+<Link className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" to="/shopbrowsebooks">Categories</Link>
+<Link className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" to="/shopbrowsebooks">Best Sellers</Link>
+<Link className="h-full flex items-center text-outline-variant hover:text-on-primary transition-colors hover:bg-primary-container/50 px-4 font-label-md text-label-md scale-95 duration-200 ease-in-out" to="/shopbrowsebooks">New Arrivals</Link>
 </nav>
 <div className="flex items-center space-x-6 text-on-primary">
-<button className="hover:text-tertiary-fixed-dim transition-colors scale-95 duration-200 ease-in-out">
+<button className="hover:text-tertiary-fixed-dim transition-colors scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined">favorite</span>
 </button>
-<button className="hover:text-tertiary-fixed-dim transition-colors scale-95 duration-200 ease-in-out">
+<button className="hover:text-tertiary-fixed-dim transition-colors scale-95 duration-200 ease-in-out" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined">shopping_cart</span>
 </button>
-<button className="hover:text-tertiary-fixed-dim transition-colors scale-95 duration-200 ease-in-out">
+<button className="hover:text-tertiary-fixed-dim transition-colors scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">account_circle</span>
 </button>
 </div>
@@ -30,9 +33,9 @@ export default function ProductDetailsTheMidnightLibrary() {
 <main className="flex-grow w-full max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12">
 {/* Breadcrumb */}
 <nav className="text-on-surface-variant font-label-sm text-label-sm mb-8 flex items-center space-x-2">
-<a className="hover:text-on-background transition-colors" href="#">Home</a>
+<Link className="hover:text-on-background transition-colors" to="/">Home</Link>
 <span className="material-symbols-outlined text-[16px]">chevron_right</span>
-<a className="hover:text-on-background transition-colors" href="#">Fiction</a>
+<Link className="hover:text-on-background transition-colors" to="/shopbrowsebooks">Fiction</Link>
 <span className="material-symbols-outlined text-[16px]">chevron_right</span>
 <span className="text-on-background font-medium">The Midnight Library</span>
 </nav>
@@ -72,7 +75,7 @@ export default function ProductDetailsTheMidnightLibrary() {
 <span className="material-symbols-outlined text-[18px]">star_half</span>
 </div>
 <span className="font-label-md text-label-md text-on-background ml-2">4.8</span>
-<a className="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary underline ml-1" href="#reviews">(500 reviews)</a>
+<Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary underline ml-1" to="#reviews">(500 reviews)</Link>
 </div>
 <div className="h-4 w-px bg-outline-variant"></div>
 <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Publisher: Canongate</span>
@@ -96,7 +99,7 @@ export default function ProductDetailsTheMidnightLibrary() {
 <span className="material-symbols-outlined text-[20px]">add</span>
 </button>
 </div>
-<button className="flex-grow h-12 bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md rounded-lg shadow-sm hover:shadow-md hover:bg-tertiary-fixed-dim transition-all flex items-center justify-center space-x-2">
+<button className="flex-grow h-12 bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md rounded-lg shadow-sm hover:shadow-md hover:bg-tertiary-fixed-dim transition-all flex items-center justify-center space-x-2" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined text-[20px]">shopping_bag</span>
 <span>Add to Cart</span>
 </button>
@@ -141,13 +144,13 @@ export default function ProductDetailsTheMidnightLibrary() {
 <p className="font-body-sm text-body-sm text-outline-variant">© 2024 BookNest Pakistan. All rights reserved.</p>
 </div>
 <div className="flex flex-col space-y-2 font-label-sm text-label-sm">
-<a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" href="#">About Us</a>
-<a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" href="#">Contact</a>
-<a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" href="#">Shipping Policy</a>
+<Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" to="/aboutusourstorybooknest">About Us</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" to="/contactusbooknestsupport">Contact</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" to="/shopbrowsebooks">Shipping Policy</Link>
 </div>
 <div className="flex flex-col space-y-2 font-label-sm text-label-sm">
-<a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" href="#">Terms of Service</a>
-<a className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" href="#">Privacy Policy</a>
+<Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1 block" to="/shopbrowsebooks">Privacy Policy</Link>
 </div>
 </div>
 </footer>

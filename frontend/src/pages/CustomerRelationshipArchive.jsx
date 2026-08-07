@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './CustomerRelationshipArchive.css';
 
 export default function CustomerRelationshipArchive() {
@@ -36,7 +38,8 @@ export default function CustomerRelationshipArchive() {
         }
   }, []);
 
-return (
+  const navigate = useNavigate();
+  return (
     <>
       {/* TopNavBar */}
 <header className="bg-primary text-on-primary docked full-width top-0 border-b border-outline-variant shadow-md z-50">
@@ -44,10 +47,10 @@ return (
 <div className="flex items-center gap-lg">
 <span className="font-headline-md text-headline-md font-bold text-on-primary tracking-tight">BookNest</span>
 <nav className="hidden md:flex gap-md ml-xl">
-<a className="text-on-primary-fixed-variant opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md py-sm" href="#">Catalog</a>
-<a className="text-on-primary-fixed-variant opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md py-sm" href="#">Collections</a>
-<a className="text-on-primary border-b-2 border-secondary-container pb-1 font-label-md text-label-md py-sm" href="#">Archives</a>
-<a className="text-on-primary-fixed-variant opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md py-sm" href="#">Curations</a>
+<Link className="text-on-primary-fixed-variant opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md py-sm" to="/catalogarchive">Catalog</Link>
+<Link className="text-on-primary-fixed-variant opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md py-sm" to="/browsecollections">Collections</Link>
+<Link className="text-on-primary border-b-2 border-secondary-container pb-1 font-label-md text-label-md py-sm" to="/shopbrowsebooks">Archives</Link>
+<Link className="text-on-primary-fixed-variant opacity-80 hover:text-on-primary hover:opacity-100 transition-opacity duration-200 font-label-md text-label-md py-sm" to="/shopbrowsebooks">Curations</Link>
 </nav>
 </div>
 <div className="flex items-center gap-md">
@@ -57,7 +60,7 @@ return (
 <button className="scale-95 active:scale-90 transition-transform p-sm rounded-full hover:bg-surface-variant/20">
 <span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 0'}}>history</span>
 </button>
-<button className="font-label-md text-label-md bg-on-primary text-primary px-lg py-sm rounded-full scale-95 active:scale-90 transition-transform hover:bg-surface-container-low">Sign In</button>
+<button className="font-label-md text-label-md bg-on-primary text-primary px-lg py-sm rounded-full scale-95 active:scale-90 transition-transform hover:bg-surface-container-low" onClick={() => navigate('/loginbooknestprivatelibrary')}>Sign In</button>
 </div>
 </div>
 </header>
@@ -68,7 +71,7 @@ return (
 <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-sm">Customer Relationship Archive</h1>
 <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Managing the readers of the BookNest collection.</p>
 </div>
-<button className="bg-[#b8860b] text-[#171a1c] font-label-md text-label-md px-lg py-md rounded-DEFAULT font-bold flex items-center gap-sm archive-shadow archive-shadow-hover transition-all">
+<button className="bg-[#b8860b] text-[#171a1c] font-label-md text-label-md px-lg py-md rounded-DEFAULT font-bold flex items-center gap-sm archive-shadow archive-shadow-hover transition-all" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined">person_add</span>
                 Add New Reader
             </button>
@@ -240,7 +243,7 @@ return (
 <div className="flex-grow">
 <div className="flex justify-between items-end mb-md">
 <h3 className="font-headline-sm text-headline-sm text-on-surface text-[20px]">Order History</h3>
-<a className="font-label-sm text-label-sm text-on-surface-variant hover:text-[#b8860b] hover:underline underline-offset-4" href="#">View All (24)</a>
+<Link className="font-label-sm text-label-sm text-on-surface-variant hover:text-[#b8860b] hover:underline underline-offset-4" to="/shopbrowsebooks">View All (24)</Link>
 </div>
 <ul className="divide-y divide-outline-variant/30">
 <li className="py-md flex justify-between items-center group cursor-pointer hover:bg-surface-container-low -mx-md px-md rounded transition-colors">
@@ -285,10 +288,10 @@ return (
 </div>
 </div>
 <div className="flex gap-md flex-wrap justify-center">
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" href="#">Archival Standards</a>
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" href="#">Conservation Policy</a>
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" href="#">Terms of Access</a>
-<a className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" href="#">The Vault</a>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">Archival Standards</Link>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">Conservation Policy</Link>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">Terms of Access</Link>
+<Link className="text-on-primary-fixed-variant opacity-70 hover:text-on-primary hover:opacity-100 transition-all underline-offset-4 hover:underline font-label-sm text-label-sm" to="/shopbrowsebooks">The Vault</Link>
 </div>
 </div>
 </footer>

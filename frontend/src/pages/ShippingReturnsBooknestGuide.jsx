@@ -1,32 +1,35 @@
 import React from 'react';
+
+import { Link, useNavigate} from 'react-router-dom';
 import './ShippingReturnsBooknestGuide.css';
 
 export default function ShippingReturnsBooknestGuide() {
+    const navigate = useNavigate();
   return (
     <>
       {/* TopNavBar (Shared Component) */}
 <header className="bg-primary shadow-md sticky top-0 z-50 transition-all duration-300 w-full" id="top-nav">
 <div className="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto h-20">
 {/* Brand Logo */}
-<a className="font-display-lg text-display-lg font-bold text-on-primary" href="#">
+<Link className="font-display-lg text-display-lg font-bold text-on-primary" to="/">
                 BookNest
-            </a>
+            </Link>
 {/* Navigation Links (Web) */}
 <nav className="hidden md:flex gap-8">
-<a className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors py-2" href="#">Shop</a>
-<a className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors py-2" href="#">Categories</a>
-<a className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors py-2" href="#">Best Sellers</a>
-<a className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors py-2" href="#">New Arrivals</a>
+<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors py-2" to="/shopbrowsebooks">Shop</Link>
+<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors py-2" to="/shopbrowsebooks">Categories</Link>
+<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors py-2" to="/shopbrowsebooks">Best Sellers</Link>
+<Link className="font-label-md text-label-md text-outline-variant hover:text-on-primary transition-colors py-2" to="/shopbrowsebooks">New Arrivals</Link>
 </nav>
 {/* Trailing Icons */}
 <div className="flex items-center gap-4">
-<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out">
+<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}>
 <span className="material-symbols-outlined" data-icon="favorite">favorite</span>
 </button>
-<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out">
+<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/shoppingcartyourbookcollection')}>
 <span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
 </button>
-<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out">
+<button className="text-on-primary hover:bg-primary-container/50 transition-all duration-400 p-2 rounded-full scale-95 duration-200 ease-in-out" onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}>
 <span className="material-symbols-outlined" data-icon="account_circle">account_circle</span>
 </button>
 </div>
@@ -155,7 +158,7 @@ export default function ShippingReturnsBooknestGuide() {
 <button className="bg-accent-brass text-primary font-label-md px-6 py-3 rounded-lg hover:bg-white transition-colors duration-300 font-medium">
                             Contact Support
                         </button>
-<button className="border border-outline text-white font-label-md px-6 py-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
+<button className="border border-outline text-white font-label-md px-6 py-3 rounded-lg hover:bg-white/10 transition-colors duration-300" onClick={() => navigate('/dashboard/ordertrackingbooknestprivatelibrary')}>
                             Track Order
                         </button>
 </div>
@@ -171,20 +174,20 @@ export default function ShippingReturnsBooknestGuide() {
 <div className="w-full py-margin-desktop px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
 {/* Brand */}
 <div className="col-span-1 md:col-span-1">
-<a className="font-headline-md text-headline-md font-bold text-on-primary mb-4 block" href="#">
+<Link className="font-headline-md text-headline-md font-bold text-on-primary mb-4 block" to="/">
                     BookNest
-                </a>
+                </Link>
 <p className="font-body-sm text-body-sm text-outline-variant">
                     © 2024 BookNest Pakistan. All rights reserved.
                 </p>
 </div>
 {/* Links */}
 <div className="col-span-1 md:col-span-3 flex flex-wrap gap-x-8 gap-y-4 md:justify-end">
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1" href="#">About Us</a>
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1" href="#">Contact</a>
-<a className="font-label-sm text-label-sm text-secondary-fixed font-bold opacity-80 hover:opacity-100 py-1" href="#">Shipping Policy</a>
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1" href="#">Terms of Service</a>
-<a className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1" href="#">Privacy Policy</a>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1" to="/aboutusourstorybooknest">About Us</Link>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1" to="/contactusbooknestsupport">Contact</Link>
+<Link className="font-label-sm text-label-sm text-secondary-fixed font-bold opacity-80 hover:opacity-100 py-1" to="/shopbrowsebooks">Shipping Policy</Link>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1" to="/shopbrowsebooks">Terms of Service</Link>
+<Link className="font-label-sm text-label-sm text-outline-variant hover:text-on-primary transition-all opacity-80 hover:opacity-100 py-1" to="/shopbrowsebooks">Privacy Policy</Link>
 </div>
 </div>
 </footer>
