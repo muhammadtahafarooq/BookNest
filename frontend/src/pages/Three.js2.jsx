@@ -123,14 +123,13 @@ export default function ThreeJS2() {
   }, []);
 
 return (
-    <>
+    <div className="Three-js2-container">
       {/* STITCH_THREEJS_START:ANIMATION_8 class="fixed inset-0 w-full h-full bg-transparent" */}
 <div className="fixed inset-0 w-full h-full bg-transparent" style={{display: 'block'}}>
 {/* TODO manual conversion needed - inline script removed, see warnings */}
 <div id="threejs-container-ANIMATION_8" style={{width: '100%', height: '100%'}}></div>
 {/* TODO manual conversion needed - inline script removed, see warnings */}
 </div>
-{/* STITCH_THREEJS_END:ANIMATION_8 */}
-    </>
+{/* STITCH_THREEJS_END:ANIMATION_8 */}    </div>
   );
 }

@@ -100,14 +100,13 @@ const handleResize = () => {
   }, []);
 
 return (
-    <>
+    <div className="Three-js5-container">
       {/* STITCH_THREEJS_START:ANIMATION_26 class="fixed inset-0 w-full h-full bg-transparent" */}
 <div className="fixed inset-0 w-full h-full bg-transparent" style={{display: 'block'}}>
 {/* TODO manual conversion needed - inline script removed, see warnings */}
 <div id="threejs-container-ANIMATION_26" style={{width: '100%', height: '100%'}}></div>
 {/* TODO manual conversion needed - inline script removed, see warnings */}
 </div>
-{/* STITCH_THREEJS_END:ANIMATION_26 */}
-    </>
+{/* STITCH_THREEJS_END:ANIMATION_26 */}    </div>
   );
 }
