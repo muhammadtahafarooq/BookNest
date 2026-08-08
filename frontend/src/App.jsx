@@ -68,6 +68,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Homepage />} />
         <Route path="/aboutusourstorybooknest" element={<AboutUsOurStoryBooknest />} />
         <Route path="/beginyourarchive" element={<BeginYourArchive />} />
         <Route path="/blogstoriesinspiration" element={<BlogStoriesInspiration />} />
@@ -79,27 +80,18 @@ function App() {
         <Route path="/contactusbooknestsupport" element={<ContactUsBooknestSupport />} />
         <Route path="/createaccountbooknest" element={<CreateAccountBooknest />} />
         <Route path="/faqbooknestsupport" element={<FaqBooknestSupport />} />
-        <Route path="/" element={<Homepage />} />
-        <Route path="/knowledgearchivefaqs" element={<KnowledgeArchiveFaqs />} />
         <Route path="/librarydiscoverysearchresults" element={<LibraryDiscoverySearchResults />} />
         <Route path="/loginbooknestprivatelibrary" element={<LoginBooknestPrivateLibrary />} />
         <Route path="/managebookcategories" element={<ManageBookCategories />} />
-        <Route path="/ourstoryarchive" element={<OurStoryArchive />} />
         <Route path="/premiumbookdetails" element={<PremiumBookDetails />} />
         <Route path="/premiumdigitallibrary" element={<PremiumDigitalLibrary />} />
         <Route path="/privacypolicyarchive" element={<PrivacyPolicyArchive />} />
-        <Route path="/privacypolicybooknestprivatelibrary" element={<PrivacyPolicyBooknestPrivateLibrary />} />
         <Route path="/privatelibraryaccess" element={<PrivateLibraryAccess />} />
-        <Route path="/productdetailsthemidnightlibrary" element={<ProductDetailsTheMidnightLibrary />} />
         <Route path="/searchresultsbooknest" element={<SearchResultsBooknest />} />
-        <Route path="/securecheckoutarchive" element={<SecureCheckoutArchive />} />
         <Route path="/shader" element={<Shader />} />
         <Route path="/shippingreturnsarchive" element={<ShippingReturnsArchive />} />
-        <Route path="/shippingreturnsbooknestguide" element={<ShippingReturnsBooknestGuide />} />
         <Route path="/shopbrowsebooks" element={<ShopBrowseBooks />} />
         <Route path="/shoppingcartyourbookcollection" element={<ShoppingCartYourBookCollection />} />
-        <Route path="/storiesfromthebookshelf" element={<StoriesFromTheBookshelf />} />
-        <Route path="/termsconditionsarchive" element={<TermsConditionsArchive />} />
         <Route path="/termsconditionsbooknestprivatelibrary" element={<TermsConditionsBooknestPrivateLibrary />} />
         <Route path="/theartofthearchive" element={<TheArtOfTheArchive />} />
         <Route path="/three.js1" element={<ThreeJS1 />} />
@@ -120,33 +112,25 @@ function App() {
           <Route path="yourreadingselection" element={<YourReadingSelection />} />
         </Route>
         <Route path="/admin">
-} />
           <Route path="admindashboardbooknestcommandcenter" element={<AdminDashboardBooknestCommandCenter />} />
-} />
           <Route path="authormanagementbooknestadminarchive" element={<AuthorManagementBooknestAdminArchive />} />
           <Route path="bannermanagementstudio" element={<BannerManagementStudio />} />
           <Route path="blogmanagementbooknestpublishingroom" element={<BlogManagementBooknestPublishingRoom />} />
-} />
-} />
+          <Route path="bookcollectionmanagementadminarchive" element={<BookCollectionManagementAdminArchive />} />
           <Route path="categorymanagementbooknestadmin" element={<CategoryManagementBooknestAdmin />} />
           <Route path="contactmessagesbooknestadminarchive" element={<ContactMessagesBooknestAdminArchive />} />
           <Route path="customermanagementbooknestadmindirectory" element={<CustomerManagementBooknestAdminDirectory />} />
           <Route path="customerrelationshiparchive" element={<CustomerRelationshipArchive />} />
           <Route path="editorialmanagementarchive" element={<EditorialManagementArchive />} />
-} />
           <Route path="inventorymanagementbooknestadmincontrol" element={<InventoryManagementBooknestAdminControl />} />
           <Route path="librarymanagementarchive" element={<LibraryManagementArchive />} />
           <Route path="ordermanagementarchive" element={<OrderManagementArchive />} />
-} />
           <Route path="paymentconfigurationarchive" element={<PaymentConfigurationArchive />} />
-} />
           <Route path="promotionmanagementbooknestadminarchive" element={<PromotionManagementBooknestAdminArchive />} />
-} />
           <Route path="publishermanagementbooknestadminarchive" element={<PublisherManagementBooknestAdminArchive />} />
           <Route path="readerbehaviorinsights" element={<ReaderBehaviorInsights />} />
           <Route path="reviewsmoderationbooknestadminarchive" element={<ReviewsModerationBooknestAdminArchive />} />
           <Route path="salesintelligenceledger" element={<SalesIntelligenceLedger />} />
-} />
           <Route path="shippingsettingsarchive" element={<ShippingSettingsArchive />} />
           <Route path="staffmanagementarchive1" element={<StaffManagementArchive1 />} />
           <Route path="staffmanagementarchive2" element={<StaffManagementArchive2 />} />
