@@ -53,20 +53,16 @@ export default function Homepage() {
 {/* Right: 3D Scene */}
 <div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 group">
 <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-700 z-10 pointer-events-none"></div>
-{/* STITCH_THREEJS_START:ANIMATION_4 class="absolute inset-0 w-full h-full object-cover" */}
-<div className="absolute inset-0 w-full h-full object-cover" style={{display: 'block'}}>
-{/* TODO manual conversion needed - inline script removed, see warnings */}
-<div id="threejs-container-ANIMATION_4" style={{width: '100%', height: '100%'}}></div>
-{/* TODO manual conversion needed - inline script removed, see warnings */}
+<div className="absolute inset-0 w-full h-full flex items-center justify-center perspective-[1000px]">
+<img src="/real_book.jpg" alt="Antique Leather Book" className="w-[60%] max-w-[300px] h-auto object-cover rounded-r-xl rounded-l-md shadow-2xl transition-transform duration-700 ease-out hover:rotate-y-[-15deg] hover:scale-105 cursor-pointer origin-left border-l-4 border-[#3a2818]" style={{ transformStyle: 'preserve-3d' }} />
 </div>
-{/* STITCH_THREEJS_END:ANIMATION_4 */}
 <div className="absolute bottom-6 right-6 z-20 bg-background/90 backdrop-blur-md px-4 py-3 rounded-lg border border-white/20 shadow-xl flex items-center gap-3">
 <div className="w-10 h-10 rounded-full bg-golden/20 flex items-center justify-center">
 <span className="material-symbols-outlined text-golden">auto_awesome</span>
 </div>
 <div>
 <p className="font-label-sm text-label-sm text-surface-tint">Interactive View</p>
-<p className="font-label-md text-label-md text-on-surface font-bold">Drag to explore</p>
+<p className="font-label-md text-label-md text-on-surface font-bold">Hover to explore</p>
 </div>
 </div>
 </div>

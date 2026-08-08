@@ -7,6 +7,32 @@ import './ShopBrowseBooks.css';
 
 export default function ShopBrowseBooks() {
     const navigate = useNavigate();
+
+    React.useEffect(() => {
+        const checkboxes = document.querySelectorAll('.form-checkbox');
+        const cards = document.querySelectorAll('.book-card');
+        
+        // Mock categories for the 4 cards (in order: Fiction, Fiction, Non-Fiction, Non-Fiction)
+        const mockCategories = ['Fiction', 'Fiction', 'Non-Fiction', 'Non-Fiction'];
+        
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                const checkedLabels = Array.from(checkboxes)
+                    .filter(c => c.checked)
+                    .map(c => c.nextElementSibling.textContent.split(' (')[0]);
+                
+                cards.forEach((card, index) => {
+                    const category = mockCategories[index];
+                    if (checkedLabels.length === 0 || checkedLabels.includes(category)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }, []);
+
   return (
     <>
       {/* TopNavBar (Shared Component) */}

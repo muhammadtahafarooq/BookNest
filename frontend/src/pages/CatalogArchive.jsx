@@ -6,8 +6,30 @@ import { Link, useNavigate} from 'react-router-dom';
 import './CatalogArchive.css';
 
 export default function CatalogArchive() {
+  const navigate = useNavigate();
   
   useEffect(() => {
+        const checkboxes = document.querySelectorAll('.form-checkbox');
+        const cards = document.querySelectorAll('.book-card');
+        const mockCategories = ['History', 'Fiction', 'Science']; // based on typical book distribution
+        
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                const checkedLabels = Array.from(checkboxes)
+                    .filter(c => c.checked)
+                    .map(c => c.nextElementSibling.textContent.split(' (')[0]);
+                
+                cards.forEach((card, index) => {
+                    const category = mockCategories[index];
+                    if (checkedLabels.length === 0 || checkedLabels.includes(category)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
     // Simple scroll observer for progressive reveal on cards
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
@@ -34,7 +56,6 @@ export default function CatalogArchive() {
                 observer.observe(card);
             });
         });
-      const navigate = useNavigate();
   return () => {
         if (typeof observer !== 'undefined') observer.disconnect();
     };
