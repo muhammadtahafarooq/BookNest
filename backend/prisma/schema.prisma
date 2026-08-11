@@ -1,0 +1,663 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+//////////////////////////////////////////////////////
+// ENUMS
+//////////////////////////////////////////////////////
+
+enum Role {
+  CUSTOMER
+  STAFF
+  ADMIN
+}
+
+enum BookCondition {
+  NEW
+  USED
+}
+
+enum BookLanguage {
+  ENGLISH
+  URDU
+}
+
+enum InventoryStatus {
+  IN_STOCK
+  LOW_STOCK
+  OUT_OF_STOCK
+}
+
+enum AddressType {
+  HOME
+  OFFICE
+}
+
+//////////////////////////////////////////////////////
+// USER
+//////////////////////////////////////////////////////
+
+model User {
+  id        String  @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String  @unique
+  password  String
+  phone     String?
+
+  role Role @default(CUSTOMER)
+
+  emailVerified Boolean @default(false)
+  isActive      Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  addresses     Address[]
+  refreshTokens RefreshToken[]
+
+  wishlist Wishlist[]
+  cart     Cart?
+
+  orders  Order[]
+  reviews Review[]
+
+  blogPosts BlogPost[]
+
+  auditLogs         AuditLog[]
+  notifications     Notification[]
+  customerAnalytics CustomerAnalytics?
+
+  @@index([email])
+}
+
+//////////////////////////////////////////////////////
+// ADDRESS
+//////////////////////////////////////////////////////
+
+model Address {
+  id           String      @id @default(cuid())
+  userId       String
+  type         AddressType
+  fullName     String
+  phone        String
+  country      String      @default("Pakistan")
+  province     String
+  city         String
+  postalCode   String?
+  addressLine1 String
+  addressLine2 String?
+  isDefault    Boolean     @default(false)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orders Order[]
+
+  @@index([userId])
+}
+
+//////////////////////////////////////////////////////
+// REFRESH TOKENS
+//////////////////////////////////////////////////////
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+//////////////////////////////////////////////////////
+// CATEGORY
+//////////////////////////////////////////////////////
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  image       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  books Book[]
+}
+
+//////////////////////////////////////////////////////
+// AUTHOR
+//////////////////////////////////////////////////////
+
+model Author {
+  id        String   @id @default(cuid())
+  name      String
+  biography String?
+  image     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  books Book[]
+
+  @@unique([name])
+}
+
+//////////////////////////////////////////////////////
+// PUBLISHER
+//////////////////////////////////////////////////////
+
+model Publisher {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  website     String?
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  books Book[]
+}
+
+//////////////////////////////////////////////////////
+// BOOK
+//////////////////////////////////////////////////////
+
+model Book {
+  id              String        @id @default(cuid())
+  title           String
+  slug            String        @unique
+  isbn            String        @unique
+  description     String        @db.Text
+  language        BookLanguage  @default(ENGLISH)
+  condition       BookCondition
+  price           Decimal       @db.Decimal(10, 2)
+  comparePrice    Decimal?      @db.Decimal(10, 2)
+  pages           Int?
+  publicationYear Int?
+  featured        Boolean       @default(false)
+  active          Boolean       @default(true)
+  categoryId      String
+  authorId        String
+  publisherId     String
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  category   Category    @relation(fields: [categoryId], references: [id])
+  author     Author      @relation(fields: [authorId], references: [id])
+  publisher  Publisher   @relation(fields: [publisherId], references: [id])
+  images     BookImage[]
+  inventory  Inventory?
+  wishlist   Wishlist[]
+  cartItems  CartItem[]
+  orderItems OrderItem[]
+  reviews    Review[]
+
+  @@index([title])
+  @@index([isbn])
+  @@index([categoryId])
+  @@index([authorId])
+  @@index([publisherId])
+}
+
+//////////////////////////////////////////////////////
+// BOOK IMAGES
+//////////////////////////////////////////////////////
+
+model BookImage {
+  id        String   @id @default(cuid())
+  bookId    String
+  imageUrl  String
+  altText   String?
+  isPrimary Boolean  @default(false)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+
+  book Book @relation(fields: [bookId], references: [id], onDelete: Cascade)
+
+  @@index([bookId])
+}
+
+//////////////////////////////////////////////////////
+// INVENTORY
+//////////////////////////////////////////////////////
+
+model Inventory {
+  id            String          @id @default(cuid())
+  bookId        String          @unique
+  sku           String          @unique
+  quantity      Int
+  lowStockLevel Int             @default(5)
+  status        InventoryStatus @default(IN_STOCK)
+  updatedAt     DateTime        @updatedAt
+
+  book Book @relation(fields: [bookId], references: [id], onDelete: Cascade)
+}
+
+//////////////////////////////////////////////////////
+// WISHLIST
+//////////////////////////////////////////////////////
+
+model Wishlist {
+  id        String   @id @default(cuid())
+  userId    String
+  bookId    String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  book Book @relation(fields: [bookId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, bookId])
+  @@index([userId])
+  @@index([bookId])
+}
+
+//////////////////////////////////////////////////////
+// CART
+//////////////////////////////////////////////////////
+
+model Cart {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user  User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items CartItem[]
+}
+
+//////////////////////////////////////////////////////
+// CART ITEMS
+//////////////////////////////////////////////////////
+
+model CartItem {
+  id        String   @id @default(cuid())
+  cartId    String
+  bookId    String
+  quantity  Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  cart Cart @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  book Book @relation(fields: [bookId], references: [id])
+
+  @@unique([cartId, bookId])
+  @@index([cartId])
+  @@index([bookId])
+}
+
+//////////////////////////////////////////////////////
+// COUPONS
+//////////////////////////////////////////////////////
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED
+}
+
+model Coupon {
+  id              String       @id @default(cuid())
+  code            String       @unique
+  description     String?
+  discountType    DiscountType
+  discountValue   Decimal      @db.Decimal(10, 2)
+  minimumAmount   Decimal?
+  maximumDiscount Decimal?
+  usageLimit      Int?
+  usedCount       Int          @default(0)
+  active          Boolean      @default(true)
+  startDate       DateTime
+  expiryDate      DateTime
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  orders Order[]
+
+  @@index([code])
+}
+
+//////////////////////////////////////////////////////
+// SHIPPING
+//////////////////////////////////////////////////////
+
+enum ShippingType {
+  STANDARD
+  EXPRESS
+}
+
+model ShippingMethod {
+  id            String       @id @default(cuid())
+  name          String
+  type          ShippingType
+  description   String?
+  price         Decimal      @db.Decimal(10, 2)
+  estimatedDays String?
+  active        Boolean      @default(true)
+  createdAt     DateTime     @default(now())
+
+  orders Order[]
+}
+
+//////////////////////////////////////////////////////
+// ORDER STATUS
+//////////////////////////////////////////////////////
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+//////////////////////////////////////////////////////
+// ORDERS
+//////////////////////////////////////////////////////
+
+model Order {
+  id               String      @id @default(cuid())
+  orderNumber      String      @unique
+  userId           String?
+  addressId        String
+  couponId         String?
+  shippingMethodId String?
+  status           OrderStatus @default(PENDING)
+  subtotal         Decimal     @db.Decimal(10, 2)
+  discount         Decimal     @default(0) @db.Decimal(10, 2)
+  shippingCost     Decimal     @default(0) @db.Decimal(10, 2)
+  total            Decimal     @db.Decimal(10, 2)
+  notes            String?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  user           User?           @relation(fields: [userId], references: [id])
+  address        Address         @relation(fields: [addressId], references: [id])
+  coupon         Coupon?         @relation(fields: [couponId], references: [id])
+  shippingMethod ShippingMethod? @relation(fields: [shippingMethodId], references: [id])
+  items          OrderItem[]
+  payment        Payment?
+
+  @@index([userId])
+  @@index([status])
+  @@index([orderNumber])
+}
+
+//////////////////////////////////////////////////////
+// ORDER ITEMS
+//////////////////////////////////////////////////////
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  bookId    String
+  quantity  Int
+  price     Decimal  @db.Decimal(10, 2)
+  subtotal  Decimal  @db.Decimal(10, 2)
+  createdAt DateTime @default(now())
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  book  Book  @relation(fields: [bookId], references: [id])
+
+  @@index([orderId])
+  @@index([bookId])
+}
+
+//////////////////////////////////////////////////////
+// PAYMENT
+//////////////////////////////////////////////////////
+
+enum PaymentMethod {
+  COD
+  CARD
+  JAZZCASH
+  EASYPAISA
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+model Payment {
+  id              String        @id @default(cuid())
+  orderId         String        @unique
+  method          PaymentMethod
+  status          PaymentStatus @default(PENDING)
+  transactionId   String?
+  amount          Decimal       @db.Decimal(10, 2)
+  paymentResponse Json?
+  paidAt          DateTime?
+  createdAt       DateTime      @default(now())
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+//////////////////////////////////////////////////////
+// REVIEWS
+//////////////////////////////////////////////////////
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Review {
+  id        String       @id @default(cuid())
+  userId    String
+  bookId    String
+  rating    Int
+  comment   String       @db.Text
+  status    ReviewStatus @default(PENDING)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  book Book @relation(fields: [bookId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, bookId])
+  @@index([bookId])
+}
+
+//////////////////////////////////////////////////////
+// BLOG
+//////////////////////////////////////////////////////
+
+enum BlogStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model BlogPost {
+  id          String     @id @default(cuid())
+  title       String
+  slug        String     @unique
+  excerpt     String?
+  content     String     @db.Text
+  coverImage  String?
+  status      BlogStatus @default(DRAFT)
+  authorId    String
+  publishedAt DateTime?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  author User @relation(fields: [authorId], references: [id])
+
+  @@index([slug])
+  @@index([status])
+}
+
+//////////////////////////////////////////////////////
+// HOMEPAGE BANNERS
+//////////////////////////////////////////////////////
+
+model Banner {
+  id         String   @id @default(cuid())
+  title      String
+  subtitle   String?
+  imageUrl   String
+  buttonText String?
+  buttonLink String?
+  active     Boolean  @default(true)
+  sortOrder  Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+//////////////////////////////////////////////////////
+// CONTACT MESSAGES
+//////////////////////////////////////////////////////
+
+enum ContactStatus {
+  NEW
+  READ
+  REPLIED
+}
+
+model ContactMessage {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String        @db.Text
+  status    ContactStatus @default(NEW)
+  createdAt DateTime      @default(now())
+}
+
+//////////////////////////////////////////////////////
+// FAQ
+//////////////////////////////////////////////////////
+
+model FAQ {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String   @db.Text
+  active    Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+//////////////////////////////////////////////////////
+// NOTIFICATIONS
+//////////////////////////////////////////////////////
+
+enum NotificationType {
+  ORDER_CREATED
+  PAYMENT_SUCCESS
+  ORDER_SHIPPED
+  ORDER_DELIVERED
+  SYSTEM
+}
+
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String
+  title     String
+  message   String           @db.Text
+  type      NotificationType
+  read      Boolean          @default(false)
+  createdAt DateTime         @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+//////////////////////////////////////////////////////
+// APPLICATION SETTINGS
+//////////////////////////////////////////////////////
+
+model AppSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String   @db.Text
+  description String?
+  updatedAt   DateTime @updatedAt
+}
+
+//////////////////////////////////////////////////////
+// PAYMENT SETTINGS
+//////////////////////////////////////////////////////
+
+model PaymentSetting {
+  id            String   @id @default(cuid())
+  provider      String
+  enabled       Boolean  @default(false)
+  configuration Json?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+//////////////////////////////////////////////////////
+// SHIPPING SETTINGS
+//////////////////////////////////////////////////////
+
+model ShippingSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+}
+
+//////////////////////////////////////////////////////
+// SALES REPORT SNAPSHOTS
+//////////////////////////////////////////////////////
+
+model SalesReport {
+  id             String   @id @default(cuid())
+  reportDate     DateTime
+  totalOrders    Int
+  totalSales     Decimal  @db.Decimal(10, 2)
+  totalCustomers Int
+  createdAt      DateTime @default(now())
+
+  @@index([reportDate])
+}
+
+//////////////////////////////////////////////////////
+// CUSTOMER ANALYTICS
+//////////////////////////////////////////////////////
+
+model CustomerAnalytics {
+  id            String    @id @default(cuid())
+  userId        String
+  totalOrders   Int       @default(0)
+  totalSpent    Decimal   @default(0) @db.Decimal(10, 2)
+  lastOrderDate DateTime?
+  updatedAt     DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId])
+}
+
+//////////////////////////////////////////////////////
+// ADMIN AUDIT LOG
+//////////////////////////////////////////////////////
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String
+  action    String
+  entity    String
+  entityId  String?
+  oldData   Json?
+  newData   Json?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([entity])
+}

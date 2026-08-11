@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { motion } from 'framer-motion';
 
 import { Link, useNavigate} from 'react-router-dom';
 import './CatalogArchive.css';
@@ -62,7 +63,7 @@ export default function CatalogArchive() {
   }, []);
 
 return (
-    <>
+    <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
       {/* TopNavBar */}
 <nav className="bg-primary dark:bg-primary-container docked full-width top-0 border-b border-outline dark:border-outline-variant shadow-sm dark:shadow-none sticky z-50">
 <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-[1280px] mx-auto">
@@ -185,7 +186,7 @@ return (
 <p className="font-body-md text-body-md text-on-surface-variant mb-md">E.L. Sterling</p>
 <div className="mt-auto flex items-center justify-between pt-md border-t border-stone-manuscript border-opacity-50">
 <span className="font-headline-sm text-headline-sm text-obsidian-ink">$145.00</span>
-<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
+<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300" onClick={() => window.dispatchEvent(new CustomEvent('cart-updated'))}>
 <span className="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
 </button>
 </div>
@@ -204,7 +205,7 @@ return (
 <p className="font-body-md text-body-md text-on-surface-variant mb-md">Marcus Vance</p>
 <div className="mt-auto flex items-center justify-between pt-md border-t border-stone-manuscript border-opacity-50">
 <span className="font-headline-sm text-headline-sm text-obsidian-ink">$68.00</span>
-<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
+<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300" onClick={() => window.dispatchEvent(new CustomEvent('cart-updated'))}>
 <span className="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
 </button>
 </div>
@@ -226,7 +227,7 @@ return (
 <p className="font-body-md text-body-md text-on-surface-variant mb-md">Dr. Helena Croft</p>
 <div className="mt-auto flex items-center justify-between pt-md border-t border-stone-manuscript border-opacity-50">
 <span className="font-headline-sm text-headline-sm text-obsidian-ink">$320.00</span>
-<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
+<button aria-label="Add to cart" className="bg-burnished-brass hover:bg-obsidian-ink text-white p-2 rounded-full transition-colors duration-300" onClick={() => window.dispatchEvent(new CustomEvent('cart-updated'))}>
 <span className="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
 </button>
 </div>
@@ -253,6 +254,6 @@ return (
 {/* Footer */}
 <Footer />
 {/* TODO manual conversion needed - inline script removed, see warnings */}
-    </>
+    </motion.div>
   );
 }

@@ -1,9 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { animate } from 'animejs';
 
 export default function Navbar() {
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
+  
+  const searchIconRef = useRef(null);
+  const favIconRef = useRef(null);
+  const cartIconRef = useRef(null);
+  const accountIconRef = useRef(null);
+  const menuIconRef = useRef(null);
+
+  useEffect(() => {
+    const handleCartAdd = () => {
+      if (cartIconRef.current) {
+        animate({
+          targets: cartIconRef.current,
+          scale: [1, 1.4, 1],
+          duration: 350,
+          easing: 'easeOutElastic(1, .8)'
+        });
+      }
+    };
+    window.addEventListener('cart-updated', handleCartAdd);
+    return () => window.removeEventListener('cart-updated', handleCartAdd);
+  }, []);
+
+  const animateSearch = () => {
+    animate({
+      targets: searchIconRef.current,
+      rotate: [0, -15, 15, 0],
+      duration: 400,
+      easing: 'easeInOutSine'
+    });
+  };
+
+  const animateFavorite = () => {
+    animate({
+      targets: favIconRef.current,
+      scale: [1, 1.3, 0.9, 1.1, 1],
+      duration: 500,
+      easing: 'easeOutQuad'
+    });
+  };
+
+  const animateAccount = () => {
+    animate({
+      targets: accountIconRef.current,
+      rotateY: [0, 180, 360],
+      duration: 600,
+      easing: 'easeInOutSine'
+    });
+  };
+
+  const animateMenu = () => {
+    animate({
+      targets: menuIconRef.current,
+      scale: [1, 1.2, 1],
+      duration: 300,
+      easing: 'easeInOutSine'
+    });
+  };
 
   return (
     <header className="bg-primary shadow-sm docked full-width top-0 z-50 sticky transition-all duration-300">
@@ -37,17 +95,19 @@ export default function Navbar() {
           <button
             aria-label="search"
             className="text-on-primary hover:text-secondary-fixed transition-colors duration-300 p-2"
+            onMouseEnter={animateSearch}
             onClick={() => navigate('/searchresultsbooknest')}
           >
-            <span className="material-symbols-outlined">search</span>
+            <span ref={searchIconRef} className="material-symbols-outlined inline-block">search</span>
           </button>
 
           <button
             aria-label="favorite"
             className="text-on-primary hover:text-secondary-fixed transition-colors duration-300 p-2"
+            onMouseEnter={animateFavorite}
             onClick={() => navigate('/dashboard/myreadingshelfbooknestwishlist')}
           >
-            <span className="material-symbols-outlined">favorite</span>
+            <span ref={favIconRef} className="material-symbols-outlined inline-block">favorite</span>
           </button>
 
           <button
@@ -55,24 +115,26 @@ export default function Navbar() {
             className="text-on-primary hover:text-secondary-fixed transition-colors duration-300 p-2 relative"
             onClick={() => navigate('/shoppingcartyourbookcollection')}
           >
-            <span className="material-symbols-outlined">shopping_cart</span>
+            <span ref={cartIconRef} className="material-symbols-outlined inline-block">shopping_cart</span>
           </button>
 
           <button
             aria-label="account_circle"
             className="text-on-primary hover:text-secondary-fixed transition-colors duration-300 p-2"
+            onMouseEnter={animateAccount}
             onClick={() => navigate('/dashboard/customerdashboardmypersonalbookshelf')}
           >
-            <span className="material-symbols-outlined">account_circle</span>
+            <span ref={accountIconRef} className="material-symbols-outlined inline-block" style={{ perspective: 1000 }}>account_circle</span>
           </button>
 
           {/* Mobile Menu Toggle */}
           <button
             aria-label="menu"
             className="md:hidden text-on-primary hover:text-secondary-fixed p-2 transition-colors duration-300"
+            onMouseEnter={animateMenu}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
-            <span className="material-symbols-outlined">{mobileOpen ? 'close' : 'menu'}</span>
+            <span ref={menuIconRef} className="material-symbols-outlined inline-block">{mobileOpen ? 'close' : 'menu'}</span>
           </button>
         </div>
       </div>

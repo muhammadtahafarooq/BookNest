@@ -1,18 +1,53 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Homepage.css';
-import Navbar from '../components/Navbar';
+import React, { useEffect } from 'react';
 import Footer from '../components/Footer';
+import BookHeroAnimation from '../components/BookHeroAnimation';
+import { Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+// ErrorBoundary import removed
+
+
+import { useRef } from 'react';
+import { animate } from 'animejs';
+import Navbar from '../components/Navbar';
+
+const MotionLink = motion(Link);
 
 export default function Homepage() {
   const navigate = useNavigate();
+  const heroRef = useRef(null);
+    // Add global background effect
+    useEffect(() => {
+      const onMouseMove = (e) => {
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
+        document.documentElement.style.setProperty('--bg-x', `${x}%`);
+        document.documentElement.style.setProperty('--bg-y', `${y}%`);
+      };
+      window.addEventListener('mousemove', onMouseMove);
+      return () => window.removeEventListener('mousemove', onMouseMove);
+    }, []);
+  const handleMouseMove = (e) => {
+    const rect = heroRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+      // Directly set background position for smooth gradient effect
+      if (heroRef.current) {
+        heroRef.current.style.backgroundPosition = `${x}% ${y}%`;
+      }
+  };
   return (
-    <>
+    <div>
       {/* TopNavBar */}
 {/* <Navbar /> */}
 <Navbar />
 {/* Hero Section */}
-<section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-[#102A43] to-[#1A3636]">
+<motion.section 
+    initial={{ opacity: 0, y: 50 }} 
+    animate={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 0.8, ease: "easeOut" }} 
+    className="relative min-h-[80vh] flex items-center overflow-hidden mesh-gradient-premium"
+>
 <div className="absolute inset-0 opacity-20 pointer-events-none">
 {/* Subtle pattern overlay could go here */}
 </div>
@@ -23,16 +58,16 @@ export default function Homepage() {
                     Books that find their way <span className="text-golden italic">home</span>
 </h1>
 <p className="font-body-lg text-inverse-primary max-w-xl opacity-90 leading-relaxed">
-                    Curate your personal library with our handpicked selection of academic texts, captivating novels, inspiring children's tales, profound Islamic literature, and transformative self-help books.
+                    Curate your Islamic literature, and transformative self-help books.
                 </p>
 <div className="flex flex-wrap gap-4 pt-4">
-<Link to="/shopbrowsebooks" className="bg-golden text-[#102A43] font-label-md text-label-md px-8 py-4 rounded-lg font-bold hover:bg-[#b08832] transition-colors duration-400 shadow-lg shadow-black/20 flex items-center gap-2">
+<MotionLink whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} to="/shopbrowsebooks" className="bg-golden text-[#102A43] font-label-md text-label-md px-8 py-4 rounded-lg font-bold hover:bg-[#b08832] transition-colors duration-400 shadow-lg shadow-black/20 flex items-center gap-2">
                         Shop Books
                         <span className="material-symbols-outlined text-sm">arrow_forward</span>
-</Link>
-<Link to="/categoriesexploration" className="border border-outline text-on-primary font-label-md text-label-md px-8 py-4 rounded-lg hover:bg-white/5 transition-colors duration-400 flex items-center gap-2">
+</MotionLink>
+<MotionLink whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} to="/categoriesexploration" className="border border-outline text-on-primary font-label-md text-label-md px-8 py-4 rounded-lg hover:bg-white/5 transition-colors duration-400 flex items-center gap-2">
                         Explore Categories
-                    </Link>
+                    </MotionLink>
 </div>
 {/* Trust indicators */}
 <div className="flex items-center gap-6 pt-8 border-t border-white/10 text-inverse-primary font-body-sm">
@@ -51,23 +86,12 @@ export default function Homepage() {
 </div>
 </div>
 {/* Right: 3D Scene */}
-<div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 group">
-<div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-700 z-10 pointer-events-none"></div>
-<div className="absolute inset-0 w-full h-full flex items-center justify-center perspective-[1000px]">
-<img src="/real_book.jpg" alt="Antique Leather Book" className="w-[60%] max-w-[300px] h-auto object-cover rounded-r-xl rounded-l-md shadow-2xl transition-transform duration-700 ease-out hover:rotate-y-[-15deg] hover:scale-105 cursor-pointer origin-left border-l-4 border-[#3a2818]" style={{ transformStyle: 'preserve-3d' }} />
-</div>
-<div className="absolute bottom-6 right-6 z-20 bg-background/90 backdrop-blur-md px-4 py-3 rounded-lg border border-white/20 shadow-xl flex items-center gap-3">
-<div className="w-10 h-10 rounded-full bg-golden/20 flex items-center justify-center">
-<span className="material-symbols-outlined text-golden">auto_awesome</span>
-</div>
-<div>
-<p className="font-label-sm text-label-sm text-surface-tint">Interactive View</p>
-<p className="font-label-md text-label-md text-on-surface font-bold">Hover to explore</p>
+<div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 group" ref={heroRef} onMouseMove={handleMouseMove}>
+  <div className="hero-bg absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-30 pointer-events-none"></div>
+  <BookHeroAnimation />
 </div>
 </div>
-</div>
-</div>
-</section>
+</motion.section>
 {/* Main Content Canvas */}
 <main className="bg-background pb-32">
 {/* Featured Categories Shelf (Bento Grid Style) */}
@@ -83,7 +107,7 @@ export default function Homepage() {
 </div>
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
 {/* Academic */}
-<Link className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" to="/catalogarchive">
+<MotionLink initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" to="/catalogarchive">
 <div className="absolute inset-0 bg-gradient-to-br from-primary-fixed/30 to-transparent z-10"></div>
 <div className="absolute top-6 left-6 z-20">
 <h3 className="font-editorial text-2xl font-bold text-on-surface group-hover:text-primary transition-colors">Academic</h3>
@@ -92,9 +116,9 @@ export default function Homepage() {
 <div className="absolute bottom-[-20px] right-[-20px] w-48 h-48 opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700">
 <img className="w-full h-full object-cover rounded-lg rotate-[-10deg] shadow-lg" data-alt="A stack of heavy, thick hardcover academic textbooks with dark, textured covers and gold foil lettering on the spines, resting on a polished wooden desk under soft, warm library lighting. The overall aesthetic is intellectual, traditional, and scholarly, with a subtle depth of field blurring the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDADGKG1H3HyjyLpyf1AZXZTwsslu10nX92c6juek9qBev8qorkL3s347Fla7PVDffuckx9F9eUpzBJQYHB8EuhQIn_AMARmwv3q__e6AdQ6F4CO27wSQzwhQlmGL9vaS4bj7DuH_B9PXgaUSOtqDW1D4TnkRmHeAnT-mobNrJ6Vfw35AVtqoC1gplpcDVlLkst7A5BP4-4m05bl_I_LEAZ0kxGy1ZuKDBWkbXhsLuHWsVBEyEGbdgh" />
 </div>
-</Link>
+</MotionLink>
 {/* Novels */}
-<Link className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" to="/catalogarchive">
+<MotionLink initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.2 }} className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" to="/catalogarchive">
 <div className="absolute inset-0 bg-gradient-to-br from-tertiary-fixed/30 to-transparent z-10"></div>
 <div className="absolute top-6 left-6 z-20">
 <h3 className="font-editorial text-2xl font-bold text-on-surface group-hover:text-primary transition-colors">Novels</h3>
@@ -103,9 +127,9 @@ export default function Homepage() {
 <div className="absolute bottom-[-10px] right-4 w-40 h-56 opacity-90 group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-500">
 <img className="w-full h-full object-cover rounded-lg shadow-lg" data-alt="A slightly fanned out row of three colorful fiction novels standing upright. The covers feature minimalist, modern graphic illustrations. The books are positioned on a clean, bright white surface, illuminated by crisp, natural daylight, creating a light-mode, airy, and inviting contemporary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9gEyhuelCP3Rmiva_pn0AaWRGMqCBFT8zIhYJcghkd1oUcqe7Pq-CGN4PVcHMMna-FrDjbjPP6p8SkBs_B9YD04Mu-UkpVPBl-2twD9e5l8ytv68CYTNzO6qNEQtnkQN4uNoTvFrxiGz4GjcQEOGKw_AQ1IN6NcqeTHZGzTrUvfy2-STA3TaYIThhogN3fTpdq9iXxixlOJU3P2ELlbVYYXNXGqyD_GLagGW1v_L_3G5ex7w7Kcd0" />
 </div>
-</Link>
+</MotionLink>
 {/* Children */}
-<Link className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" to="/catalogarchive">
+<MotionLink initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.3 }} className="group block relative h-64 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-400 bg-surface border border-surface-variant hover:-translate-y-1" to="/catalogarchive">
 <div className="absolute inset-0 bg-gradient-to-br from-[#dcfce7]/50 to-transparent z-10"></div>
 <div className="absolute top-6 left-6 z-20">
 <h3 className="font-editorial text-2xl font-bold text-on-surface group-hover:text-primary transition-colors">Children's</h3>
@@ -114,7 +138,7 @@ export default function Homepage() {
 <div className="absolute bottom-[-30px] right-[-10px] w-56 h-40 opacity-90 group-hover:scale-105 group-hover:-rotate-3 transition-all duration-500">
 <img className="w-full h-full object-cover rounded-lg shadow-md" data-alt="Several brightly colored, large-format children's picture books lying open and slightly overlapping on a soft, light-colored textured rug. The illustrations visible on the pages are whimsical and soft. The lighting is bright, cheerful, and even, perfectly suited for a vibrant, family-friendly light-mode design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj2kHRIyql4sQMpjXvX7NqpqjjdV0Enw09vpRx3YaWUHVgI5ftVxDjWjsc0qmtb95ACZ7NKrETz-6BNsaXvfER_eH-ftA53EUg2B-uGd_tf2ucFlqkqnIjgDR5ii1MxYkIu1WKT_rCvELh4jRt1-IEHqsLdEbkc0himk5scT3ux_Z6kYvn5Qjrk7Mi0ZJG2sDji9rlB-Nm4Yx43bw4ccrXV_MwxxZgFvZ4gSIf3ICZdniC-kuAO6TK" />
 </div>
-</Link>
+</MotionLink>
 </div>
 </section>
 {/* Featured Books (Horizontal Shelf) */}
@@ -126,15 +150,15 @@ export default function Homepage() {
                         Staff Picks
                     </h2>
 <div className="flex gap-2">
-<button className="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"><span className="material-symbols-outlined">chevron_left</span></button>
-<button className="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"><span className="material-symbols-outlined">chevron_right</span></button>
+<motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"><span className="material-symbols-outlined">chevron_left</span></motion.button>
+<motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"><span className="material-symbols-outlined">chevron_right</span></motion.button>
 </div>
 </div>
 {/* Shelf Container */}
 <div className="relative pb-8">
 <div className="flex gap-8 overflow-x-auto pb-12 pt-8 px-4 snap-x hide-scrollbar" style={{scrollbarWidth: 'none'}}>
 {/* Book Card 1 */}
-<div className="flex-shrink-0 w-56 snap-center group book-card">
+<motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="flex-shrink-0 w-56 snap-center group book-card">
 <div className="relative h-80 mb-6 cursor-pointer">
 <div className="absolute top-2 right-2 z-30 bg-white/90 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:text-danger-rose">
 <span className="material-symbols-outlined text-sm">bookmark</span>
@@ -155,12 +179,12 @@ export default function Homepage() {
 </div>
 <div className="flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-on-surface">$24.99</span>
-<button className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors" onClick={() => navigate('/shoppingcartyourbookcollection')}>Add to Cart</button>
+<motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors" onClick={() => window.dispatchEvent(new CustomEvent('cart-updated'))}>Add to Cart</motion.button>
 </div>
 </div>
-</div>
+</motion.div>
 {/* Book Card 2 */}
-<div className="flex-shrink-0 w-56 snap-center group book-card">
+<motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.2 }} className="flex-shrink-0 w-56 snap-center group book-card">
 <div className="relative h-80 mb-6 cursor-pointer">
 <div className="absolute top-2 left-2 z-30 bg-danger-rose text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm">NEW</div>
 <div className="absolute top-2 right-2 z-30 bg-white/90 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:text-danger-rose">
@@ -182,12 +206,12 @@ export default function Homepage() {
 </div>
 <div className="flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-on-surface">$19.50</span>
-<button className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors" onClick={() => navigate('/shoppingcartyourbookcollection')}>Add to Cart</button>
+<motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors" onClick={() => window.dispatchEvent(new CustomEvent('cart-updated'))}>Add to Cart</motion.button>
 </div>
 </div>
-</div>
+</motion.div>
 {/* Book Card 3 */}
-<div className="flex-shrink-0 w-56 snap-center group book-card">
+<motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.3 }} className="flex-shrink-0 w-56 snap-center group book-card">
 <div className="relative h-80 mb-6 cursor-pointer">
 <div className="absolute top-2 right-2 z-30 bg-white/90 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:text-danger-rose">
 <span className="material-symbols-outlined text-sm">bookmark</span>
@@ -209,10 +233,10 @@ export default function Homepage() {
 <div className="flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-on-surface text-surface-tint line-through text-xs mr-2">$30.00</span>
 <span className="font-label-md text-label-md font-bold text-danger-rose">$22.00</span>
-<button className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors ml-auto" onClick={() => navigate('/shoppingcartyourbookcollection')}>Add to Cart</button>
+<motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-primary-container text-on-primary-container hover:bg-secondary hover:text-on-secondary px-3 py-1.5 rounded text-xs font-medium transition-colors ml-auto" onClick={() => window.dispatchEvent(new CustomEvent('cart-updated'))}>Add to Cart</motion.button>
 </div>
 </div>
-</div>
+</motion.div>
 </div>
 {/* Ambient Shadow for Shelf */}
 <div className="absolute bottom-6 left-0 w-full h-4 bg-black/5 blur-xl pointer-events-none"></div>
@@ -222,6 +246,6 @@ export default function Homepage() {
 </main>
 {/* Footer */}
 <Footer />
-    </>
+    </div>
   );
 }

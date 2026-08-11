@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
+import { motion } from 'framer-motion';
 import './ShopBrowseBooks.css';
 
 export default function ShopBrowseBooks() {
@@ -34,7 +35,7 @@ export default function ShopBrowseBooks() {
     }, []);
 
   return (
-    <>
+    <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
       {/* TopNavBar (Shared Component) */}
 {/* <Navbar /> */}
 <Navbar />
@@ -155,7 +156,7 @@ export default function ShopBrowseBooks() {
 </div>
 <div className="mt-auto pt-4 flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-primary">$24.99</span>
-<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
+<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => window.dispatchEvent(new CustomEvent('cart-updated'))}>
                                 Add to Cart
                             </button>
 </div>
@@ -187,7 +188,7 @@ export default function ShopBrowseBooks() {
 </div>
 <div className="mt-auto pt-4 flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-primary">$18.50</span>
-<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
+<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => window.dispatchEvent(new CustomEvent('cart-updated'))}>
                                 Add to Cart
                             </button>
 </div>
@@ -219,7 +220,7 @@ export default function ShopBrowseBooks() {
 </div>
 <div className="mt-auto pt-4 flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-primary">$32.00</span>
-<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
+<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => window.dispatchEvent(new CustomEvent('cart-updated'))}>
                                 Add to Cart
                             </button>
 </div>
@@ -251,7 +252,7 @@ export default function ShopBrowseBooks() {
 </div>
 <div className="mt-auto pt-4 flex items-center justify-between">
 <span className="font-label-md text-label-md font-bold text-primary">$19.99</span>
-<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => navigate('/shoppingcartyourbookcollection')}>
+<button className="bg-secondary/10 text-secondary hover:bg-secondary hover:text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md transition-colors duration-300" onClick={() => window.dispatchEvent(new CustomEvent('cart-updated'))}>
                                 Add to Cart
                             </button>
 </div>
@@ -278,6 +279,6 @@ export default function ShopBrowseBooks() {
 <Footer />
 {/* Simple Scroll Animation Script */}
 {/* TODO manual conversion needed - inline script removed, see warnings */}
-    </>
+    </motion.div>
   );
 }

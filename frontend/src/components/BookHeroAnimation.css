@@ -1,0 +1,247 @@
+/* ── Book Hero Wrapper ── */
+.book-hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* ── Floating Particles ── */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(176, 136, 50, 0.55);
+  border-radius: 50%;
+  animation: floatParticle 6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.5s);
+  left: calc(5% + var(--i) * 8%);
+  top: calc(15% + (var(--i) * 6%));
+}
+
+.particle:nth-child(odd) {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.4; }
+  25%       { transform: translateY(-30px) translateX(10px) scale(1.2); opacity: 0.9; }
+  50%       { transform: translateY(-50px) translateX(-15px) scale(0.8); opacity: 0.5; }
+  75%       { transform: translateY(-20px) translateX(20px) scale(1.1); opacity: 0.7; }
+}
+
+/* ── Books Showcase ── */
+.books-showcase {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+  z-index: 5;
+  perspective: 900px;
+  padding-bottom: 20px;
+}
+
+/* ── 3D Book Base ── */
+.book-3d {
+  position: relative;
+  flex-shrink: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.7s ease;
+}
+
+/* Center book */
+.book-3d--center {
+  width: 180px;
+  height: 260px;
+  transform: rotateY(-22deg) rotateX(4deg);
+  opacity: 1;
+  z-index: 10;
+  animation: bookFloat 4s ease-in-out infinite;
+}
+
+/* Side books — visible by default, slightly smaller */
+.book-3d--left {
+  width: 130px;
+  height: 195px;
+  transform: rotateY(18deg) rotateX(3deg);
+  opacity: 1;
+  z-index: 8;
+  animation: bookFloatLeft 5s ease-in-out infinite;
+}
+
+.book-3d--right {
+  width: 130px;
+  height: 195px;
+  transform: rotateY(-38deg) rotateX(3deg);
+  opacity: 1;
+  z-index: 8;
+  animation: bookFloatRight 5.5s ease-in-out infinite;
+}
+
+/* ── Hover: spread and lift ── */
+.books-showcase--active .book-3d--center {
+  animation: none;
+  transform: rotateY(-25deg) rotateX(6deg) scale(1.06) translateY(-10px);
+}
+.books-showcase--active .book-3d--left {
+  animation: none;
+  transform: rotateY(22deg) rotateX(3deg) translateX(-8px) scale(1.03) translateY(-5px);
+}
+.books-showcase--active .book-3d--right {
+  animation: none;
+  transform: rotateY(-44deg) rotateX(3deg) translateX(8px) scale(1.03) translateY(-5px);
+}
+
+/* ── Float Animations ── */
+@keyframes bookFloat {
+  0%, 100% { transform: rotateY(-22deg) rotateX(4deg) translateY(0); }
+  50%       { transform: rotateY(-22deg) rotateX(4deg) translateY(-14px); }
+}
+@keyframes bookFloatLeft {
+  0%, 100% { transform: rotateY(18deg) rotateX(3deg) translateY(0); }
+  50%       { transform: rotateY(18deg) rotateX(3deg) translateY(-8px); }
+}
+@keyframes bookFloatRight {
+  0%, 100% { transform: rotateY(-38deg) rotateX(3deg) translateY(0); }
+  50%       { transform: rotateY(-38deg) rotateX(3deg) translateY(-10px); }
+}
+
+/* ── Cover ── */
+.book-3d__cover {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px 8px 8px 2px;
+  overflow: hidden;
+  transform: translateZ(14px);
+  box-shadow:
+    6px 6px 24px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(176, 136, 50, 0.08);
+  transition: box-shadow 0.5s ease;
+}
+.book-3d:hover .book-3d__cover {
+  box-shadow:
+    10px 10px 32px rgba(0, 0, 0, 0.55),
+    0 0 60px rgba(176, 136, 50, 0.2);
+}
+
+.book-3d__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Shine */
+.book-3d__shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    125deg,
+    transparent 30%,
+    rgba(255,255,255,0.18) 48%,
+    rgba(255,255,255,0.06) 52%,
+    transparent 58%
+  );
+  pointer-events: none;
+}
+
+/* ── Spine ── */
+.book-3d__spine {
+  position: absolute;
+  width: 28px;
+  height: 100%;
+  left: 0;
+  transform-origin: left center;
+  transform: rotateY(90deg) translateX(-14px);
+  background: linear-gradient(to right, #1a2a4a, #243b6a, #1a2a4a);
+  border-radius: 2px 0 0 2px;
+}
+.book-3d__spine--red   { background: linear-gradient(to right, #4a1a2a, #6a2438, #4a1a2a); }
+.book-3d__spine--green { background: linear-gradient(to right, #1a4a2a, #24603a, #1a4a2a); }
+
+/* ── Pages ── */
+.book-3d__pages {
+  position: absolute;
+  inset: 2% 0;
+  right: -2px;
+  transform: translateZ(-1px);
+  background: repeating-linear-gradient(
+    to right,
+    #f5f0e8, #f5f0e8 1px,
+    #ede6d6 1px, #ede6d6 2px
+  );
+  border-radius: 0 3px 3px 0;
+}
+
+/* ── Back ── */
+.book-3d__back {
+  position: absolute;
+  inset: 0;
+  background: #152040;
+  border-radius: 2px 8px 8px 2px;
+  transform: translateZ(-14px);
+}
+.book-3d__back--red   { background: #301020; }
+.book-3d__back--green { background: #103020; }
+
+/* ── CTA Overlay ── */
+.book-hero-cta {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(18px);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 20;
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+  pointer-events: none;
+}
+.book-hero-cta--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.book-hero-cta p {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── Glow ── */
+.book-glow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(176,136,50,0.18) 0%, transparent 70%);
+  filter: blur(50px);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+.book-glow--active { opacity: 1; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .book-3d--center { width: 130px; height: 185px; }
+  .book-3d--left,
+  .book-3d--right  { width: 95px; height: 140px; }
+  .books-showcase  { gap: 12px; }
+}

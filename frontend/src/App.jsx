@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MouseBackground from './components/MouseBackground';
 import AboutUsOurStoryBooknest from './pages/AboutUsOurStoryBooknest';
 import AdminDashboardBooknestCommandCenter from './pages/AdminDashboardBooknestCommandCenter';
 import AuthorManagementBooknestAdminArchive from './pages/AuthorManagementBooknestAdminArchive';
@@ -67,6 +68,7 @@ import YourReadingSelection from './pages/YourReadingSelection';
 function App() {
   return (
     <Router>
+      <MouseBackground />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/aboutusourstorybooknest" element={<AboutUsOurStoryBooknest />} />

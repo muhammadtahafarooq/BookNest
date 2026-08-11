@@ -18,3 +18,30 @@
   -webkit-font-smoothing: antialiased;
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
+
+/* Premium Fluid Mesh Gradient (Inspired by shadergradient.co) */
+.mesh-gradient-premium {
+  background: linear-gradient(135deg, #102a43, #1a3636, #244b5a, #2d3748, #b08832);
+  background-size: 400% 400%;
+  background-position: var(--bg-x, 0%) var(--bg-y, 0%);
+  transition: background-position 0.3s ease;
+  animation: fluidMovement 15s ease infinite;
+}
+
+/* stray block start */
+  /* background-size: 400% 400%; */
+  /* animation: fluidMovement 15s ease infinite; */
+  /* stray block end */
+
+@keyframes fluidMovement {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
