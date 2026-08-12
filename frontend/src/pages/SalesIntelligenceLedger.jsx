@@ -95,7 +95,7 @@ export default function SalesIntelligenceLedger() {
 {/* Footer Links */}
 <ul className="space-y-xs mt-auto pt-md border-t border-outline-variant/30">
 <li>
-<Link className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" to="/contactusbooknestsupport">
+            <Link className="flex items-center gap-md px-md py-sm font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-all duration-300 rounded-lg" to="/contact"> 
 <span className="material-symbols-outlined">help_outline</span>
                     Support
                 </Link>

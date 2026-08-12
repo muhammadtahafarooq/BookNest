@@ -53,9 +53,9 @@ export default function AuthorManagementBooknestAdminArchive() {
 <span className="material-symbols-outlined text-lg" data-icon="settings">settings</span>
 <span className="font-label-md text-label-md">Settings</span>
 </Link>
-<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/contactusbooknestsupport">
+                <Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400" to="/contact">
 <span className="material-symbols-outlined text-lg" data-icon="help_outline">help_outline</span>
-<span className="font-label-md text-label-md">Support</span>
+                    <span className="font-label-md text-label-md">Support</span>
 </Link>
 </div>
 </nav>

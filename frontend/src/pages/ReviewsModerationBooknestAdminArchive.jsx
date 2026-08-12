@@ -71,7 +71,7 @@ export default function ReviewsModerationBooknestAdminArchive() {
 </Link>
 </li>
 <li>
-<Link className="flex items-center space-x-3 text-on-primary-container font-medium pl-3 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-DEFAULT" to="/contactusbooknestsupport">
+            <Link className="flex items-center space-x-3 text-on-primary-container font-medium pl-3 py-2 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-DEFAULT" to="/contact">
 <span className="material-symbols-outlined" data-icon="help_outline">help_outline</span>
 <span className="font-label-md text-label-md">Support</span>
 </Link>

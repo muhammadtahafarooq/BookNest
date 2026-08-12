@@ -80,7 +80,7 @@ export default function PublisherManagementBooknestAdminArchive() {
 </Link>
 </li>
 <li>
-<Link className="flex items-center gap-3 px-2 py-2 text-on-primary-container font-medium hover:text-surface-bright transition-colors duration-300" to="/contactusbooknestsupport">
+            <Link className="flex items-center gap-3 px-2 py-2 text-on-primary-container font-medium hover:text-surface-bright transition-colors duration-300" to="/contact">
 <span className="material-symbols-outlined text-[20px]">help_outline</span>
 <span className="font-label-sm text-label-sm">Support</span>
 </Link>

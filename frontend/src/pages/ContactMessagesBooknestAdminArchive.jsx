@@ -76,7 +76,7 @@ export default function ContactMessagesBooknestAdminArchive() {
 </li>
 <li className="w-full">
 {/* Active State Applied Here to Support (closest match to Customer Messages) */}
-<Link className="flex items-center gap-3 text-secondary-fixed-dim font-bold border-l-4 border-secondary-fixed-dim pl-4 py-3 opacity-90 transition-all duration-200 w-full bg-on-primary-fixed-variant/20" to="/contactusbooknestsupport">
+            <Link className="flex items-center gap-3 text-secondary-fixed-dim font-bold border-l-4 border-secondary-fixed-dim pl-4 py-3 opacity-90 transition-all duration-200 w-full bg-on-primary-fixed-variant/20" to="/contact">
 <span className="material-symbols-outlined icon-fill">help_outline</span>
 <span className="font-label-md text-label-md">Support</span>
 </Link>

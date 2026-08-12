@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-import { Link, useNavigate} from 'react-router-dom';
-import { supabase } from '../supabaseClient';
-import './ContactUsBooknestSupport.css';
+import axios from 'axios';
+import './Contact.css';
 
-export default function ContactUsBooknestSupport() {
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const SUBJECT_OPTIONS = ['general', 'order', 'returns', 'press'];
+
+const validateEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+const sanitizeText = (value) => value.trim();
+
+export default function Contact() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         firstName: '',
@@ -28,20 +33,47 @@ export default function ContactUsBooknestSupport() {
         setStatus('loading');
         setFeedbackMsg('');
 
-        try {
-            const fullName = `${formData.firstName} ${formData.lastName}`.trim();
-            const { error } = await supabase
-                .from('ContactMessage')
-                .insert([
-                    {
-                        name: fullName,
-                        email: formData.email,
-                        subject: formData.subject,
-                        message: formData.message,
-                    }
-                ]);
+        const firstName = sanitizeText(formData.firstName);
+        const lastName = sanitizeText(formData.lastName);
+        const email = sanitizeText(formData.email);
+        const subject = sanitizeText(formData.subject);
+        const message = sanitizeText(formData.message);
 
-            if (error) throw error;
+        if (!firstName || !lastName || !email || !message) {
+            setStatus('error');
+            setFeedbackMsg('Please complete all required fields.');
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            setStatus('error');
+            setFeedbackMsg('Please enter a valid email address.');
+            return;
+        }
+
+        if (!SUBJECT_OPTIONS.includes(subject)) {
+            setStatus('error');
+            setFeedbackMsg('Please select a valid subject.');
+            return;
+        }
+
+        if (message.length > 2000) {
+            setStatus('error');
+            setFeedbackMsg('Message is too long. Please keep it under 2000 characters.');
+            return;
+        }
+
+        try {
+            const payload = {
+                name: `${firstName} ${lastName}`.trim(),
+                email,
+                subject,
+                message,
+            };
+
+            await axios.post(`${API_URL}/contact-messages`, payload, {
+                headers: { 'Content-Type': 'application/json' },
+            });
 
             setStatus('success');
             setFeedbackMsg('Your message has been sent successfully. We will get back to you soon!');
@@ -53,7 +85,7 @@ export default function ContactUsBooknestSupport() {
         }
     };
 
-  return (
+    return (
     <>
       {/* TopNavBar */}
 {/* <Navbar /> */}
@@ -79,7 +111,7 @@ export default function ContactUsBooknestSupport() {
 </div>
 <h3 className="font-fraunces text-xl font-medium text-[#102A43] mb-2">Phone</h3>
 <p className="font-body-md text-[#102A43]/70 mb-4">Mon-Fri from 9am to 6pm PKT.</p>
-<Link className="font-label-md text-label-md text-[#C89B3C] hover:text-[#102A43] transition-colors" to="tel:+923001234567">+92 300 123 4567</Link>
+<a className="font-label-md text-label-md text-[#C89B3C] hover:text-[#102A43] transition-colors" href="tel:+923001234567">+92 300 123 4567</a>
 </div>
 {/* Email */}
 <div className="bg-[#F9F8F6] rounded-xl p-8 shadow-ambient border border-white/40 glass-panel transition-transform duration-300 hover:-translate-y-1">
@@ -88,7 +120,7 @@ export default function ContactUsBooknestSupport() {
 </div>
 <h3 className="font-fraunces text-xl font-medium text-[#102A43] mb-2">Email</h3>
 <p className="font-body-md text-[#102A43]/70 mb-4">Our friendly team is here to help.</p>
-<Link className="font-label-md text-label-md text-[#C89B3C] hover:text-[#102A43] transition-colors" to="mailto:hello@booknest.pk">hello@booknest.pk</Link>
+<a className="font-label-md text-label-md text-[#C89B3C] hover:text-[#102A43] transition-colors" href="mailto:hello@booknest.pk">hello@booknest.pk</a>
 </div>
 {/* Location */}
 <div className="bg-[#F9F8F6] rounded-xl p-8 shadow-ambient border border-white/40 glass-panel transition-transform duration-300 hover:-translate-y-1">
@@ -193,7 +225,7 @@ export default function ContactUsBooknestSupport() {
 {/* MAP / LOCATION SECTION */}
 <section className="w-full h-[400px] relative overflow-hidden bg-[#F0EDEF]">
 {/* Map Image Placeholder with data-location */}
-<img className="w-full h-full object-cover mix-blend-luminosity opacity-80 grayscale" data-alt="A highly stylized, minimal digital map of Lahore, Pakistan, rendered in a sophisticated, muted color palette featuring deep navy blues (Midnight Ink) and soft creams (Paper Mist), with subtle golden accents highlighting the central area. The visual style is clean, modern, and high-end, fitting a premium corporate aesthetic, avoiding cluttered street names or overly realistic satellite imagery, focusing instead on elegant geometric abstraction." data-location="Lahore, Pakistan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVKAWDqMPRpUJu7os48hDwSRKekukeuar2hxquibPvo_H4XrB1eQvxjN2Ox9Jug1JqX1gjqJYDh8In_IFo_4lPeXMV9JE8qZke5oeTw5Z89REBHLiv8MkJYX6_pz8kfY38viyMydENdHTg69MiaO_HtMKZ5VGDp--kc5SAU_tT5FU5b3In5fKf8uTzzoL0QQu0KTUtzfI5J8E-LQ8EbRmwe8wp7f3HLkevHXv2fnIpv-upERu_JMEh" />
+<img loading="lazy" decoding="async" alt="Lahore location map" className="w-full h-full object-cover mix-blend-luminosity opacity-80 grayscale" data-location="Lahore, Pakistan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVKAWDqMPRpUJu7os48hDwSRKekukeuar2hxquibPvo_H4XrB1eQvxjN2Ox9Jug1JqX1gjqJYDh8In_IFo_4lPeXMV9JE8qZke5oeTw5Z89REBHLiv8MkJYX6_pz8kfY38viyMydENdHTg69MiaO_HtMKZ5VGDp--kc5SAU_tT5FU5b3In5fKf8uTzzoL0QQu0KTUtzfI5J8E-LQ8EbRmwe8wp7f3HLkevHXv2fnIpv-upERu_JMEh" />
 <div className="absolute inset-0 bg-gradient-to-t from-[#F6F3EC] via-transparent to-transparent"></div>
 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md px-6 py-4 rounded-xl shadow-ambient border border-white flex items-center space-x-4">
 <div className="w-10 h-10 rounded-full bg-[#102A43] flex items-center justify-center text-white">

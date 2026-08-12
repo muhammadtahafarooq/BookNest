@@ -75,7 +75,7 @@ export default function PromotionManagementBooknestAdminArchive() {
 </Link>
 </li>
 <li>
-<Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/contactusbooknestsupport">
+            <Link className="flex items-center gap-3 text-on-primary-container font-medium pl-5 py-3 hover:bg-on-primary-fixed-variant hover:text-surface-bright transition-colors duration-400 rounded-lg" to="/contact">
 <span className="material-symbols-outlined" data-icon="help_outline">help_outline</span>
 <span className="font-label-md text-label-md">Support</span>
 </Link>

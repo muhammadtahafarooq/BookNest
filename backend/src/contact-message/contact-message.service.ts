@@ -1,14 +1,18 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, Logger } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateContactMessageDto } from './dto/create-contact-message.dto';
 import { UpdateContactMessageDto } from './dto/update-contact-message.dto';
 
 @Injectable()
 export class ContactMessageService {
+  private readonly logger = new Logger(ContactMessageService.name);
+
   constructor(private readonly prisma: PrismaService) {}
 
   async create(data: CreateContactMessageDto) {
-    return this.prisma.contactMessage.create({ data });
+    const record = await this.prisma.contactMessage.create({ data });
+    this.logger.log(`New contact message received: ${record.id} (${record.email})`);
+    return record;
   }
 
   async findAll(page = 1, limit = 20) {

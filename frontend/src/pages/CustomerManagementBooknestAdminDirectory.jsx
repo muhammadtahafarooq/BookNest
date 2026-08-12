@@ -61,7 +61,7 @@ export default function CustomerManagementBooknestAdminDirectory() {
 <div className="px-0 pt-8 border-t border-primary-fixed-dim/20">
 <ul className="space-y-2">
 <li>
-<Link className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" to="/contactusbooknestsupport">
+            <Link className="flex items-center px-6 py-3 font-label-md text-label-md text-on-primary-container dark:text-on-primary-container opacity-70 hover:bg-primary-fixed-dim/10 hover:text-tertiary-fixed transition-colors duration-400" to="/contact">
 <span className="material-symbols-outlined mr-4" data-icon="help">help</span>
                         Support
                     </Link>

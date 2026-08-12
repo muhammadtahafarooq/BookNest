@@ -26,7 +26,7 @@ export default function PaymentConfigurationArchive() {
 <li><Link className="flex items-center gap-md px-md py-sm rounded-lg bg-secondary-container text-on-secondary-container font-semibold scale-98 active:scale-95 transition-transform" to="/shopbrowsebooks"><span className="material-symbols-outlined" style={{fontVariationSettings: '\'FILL\' 1'}}>settings</span> Settings</Link></li>
 </ul>
 <div className="mt-auto flex flex-col gap-sm border-t border-outline-variant pt-lg">
-<Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200" to="/contactusbooknestsupport"><span className="material-symbols-outlined">help</span> Support</Link>
+            <Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200" to="/contact"><span className="material-symbols-outlined">help</span> Support</Link>
 <Link className="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container dark:text-on-surface-variant hover:bg-surface-container-high hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-200" to="/shopbrowsebooks"><span className="material-symbols-outlined">logout</span> Sign Out</Link>
 </div>
 </nav>

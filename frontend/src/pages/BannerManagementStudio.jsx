@@ -54,7 +54,7 @@ export default function BannerManagementStudio() {
             </button>
 <ul className="flex flex-col gap-sm font-label-md text-label-md">
 <li>
-<Link className="flex items-center gap-md text-on-primary-container px-md py-sm hover:bg-surface-variant/10 transition-colors" to="/contactusbooknestsupport">
+            <Link className="flex items-center gap-md text-on-primary-container px-md py-sm hover:bg-surface-variant/10 transition-colors" to="/contact">
 <span className="material-symbols-outlined text-xl" data-icon="help">help</span> Support
                     </Link>
 </li>

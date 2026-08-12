@@ -41,7 +41,7 @@ export default function OrderManagementArchive() {
                 </Link>
 </li>
 <li>
-<Link className="flex items-center gap-md py-sm pl-5 text-on-primary-container hover:bg-primary-container hover:text-secondary-fixed transition-colors transition-all duration-300 ease-in-out font-label-md text-label-md" to="/contactusbooknestsupport">
+    <Link className="flex items-center gap-md py-sm pl-5 text-on-primary-container hover:bg-primary-container hover:text-secondary-fixed transition-colors transition-all duration-300 ease-in-out font-label-md text-label-md" to="/contact">
 <span className="material-symbols-outlined">import_contacts</span>
                     Circulation
                 </Link>
@@ -62,7 +62,7 @@ export default function OrderManagementArchive() {
 {/* Footer Links */}
 <ul className="flex flex-col gap-sm mt-auto px-0 border-t border-[#313030] pt-lg mx-5">
 <li>
-<Link className="flex items-center gap-md py-sm text-on-primary-container hover:text-secondary-fixed transition-colors font-label-md text-label-md" to="/contactusbooknestsupport">
+            <Link className="flex items-center gap-md py-sm text-on-primary-container hover:text-secondary-fixed transition-colors font-label-md text-label-md" to="/contact">
 <span className="material-symbols-outlined">help_outline</span>
                     Support
                 </Link>

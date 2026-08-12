@@ -36,7 +36,7 @@ export default function Footer() {
             <h4 className="font-label-md text-label-md text-on-primary mb-4 font-bold tracking-widest uppercase">Support</h4>
             <ul className="space-y-3 font-body-sm text-body-sm">
               <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/aboutusourstorybooknest">About Us</Link></li>
-              <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/contactusbooknestsupport">Contact</Link></li>
+              <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/contact">Contact</Link></li>
               <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/faqbooknestsupport">FAQ</Link></li>
               <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/shippingreturnsarchive">Shipping & Returns</Link></li>
               <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/privacypolicyarchive">Privacy Policy</Link></li>
@@ -72,7 +72,7 @@ export default function Footer() {
           <div className="flex items-center gap-6 mt-4 md:mt-0">
             <Link className="hover:text-on-primary transition-colors" to="/privacypolicyarchive">Privacy</Link>
             <Link className="hover:text-on-primary transition-colors" to="/termsconditionsbooknestprivatelibrary">Terms</Link>
-            <Link className="hover:text-on-primary transition-colors" to="/contactusbooknestsupport">Contact</Link>
+            <Link className="hover:text-on-primary transition-colors" to="/contact">Contact</Link>
           </div>
         </div>
 
