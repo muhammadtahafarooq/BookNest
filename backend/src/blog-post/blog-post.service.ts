@@ -14,15 +14,27 @@ export class BlogPostService {
   async findAll(page = 1, limit = 20) {
     const skip = (page - 1) * limit;
     const take = Math.min(limit, 100);
+    const include = {
+      author: { select: { id: true, firstName: true, lastName: true } },
+    };
     const [data, total] = await Promise.all([
-      this.prisma.blogPost.findMany({ skip, take }),
+      this.prisma.blogPost.findMany({ skip, take, include }),
       this.prisma.blogPost.count(),
     ]);
-    return { data, meta: { total, page, limit: take, totalPages: Math.ceil(total / take) } };
+    return {
+      data,
+      meta: { total, page, limit: take, totalPages: Math.ceil(total / take) },
+    };
   }
 
   async findOne(id: string) {
-    const record = await this.prisma.blogPost.findUnique({ where: { id } });
+    const include = {
+      author: { select: { id: true, firstName: true, lastName: true } },
+    };
+    const record = await this.prisma.blogPost.findUnique({
+      where: { id },
+      include,
+    });
     if (!record) throw new NotFoundException('BlogPost not found');
     return record;
   }

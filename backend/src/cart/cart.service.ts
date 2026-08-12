@@ -14,15 +14,23 @@ export class CartService {
   async findAll(page = 1, limit = 20) {
     const skip = (page - 1) * limit;
     const take = Math.min(limit, 100);
+    const include = { items: { include: { book: true } } };
     const [data, total] = await Promise.all([
-      this.prisma.cart.findMany({ skip, take }),
+      this.prisma.cart.findMany({ skip, take, include }),
       this.prisma.cart.count(),
     ]);
-    return { data, meta: { total, page, limit: take, totalPages: Math.ceil(total / take) } };
+    return {
+      data,
+      meta: { total, page, limit: take, totalPages: Math.ceil(total / take) },
+    };
   }
 
   async findOne(id: string) {
-    const record = await this.prisma.cart.findUnique({ where: { id } });
+    const include = { items: { include: { book: true } } };
+    const record = await this.prisma.cart.findUnique({
+      where: { id },
+      include,
+    });
     if (!record) throw new NotFoundException('Cart not found');
     return record;
   }

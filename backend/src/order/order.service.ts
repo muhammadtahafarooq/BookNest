@@ -14,15 +14,53 @@ export class OrderService {
   async findAll(page = 1, limit = 20) {
     const skip = (page - 1) * limit;
     const take = Math.min(limit, 100);
+    const include = {
+      user: {
+        select: {
+          id: true,
+          firstName: true,
+          lastName: true,
+          email: true,
+          phone: true,
+        },
+      },
+      address: true,
+      items: { include: { book: true } },
+      payment: true,
+      shippingMethod: true,
+      coupon: true,
+    };
     const [data, total] = await Promise.all([
-      this.prisma.order.findMany({ skip, take }),
+      this.prisma.order.findMany({ skip, take, include }),
       this.prisma.order.count(),
     ]);
-    return { data, meta: { total, page, limit: take, totalPages: Math.ceil(total / take) } };
+    return {
+      data,
+      meta: { total, page, limit: take, totalPages: Math.ceil(total / take) },
+    };
   }
 
   async findOne(id: string) {
-    const record = await this.prisma.order.findUnique({ where: { id } });
+    const include = {
+      user: {
+        select: {
+          id: true,
+          firstName: true,
+          lastName: true,
+          email: true,
+          phone: true,
+        },
+      },
+      address: true,
+      items: { include: { book: true } },
+      payment: true,
+      shippingMethod: true,
+      coupon: true,
+    };
+    const record = await this.prisma.order.findUnique({
+      where: { id },
+      include,
+    });
     if (!record) throw new NotFoundException('Order not found');
     return record;
   }

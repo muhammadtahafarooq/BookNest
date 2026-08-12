@@ -37,7 +37,9 @@ export class AuthService {
 
   // ─── Register ───────────────────────────────────────────────────────────────
   async register(dto: RegisterDto) {
-    const existing = await this.prisma.user.findUnique({ where: { email: dto.email } });
+    const existing = await this.prisma.user.findUnique({
+      where: { email: dto.email },
+    });
     if (existing) throw new ConflictException('Email already registered');
 
     const hashedPassword = await bcrypt.hash(dto.password, 12);
@@ -57,9 +59,12 @@ export class AuthService {
 
   // ─── Login ──────────────────────────────────────────────────────────────────
   async login(dto: LoginDto) {
-    const user = await this.prisma.user.findUnique({ where: { email: dto.email } });
+    const user = await this.prisma.user.findUnique({
+      where: { email: dto.email },
+    });
     if (!user) throw new UnauthorizedException('Invalid credentials');
-    if (!user.isActive) throw new UnauthorizedException('Account is deactivated');
+    if (!user.isActive)
+      throw new UnauthorizedException('Account is deactivated');
 
     const passwordMatch = await bcrypt.compare(dto.password, user.password);
     if (!passwordMatch) throw new UnauthorizedException('Invalid credentials');
@@ -75,9 +80,14 @@ export class AuthService {
 
   // ─── Forgot Password ────────────────────────────────────────────────────────
   async forgotPassword(dto: ForgotPasswordDto) {
-    const user = await this.prisma.user.findUnique({ where: { email: dto.email } });
+    const user = await this.prisma.user.findUnique({
+      where: { email: dto.email },
+    });
     // Always return success to prevent email enumeration
-    if (!user) return { message: 'If that email exists, a reset token has been issued.' };
+    if (!user)
+      return {
+        message: 'If that email exists, a reset token has been issued.',
+      };
 
     // Delete any existing reset tokens for this user
     await this.prisma.refreshToken.deleteMany({ where: { userId: user.id } });
@@ -94,9 +104,15 @@ export class AuthService {
     });
 
     // In production: send email with reset link
+    if (process.env.NODE_ENV === 'production') {
+      return {
+        message: 'If that email exists, a reset token has been issued.',
+      };
+    }
     // For development: return token directly
     return {
-      message: 'Password reset token generated (dev mode — would be emailed in production).',
+      message:
+        'Password reset token generated (dev mode — would be emailed in production).',
       resetToken,
       expiresAt,
     };
@@ -109,7 +125,8 @@ export class AuthService {
       include: { user: true },
     });
 
-    if (!record) throw new BadRequestException('Invalid or expired reset token');
+    if (!record)
+      throw new BadRequestException('Invalid or expired reset token');
     if (record.expiresAt < new Date()) {
       await this.prisma.refreshToken.delete({ where: { token: dto.token } });
       throw new BadRequestException('Reset token has expired');

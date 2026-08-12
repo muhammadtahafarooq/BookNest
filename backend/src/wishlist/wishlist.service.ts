@@ -14,15 +14,23 @@ export class WishlistService {
   async findAll(page = 1, limit = 20) {
     const skip = (page - 1) * limit;
     const take = Math.min(limit, 100);
+    const include = { book: { include: { images: true } } };
     const [data, total] = await Promise.all([
-      this.prisma.wishlist.findMany({ skip, take }),
+      this.prisma.wishlist.findMany({ skip, take, include }),
       this.prisma.wishlist.count(),
     ]);
-    return { data, meta: { total, page, limit: take, totalPages: Math.ceil(total / take) } };
+    return {
+      data,
+      meta: { total, page, limit: take, totalPages: Math.ceil(total / take) },
+    };
   }
 
   async findOne(id: string) {
-    const record = await this.prisma.wishlist.findUnique({ where: { id } });
+    const include = { book: { include: { images: true } } };
+    const record = await this.prisma.wishlist.findUnique({
+      where: { id },
+      include,
+    });
     if (!record) throw new NotFoundException('Wishlist not found');
     return record;
   }

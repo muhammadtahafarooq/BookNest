@@ -14,15 +14,29 @@ export class ReviewService {
   async findAll(page = 1, limit = 20) {
     const skip = (page - 1) * limit;
     const take = Math.min(limit, 100);
+    const include = {
+      book: { select: { id: true, title: true, slug: true } },
+      user: { select: { id: true, firstName: true, lastName: true } },
+    };
     const [data, total] = await Promise.all([
-      this.prisma.review.findMany({ skip, take }),
+      this.prisma.review.findMany({ skip, take, include }),
       this.prisma.review.count(),
     ]);
-    return { data, meta: { total, page, limit: take, totalPages: Math.ceil(total / take) } };
+    return {
+      data,
+      meta: { total, page, limit: take, totalPages: Math.ceil(total / take) },
+    };
   }
 
   async findOne(id: string) {
-    const record = await this.prisma.review.findUnique({ where: { id } });
+    const include = {
+      book: { select: { id: true, title: true, slug: true } },
+      user: { select: { id: true, firstName: true, lastName: true } },
+    };
+    const record = await this.prisma.review.findUnique({
+      where: { id },
+      include,
+    });
     if (!record) throw new NotFoundException('Review not found');
     return record;
   }

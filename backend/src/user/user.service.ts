@@ -22,7 +22,7 @@ export class UserService {
   };
 
   async create(data: CreateUserDto) {
-    return this.prisma.user.create({ data });
+    return this.prisma.user.create({ data, select: this.selectFields });
   }
 
   async findAll(page = 1, limit = 20) {
@@ -32,18 +32,28 @@ export class UserService {
       this.prisma.user.findMany({ skip, take, select: this.selectFields }),
       this.prisma.user.count(),
     ]);
-    return { data, meta: { total, page, limit: take, totalPages: Math.ceil(total / take) } };
+    return {
+      data,
+      meta: { total, page, limit: take, totalPages: Math.ceil(total / take) },
+    };
   }
 
   async findOne(id: string) {
-    const record = await this.prisma.user.findUnique({ where: { id }, select: this.selectFields });
+    const record = await this.prisma.user.findUnique({
+      where: { id },
+      select: this.selectFields,
+    });
     if (!record) throw new NotFoundException('User not found');
     return record;
   }
 
   async update(id: string, data: UpdateUserDto) {
     await this.findOne(id);
-    return this.prisma.user.update({ where: { id }, data });
+    return this.prisma.user.update({
+      where: { id },
+      data,
+      select: this.selectFields,
+    });
   }
 
   async remove(id: string) {

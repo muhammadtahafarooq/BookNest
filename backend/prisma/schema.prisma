@@ -387,6 +387,10 @@ model Order {
   @@index([userId])
   @@index([status])
   @@index([orderNumber])
+  @@index([addressId])
+  @@index([couponId])
+  @@index([shippingMethodId])
+  @@index([userId, createdAt])
 }
 
 //////////////////////////////////////////////////////
@@ -466,6 +470,7 @@ model Review {
 
   @@unique([userId, bookId])
   @@index([bookId])
+  @@index([status])
 }
 
 //////////////////////////////////////////////////////
@@ -494,6 +499,7 @@ model BlogPost {
 
   @@index([slug])
   @@index([status])
+  @@index([authorId])
 }
 
 //////////////////////////////////////////////////////
@@ -532,6 +538,8 @@ model ContactMessage {
   message   String        @db.Text
   status    ContactStatus @default(NEW)
   createdAt DateTime      @default(now())
+
+  @@index([status, createdAt])
 }
 
 //////////////////////////////////////////////////////
