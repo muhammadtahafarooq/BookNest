@@ -2,34 +2,31 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-import { Link, useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './ShippingReturnsArchive.css';
 
 export default function ShippingReturnsArchive() {
   
   useEffect(() => {
-    // Scroll reveal animation logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const reveals = document.querySelectorAll('.reveal');
-            
-            const revealOnScroll = () => {
-                const windowHeight = window.innerHeight;
-                const elementVisible = 100;
-                
-                reveals.forEach((reveal) => {
-                    const elementTop = reveal.getBoundingClientRect().top;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveal.classList.add('active');
-                    }
-                });
-            };
-            
-            // Initial check
-            revealOnScroll();
-            
-            // Check on scroll
-            window.addEventListener('scroll', revealOnScroll);
-        });
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      const elementVisible = 100;
+
+      reveals.forEach((reveal) => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight - elementVisible) {
+          reveal.classList.add('active');
+        }
+      });
+    };
+
+    revealOnScroll();
+    window.addEventListener('scroll', revealOnScroll);
+
+    return () => {
+      window.removeEventListener('scroll', revealOnScroll);
+    };
   }, []);
 
   const navigate = useNavigate();
@@ -42,22 +39,35 @@ export default function ShippingReturnsArchive() {
 <main className="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-xxl space-y-xxl">
 {/* Hero Section */}
 <section className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center reveal">
-<div className="lg:col-span-6 space-y-lg">
+<div className="lg:col-span-6 space-y-8">
 <h1 className="font-display-lg text-display-lg font-headline-lg-mobile text-headline-lg-mobile text-primary">
                     From Our Shelf To Your Door
                 </h1>
 <p className="font-body-lg text-body-lg text-on-surface-variant max-w-md">
                     Reliable delivery options designed for readers across Pakistan. We treat every parcel as a valuable addition to your personal library.
                 </p>
+<div className="flex flex-wrap gap-4 items-center">
+  <Link className="btn-primary inline-flex items-center justify-center px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300" to="/contact">
+    Contact Support
+  </Link>
+  <span className="inline-flex items-center rounded-full bg-surface-container py-2 px-4 text-on-surface-variant text-sm border border-outline-variant">
+    Trusted same-day packing and premium archival shipping
+  </span>
 </div>
-<div className="lg:col-span-6 relative rounded-xl overflow-hidden shadow-sm h-[400px]">
-{/* STITCH_THREEJS_START:ANIMATION_26 class="absolute inset-0 w-full h-full bg-transparent" */}
-<div className="absolute inset-0 w-full h-full bg-transparent" style={{display: 'block'}}>
-{/* TODO manual conversion needed - inline script removed, see warnings */}
-<div id="threejs-container-ANIMATION_26" style={{width: '100%', height: '100%'}}></div>
-{/* TODO manual conversion needed - inline script removed, see warnings */}
 </div>
-{/* STITCH_THREEJS_END:ANIMATION_26 */}
+<div className="lg:col-span-6 grid place-items-center">
+  <div className="relative w-full max-w-[560px] overflow-hidden rounded-[2rem] shadow-2xl">
+    <img
+      className="w-full h-[400px] object-cover"
+      src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80"
+      alt="Premium book shipment prepared for delivery"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
+    <div className="absolute left-6 bottom-6 rounded-3xl bg-white/90 backdrop-blur-xl border border-white/80 p-5 max-w-sm">
+      <p className="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] mb-2">Premium Care</p>
+      <h2 className="font-fraunces text-2xl text-midnight-ink font-semibold">Carefully packed for every journey.</h2>
+    </div>
+  </div>
 </div>
 </section>
 {/* Shipping Information Bento Grid */}

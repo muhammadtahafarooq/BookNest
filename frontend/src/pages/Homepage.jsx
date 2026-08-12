@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import BookHeroAnimation from '../components/BookHeroAnimation';
 import { Link, useNavigate } from 'react-router-dom';
@@ -15,6 +15,7 @@ const MotionLink = motion(Link);
 export default function Homepage() {
   const navigate = useNavigate();
   const heroRef = useRef(null);
+  const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
     // Add global background effect
     useEffect(() => {
       const onMouseMove = (e) => {
@@ -31,10 +32,13 @@ export default function Homepage() {
     if (!rect) return;
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
-      // Directly set background position for smooth gradient effect
-      if (heroRef.current) {
-        heroRef.current.style.backgroundPosition = `${x}% ${y}%`;
-      }
+    if (heroRef.current) {
+      heroRef.current.style.backgroundPosition = `${x}% ${y}%`;
+    }
+    setCursorPos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
   };
   return (
     <div>
@@ -80,14 +84,34 @@ export default function Homepage() {
 <span>Fast Delivery</span>
 </div>
 <div className="flex items-center gap-2">
-<span className="material-symbols-outlined text-golden text-xl">star</span>
-<span>4.9/5 Reviews</span>
+<span className="material-symbols-outlined text-golden text-xl">auto_awesome</span>
+<span>Curated Library Picks</span>
 </div>
 </div>
 </div>
 {/* Right: 3D Scene */}
 <div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 group" ref={heroRef} onMouseMove={handleMouseMove}>
   <div className="hero-bg absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-30 pointer-events-none"></div>
+  <div
+    className="pointer-events-none absolute rounded-full bg-white/10 border border-white/20 blur-3xl shadow-[0_0_90px_rgba(255,255,255,0.35)] transition-all duration-150"
+    style={{
+      width: '180px',
+      height: '180px',
+      left: `${cursorPos.x}px`,
+      top: `${cursorPos.y}px`,
+      transform: 'translate(-50%, -50%)',
+    }}
+  />
+  <div
+    className="pointer-events-none absolute rounded-full bg-fuchsia-300/15 blur-2xl shadow-[0_0_120px_rgba(192,132,252,0.35)] transition-all duration-150"
+    style={{
+      width: '260px',
+      height: '260px',
+      left: `${cursorPos.x}px`,
+      top: `${cursorPos.y}px`,
+      transform: 'translate(-50%, -50%)',
+    }}
+  />
   <BookHeroAnimation />
 </div>
 </div>

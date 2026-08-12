@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import './SearchResultsBooknest.css';
 
 export default function SearchResultsBooknest() {
     const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [query, setQuery] = useState('');
+    const paramQuery = searchParams.get('q') || '';
+
+    useEffect(() => {
+      setQuery(paramQuery);
+    }, [paramQuery]);
+
+    const handleSearchSubmit = (event) => {
+      event.preventDefault();
+      if (query.trim()) {
+        setSearchParams({ q: query.trim() });
+      }
+    };
+
   return (
     <>
       {/* TopNavBar */}
@@ -18,10 +33,31 @@ export default function SearchResultsBooknest() {
 <section className="reveal-item w-full pb-6 border-b border-cloud-linen">
 <p className="font-inter text-sm text-slate-binding uppercase tracking-widest mb-2 font-medium">Search Archive</p>
 <h1 className="font-fraunces text-4xl md:text-5xl font-semibold text-midnight-ink mb-4 leading-tight">
-                Search Results for <span className="italic text-library-forest">"The Midnight Library"</span>
+                {query ? (
+                  <>Search Results for <span className="italic text-library-forest">"{query}"</span></>
+                ) : (
+                  <>Search the Archive</>
+                )}
 </h1>
-<div className="flex items-center justify-between flex-wrap gap-4">
-<p className="font-inter text-slate-binding text-base">42 books found in our archives</p>
+<div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+  <p className="font-inter text-slate-binding text-base">
+    {query ? 'Search results updated for your term.' : 'Search from our complete archive.'}
+  </p>
+  <form className="flex items-center gap-2 w-full lg:w-auto" onSubmit={handleSearchSubmit}>
+    <div className="relative w-full lg:w-96">
+      <input
+        className="w-full border border-cloud-linen rounded-full py-3 pl-4 pr-12 text-sm font-inter text-midnight-ink focus:border-antique-brass focus:ring-1 focus:ring-antique-brass transition-colors"
+        placeholder="Search by title, author, ISBN, publisher..."
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-binding hover:text-midnight-ink transition-colors">
+        <span className="material-symbols-outlined">search</span>
+      </button>
+    </div>
+  </form>
+</div>
 <div className="flex items-center gap-2">
 <span className="font-inter text-sm text-slate-binding">Sort by:</span>
 <select className="bg-transparent border-none text-midnight-ink font-medium font-inter focus:ring-0 cursor-pointer">
@@ -30,7 +66,6 @@ export default function SearchResultsBooknest() {
 <option>Price (Low to High)</option>
 <option>Price (High to Low)</option>
 </select>
-</div>
 </div>
 </section>
 {/* Layout: Sidebar + Grid */}
@@ -45,7 +80,7 @@ export default function SearchResultsBooknest() {
 <ul className="space-y-2 font-inter text-sm text-slate-binding">
 <li>
 <label className="flex items-center gap-3 cursor-pointer group">
-<input defaultChecked={true} className="rounded border-slate-binding/30 text-antique-brass focus:ring-antique-brass bg-transparent w-4 h-4 transition-colors" type="checkbox" />
+<input className="rounded border-slate-binding/30 text-antique-brass focus:ring-antique-brass bg-transparent w-4 h-4 transition-colors" type="checkbox" />
 <span className="group-hover:text-midnight-ink transition-colors">Fiction (24)</span>
 </label>
 </li>
@@ -73,7 +108,7 @@ export default function SearchResultsBooknest() {
 <ul className="space-y-2 font-inter text-sm text-slate-binding max-h-32 overflow-y-auto pr-2">
 <li>
 <label className="flex items-center gap-3 cursor-pointer group">
-<input defaultChecked={true} className="rounded border-slate-binding/30 text-antique-brass focus:ring-antique-brass bg-transparent w-4 h-4 transition-colors" type="checkbox" />
+<input className="rounded border-slate-binding/30 text-antique-brass focus:ring-antique-brass bg-transparent w-4 h-4 transition-colors" type="checkbox" />
 <span className="group-hover:text-midnight-ink transition-colors">Matt Haig (3)</span>
 </label>
 </li>

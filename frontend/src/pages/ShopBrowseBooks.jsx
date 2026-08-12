@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -6,33 +6,39 @@ import { Link, useNavigate} from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './ShopBrowseBooks.css';
 
+const CATEGORY_MAP = ['Fiction', 'Fiction', 'Non-Fiction', 'Non-Fiction'];
+const FILTER_OPTIONS = [
+  { label: 'Fiction', count: '1,204' },
+  { label: 'Non-Fiction', count: '845' },
+  { label: 'Science & Tech', count: '432' },
+  { label: 'Arts & Photography', count: '198' },
+];
+
 export default function ShopBrowseBooks() {
     const navigate = useNavigate();
+    const [selectedFilters, setSelectedFilters] = useState([]);
 
-    React.useEffect(() => {
-        const checkboxes = document.querySelectorAll('.form-checkbox');
+    useEffect(() => {
         const cards = document.querySelectorAll('.book-card');
-        
-        // Mock categories for the 4 cards (in order: Fiction, Fiction, Non-Fiction, Non-Fiction)
-        const mockCategories = ['Fiction', 'Fiction', 'Non-Fiction', 'Non-Fiction'];
-        
-        checkboxes.forEach(cb => {
-            cb.addEventListener('change', () => {
-                const checkedLabels = Array.from(checkboxes)
-                    .filter(c => c.checked)
-                    .map(c => c.nextElementSibling.textContent.split(' (')[0]);
-                
-                cards.forEach((card, index) => {
-                    const category = mockCategories[index];
-                    if (checkedLabels.length === 0 || checkedLabels.includes(category)) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
+        cards.forEach((card, index) => {
+            const category = CATEGORY_MAP[index];
+            const shouldShow = selectedFilters.length === 0 || selectedFilters.includes(category);
+            card.style.display = shouldShow ? 'flex' : 'none';
         });
-    }, []);
+    }, [selectedFilters]);
+
+    const handleFilterToggle = (label) => {
+      setSelectedFilters((prev) => {
+        if (prev.includes(label)) {
+          return prev.filter((item) => item !== label);
+        }
+        return [...prev, label];
+      });
+    };
+
+    const clearFilters = () => {
+      setSelectedFilters([]);
+    };
 
   return (
     <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
@@ -56,22 +62,19 @@ export default function ShopBrowseBooks() {
 <div className="mb-6">
 <h4 className="font-label-md text-label-md text-on-surface-variant mb-3 uppercase tracking-wider">Category</h4>
 <div className="space-y-2">
-<label className="flex items-center space-x-3 cursor-pointer group">
-<input defaultChecked={true} className="rounded form-checkbox text-secondary border-outline-variant focus:ring-secondary-fixed focus:ring-offset-0 w-4 h-4" type="checkbox" />
-<span className="font-body-sm text-body-sm text-on-surface group-hover:text-secondary transition-colors">Fiction (1,204)</span>
+{FILTER_OPTIONS.map((filter) => (
+<label key={filter.label} className="flex items-center space-x-3 cursor-pointer group">
+  <input
+    className="rounded form-checkbox text-secondary border-outline-variant focus:ring-secondary-fixed focus:ring-offset-0 w-4 h-4"
+    type="checkbox"
+    checked={selectedFilters.includes(filter.label)}
+    onChange={() => handleFilterToggle(filter.label)}
+  />
+  <span className="font-body-sm text-body-sm text-on-surface group-hover:text-secondary transition-colors">
+    {filter.label} ({filter.count})
+  </span>
 </label>
-<label className="flex items-center space-x-3 cursor-pointer group">
-<input className="rounded form-checkbox text-secondary border-outline-variant focus:ring-secondary-fixed focus:ring-offset-0 w-4 h-4" type="checkbox" />
-<span className="font-body-sm text-body-sm text-on-surface group-hover:text-secondary transition-colors">Non-Fiction (845)</span>
-</label>
-<label className="flex items-center space-x-3 cursor-pointer group">
-<input className="rounded form-checkbox text-secondary border-outline-variant focus:ring-secondary-fixed focus:ring-offset-0 w-4 h-4" type="checkbox" />
-<span className="font-body-sm text-body-sm text-on-surface group-hover:text-secondary transition-colors">Science &amp; Tech (432)</span>
-</label>
-<label className="flex items-center space-x-3 cursor-pointer group">
-<input className="rounded form-checkbox text-secondary border-outline-variant focus:ring-secondary-fixed focus:ring-offset-0 w-4 h-4" type="checkbox" />
-<span className="font-body-sm text-body-sm text-on-surface group-hover:text-secondary transition-colors">Arts &amp; Photography (198)</span>
-</label>
+))}
 </div>
 </div>
 {/* Price Range */}
@@ -110,11 +113,19 @@ export default function ShopBrowseBooks() {
 {/* Active Filters Tags */}
 <div className="hidden md:flex flex-wrap items-center gap-2 mb-8">
 <span className="font-body-sm text-body-sm text-on-surface-variant mr-2">Active:</span>
-<span className="inline-flex items-center bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface border border-outline-variant/30">
-                    Fiction
-                    <button className="ml-2 text-outline hover:text-error transition-colors"><span className="material-symbols-outlined text-[14px]">close</span></button>
-</span>
-<button className="font-label-sm text-label-sm text-secondary hover:underline ml-2">Clear all</button>
+{selectedFilters.length > 0 ? (
+  selectedFilters.map((label) => (
+    <span key={label} className="inline-flex items-center bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface border border-outline-variant/30">
+      {label}
+      <button type="button" className="ml-2 text-outline hover:text-error transition-colors" onClick={() => handleFilterToggle(label)}>
+        <span className="material-symbols-outlined text-[14px]">close</span>
+      </button>
+    </span>
+  ))
+) : (
+  <span className="font-body-sm text-body-sm text-on-surface-variant">None</span>
+)}
+<button type="button" className="font-label-sm text-label-sm text-secondary hover:underline ml-2" onClick={clearFilters}>Clear all</button>
 <div className="ml-auto flex items-center space-x-2">
 <label className="font-body-sm text-body-sm text-on-surface-variant">Sort by:</label>
 <select className="border-0 bg-transparent font-label-md text-label-md text-primary cursor-pointer focus:ring-0 py-1 pl-0 pr-8">

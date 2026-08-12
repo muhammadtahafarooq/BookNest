@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
@@ -18,10 +17,10 @@ export default function TermsConditionsBooknestPrivateLibrary() {
             </Link>
 {/* Desktop Nav */}
 <div className="hidden md:flex items-center space-x-8">
-<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shop">Shop</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/categories">Categories</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/best-sellers">Best Sellers</Link>
-<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/new-arrivals">New Arrivals</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/shopbrowsebooks">Shop</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/categoriesexploration">Categories</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/bestsellers">Best Sellers</Link>
+<Link className="text-outline-variant hover:text-on-primary transition-colors font-label-md text-label-md" to="/newarrivals">New Arrivals</Link>
 </div>
 {/* Actions */}
 <div className="flex items-center space-x-6 text-on-primary">
@@ -42,9 +41,6 @@ export default function TermsConditionsBooknestPrivateLibrary() {
 </nav>
 {/* Main Content */}
 <main className="flex-grow w-full max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24">
-{/* Header */}
-{/* <Navbar /> */}
-<Navbar />
 {/* Document Content */}
 <article className="space-y-12">
 <section>

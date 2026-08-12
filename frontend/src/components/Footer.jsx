@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
+  const [email, setEmail] = useState('');
+  const [subscribeStatus, setSubscribeStatus] = useState('idle');
+  const [subscribeMessage, setSubscribeMessage] = useState('');
+
+  const handleSubscribe = (event) => {
+    event.preventDefault();
+    if (!email.trim()) {
+      setSubscribeStatus('error');
+      setSubscribeMessage('Please enter your email address.');
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      setSubscribeStatus('error');
+      setSubscribeMessage('Please enter a valid email address.');
+      return;
+    }
+
+    setSubscribeStatus('success');
+    setSubscribeMessage('Thanks for subscribing! You will receive our next update soon.');
+    setEmail('');
+  };
+
   return (
     <footer className="bg-primary border-t border-outline/20 text-on-primary mt-auto">
       <div className="w-full py-12 px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
@@ -15,8 +38,12 @@ export default function Footer() {
             Books that find their way home. Your private library, curated with care.
           </p>
           <div className="flex space-x-4 mt-auto">
-            <span className="material-symbols-outlined text-lg text-on-primary/40 hover:text-secondary-fixed cursor-pointer transition-colors">payments</span>
-            <span className="material-symbols-outlined text-lg text-on-primary/40 hover:text-secondary-fixed cursor-pointer transition-colors">credit_card</span>
+            <Link to="/shippingreturnsarchive" className="flex items-center justify-center rounded-full w-10 h-10 bg-on-primary/10 text-on-primary/70 hover:text-on-primary hover:bg-on-primary/20 transition-colors">
+              <span className="material-symbols-outlined text-lg">payments</span>
+            </Link>
+            <Link to="/contact" className="flex items-center justify-center rounded-full w-10 h-10 bg-on-primary/10 text-on-primary/70 hover:text-on-primary hover:bg-on-primary/20 transition-colors">
+              <span className="material-symbols-outlined text-lg">credit_card</span>
+            </Link>
           </div>
         </div>
 
@@ -26,8 +53,8 @@ export default function Footer() {
             <h4 className="font-label-md text-label-md text-on-primary mb-4 font-bold tracking-widest uppercase">Store</h4>
             <ul className="space-y-3 font-body-sm text-body-sm">
               <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/shopbrowsebooks">Shop All</Link></li>
-              <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/shopbrowsebooks">New Arrivals</Link></li>
-              <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/shopbrowsebooks">Best Sellers</Link></li>
+              <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/newarrivals">New Arrivals</Link></li>
+              <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/bestsellers">Best Sellers</Link></li>
               <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/categoriesexploration">Categories</Link></li>
               <li><Link className="text-on-primary/60 hover:text-on-primary transition-colors duration-300 block" to="/blogstoriesinspiration">Blog</Link></li>
             </ul>
@@ -51,8 +78,10 @@ export default function Footer() {
           <p className="font-body-sm text-body-sm text-on-primary/60 mb-4">
             Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
           </p>
-          <form className="flex flex-col gap-2" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex flex-col gap-2" onSubmit={handleSubscribe}>
             <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="bg-primary-container text-on-primary border border-outline/30 rounded px-4 py-2 font-body-sm text-body-sm focus:border-secondary-fixed focus:ring-1 focus:ring-secondary-fixed outline-none w-full placeholder-on-primary/40"
               placeholder="Enter your email"
               type="email"
@@ -63,12 +92,13 @@ export default function Footer() {
             >
               Subscribe
             </button>
+            {subscribeStatus !== 'idle' && (
+              <p className={`mt-2 text-sm ${subscribeStatus === 'success' ? 'text-emerald-300' : 'text-error'}`}>
+                {subscribeMessage}
+              </p>
+            )}
           </form>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="col-span-1 md:col-span-4 border-t border-outline/20 mt-4 pt-8 flex flex-col md:flex-row justify-between items-center text-on-primary/40 font-label-sm text-label-sm">
-          <p>© 2024 BookNest Pakistan. All rights reserved.</p>
+          <p className="mt-6">© 2024 BookNest Pakistan. All rights reserved.</p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
             <Link className="hover:text-on-primary transition-colors" to="/privacypolicyarchive">Privacy</Link>
             <Link className="hover:text-on-primary transition-colors" to="/termsconditionsbooknestprivatelibrary">Terms</Link>

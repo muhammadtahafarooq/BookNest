@@ -13,6 +13,8 @@ const BookCollectionManagementAdminArchive = lazy(() => import('./pages/BookColl
 const BrowseCollections = lazy(() => import('./pages/BrowseCollections'));
 const CatalogArchive = lazy(() => import('./pages/CatalogArchive'));
 const CategoriesExploration = lazy(() => import('./pages/CategoriesExploration'));
+const NewArrivals = lazy(() => import('./pages/NewArrivals'));
+const BestSellers = lazy(() => import('./pages/BestSellers'));
 const CategoryManagementBooknestAdmin = lazy(() => import('./pages/CategoryManagementBooknestAdmin'));
 const Checkout = lazy(() => import('./pages/Checkout'));
 const ConnectWithTheArchive = lazy(() => import('./pages/ConnectWithTheArchive'));
@@ -97,6 +99,8 @@ function App() {
           <Route path="/shader" element={<Shader />} />
           <Route path="/shippingreturnsarchive" element={<ShippingReturnsArchive />} />
           <Route path="/shopbrowsebooks" element={<ShopBrowseBooks />} />
+          <Route path="/newarrivals" element={<NewArrivals />} />
+          <Route path="/bestsellers" element={<BestSellers />} />
           <Route path="/shoppingcartyourbookcollection" element={<ShoppingCartYourBookCollection />} />
           <Route path="/termsconditionsbooknestprivatelibrary" element={<TermsConditionsBooknestPrivateLibrary />} />
           <Route path="/theartofthearchive" element={<TheArtOfTheArchive />} />

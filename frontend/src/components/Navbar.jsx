@@ -5,6 +5,9 @@ import { animate } from 'animejs';
 export default function Navbar() {
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showSearchInput, setShowSearchInput] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = useRef(null);
   
   const searchIconRef = useRef(null);
   const favIconRef = useRef(null);
@@ -63,6 +66,29 @@ export default function Navbar() {
     });
   };
 
+  useEffect(() => {
+    if (showSearchInput && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [showSearchInput]);
+
+  const performSearch = () => {
+    const trimmed = searchQuery.trim();
+    if (trimmed) {
+      navigate(`/searchresultsbooknest?q=${encodeURIComponent(trimmed)}`);
+      setShowSearchInput(false);
+    } else {
+      setShowSearchInput(true);
+    }
+  };
+
+  const handleSearchKey = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      performSearch();
+    }
+  };
+
   return (
     <header className="bg-primary shadow-sm docked full-width top-0 z-50 sticky transition-all duration-300">
       <div className="flex justify-between items-center w-full px-margin-desktop max-w-container-max-width mx-auto py-4">
@@ -79,7 +105,7 @@ export default function Navbar() {
           <Link className="text-on-primary/80 hover:text-secondary-fixed font-label-md text-label-md transition-colors duration-300" to="/categoriesexploration">
             Categories
           </Link>
-          <Link className="text-on-primary/80 hover:text-secondary-fixed font-label-md text-label-md transition-colors duration-300" to="/shopbrowsebooks">
+          <Link className="text-on-primary/80 hover:text-secondary-fixed font-label-md text-label-md transition-colors duration-300" to="/newarrivals">
             New Arrivals
           </Link>
           <Link className="text-on-primary/80 hover:text-secondary-fixed font-label-md text-label-md transition-colors duration-300" to="/blogstoriesinspiration">
@@ -92,11 +118,31 @@ export default function Navbar() {
 
         {/* Trailing Icons */}
         <div className="flex items-center space-x-4">
+          {showSearchInput && (
+            <div className="flex items-center rounded-full border border-outline/20 bg-surface px-3 py-2 shadow-sm">
+              <input
+                ref={searchInputRef}
+                className="bg-transparent outline-none text-on-primary placeholder:text-on-primary/50 text-sm w-44 sm:w-48"
+                placeholder="Search books..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleSearchKey}
+              />
+              <button
+                type="button"
+                className="text-on-primary/80 hover:text-on-primary transition-colors"
+                onClick={performSearch}
+                aria-label="search"
+              >
+                <span className="material-symbols-outlined">search</span>
+              </button>
+            </div>
+          )}
           <button
             aria-label="search"
-            className="text-on-primary hover:text-secondary-fixed transition-colors duration-300 p-2"
+            className="relative text-on-primary hover:text-secondary-fixed transition-all duration-300 p-2 hover:scale-110"
             onMouseEnter={animateSearch}
-            onClick={() => navigate('/searchresultsbooknest')}
+            onClick={performSearch}
           >
             <span ref={searchIconRef} className="material-symbols-outlined inline-block">search</span>
           </button>
@@ -144,7 +190,7 @@ export default function Navbar() {
         <nav className="md:hidden bg-primary border-t border-outline/20 px-6 py-4 flex flex-col space-y-4">
           <Link className="text-on-primary font-label-md text-label-md hover:text-secondary-fixed transition-colors" to="/shopbrowsebooks" onClick={() => setMobileOpen(false)}>Shop</Link>
           <Link className="text-on-primary font-label-md text-label-md hover:text-secondary-fixed transition-colors" to="/categoriesexploration" onClick={() => setMobileOpen(false)}>Categories</Link>
-          <Link className="text-on-primary font-label-md text-label-md hover:text-secondary-fixed transition-colors" to="/shopbrowsebooks" onClick={() => setMobileOpen(false)}>New Arrivals</Link>
+          <Link className="text-on-primary font-label-md text-label-md hover:text-secondary-fixed transition-colors" to="/newarrivals" onClick={() => setMobileOpen(false)}>New Arrivals</Link>
           <Link className="text-on-primary font-label-md text-label-md hover:text-secondary-fixed transition-colors" to="/blogstoriesinspiration" onClick={() => setMobileOpen(false)}>Blog</Link>
           <Link className="text-on-primary font-label-md text-label-md hover:text-secondary-fixed transition-colors" to="/aboutusourstorybooknest" onClick={() => setMobileOpen(false)}>About</Link>
           <hr className="border-outline/20" />

@@ -59,36 +59,47 @@ export default function MouseBackground() {
       ctx.clearRect(0, 0, width, height);
 
       // ── 1. Smooth lamp position ───────────────────────────────────────
-      lamp.current.x += (mouse.current.x - lamp.current.x) * 0.055;
-      lamp.current.y += (mouse.current.y - lamp.current.y) * 0.055;
+      lamp.current.x += (mouse.current.x - lamp.current.x) * 0.085;
+      lamp.current.y += (mouse.current.y - lamp.current.y) * 0.085;
 
       const lx = lamp.current.x;
       const ly = lamp.current.y;
 
-      // ── 2. Warm reading-lamp glow (visible on both dark & light pages)
-      // Outer amber wash
-      const outer = ctx.createRadialGradient(lx, ly, 0, lx, ly, 460);
-      outer.addColorStop(0,   'rgba(180,110,30,0.07)');
-      outer.addColorStop(0.4, 'rgba(160,90,20,0.04)');
-      outer.addColorStop(0.75,'rgba(140,75,15,0.015)');
+      // ── 2. Warm professional glow (dominant spotlight effect)
+      const outer = ctx.createRadialGradient(lx, ly, 0, lx, ly, 520);
+      outer.addColorStop(0,   'rgba(210,160,75,0.14)');
+      outer.addColorStop(0.32,'rgba(190,130,50,0.06)');
+      outer.addColorStop(0.68,'rgba(150,100,35,0.015)');
       outer.addColorStop(1,   'rgba(0,0,0,0)');
       ctx.fillStyle = outer;
       ctx.fillRect(0, 0, width, height);
 
-      // Inner warm hotspot
-      const inner = ctx.createRadialGradient(lx, ly, 0, lx, ly, 170);
-      inner.addColorStop(0,   'rgba(200,140,50,0.13)');
-      inner.addColorStop(0.45,'rgba(180,110,30,0.065)');
+      const inner = ctx.createRadialGradient(lx, ly, 0, lx, ly, 180);
+      inner.addColorStop(0,   'rgba(235,190,110,0.2)');
+      inner.addColorStop(0.4, 'rgba(220,150,70,0.08)');
       inner.addColorStop(1,   'rgba(0,0,0,0)');
       ctx.fillStyle = inner;
       ctx.fillRect(0, 0, width, height);
 
-      // Tiny pinpoint at cursor
-      const pin = ctx.createRadialGradient(lx, ly, 0, lx, ly, 55);
-      pin.addColorStop(0,  'rgba(220,160,60,0.22)');
-      pin.addColorStop(1,  'rgba(0,0,0,0)');
-      ctx.fillStyle = pin;
-      ctx.fillRect(0, 0, width, height);
+      const halo = ctx.createRadialGradient(lx, ly, 0, lx, ly, 92);
+      halo.addColorStop(0,   'rgba(255,255,240,0.14)');
+      halo.addColorStop(0.4, 'rgba(255,245,220,0.05)');
+      halo.addColorStop(1,   'rgba(0,0,0,0)');
+      ctx.fillStyle = halo;
+      ctx.beginPath();
+      ctx.arc(lx, ly, 92, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Tiny bright core to reinforce the dominant pointer
+      ctx.save();
+      ctx.globalAlpha = 0.88;
+      ctx.shadowBlur = 22;
+      ctx.shadowColor = 'rgba(255,210,150,0.22)';
+      ctx.fillStyle = 'rgba(255,235,190,0.95)';
+      ctx.beginPath();
+      ctx.arc(lx, ly, 4 + 1.5 * Math.sin(ts * 0.0035), 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
 
       // ── 3. Dust motes ─────────────────────────────────────────────────
       motesRef.current.forEach((m) => {
