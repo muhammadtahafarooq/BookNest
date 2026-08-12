@@ -10,7 +10,7 @@ export default defineConfig({
     seed: "ts-node prisma/seed.ts",
   },
   datasource: {
-    // Session-mode URL for migrations (Supabase pooler rejects/queues DDL)
+    // Session-mode URL used only for migrations
     url: process.env["DIRECT_URL"] || process.env["DATABASE_URL"],
   },
 });
