@@ -1,12 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 import { Link, useNavigate} from 'react-router-dom';
+import { supabase } from '../supabaseClient';
 import './ContactUsBooknestSupport.css';
 
 export default function ContactUsBooknestSupport() {
     const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        subject: 'general',
+        message: ''
+    });
+    const [status, setStatus] = useState('idle'); // idle, loading, success, error
+    const [feedbackMsg, setFeedbackMsg] = useState('');
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('loading');
+        setFeedbackMsg('');
+
+        try {
+            const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+            const { error } = await supabase
+                .from('ContactMessage')
+                .insert([
+                    {
+                        name: fullName,
+                        email: formData.email,
+                        subject: formData.subject,
+                        message: formData.message,
+                    }
+                ]);
+
+            if (error) throw error;
+
+            setStatus('success');
+            setFeedbackMsg('Your message has been sent successfully. We will get back to you soon!');
+            setFormData({ firstName: '', lastName: '', email: '', subject: 'general', message: '' });
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setStatus('error');
+            setFeedbackMsg('There was an error sending your message. Please try again.');
+        }
+    };
+
   return (
     <>
       {/* TopNavBar */}
@@ -63,24 +109,34 @@ export default function ContactUsBooknestSupport() {
 {/* CONTACT FORM */}
 <div className="lg:col-span-7 bg-white rounded-xl p-8 md:p-10 shadow-ambient border border-[#E2E8F0]">
 <h2 className="font-fraunces text-3xl font-medium text-[#102A43] mb-8">Send us a message</h2>
-<form action="#" className="space-y-6" method="POST">
+{status === 'success' && (
+    <div className="mb-6 p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg">
+        {feedbackMsg}
+    </div>
+)}
+{status === 'error' && (
+    <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+        {feedbackMsg}
+    </div>
+)}
+<form onSubmit={handleSubmit} className="space-y-6">
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
 <label className="block font-label-sm text-label-sm text-[#102A43] mb-2" htmlFor="first-name">First name</label>
-<input className="w-full rounded-lg border-[#E2E8F0] bg-white px-4 py-3 font-body-md text-[#102A43] focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/20 transition-all duration-300 outline-none" id="first-name" name="first-name" placeholder="Jane" type="text" />
+<input className="w-full rounded-lg border-[#E2E8F0] bg-white px-4 py-3 font-body-md text-[#102A43] focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/20 transition-all duration-300 outline-none" id="first-name" name="firstName" placeholder="Jane" type="text" value={formData.firstName} onChange={handleChange} required />
 </div>
 <div>
 <label className="block font-label-sm text-label-sm text-[#102A43] mb-2" htmlFor="last-name">Last name</label>
-<input className="w-full rounded-lg border-[#E2E8F0] bg-white px-4 py-3 font-body-md text-[#102A43] focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/20 transition-all duration-300 outline-none" id="last-name" name="last-name" placeholder="Doe" type="text" />
+<input className="w-full rounded-lg border-[#E2E8F0] bg-white px-4 py-3 font-body-md text-[#102A43] focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/20 transition-all duration-300 outline-none" id="last-name" name="lastName" placeholder="Doe" type="text" value={formData.lastName} onChange={handleChange} required />
 </div>
 </div>
 <div>
 <label className="block font-label-sm text-label-sm text-[#102A43] mb-2" htmlFor="email">Email address</label>
-<input className="w-full rounded-lg border-[#E2E8F0] bg-white px-4 py-3 font-body-md text-[#102A43] focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/20 transition-all duration-300 outline-none" id="email" name="email" placeholder="jane@example.com" type="email" />
+<input className="w-full rounded-lg border-[#E2E8F0] bg-white px-4 py-3 font-body-md text-[#102A43] focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/20 transition-all duration-300 outline-none" id="email" name="email" placeholder="jane@example.com" type="email" value={formData.email} onChange={handleChange} required />
 </div>
 <div>
 <label className="block font-label-sm text-label-sm text-[#102A43] mb-2" htmlFor="subject">Subject</label>
-<select className="w-full rounded-lg border-[#E2E8F0] bg-white px-4 py-3 font-body-md text-[#102A43] focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/20 transition-all duration-300 outline-none" id="subject" name="subject">
+<select className="w-full rounded-lg border-[#E2E8F0] bg-white px-4 py-3 font-body-md text-[#102A43] focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/20 transition-all duration-300 outline-none" id="subject" name="subject" value={formData.subject} onChange={handleChange} required>
 <option value="general">General Inquiry</option>
 <option value="order">Order Status</option>
 <option value="returns">Returns &amp; Exchanges</option>
@@ -89,12 +145,12 @@ export default function ContactUsBooknestSupport() {
 </div>
 <div>
 <label className="block font-label-sm text-label-sm text-[#102A43] mb-2" htmlFor="message">Message</label>
-<textarea className="w-full rounded-lg border-[#E2E8F0] bg-white px-4 py-3 font-body-md text-[#102A43] focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/20 transition-all duration-300 outline-none resize-none" id="message" name="message" placeholder="How can we help you today?" rows="5"></textarea>
+<textarea className="w-full rounded-lg border-[#E2E8F0] bg-white px-4 py-3 font-body-md text-[#102A43] focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/20 transition-all duration-300 outline-none resize-none" id="message" name="message" placeholder="How can we help you today?" rows="5" value={formData.message} onChange={handleChange} required></textarea>
 </div>
 <div className="pt-2">
-<button className="w-full sm:w-auto px-8 py-4 bg-antique-brass hover:bg-[#B58B35] text-white font-label-md text-label-md rounded-lg transition-all duration-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-antique-brass flex items-center justify-center space-x-2" type="submit">
-<span>Send Message</span>
-<span className="material-symbols-outlined text-sm" data-icon="send">send</span>
+<button disabled={status === 'loading'} className="w-full sm:w-auto px-8 py-4 bg-antique-brass hover:bg-[#B58B35] disabled:opacity-50 text-white font-label-md text-label-md rounded-lg transition-all duration-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-antique-brass flex items-center justify-center space-x-2" type="submit">
+<span>{status === 'loading' ? 'Sending...' : 'Send Message'}</span>
+{status !== 'loading' && <span className="material-symbols-outlined text-sm" data-icon="send">send</span>}
 </button>
 </div>
 </form>
