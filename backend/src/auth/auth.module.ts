@@ -11,10 +11,16 @@ import { PrismaModule } from '../prisma/prisma.module';
     PrismaModule,
     PassportModule,
     JwtModule.registerAsync({
-      useFactory: () => ({
-        secret: process.env.JWT_SECRET || 'changeme',
-        signOptions: { expiresIn: (process.env.JWT_EXPIRES_IN || '7d') as any },
-      }),
+      useFactory: () => {
+        const secret = process.env.JWT_SECRET;
+        if (!secret) {
+          throw new Error('JWT_SECRET is not set');
+        }
+        return {
+          secret,
+          signOptions: { expiresIn: (process.env.JWT_EXPIRES_IN || '7d') as any },
+        };
+      },
     }),
   ],
   providers: [AuthService, JwtStrategy],

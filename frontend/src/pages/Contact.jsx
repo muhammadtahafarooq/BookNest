@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import axios from 'axios';
 import './Contact.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:3000').replace(/\/+$/, '');
 const SUBJECT_OPTIONS = ['general', 'order', 'returns', 'press'];
 
 const validateEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());

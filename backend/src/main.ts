@@ -27,6 +27,7 @@ function validateEnv() {
 async function bootstrap() {
   validateEnv();
   const app = await NestFactory.create(AppModule);
+  app.enableShutdownHooks();
 
   // Security Middlewares
   app.use(helmet());
@@ -58,7 +59,7 @@ async function bootstrap() {
     console.log(`Swagger UI available at: http://localhost:${process.env.PORT ?? 3000}/api`);
   }
 
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT ?? 3000, '0.0.0.0');
   console.log(
     `Application is running on: http://localhost:${process.env.PORT ?? 3000}`,
   );
