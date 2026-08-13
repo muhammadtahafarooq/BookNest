@@ -18,8 +18,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleCartAdd = () => {
       if (cartIconRef.current) {
-        animate({
-          targets: cartIconRef.current,
+        animate(cartIconRef.current, {
           scale: [1, 1.4, 1],
           duration: 350,
           easing: 'easeOutElastic(1, .8)'
@@ -31,8 +30,7 @@ export default function Navbar() {
   }, []);
 
   const animateSearch = () => {
-    animate({
-      targets: searchIconRef.current,
+    animate(searchIconRef.current, {
       rotate: [0, -15, 15, 0],
       duration: 400,
       easing: 'easeInOutSine'
@@ -40,8 +38,7 @@ export default function Navbar() {
   };
 
   const animateFavorite = () => {
-    animate({
-      targets: favIconRef.current,
+    animate(favIconRef.current, {
       scale: [1, 1.3, 0.9, 1.1, 1],
       duration: 500,
       easing: 'easeOutQuad'
@@ -49,8 +46,7 @@ export default function Navbar() {
   };
 
   const animateAccount = () => {
-    animate({
-      targets: accountIconRef.current,
+    animate(accountIconRef.current, {
       rotateY: [0, 180, 360],
       duration: 600,
       easing: 'easeInOutSine'
@@ -58,8 +54,7 @@ export default function Navbar() {
   };
 
   const animateMenu = () => {
-    animate({
-      targets: menuIconRef.current,
+    animate(menuIconRef.current, {
       scale: [1, 1.2, 1],
       duration: 300,
       easing: 'easeInOutSine'
